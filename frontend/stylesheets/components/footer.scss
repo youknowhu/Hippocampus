@@ -1,0 +1,56 @@
+footer {
+  background-color: #3e7e96;
+  display: block;
+  box-sizing: border-box;
+  color: $dark-gray;
+  font-size: 16px;
+
+
+
+  .footer-main {
+    background-color: $dark-purple;
+    background-image: url('../assets/tent_logo.ico'), url('../assets/mountains_footer.svg');
+    background-position: bottom center;
+    background-repeat: no-repeat, repeat-x;
+    background-size: auto 55px, auto 200px;
+    padding-top: 30px;
+    padding-bottom: 200px;
+    color: #fff;
+    font-size: 0.9em;
+    background-position-x: 50%, 50%;
+    background-position-y: 100%, 100%;
+  }
+
+  .footer-main h5 {
+    color: #70539f;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    border-top: 5px solid rgb(253, 224, 171);
+    padding-top: 9px;
+    padding-bottom: 8px;
+    color: white;
+    box-sizing: border-box;
+    display: block;
+    font-size: 10px;
+    line-height: 18.176px;
+
+    .bottom {
+      font-weight: 100;
+      width: 900px;
+      margin: 0 auto;
+      letter-spacing: 0.4px;
+    }
+
+    .pull-right {
+      font-weight: 100;
+      letter-spacing: 0.4px;
+    }
+
+    a {
+      font-weight:100;
+      letter-spacing: 0.4px;
+    }
+  }
+}

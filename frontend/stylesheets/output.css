@@ -28,7 +28,8 @@ span, article, footer, time, small {
   text-decoration: inherit;
   vertical-align: inherit;
   box-sizing: inherit;
-  background: transparent; }
+  line-height: 1.42;
+  letter-spacing: 0.23px; }
 
 ul {
   list-style: none; }
@@ -84,7 +85,6 @@ header {
     header .discover-nav li {
       margin: 0px 10px;
       font-weight: 300;
-      letter-spacing: 0.23px;
       width: 60px;
       height: 70px;
       text-align: center;
@@ -94,5 +94,47 @@ header {
       border-bottom: 2px solid #40d9ac; }
     header .discover-nav .search:hover {
       border-bottom: none; }
+
+footer {
+  background-color: #3e7e96;
+  display: block;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 16px; }
+  footer .footer-main {
+    background-color: #41305C;
+    background-image: url("../assets/tent_logo.ico"), url("../assets/mountains_footer.svg");
+    background-position: bottom center;
+    background-repeat: no-repeat, repeat-x;
+    background-size: auto 55px, auto 200px;
+    padding-top: 30px;
+    padding-bottom: 200px;
+    color: #fff;
+    font-size: 0.9em;
+    background-position-x: 50%, 50%;
+    background-position-y: 100%, 100%; }
+  footer .footer-main h5 {
+    color: #70539f;
+    margin-bottom: 20px; }
+  footer .footer-bottom {
+    border-top: 5px solid #fde0ab;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    color: white;
+    box-sizing: border-box;
+    display: block;
+    font-size: 10px;
+    line-height: 18.176px; }
+    footer .footer-bottom .bottom {
+      font-weight: 100;
+      width: 900px;
+      margin: 0 auto;
+      letter-spacing: 0.4px; }
+    footer .footer-bottom .pull-right {
+      font-weight: 100;
+      letter-spacing: 0.4px; }
+    footer .footer-bottom a {
+      font-weight: 100;
+      letter-spacing: 0.4px; }
 
 /*# sourceMappingURL=output.css.map */
