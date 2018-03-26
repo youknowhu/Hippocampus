@@ -1,0 +1,98 @@
+/* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_self
+*/
+/* PHASE 0: Reset */
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: "Calibre", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent; }
+
+ul {
+  list-style: none; }
+
+img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -moz-appearance: none;
+  appearance: none; }
+
+button,
+input[type="submit"] {
+  cursor: pointer; }
+
+/* Clearfix */
+.group:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+header {
+  display: flex;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ebebeb;
+  color: #333333; }
+  header .logo {
+    width: 250px;
+    height: 70px;
+    padding: 0px 20px;
+    border-right: 1px solid #ebebeb; }
+  header .discover-nav {
+    font-size: 15px; }
+    header .discover-nav .search {
+      margin: 0px 10px;
+      width: 80px; }
+    header .discover-nav strong {
+      font-weight: 700;
+      margin-left: 5px; }
+    header .discover-nav ul {
+      display: flex; }
+    header .discover-nav li {
+      margin: 0px 10px;
+      font-weight: 300;
+      letter-spacing: 0.23px;
+      width: 60px;
+      height: 70px;
+      text-align: center;
+      line-height: 70px;
+      vertical-align: center; }
+    header .discover-nav li:hover {
+      border-bottom: 2px solid #40d9ac; }
+    header .discover-nav .search:hover {
+      border-bottom: none; }
+
+/*# sourceMappingURL=output.css.map */

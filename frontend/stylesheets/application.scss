@@ -18,10 +18,8 @@
 // Core
 @import "base/colors.scss";
 @import "base/fonts.scss";
-@import "base/layout.scss";
 
 // Grid
-@import "base/grid.scss";
 
 // Components
-@import "components/*";
+@import "components/header.scss"
