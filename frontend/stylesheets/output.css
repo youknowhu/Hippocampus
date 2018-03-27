@@ -62,6 +62,21 @@ input[type="submit"] {
   display: block;
   clear: both; }
 
+.footer-container {
+  float: left;
+  box-sizing: border-box; }
+
+/* Attribute selector targeting all elements
+with a class attribute containing 'col-' */
+[class*='col-'] {
+  padding-right: 20px; }
+
+[class*='col-']:last-of-type {
+  padding-right: 0; }
+
+.row {
+  width: 50%; }
+
 header {
   display: flex;
   box-sizing: border-box;
