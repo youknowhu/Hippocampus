@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,14 +6,38 @@
     <title>Hippocampus | Find yourself outside</title>
     <link rel="stylesheet" href="./stylesheets/output.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-    <link rel="shortcut icon" href="./assets/tent_logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/blue_hippo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      $( ".datepicker" ).datepicker({
+        dayNamesMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        nextText: ">",
+        prevText: "<",
+        monthNamesShort: $.datepicker.regional["en"].monthNames,
+        dateFormat: "mm-dd-yy"
+      });
+    } );
+
+    $(function(){
+     $("body").on("click", ".js-modal-open", function(event){
+       event.preventDefault();
+       $(".modal").addClass("is-open");
+     });
+     $("body").on("click", ".js-modal-close", function(event){
+       event.preventDefault();
+       $(".modal").removeClass("is-open");
+     });
+    });
+    </script>
   </head>
   <body>
-    <header>
-      <img class="logo" src="./assets/Hippocampus_logo.svg"/>
-      <nav>
-        <section class="discover-nav">
+    <header class="nav-header">
+      <div class="nav-left">
+        <img class="logo" src="./assets/Hippo_logo.svg"/>
+        <nav class="discover-nav">
           <ul>
             <li class="search"><i class="fa fa-search"></i><strong>Search</strong></li>
             <li><label>Camping</label></li>
@@ -20,23 +45,155 @@
             <li><label>Scouting</label></li>
             <li><label>About</label></li>
           </ul>
-        </section>
-
-      </nav>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <h4><a href="#" class="js-modal-open">Log In</a></h4>
+      </div>
     </header>
-    <main>
+    <main class="main-header">
+      <section class="row left">
+        <h2>Find yourself outside.</h2>
+        <div class="subtext">
+          <h1>Search, discover and book over <strong>285,000</strong> campsites, ranches, vineyards, farms, public parks and more.</h1>
+        </div>
+        <div class="main-search-box">
+          <div class="location-search">
+            <input type="text" name="location" class="find-camping" placeholder="Find camping near..."/>
+            <i class="fa fa-search"></i>
+          </div>
+          <div class="dates-search">
+            <input type="text" name="check-in-date"
+             class="datepicker" value="Check In">
+            <input type="text" name="check-out-date"
+             class="datepicker" value="Check Out">
+            <div class="search-button">
+              Search
+            </div>
+          </div>
+        </div>
+        <div class="search-subtext">
+          <p class="discover-subtext">
+            or Discover the best camps near me           <i class="fa fa-long-arrow-right"></i>
+
+          </p>
+        </div>
+
+      </section>
+      <section class="row right">
+        <img src='../app/assets/images/glacier_national_park.jpg'>
+        <p class="main-header-image-footer">
+          <strong>Glacier National Park</strong> hosted by U.S. National Park Service
+        </p>
+      </section>
     </main>
+    <section class="discover-filters">
+      <h2>Discover camping...</h2>
+      <container class="discover-grid">
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/tent_cropped.jpg"/>
+          </div>
+          <footer class="discover-footer">
+            <h2>Camping under $30</h2>
+            <p>Best options near me</p>
+          </footer>
+        </div>
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/glamping_cropped.jpeg"/>
+          </div>
+          <footer class="discover-footer">
+            <h2>Glamping</h2>
+            <p>Best options near me</p>
+          </footer>
+        </div>
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/dogs_woods_cropped.jpg"/>
+          </div>
+          <footer class="discover-footer">
+            <h2>Pet friendly camping</h2>
+            <p>Best options near me</p>
+          </footer>
+        </div>
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/Zion_National_Park.jpg"/>
+          </div>
+          <footer class="discover-footer">
+            <h2>Zion</h2>
+            <p>Utah</p>
+          </footer>
+        </div>
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/channel_islands.jpg"/>
+          </div>
+          <footer class="discover-footer">
+            <h2>Channel Islands</h2>
+            <p>California</p>
+          </footer>
+        </div>
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/glacier_lake_cropped.jpeg"/>
+          </div>
+          <div class="discover-footer">
+            <h2>Glacier National Park</h2>
+            <p>Montana</p>
+          </div>
+        </div>
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/yosemite_cropped.jpg"/>
+          </div>
+          <footer class="discover-footer">
+            <h2>Yosemite</h2>
+            <p>California</p>
+          </footer>
+        </div>
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/joshua_tree_cropped.jpg"/>
+          </div>
+          <footer class="discover-footer">
+            <h2>Joshua Tree</h2>
+            <p>California</p>
+          </footer>
+        </div>
+
+        <div class="discover-square">
+          <div class="crop">
+            <img src="./assets/yellowstone_cropped.jpeg"/>
+          </div>
+          <footer class="discover-footer">
+            <h2>Yellowstone</h2>
+            <p>Wyoming</p>
+          </footer>
+        </div>
+
+      </container>
+    </section>
     <footer>
       <section class="footer-main">
         <div class="footer-container">
           <div class="row">
-            <div class="col-sm-6">
-              <h5>Hipcamp is everywhere you want to camp.</h5>
+            <div class="col-sm-6 footer-col left">
+              <h5>Hippocampus is everywhere you want to camp.</h5>
               <p>Discover unique experiences on ranches, nature preserves, farms, vineyards, and public campgrounds across the U.S. Book tent camping, treehouses, cabins, yurts, primitive backcountry sites, car camping, airstreams, tiny houses, RV camping, glamping tents and more. </p>
             </div>
             <div class="col-sm-6">
               <div class="row">
-                <div class="col-md-4 col-md-offset-1 col-xs-4">
+                <div class="col-md-4 col-md-offset-1 col-xs-4 footer-col">
                   <h5>Browse</h5>
                   <ul class="list-unstyled">
                     <li><a href="/host">Host campers</a></li>
@@ -45,7 +202,7 @@
                     <li><a target="_blank" href="http://hipcamp.helpscoutdocs.com">
                       Help</a></li>
                     <li><a href="/about#contact">Contact</a></li></ul></div>
-                <div class="col-md-4 col-xs-4">
+                <div class="col-md-4 col-xs-4 footer-col">
                   <h5>About</h5>
                   <ul class="list-unstyled">
                     <li><a href="/journal">Journal</a></li>
@@ -55,7 +212,7 @@
                     <li><a target="_blank" href="http://hipca.mp/thepresskit">Press Kit</a></li>
                   </ul>
                 </div>
-                <div class="col-md-3 col-xs-4">
+                <div class="col-md-3 col-xs-4 footer-col">
                   <h5>Social</h5>
                     <ul class="list-unstyled">
                       <li><a href="#"><span class="icon fa fa-facebook-official"></span> Facebook</a></li>
@@ -81,5 +238,39 @@
         </div>
       </section>
     </footer>
+
+    <div class="modal">
+      <form class="modal-form">
+
+        <h3>Welcome back! </h3>
+        <p>It's about time for another camping trip.</p>
+
+        <div class="input">
+          <label>
+            <input type="text" placeholder="Username">
+          </label>
+        </div>
+
+        <div class="input">
+          <input type="text" placeholder="Password">
+        </div>
+
+
+        <div class="submit">
+          <button>Log In</button>
+        </div>
+
+        <div class="modal-footer">
+          <p>
+            Don't have a Hippocampus account? <br /> <a href="#">Sign Up!</a>
+          </p>
+        </div>
+
+      </form>
+    <div class="modal-screen js-modal-close">
+    </div>
+  </div>
   </body>
+
+
 </html>

@@ -1,18 +1,22 @@
 .footer-container {
-  float: left;
-  box-sizing: border-box;
+  position: relative;
+
+  .row {
+    display: flex;
+  }
+
+  .col-sm-6 {
+    width: 50%;
+  }
+
 }
 
 /* Attribute selector targeting all elements
 with a class attribute containing 'col-' */
 [class*='col-'] {
-  padding-right: 20px;
+  padding: 20px;
 }
 
 [class*='col-']:last-of-type {
   padding-right: 0;
-}
-
-.row {
-  width: 50%;
 }

@@ -19,9 +19,13 @@
 @import "base/colors.scss";
 @import "base/fonts.scss";
 @import "base/grid.scss";
+@import "base/datepicker.scss";
 
 // Grid
 
 // Components
 @import "components/header.scss";
 @import "components/footer.scss";
+@import "components/main-header.scss";
+@import "components/filters.scss";
+@import "components/modal.scss";

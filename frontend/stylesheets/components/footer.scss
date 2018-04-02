@@ -13,17 +13,37 @@ footer {
     background-position: bottom center;
     background-repeat: no-repeat, repeat-x;
     background-size: auto 55px, auto 200px;
-    padding-top: 30px;
+    padding-top: 5px;
     padding-bottom: 200px;
     color: #fff;
-    font-size: 0.9em;
     background-position-x: 50%, 50%;
     background-position-y: 100%, 100%;
-  }
 
-  .footer-main h5 {
-    color: #70539f;
-    margin-bottom: 20px;
+    .footer-container {
+      width: 80vw;
+      margin: 0 auto;
+    }
+
+    h5 {
+      color: #70539f;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
+
+    li, a, p {
+      font-weight:100;
+      letter-spacing: 0.6px;
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .footer-col {
+      margin: 0px 30px 0px 30px;
+    }
+
+    .left {
+      margin: 21px 20px 0px 20px;
+    }
   }
 
   .footer-bottom {
@@ -38,7 +58,7 @@ footer {
 
     .bottom {
       font-weight: 100;
-      width: 900px;
+      width: 75vw;
       margin: 0 auto;
       letter-spacing: 0.4px;
     }
@@ -49,8 +69,7 @@ footer {
     }
 
     a {
-      font-weight:100;
-      letter-spacing: 0.4px;
+      font-weight: 100;
     }
   }
 }
