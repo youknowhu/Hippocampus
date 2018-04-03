@@ -1,3 +1,5 @@
+$assetPath: '../images';
+
 footer {
   background-color: #3e7e96;
   display: block;
@@ -5,11 +7,9 @@ footer {
   color: $dark-gray;
   font-size: 16px;
 
-
-
   .footer-main {
     background-color: $dark-purple;
-    background-image: url('../../assets/tent_logo.ico'), url('../../assets/mountains_footer.svg');
+    background-image: url('https://res.cloudinary.com/deor0br3s/image/upload/v1522783892/tent_logo.png'), url('http://res.cloudinary.com/deor0br3s/image/upload/v1522783905/mountains_footer.png');
     background-position: bottom center;
     background-repeat: no-repeat, repeat-x;
     background-size: auto 55px, auto 200px;
@@ -18,9 +18,9 @@ footer {
     color: #fff;
     background-position-x: 50%, 50%;
     background-position-y: 100%, 100%;
-    font-weight: 100;
 
     .footer-container {
+      padding-top: 30px;
       width: 80vw;
       margin: 0 auto;
     }
@@ -56,17 +56,24 @@ footer {
     display: block;
     font-size: 10px;
     line-height: 18.176px;
+    font-weight: 100;
 
     .bottom {
       font-weight: 100;
       width: 75vw;
       margin: 0 auto;
       letter-spacing: 0.4px;
+      display: flex;
+      justify-content: space-between;
     }
 
     .pull-right {
       font-weight: 100;
       letter-spacing: 0.4px;
+    }
+
+    .pull-left {
+      font-weight: 100;
     }
 
     a {

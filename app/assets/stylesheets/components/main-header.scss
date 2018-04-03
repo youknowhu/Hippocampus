@@ -1,0 +1,139 @@
+.main-header {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  top: 110px;
+  padding-bottom: 250px;
+
+  h2 {
+    font-weight: 600;
+    font-size: 64px;
+    color: #33334D;
+    line-height: 1.1;
+    display: block;
+  }
+
+  .left {
+    padding: 30px 150px;
+  }
+
+  .row {
+    width: 50%;
+
+    .subtext {
+      padding-top: 20px;
+      padding-bottom: 30px;
+
+      h1 {
+        color: $lighter-gray;
+        font-weight: 200;
+        font-size: 20px;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+    }
+
+
+    .main-search-box {
+      width: 550px;
+      height: 200px;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      box-shadow: 0 1px 20px $light-gray;
+      -webkit-box-shadow: 0 1px 20px $light-gray;
+
+
+      .location-search {
+        box-sizing: border-box;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        color: $dark-gray;
+        padding: 0 15px;
+
+
+      > * {
+        vertical-align: middle;
+        line-height: 100px;//hardcoded. Should fix this!
+        letter-spacing: 0.7px;
+      }
+
+      .find-camping {
+        color: $darkest-gray;
+      }
+
+      input {
+        font-size: 18px;
+      }
+
+      i {
+        font-size: 20px;
+      }
+
+    }
+
+    .dates-search {
+      border-top: 1px solid $lightest-gray;
+      display: flex;
+      flex-direction: row;
+      box-sizing: border-box;
+      height: 50%;
+      color: $dark-gray;
+
+
+      > * {
+        letter-spacing: 0.7px;
+        padding: 0 15px;
+      }
+
+      .datepicker {
+        border-right: 1px solid $lightest-gray;
+        vertical-align: middle;
+        line-height: 100px;//hardcoded. Should fix this!
+        font-size: 16px;
+        width: 35%
+      }
+
+      .search-button {
+        background-color: $green-cyan;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 100px;
+        width: 30%;//hardcoded. Should fix this!
+        }
+      }
+    }
+  }
+}
+
+.search-subtext {
+  padding: 20px;
+
+  .discover-subtext {
+    text-align: center;
+    color: $dark-gray;
+    font-weight: 300;
+    font-size: 14px;
+  }
+}
+
+.main-header-image-footer {
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: flex-end;
+  text-align: right;
+  font-size: 14px;
+  padding: 10px;
+  color: $lighter-gray;
+
+  strong {
+    color: $dark-gray;
+    font-weight: 700;
+    border-bottom: 1px solid $light-gray;
+  }
+}

@@ -126,9 +126,9 @@ header {
       color: #777777;
       border-bottom: 1px solid #777777; }
   header .logo {
-    width: 250px;
-    height: 70px;
-    padding: 0px 30px;
+    width: 255px;
+    height: 41px;
+    padding: 10px 20px 0px 20px;
     border-right: 1px solid #ebebeb; }
   header .discover-nav {
     font-size: 15px; }
@@ -163,7 +163,7 @@ footer {
   font-size: 16px; }
   footer .footer-main {
     background-color: #41305C;
-    background-image: url("../../assets/tent_logo.ico"), url("../../assets/mountains_footer.svg");
+    background-image: url("https://res.cloudinary.com/deor0br3s/image/upload/v1522783892/tent_logo.png"), url("http://res.cloudinary.com/deor0br3s/image/upload/v1522783905/mountains_footer.png");
     background-position: bottom center;
     background-repeat: no-repeat, repeat-x;
     background-size: auto 55px, auto 200px;
@@ -173,6 +173,7 @@ footer {
     background-position-x: 50%, 50%;
     background-position-y: 100%, 100%; }
     footer .footer-main .footer-container {
+      padding-top: 30px;
       width: 80vw;
       margin: 0 auto; }
     footer .footer-main h5 {
@@ -196,15 +197,20 @@ footer {
     box-sizing: border-box;
     display: block;
     font-size: 10px;
-    line-height: 18.176px; }
+    line-height: 18.176px;
+    font-weight: 100; }
     footer .footer-bottom .bottom {
       font-weight: 100;
       width: 75vw;
       margin: 0 auto;
-      letter-spacing: 0.4px; }
+      letter-spacing: 0.4px;
+      display: flex;
+      justify-content: space-between; }
     footer .footer-bottom .pull-right {
       font-weight: 100;
       letter-spacing: 0.4px; }
+    footer .footer-bottom .pull-left {
+      font-weight: 100; }
     footer .footer-bottom a {
       font-weight: 100; }
 
@@ -353,7 +359,7 @@ footer {
           font-weight: 200;
           letter-spacing: 0.05em; }
 
-.modal {
+.login-modal-form {
   display: none; }
 
 .modal.is-open {

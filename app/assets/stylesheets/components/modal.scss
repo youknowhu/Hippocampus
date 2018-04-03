@@ -1,0 +1,104 @@
+.login-modal-form {
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal-screen {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.modal-form {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  margin-left: -220px;
+  width: 300px;
+  padding: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #fff;
+  z-index: 2;
+
+  h3 {
+    font-size: 24px;
+    margin: 0 auto;
+    text-align: center;
+    color: $dark-gray;
+  }
+
+  p {
+    color: $gray;
+    font-weight: 200;
+    text-align: center;
+  }
+
+  input {
+    box-sizing: border-box;
+    padding: 20px 15px;
+    border: 0.5px solid $gray;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    color: $darkest-gray;
+  }
+
+  .input {
+    margin: 15px 0px;
+  }
+
+  button {
+    box-sizing: border-box;
+    background-color: $green-cyan;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px 20px;
+  }
+
+  .modal-footer {
+    padding: 20px 0px;
+    font-size: 14px;
+
+    p {
+      color: $darkest-gray;
+    }
+
+    a {
+      text-decoration: underline;
+      font-weight: 700;
+    }
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 36px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #f00;
+}
+
+.modal-form > h1 {
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.modal-form > p {
+  margin: 0 0 20px 0;
+}
