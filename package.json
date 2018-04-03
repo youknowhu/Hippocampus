@@ -1,5 +1,40 @@
 {
   "name": "hippocampus",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "lodash": "^4.17.5",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^3.4.1"
+  },
+  "description": "![Hippocampus logo](https://github.com/youknowhu/Hippocampus/blob/master/lib/assets/Hippocampus%20Logo%20-%20hippo%20image.jpg)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youknowhu/Hippocampus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youknowhu/Hippocampus/issues"
+  },
+  "homepage": "https://github.com/youknowhu/Hippocampus#readme"
 }
