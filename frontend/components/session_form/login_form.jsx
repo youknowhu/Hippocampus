@@ -37,6 +37,18 @@ class LoginForm extends React.Component {
     this.setState({showModal: false});
   }
 
+  renderErrors() {
+    return(
+      <ul className="auth-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
 
   render() {
     return (
@@ -67,6 +79,10 @@ class LoginForm extends React.Component {
               onChange={this.update('password')}/>
             </div>
 
+            {
+              (this.props.errors.length > 0) ?
+                this.renderErrors() :  <div> </div>
+            }
             <div className="submit">
               <button>Log In</button>
             </div>

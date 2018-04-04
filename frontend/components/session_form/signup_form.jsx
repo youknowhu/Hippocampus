@@ -25,6 +25,7 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.props.errors)
     this.props.signup(this.state)
       .then(() => this.props.history.push("/"))
       .then(() => this.closeModal());
@@ -41,6 +42,7 @@ class SignupForm extends React.Component {
 
 
   render() {
+    console.log(this.props.errors)
     return (
       <div className="react-modal-form">
         <Modal

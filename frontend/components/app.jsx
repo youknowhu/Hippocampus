@@ -7,14 +7,16 @@ import Footer from './footer';
 import Nav from './nav'
 import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
+import Main from './main';
 
 
 const App = () => {
   return (
     <div>
       <Nav />
-        <Route exact path="/login" component={LoginFormContainer} />
-        <Route exact path="/signup" component={SignupFormContainer} />
+        <Route path="/" component={Main} />
+        <Route path="/login" component={LoginFormContainer} />
+        <Route path="/signup" component={SignupFormContainer} />
       <Footer />
     </div>
   )

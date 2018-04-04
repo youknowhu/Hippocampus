@@ -443,4 +443,8 @@ footer {
 .modal-form > p {
   margin: 0 0 20px 0; }
 
+.auth-errors {
+  padding: 5px;
+  color: #8b0000; }
+
 /*# sourceMappingURL=output.css.map */

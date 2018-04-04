@@ -10,9 +10,8 @@ class Api::SessionsController < ApplicationController
 
     if user
       log_in(user)
-      redirect_to api_user_url(user)
     else
-      render json: ['No current user'], status: 422
+      render json: ['Invalid username/password'], status: 401
     end
   end
 
