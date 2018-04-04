@@ -7,6 +7,7 @@ import Footer from './footer';
 import Nav from './nav'
 import LoginFormContainer from './session_form/login_form_container'
 import SignupFormContainer from './session_form/signup_form_container'
+import ListingContainer from './listing/listing_container'
 import Main from './main';
 
 
@@ -15,6 +16,8 @@ const App = () => {
     <div>
       <Nav />
         <Route path="/" component={Main} />
+        <Route path="/listings/:listingId" component={ListingContainer} />
+        // with same path above,
         <Route path="/login" component={LoginFormContainer} />
         <Route path="/signup" component={SignupFormContainer} />
       <Footer />
