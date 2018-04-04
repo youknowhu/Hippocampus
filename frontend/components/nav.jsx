@@ -9,8 +9,13 @@ class NavBar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
+  handleLogout(e)  {
+    e.preventDefault();
+    this.props.logout();
+  }
+
   render() {
-      console.log(this.props.logout)
+      console.log(this.props)
       return (
       <header class="nav-header">
         <div class="nav-left">
@@ -51,4 +56,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
