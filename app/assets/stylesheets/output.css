@@ -421,7 +421,8 @@ footer {
     padding: 20px 0px;
     font-size: 14px; }
     .modal .modal-footer p {
-      color: #2d2d2d; }
+      color: #2d2d2d;
+      font-weight: 200; }
     .modal .modal-footer a {
       padding-top: 10px;
       text-decoration: underline;

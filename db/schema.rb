@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404171108) do
+ActiveRecord::Schema.define(version: 20180404202338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20180404171108) do
 
   create_table "listing_photos", force: :cascade do |t|
     t.integer "listing_id", null: false
-    t.string "image_url", null: false
+    t.string "img_url", null: false
     t.integer "order", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -45,14 +45,15 @@ ActiveRecord::Schema.define(version: 20180404171108) do
     t.integer "daily_cost", null: false
     t.boolean "is_private", null: false
     t.boolean "is_camping", null: false
-    t.boolean "allow_pets", null: false
+    t.boolean "allows_pets", null: false
     t.integer "max_capacity", null: false
     t.string "check_in_after", null: false
-    t.string "check_out_after", null: false
+    t.string "check_out_before", null: false
     t.float "lat", null: false
     t.float "lng", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "icon_url"
     t.index ["host_id"], name: "index_listings_on_host_id"
   end
 

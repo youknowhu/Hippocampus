@@ -7,6 +7,16 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :listings,
+  foreign_key: :host_id,
+  class_name: :Listing
+
+  has_many :bookings,
+  foreign_key: :guest_id,
+  class_name: :Booking
+
+  has_many :reviews
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user && user.valid_password?(password) ? user : nil
