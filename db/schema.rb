@@ -10,10 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403165527) do
+ActiveRecord::Schema.define(version: 20180404171108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "guest_id", null: false
+    t.integer "listing_id", null: false
+    t.date "start_date", null: false
+    t.date "end_date", null: false
+    t.integer "num_guests", null: false
+    t.float "total_cost", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_bookings_on_guest_id"
+    t.index ["listing_id"], name: "index_bookings_on_listing_id"
+  end
+
+  create_table "listing_photos", force: :cascade do |t|
+    t.integer "listing_id", null: false
+    t.string "image_url", null: false
+    t.integer "order", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id", "order"], name: "index_listing_photos_on_listing_id_and_order", unique: true
+    t.index ["listing_id"], name: "index_listing_photos_on_listing_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.integer "host_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
+    t.integer "daily_cost", null: false
+    t.boolean "is_private", null: false
+    t.boolean "is_camping", null: false
+    t.boolean "allow_pets", null: false
+    t.integer "max_capacity", null: false
+    t.string "check_in_after", null: false
+    t.string "check_out_after", null: false
+    t.float "lat", null: false
+    t.float "lng", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["host_id"], name: "index_listings_on_host_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "listing_id", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_reviews_on_listing_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
