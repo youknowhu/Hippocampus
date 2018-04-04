@@ -16,6 +16,7 @@ header {
 
   .nav-right{
     padding: 0px 45px;
+    display: flex;
 
     a {
       box-sizing: border-box;
@@ -27,6 +28,13 @@ header {
     a:hover {
       color: $gray;
       border-bottom: 1px solid $gray;
+    }
+
+    h2 {
+      font-size: 16px;
+      padding-top: 21px;
+      padding-right: 200px;
+      color: $gray;
     }
   }
   .logo {

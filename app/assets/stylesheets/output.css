@@ -116,7 +116,8 @@ header {
   header .nav-left {
     display: flex; }
   header .nav-right {
-    padding: 0px 45px; }
+    padding: 0px 45px;
+    display: flex; }
     header .nav-right a {
       box-sizing: border-box;
       color: #40d9ac;
@@ -125,6 +126,11 @@ header {
     header .nav-right a:hover {
       color: #777777;
       border-bottom: 1px solid #777777; }
+    header .nav-right h2 {
+      font-size: 16px;
+      padding-top: 21px;
+      padding-right: 200px;
+      color: #777777; }
   header .logo {
     width: 255px;
     height: 41px;
