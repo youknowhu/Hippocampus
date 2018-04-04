@@ -50,6 +50,10 @@
     color: $darkest-gray;
   }
 
+  img {
+    padding-bottom: 15px;
+  }
+
   .input {
     margin: 15px 0px;
   }
@@ -74,6 +78,7 @@
     }
 
     a {
+      padding-top: 10px;
       text-decoration: underline;
       font-weight: 700;
     }

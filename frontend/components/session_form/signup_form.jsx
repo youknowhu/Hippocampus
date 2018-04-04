@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router-dom';
 
-class LoginForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      firstName: '',
+      lastName: '',
+      imgUrl: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png',
       username: '',
       password: '',
       showModal: true,
@@ -14,7 +17,6 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    debugger
   }
 
   update(field) {
@@ -23,7 +25,7 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state)
+    this.props.signup(this.state)
       .then(() => this.props.history.push("/"))
       .then(() => this.closeModal());
   }
@@ -46,8 +48,29 @@ class LoginForm extends React.Component {
           onRequestClose={this.closeModal}
         >
           <form className="modal-form" onSubmit={this.handleSubmit}>
-            <h3> Welcome back! </h3>
-            <p>It's about time for another camping adventure.</p>
+
+            <img class="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/>
+            <p>Your next adventure is waiting.</p>
+
+            <div className="input">
+              <label>
+                <input
+                type="text"
+                placeholder="First Name"
+                value={this.state.firstName}
+                onChange={this.update('firstName')}/>
+              </label>
+            </div>
+
+            <div className="input">
+              <label>
+                <input
+                type="text"
+                placeholder="Last Name"
+                value={this.state.lastName}
+                onChange={this.update('lastName')}/>
+              </label>
+            </div>
 
             <div className="input">
               <label>
@@ -68,12 +91,12 @@ class LoginForm extends React.Component {
             </div>
 
             <div className="submit">
-              <button>Log In</button>
+              <button>Join HippoCampus</button>
             </div>
 
             <div className="modal-footer">
               <p>
-                Don't have a Hippocampus account? <br /> <Link to="/signup"> Sign Up!</Link>
+                Already have a Hippocampus account? <br /><Link to="/login">Log In</Link>
               </p>
             </div>
           </form>
@@ -86,4 +109,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default withRouter(SignupForm);

@@ -401,6 +401,8 @@ footer {
     font-size: 14px;
     font-weight: 700;
     color: #2d2d2d; }
+  .modal-form img {
+    padding-bottom: 15px; }
   .modal-form .input {
     margin: 15px 0px; }
   .modal-form button {
@@ -418,6 +420,7 @@ footer {
     .modal-form .modal-footer p {
       color: #2d2d2d; }
     .modal-form .modal-footer a {
+      padding-top: 10px;
       text-decoration: underline;
       font-weight: 700; }
 
