@@ -41,6 +41,7 @@ class SignupForm extends React.Component {
 
   closeModal() {
     this.setState({showModal: false});
+    this.props.history.push("/");
   }
 
   renderErrors() {
@@ -64,6 +65,8 @@ class SignupForm extends React.Component {
           isOpen={this.state.showModal}
           onRequestClose={this.closeModal}
           shouldCloseOnOverlayClick={true}
+          className="modal"
+          overlayClassName="overlay"
         >
           <form className="modal-form" onSubmit={this.handleSubmit}>
 
@@ -123,8 +126,6 @@ class SignupForm extends React.Component {
               </p>
             </div>
           </form>
-          <div class="modal-screen">
-          </div>
         </Modal>
 
       </div>

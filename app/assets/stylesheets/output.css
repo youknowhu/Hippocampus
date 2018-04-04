@@ -365,41 +365,38 @@ footer {
           font-weight: 200;
           letter-spacing: 0.05em; }
 
-.login-modal-form {
+.react-modal-form {
   display: none; }
 
-.modal.is-open {
-  display: block; }
-
-.modal-screen {
-  position: fixed;
+.overlay {
   background: rgba(255, 255, 255, 0.7);
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 1; }
+  right: 0; }
 
-.modal-form {
+.modal {
   position: absolute;
-  top: 60px;
+  top: 80px;
   left: 50%;
   margin-left: -220px;
   width: 300px;
   padding: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: #fff;
-  z-index: 2; }
-  .modal-form h3 {
+  z-index: 1; }
+  .modal h3 {
     font-size: 24px;
     margin: 0 auto;
     text-align: center;
     color: #333333; }
-  .modal-form p {
+  .modal p {
     color: #777777;
     font-weight: 200;
-    text-align: center; }
-  .modal-form input {
+    text-align: center;
+    line-height: 1.5; }
+  .modal input {
     box-sizing: border-box;
     padding: 20px 15px;
     border: 0.5px solid #777777;
@@ -407,11 +404,11 @@ footer {
     font-size: 14px;
     font-weight: 700;
     color: #2d2d2d; }
-  .modal-form img {
+  .modal img {
     padding-bottom: 15px; }
-  .modal-form .input {
+  .modal .input {
     margin: 15px 0px; }
-  .modal-form button {
+  .modal button {
     box-sizing: border-box;
     background-color: #40d9ac;
     width: 100%;
@@ -420,12 +417,12 @@ footer {
     font-size: 16px;
     text-align: center;
     padding: 20px 20px; }
-  .modal-form .modal-footer {
+  .modal .modal-footer {
     padding: 20px 0px;
     font-size: 14px; }
-    .modal-form .modal-footer p {
+    .modal .modal-footer p {
       color: #2d2d2d; }
-    .modal-form .modal-footer a {
+    .modal .modal-footer a {
       padding-top: 10px;
       text-decoration: underline;
       font-weight: 700; }
@@ -451,6 +448,7 @@ footer {
 
 .auth-errors {
   padding-bottom: 5px;
+  font-size: 14px;
   color: #8b0000; }
 
 /*# sourceMappingURL=output.css.map */

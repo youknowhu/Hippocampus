@@ -48,6 +48,7 @@ class LoginForm extends React.Component {
 
   closeModal() {
     this.setState({showModal: false});
+    this.props.history.push("/");
   }
 
   renderErrors() {
@@ -71,10 +72,13 @@ class LoginForm extends React.Component {
           isOpen={this.state.showModal}
           onRequestClose={this.closeModal}
           shouldCloseOnOverlayClick={true}
+          className="modal"
+          overlayClassName="overlay"
         >
           <form className="modal-form" onSubmit={this.handleSubmit}>
             <h3> Welcome back! </h3>
             <p>It's time for another camping adventure.</p>
+
 
             <div className="input">
               <label>
@@ -109,10 +113,7 @@ class LoginForm extends React.Component {
               </p>
             </div>
           </form>
-          <div class="modal-screen">
-          </div>
         </Modal>
-
       </div>
     );
   }
