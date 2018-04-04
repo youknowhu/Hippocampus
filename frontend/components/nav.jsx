@@ -15,7 +15,6 @@ class NavBar extends React.Component {
   }
 
   render() {
-      console.log(this.props)
       return (
       <header class="nav-header">
         <div class="nav-left">
@@ -31,6 +30,12 @@ class NavBar extends React.Component {
           </nav>
         </div>
         <div class="nav-right">
+        {
+          (this.props.currentUser === undefined || this.props.currentUser === null) ?
+            <div> </div>
+            :
+            <h2>Hello, {this.props.currentUser.username}</h2>
+        }
           {
             (this.props.currentUser === null) ?
               <h4>
