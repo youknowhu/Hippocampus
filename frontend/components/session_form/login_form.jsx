@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router-dom';
 
 class LoginForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -14,11 +15,15 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    debugger
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  componentDidMount() {
+     this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -27,6 +32,14 @@ class LoginForm extends React.Component {
       .then(() => this.props.history.push("/"))
       .then(() => this.closeModal());
   }
+
+  handleDemo(e) {
+    e.preventDefault();
+    this.props.login({username: 'guest', password: 'password'})
+      .then(() => this.props.history.push("/"))
+      .then(() => this.closeModal());
+  }
+
 
   openModal() {
     this.setState({showModal: true});
@@ -50,16 +63,18 @@ class LoginForm extends React.Component {
   }
 
 
+
   render() {
     return (
       <div className="react-modal-form">
         <Modal
           isOpen={this.state.showModal}
           onRequestClose={this.closeModal}
+          shouldCloseOnOverlayClick={true}
         >
           <form className="modal-form" onSubmit={this.handleSubmit}>
             <h3> Welcome back! </h3>
-            <p>It's about time for another camping adventure.</p>
+            <p>It's time for another camping adventure.</p>
 
             <div className="input">
               <label>
@@ -88,8 +103,9 @@ class LoginForm extends React.Component {
             </div>
 
             <div className="modal-footer">
-              <p>
-                Don't have a Hippocampus account? <br /> <Link to="/signup"> Sign Up!</Link>
+              <p> Don't have a Hippocampus account?  <br /> <br />
+                <Link to="/signup">Sign Up</Link>  or use a <br />
+                <Link to="/" onClick={this.handleDemo}> Demo Login</Link>
               </p>
             </div>
           </form>

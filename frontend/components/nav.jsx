@@ -32,9 +32,14 @@ class NavBar extends React.Component {
         </div>
         <div class="nav-right">
           {
-            (this.props.currentUser === null) ?
-              <h4><Link to="/login" className="js-modal-open">Log In</Link></h4> :
-              <h4><Link to="/" onClick={this.handleLogout}>Log Out</Link></h4>
+            (this.props.currentUser === null || this.props.currentUser === undefined) ?
+              <h4>
+                <Link to="/login" >Log In</Link>
+              </h4>
+              :
+              <h4>
+                <Link to="/" onClick={this.handleLogout}>Log Out</Link>
+              </h4>
           }
         </div>
       </header>

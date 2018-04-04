@@ -23,6 +23,10 @@ class SignupForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  componentDidMount() {
+     this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.props.errors)
@@ -40,14 +44,27 @@ class SignupForm extends React.Component {
     this.setState({showModal: false});
   }
 
+  renderErrors() {
+    return(
+      <ul className="auth-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+
 
   render() {
-    console.log(this.props.errors)
     return (
       <div className="react-modal-form">
         <Modal
           isOpen={this.state.showModal}
           onRequestClose={this.closeModal}
+          shouldCloseOnOverlayClick={true}
         >
           <form className="modal-form" onSubmit={this.handleSubmit}>
 
@@ -91,6 +108,11 @@ class SignupForm extends React.Component {
               value={this.state.password}
               onChange={this.update('password')}/>
             </div>
+
+            {
+              (this.props.errors.length > 0) ?
+                this.renderErrors() :  <div> </div>
+            }
 
             <div className="submit">
               <button>Join HippoCampus</button>
