@@ -233,14 +233,14 @@ header {
           flex-direction: row;
           padding-top: 20px; }
           .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square {
+            width: 30%;
             text-align: center;
             margin: 0 auto;
-            width: 250px;
             height: 250px;
             border: 1px solid #ebebeb;
             vertical-align: center; }
             .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square h3 {
-              font-size: 40px;
+              font-size: 36px;
               color: #333333;
               padding-top: 80px;
               margin: 0; }

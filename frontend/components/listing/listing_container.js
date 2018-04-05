@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Listing from './listing'
 import { fetchSingleListing } from '../../actions/listing_actions'
-import { fetchElevation } from '../../util/map_api_util'
+import { fetchElevation, fetchWeather } from '../../util/map_api_util'
 
 const msp = (state, ownProps) => {
   const listing = state.entities.listings[ownProps.match.params.listingId] || {};
@@ -18,6 +18,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => ({
   fetchListing: id => dispatch(fetchSingleListing(id)),
   fetchElevation: latlng => fetchElevation(latlng),
+  fetchWeather: (lat, lng) => fetchWeather(lat, lng),
 });
 
-export default connect(msp, mdp)(Listing)
+export default connect(msp, mdp)(Listing);

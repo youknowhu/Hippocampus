@@ -16,8 +16,8 @@ class Listing extends React.Component {
   componentWillReceiveProps(newProps) {
     if (this.props.listing.id != newProps.match.params.listingId) {
       this.props.fetchListing(newProps.match.params.listingId)
-        .then(() => this.getElevation()
-      )
+        .then(() => this.getElevation())
+        .then(() => this.getWeather())
     }
   }
 
@@ -30,7 +30,16 @@ class Listing extends React.Component {
     const { listing } = this.props;
     const latlng = listing.lat.toString() + "," + listing.lng.toString();
     this.props.fetchElevation(latlng)
-      .then(resp => this.setState({elevation: resp.results[0].elevation }));
+      .then(resp =>
+        this.setState({elevation: resp.results[0].elevation }));
+  }
+
+  getWeather() {
+    const { listing } = this.props;
+    this.props.fetchWeather(listing.lat, listing.lng)
+      .then(resp => this.setState({weather: resp.weather[0].description}))
+    this.props.fetchWeather(listing.lat, listing.lng)
+      .then(resp => this.setState({temperature: resp.main.temp}))
   }
 
   render() {
@@ -102,15 +111,15 @@ class Listing extends React.Component {
                 <div className='vibe-squares'>
                   <div className="vibe-square">
                     <h3>{Math.round(this.state.elevation)}ft</h3>
-                    <p>Listing's Elevation</p>
+                    <p>elevation</p>
                   </div>
                   <div className="vibe-square">
-                    <h3>{Math.round(this.state.elevation)}ft</h3>
-                    <p>Listing's Elevation</p>
+                    <h3>{this.state.weather}</h3>
+                    <p>current conditions</p>
                   </div>
                   <div className="vibe-square">
-                    <h3>{Math.round(this.state.elevation)}ft</h3>
-                    <p>Listing's Elevation</p>
+                    <h3>{Math.round(this.state.temperature)}°F</h3>
+                    <p>temperature</p>
                   </div>
                 </div>
               </div>
