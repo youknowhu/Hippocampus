@@ -31,11 +31,11 @@ const Main = () => {
             </p>
           </div>
         </section>
-        <section className="row right">
+        <section className="row right"><Link to="/listings/1">
           <img src='http://res.cloudinary.com/deor0br3s/image/upload/v1522783893/glacier_national_park.jpg'/>
           <p className="main-header-image-footer">
-            <Link to="/listings/1"><strong>Glacier National Park</strong></Link> hosted by U.S. National Park Service
-          </p>
+            <strong>Glacier National Park</strong> hosted by U.S. National Park Service
+          </p></Link>
         </section>
       </main>
       <section className="discover-filters">

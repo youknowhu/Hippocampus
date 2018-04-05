@@ -18,7 +18,7 @@ class NavBar extends React.Component {
       return (
       <header className="nav-header">
         <div className="nav-left">
-          <img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/>
+          <Link to="/"><img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/> </Link>
           <nav className="discover-nav">
             <ul>
               <li className="search"><i className="fa fa-search"></i><strong>Search</strong></li>
@@ -34,7 +34,7 @@ class NavBar extends React.Component {
           (this.props.currentUser === undefined || this.props.currentUser === null) ?
             <div> </div>
             :
-            <h2>Hello, {this.props.currentUser.username}</h2>
+            <h2>Hello, {this.props.currentUser.firstName}</h2>
         }
           {
             (this.props.currentUser === null) ?

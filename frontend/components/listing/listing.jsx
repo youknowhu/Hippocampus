@@ -21,11 +21,12 @@ class Listing extends React.Component {
 
   photosSlider() {
     const settings = {
-      infinite: false,
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1,
-      initialSlide: 0,
-      dots: true,
+      dots: false,
+      arrows: true,
+      infinite: true,
+      variableWidth: true,
     }
 
     return (
