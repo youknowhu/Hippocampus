@@ -16,12 +16,12 @@ class NavBar extends React.Component {
 
   render() {
       return (
-      <header class="nav-header">
-        <div class="nav-left">
-          <img class="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/>
-          <nav class="discover-nav">
+      <header className="nav-header">
+        <div className="nav-left">
+          <img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/>
+          <nav className="discover-nav">
             <ul>
-              <li class="search"><i class="fa fa-search"></i><strong>Search</strong></li>
+              <li className="search"><i className="fa fa-search"></i><strong>Search</strong></li>
               <li><label>Camping</label></li>
               <li><label>Hosting</label></li>
               <li><label>Scouting</label></li>
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
             </ul>
           </nav>
         </div>
-        <div class="nav-right">
+        <div className="nav-right">
         {
           (this.props.currentUser === undefined || this.props.currentUser === null) ?
             <div> </div>

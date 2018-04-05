@@ -1,3 +1,43 @@
 // Place all the styles related to the Listing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.listing-page {
+  width: 100%;
+  top: 50px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+
+  h2 {
+    color: $green-cyan;
+    font-size: 100px;
+  }
+
+  .listing-photos {
+     display: inline-block;
+     width: 500px;
+
+    .slick-slider {
+      margin: 30px auto 50px;
+      // position: relative;
+
+    }
+
+    //
+    // .slick-slide {
+    //   margin: 5px;
+    //   height: 300px;
+    //   line-height: 300px;
+    //   text-align: center;
+    //
+    //   .image {
+    //     padding: 10px;
+    //   }
+    //
+    //   img {
+    //     padding: 10px;
+    //     margin: auto;
+    //   }
+    // }
+  }
+}

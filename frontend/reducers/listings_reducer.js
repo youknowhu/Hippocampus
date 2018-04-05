@@ -2,7 +2,14 @@ import merge from 'lodash/merge';
 import { RECEIVE_ALL_LISTINGS, RECEIVE_SINGLE_LISTING }
   from '../actions/listing_actions';
 
-const listingsReducer = (state = {}, action) => {
+const _nullState = {
+  listings: {},
+  listingPhotos: {},
+  bookings: {},
+  reviews: {},
+}
+
+const listingsReducer = (state = _nullState, action) => {
   Object.freeze(state);
 
   switch (action.type) {

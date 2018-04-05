@@ -9,6 +9,7 @@ header {
   background-color: white;
   width: 100vw;
   z-index: 1;
+  height: 70px;
 
   .nav-left{
     display: flex;
@@ -39,8 +40,8 @@ header {
   }
   .logo {
     width: 255px;
-    height: 41px;
-    padding: 10px 20px 0px 20px;
+    height: 70px;
+    padding: 0px 20px;
     border-right: 1px solid $light-gray;
   }
 

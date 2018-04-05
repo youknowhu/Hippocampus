@@ -12,6 +12,8 @@
 *= require_self
 */
 /* PHASE 0: Reset */
+@import url(carousel/min.css);
+@import url(carousel/theme.css);
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
@@ -112,7 +114,8 @@ header {
   right: 0;
   background-color: white;
   width: 100vw;
-  z-index: 1; }
+  z-index: 1;
+  height: 70px; }
   header .nav-left {
     display: flex; }
   header .nav-right {
@@ -133,8 +136,8 @@ header {
       color: #777777; }
   header .logo {
     width: 255px;
-    height: 41px;
-    padding: 10px 20px 0px 20px;
+    height: 70px;
+    padding: 0px 20px;
     border-right: 1px solid #ebebeb; }
   header .discover-nav {
     font-size: 15px; }
@@ -160,6 +163,21 @@ header {
       border-bottom: 2px solid #40d9ac; }
     header .discover-nav .search:hover {
       border-bottom: none; }
+
+.listing-page {
+  width: 100%;
+  top: 50px;
+  background-color: white;
+  position: absolute;
+  z-index: 1; }
+  .listing-page h2 {
+    color: #40d9ac;
+    font-size: 100px; }
+  .listing-page .listing-photos {
+    display: inline-block;
+    width: 500px; }
+    .listing-page .listing-photos .slick-slider {
+      margin: 30px auto 50px; }
 
 footer {
   background-color: #3e7e96;
