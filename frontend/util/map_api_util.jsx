@@ -8,6 +8,6 @@ export const fetchElevation = (latlng) => (
 export const fetchWeather = (lat, lng) => (
   $.ajax({
     method: 'GET',
-    url: `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2e4d5a5f36f162d52216210eaac123a3&units=imperial`,
+    url: `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&APPID=2e4d5a5f36f162d52216210eaac123a3&units=imperial`,
   })
 );
