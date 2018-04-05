@@ -16,7 +16,7 @@ const listingsReducer = (state = _nullState, action) => {
     case RECEIVE_ALL_LISTINGS:
       return action.listings;
     case RECEIVE_SINGLE_LISTING:
-      return action.listing;
+      return action.payload.listings;
     default:
       return state;
   }

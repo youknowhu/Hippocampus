@@ -7,21 +7,19 @@ class Listing extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log('componentWillReceiveProps');
+    if (this.props.listing.id != newProps.match.params.listingId) {
+      this.props.fetchListing(newProps.match.params.listingId)
+    }
   }
 
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
 
   componentDidMount() {
-    console.log(`componentDidMount`);
     this.props.fetchListing(this.props.match.params.listingId)
   }
 
   photosSlider() {
     const settings = {
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
       dots: false,
       arrows: true,
@@ -47,8 +45,8 @@ class Listing extends React.Component {
   }
 
   render() {
-    console.log('render');
     console.log(this.props);
+
     if (this.props.listing === undefined) {
       return (
         <div> </div>
@@ -59,6 +57,26 @@ class Listing extends React.Component {
           {
             this.photosSlider()
           }
+          <div className="listing-content">
+            <section className="listing-left">
+              <h1>{this.props.listing.title}</h1>
+
+              <div className="listing-about">
+                <aside>
+                  <img src={this.props.host.imgUrl}/>
+                  <div className="host-info">
+                    <h3> Hosted by </h3>
+                    <p>{this.props.host.firstName}</p>
+                  </div>
+                </aside>
+                <main>
+                  <p>{this.props.listing.body}</p>
+                </main>
+              </div>
+            </section>
+            <section className="listing-right">
+            </section>
+          </div>
         </main >
       )
     }

@@ -13,31 +13,37 @@ ListingPhoto.delete_all
 Review.delete_all
 
 user1 = User.create!(username: 'guest', password: 'password',
-  first_name: 'Guest', last_name: 'Login',
+  first_name: 'Guest', last_name: 'Login', zip: '94104',
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
 
 user2 = User.create!(username: 'youknowhu', password: 'password',
-  first_name: 'Kimmy', last_name: 'Allgeier',
+  first_name: 'Kimmy', last_name: 'Allgeier', zip: '94612',
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
 
 user3 = User.create!(username: 'sillysally', password: 'password',
-  first_name: 'Sally', last_name: 'Smith',
+  first_name: 'Sally', last_name: 'Smith', zip: '94110',
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
 
 user4 = User.create!(username: 'jollyjimmy', password: 'password',
-  first_name: 'Jimmy', last_name: 'Johnson',
+  first_name: 'Jimmy', last_name: 'Johnson', zip: '94901',
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
 
 user5 = User.create!(username: 'bubblybetty', password: 'password',
-    first_name: 'Betty', last_name: 'Boop',
+    first_name: 'Betty', last_name: 'Boop', zip: '95120',
     img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
 
 user5 = User.create!(username: 'nps', password: 'password',
-    first_name: 'National Park Services', last_name: '_',
+    first_name: 'National Park Services', last_name: '_', zip: '20001',
     img_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/US-NationalParkService-Logo.svg')
 
 listing1 = Listing.create!(host_id: user5.id, title: 'Glacier National Park',
-  body: 'Glacier National Park has tremendous wildlife, breathtaking hikes, and well, glaciers.',
+  body: "Glacier National Park is a 1,583-sq.-mi. wilderness area in
+  Montana's Rocky Mountains, with glacier-carved peaks and valleys
+  running to the Canadian border. It's crossed by the mountainous
+  Going-to-the-Sun Road. Among more than 700 miles of hiking trails,
+  it has a route to photogenic Hidden Lake. Other activities include
+  backpacking, cycling and camping. Diverse wildlife ranges from
+  mountain goats to grizzly bears.",
   daily_cost: 25, is_private: false, is_camping: false, allows_pets: false,
   max_capacity: 10, check_in_after: '2 PM', check_out_before: '12 PM',
   lat: 48.6587896, lng: -118.3283786,
@@ -78,6 +84,13 @@ review4 = Review.create!(user_id: user3.id, listing_id: listing3.id,
   body: 'Access to fresh wild strawberries in the California sun?
   That sold me and I had an awesome weekend there' )
 
+review5 = Review.create!(user_id: user2.id, listing_id: listing1.id,
+  body: 'I highly recommend doing the Grinnell glacier hike. We saw
+  many wildlife along the way, including big horn sheep!')
+
+review6 = Review.create!(user_id: user3.id, listing_id: listing1.id,
+  body: 'Wow, Going-to-the-Sun road was absolutely breathatking' )
+
 booking1 = Booking.create!(guest_id: user3.id, listing_id: listing2.id,
   start_date: Date.new(2018, 2, 3), end_date: Date.new(2018, 2, 5),
   num_guests: 4, total_cost: 80)
@@ -105,10 +118,6 @@ listing_photos1 = ListingPhoto.create!(listing_id: listing2.id,
 listing_photos2 = ListingPhoto.create!(listing_id: listing2.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522866832/glamping-1695468_1920.jpg',
   order: 2)
-
-listing_photos3 = ListingPhoto.create!(listing_id: listing2.id,
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522866762/oval3.jpg',
-  order: 3)
 
 listing_photos4 = ListingPhoto.create!(listing_id: listing3.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522867205/iceland_lake_myvatn_camping-1090749.jpg',

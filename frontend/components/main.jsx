@@ -17,9 +17,9 @@ const Main = () => {
             </div>
             <div className="dates-search">
               <input type="text" name="check-in-date"
-               className="datepicker" value="Check In"/>
+               className="datepicker" placeholder="Check In"/>
               <input type="text" name="check-out-date"
-               className="datepicker" value="Check Out"/ >
+               className="datepicker" placeholder="Check Out"/ >
               <div className="search-button">
                 Search
               </div>
@@ -40,7 +40,7 @@ const Main = () => {
       </main>
       <section className="discover-filters">
         <h2>Discover camping...</h2>
-        <container className="discover-grid">
+        <section className="discover-grid">
 
           <div className="discover-square">
             <div className="crop">
@@ -131,7 +131,7 @@ const Main = () => {
               <p>Wyoming</p>
             </footer>
           </div>
-        </container>
+        </section>
       </section>
     </div>
 

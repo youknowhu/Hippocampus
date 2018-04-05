@@ -17,6 +17,7 @@ export const signup = userParams => (
         first_name: userParams.firstName,
         last_name: userParams.lastName,
         img_url: userParams.imgUrl,
+        zip: userParams.zip,
       },
     },
   })

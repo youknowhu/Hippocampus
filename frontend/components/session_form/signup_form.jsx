@@ -12,6 +12,7 @@ class SignupForm extends React.Component {
       imgUrl: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png',
       username: '',
       password: '',
+      zip: '',
       showModal: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,6 +60,7 @@ class SignupForm extends React.Component {
 
 
   render() {
+    console.log(this.state)
     return (
       <div className="react-modal-form">
         <Modal
@@ -70,7 +72,7 @@ class SignupForm extends React.Component {
         >
           <form className="modal-form" onSubmit={this.handleSubmit}>
 
-            <img class="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/>
+            <img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/>
             <p>Your next adventure is waiting.</p>
 
             <div className="input">
@@ -111,13 +113,21 @@ class SignupForm extends React.Component {
               onChange={this.update('password')}/>
             </div>
 
+            <div className="input">
+              <input
+              type="text"
+              placeholder="Zip"
+              value={this.state.zip}
+              onChange={this.update('zip')}/>
+            </div>
+
             {
               (this.props.errors.length > 0) ?
                 this.renderErrors() :  <div> </div>
             }
 
             <div className="submit">
-              <button>Join HippoCampus</button>
+              <button>Join Hippocampus</button>
             </div>
 
             <div className="modal-footer">

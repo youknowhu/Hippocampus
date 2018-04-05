@@ -1,5 +1,12 @@
 json.partial! "api/listings/listing", listing: @listing
 
+json.host do
+  json.set! @listing.host.id do
+    json.extract! @listing.host, :id, :username, :first_name,
+      :last_name, :img_url
+  end
+end
+
 
 json.listing_photos do
   @listing.listing_photos.each do |photo|

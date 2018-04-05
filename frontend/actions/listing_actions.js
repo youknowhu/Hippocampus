@@ -8,9 +8,9 @@ const receiveAllListings = listings => ({
   listings
 });
 
-const receiveSingleListing = listing => ({
+const receiveSingleListing = payload => ({
   type: RECEIVE_SINGLE_LISTING,
-  listing
+  payload
 });
 
 export const fetchAllListings = () => dispatch => (

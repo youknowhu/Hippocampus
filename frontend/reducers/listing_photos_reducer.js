@@ -7,7 +7,7 @@ const ListingPhotosReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_SINGLE_LISTING:
-      return action.listing.listingPhotos;
+      return action.payload.listingPhotos;
     default:
       return state;
   }
