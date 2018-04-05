@@ -31,11 +31,28 @@
   .listing-content {
     width: 60vw;
     margin: 0 auto;
-    height: 300px;
-    z-index: 2;
 
     .listing-left {
       width: 70%;
+
+      p {
+        font-size: 14px;
+      }
+
+      > div {
+        padding: 30px 0px;
+        display: flex;
+        border-bottom: 1px solid $light-gray;
+
+        > aside {
+          display: flex;
+          width: 35%;
+        }
+
+        > main {
+          width: 65%;
+        }
+      }
 
       h1 {
         font-weight: bold;
@@ -44,32 +61,81 @@
       }
 
       .listing-about {
-        padding-top: 30px;
+
+
+        img {
+          width: auto;
+          height: 50px;
+          border-radius: 25px;
+        }
+
+        .host-info, h3, p {
+          font-size: 14px;
+          padding-top: 0px;
+          margin: 0;
+
+          h3, p {
+            padding-left: 7px;
+          }
+        }
+
+
+      }
+
+      .listing-details {
+        background: white;
+        box-sizing: border-box;
+
+        li {
+          font-size: 14px;
+          margin: 5px 0px;
+        }
+
+        strong {
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+
+      .listing-vibe {
         display: flex;
+        flex-direction: column;
 
-        aside {
+        h2 {
+          font-weight: 700;
+          color: $dark-gray;
+          font-size: 16px;
+        }
+
+        .vibe-squares {
           display: flex;
+          flex-direction: row;
+          padding-top: 20px;
 
-          img {
-            width: 40px;
-            height: 50px;
-            border-radius: 25px;
+          .vibe-square {
+            text-align: center;
+            margin: 0 auto;
+            width: 250px;
+            height: 250px;
+            border: 1px solid $light-gray;
+            vertical-align: center;
+
+            h3 {
+              font-size: 40px;
+              color: $dark-gray;
+              padding-top: 80px;
+              margin: 0;
+            }
+
+            p {
+              font-size: 16px;
+              color: $gray;
+              font-weight: 200;
+            }
           }
 
-          .host-info, h3, p {
-            font-size: 14px;
-            padding-left: 5px;
-            margin: 0;
-          }
         }
 
-        main {
-          padding: 0px 40px;
-
-          p {
-            font-size: 14px;
-          }
-        }
       }
     }
 

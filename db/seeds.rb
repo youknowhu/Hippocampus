@@ -44,7 +44,7 @@ listing1 = Listing.create!(host_id: user5.id, title: 'Glacier National Park',
   it has a route to photogenic Hidden Lake. Other activities include
   backpacking, cycling and camping. Diverse wildlife ranges from
   mountain goats to grizzly bears.",
-  daily_cost: 25, is_private: false, is_camping: false, allows_pets: false,
+  daily_cost: 25, is_private: false, is_camping: true, allows_pets: false,
   max_capacity: 10, check_in_after: '2 PM', check_out_before: '12 PM',
   lat: 48.6587896, lng: -118.3283786,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522783893/glacier_national_park.jpg' )
