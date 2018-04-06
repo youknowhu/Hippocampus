@@ -5,6 +5,8 @@ class User < ApplicationRecord
     :session_token, :zip, presence: true
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
+  validates_format_of :zip, with: /^\d{5}(-\d{4})?$/, multiline: true,  message: "format should be '12345' or '12345-6789'"
+
 
   after_initialize :ensure_session_token
 
