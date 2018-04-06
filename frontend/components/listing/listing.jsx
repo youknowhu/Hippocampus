@@ -1,7 +1,9 @@
 import React from 'react';
+import { Router, Route } from 'react-router-dom';
 import ListingSlider from './listing_slider.jsx';
 import ReviewsIndex from '../reviews/reviews_index';
 import Bookings from '../bookings/bookings';
+// import ReviewForm from '../reviews/review_form';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -112,7 +114,7 @@ class Listing extends React.Component {
                 <h2> The vibe at {listing.title} </h2>
                 <div className='vibe-squares'>
                   <div className="vibe-square">
-                    <h3>{Math.round(this.state.elevation)}ft</h3>
+                    <h3>{Math.round(this.state.elevation * 3.28)}ft</h3>
                     <p>elevation</p>
                   </div>
                   <div className="vibe-square">
@@ -126,13 +128,14 @@ class Listing extends React.Component {
                 </div>
               </div>
               <div>
-
+                <ReviewsIndex
+                  listing={listing}
+                />
               </div>
             </section>
             <section className="listing-right">
-
+              <button>Book Site</button>
             </section>
-
           </div>
         </main >
       )

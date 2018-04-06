@@ -8,7 +8,7 @@ const Main = () => {
         <section className="row left">
           <h2>Adventure is waiting.</h2>
           <div className="subtext">
-            <h1>Search, discover and book over <strong>285,000</strong> campsites, ranches, vineyards, farms, public parks and more.</h1>
+            <h1>Search, discover and book over <strong>25</strong> campsites, ranches, vineyards, farms, public parks and more.</h1>
           </div>
           <div className="main-search-box">
             <div className="location-search">

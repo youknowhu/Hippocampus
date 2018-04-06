@@ -9,7 +9,7 @@ class SignupForm extends React.Component {
     this.state = {
       firstName: '',
       lastName: '',
-      imgUrl: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png',
+      imgUrl: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg',
       username: '',
       password: '',
       zip: '',

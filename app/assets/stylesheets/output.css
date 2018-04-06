@@ -171,24 +171,29 @@ header {
     margin: 0 auto;
     width: 95%;
     background: white;
-    height: 45vh; }
+    height: 50vh; }
     .listing-page .listing-photos .slick-slide {
       padding: 7px;
-      height: 45vh; }
+      height: 50vh; }
     .listing-page .listing-photos img {
       width: auto;
-      height: 45vh; }
+      height: 50vh; }
     .listing-page .listing-photos .slick-prev:before, .listing-page .listing-photos .slick-next:before {
       color: #a1a1a1;
       font-size: 24px; }
+    .listing-page .listing-photos .slick-prev:hover:before, .listing-page .listing-photos .slick-next:hover:before {
+      color: #40d9ac; }
   .listing-page .listing-content {
     padding-top: 100px;
     width: 60vw;
-    margin: 0 auto; }
+    margin: 0 auto;
+    display: flex; }
     .listing-page .listing-content .listing-left {
       width: 70%; }
       .listing-page .listing-content .listing-left p {
-        font-size: 14px; }
+        font-size: 14px;
+        font-weight: 200;
+        letter-spacing: 0.03em; }
       .listing-page .listing-content .listing-left > div {
         padding: 30px 0px;
         display: flex;
@@ -211,13 +216,16 @@ header {
         padding-top: 0px;
         margin: 0; }
         .listing-page .listing-content .listing-left .listing-about .host-info h3, .listing-page .listing-content .listing-left .listing-about .host-info p, .listing-page .listing-content .listing-left .listing-about h3 h3, .listing-page .listing-content .listing-left .listing-about h3 p, .listing-page .listing-content .listing-left .listing-about p h3, .listing-page .listing-content .listing-left .listing-about p p {
-          padding-left: 7px; }
+          padding-left: 7px;
+          line-height: 1.4; }
       .listing-page .listing-content .listing-left .listing-details {
         background: white;
         box-sizing: border-box; }
         .listing-page .listing-content .listing-left .listing-details li {
           font-size: 14px;
-          margin: 5px 0px; }
+          margin: 5px 0px;
+          font-weight: 200;
+          letter-spacing: 0.03em; }
         .listing-page .listing-content .listing-left .listing-details strong {
           font-weight: 700;
           font-size: 14px; }
@@ -239,19 +247,31 @@ header {
             width: 30%;
             text-align: center;
             margin: 0 auto;
-            height: 12.5vw;
+            height: 12vw;
             border: 1px solid #ebebeb; }
             .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square h3 {
-              font-size: 2.75vw;
+              font-size: 2.25vw;
               color: #333333;
               margin: 0px 10px;
               line-height: 1.2; }
             .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square p {
-              font-size: 16px;
+              font-size: 14px;
               color: #777777;
               font-weight: 200; }
     .listing-page .listing-content .listing-right {
-      width: 30%; }
+      width: 30%;
+      margin: 0 auto;
+      padding-left: 50px;
+      text-align: center; }
+      .listing-page .listing-content .listing-right button {
+        box-sizing: border-box;
+        background-color: #40d9ac;
+        width: 90%;
+        color: white;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        padding: 20px 20px; }
 
 footer {
   background-color: #3e7e96;
@@ -545,5 +565,42 @@ footer {
   padding-bottom: 5px;
   font-size: 14px;
   color: #8b0000; }
+
+.reviews-index {
+  display: flex;
+  flex-direction: column; }
+  .reviews-index strong {
+    color: #333333;
+    font-weight: 700;
+    font-size: 16px; }
+  .reviews-index .reviews-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .reviews-index .reviews-header a {
+      color: #40d9ac; }
+    .reviews-index .reviews-header a:hover {
+      color: #333333;
+      text-decoration: underline; }
+  .reviews-index .reviews-index-item {
+    display: flex;
+    margin: 30px 10px;
+    justify-content: space-between; }
+    .reviews-index .reviews-index-item aside {
+      width: 12%; }
+      .reviews-index .reviews-index-item aside img {
+        border-radius: 50%; }
+    .reviews-index .reviews-index-item main {
+      width: 84%;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #ebebeb; }
+      .reviews-index .reviews-index-item main h2 {
+        padding-top: 15px;
+        font-weight: 700;
+        color: #333333; }
+      .reviews-index .reviews-index-item main .date {
+        font-size: 14px;
+        color: #a1a1a1;
+        padding-bottom: 15px; }
 
 /*# sourceMappingURL=output.css.map */

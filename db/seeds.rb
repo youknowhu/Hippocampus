@@ -14,23 +14,23 @@ Review.delete_all
 
 user1 = User.create!(username: 'guest', password: 'password',
   first_name: 'Guest', last_name: 'Login', zip: '94104',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
 
 user2 = User.create!(username: 'youknowhu', password: 'password',
   first_name: 'Kimmy', last_name: 'Allgeier', zip: '94612',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
 
 user3 = User.create!(username: 'sillysally', password: 'password',
   first_name: 'Sally', last_name: 'Smith', zip: '94110',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
 
 user4 = User.create!(username: 'jollyjimmy', password: 'password',
   first_name: 'Jimmy', last_name: 'Johnson', zip: '94901',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
 
 user5 = User.create!(username: 'bubblybetty', password: 'password',
     first_name: 'Betty', last_name: 'Boop', zip: '95120',
-    img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522783892/favicon.png')
+    img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
 
 user5 = User.create!(username: 'nps', password: 'password',
     first_name: 'National Park Services', last_name: '_', zip: '20001',
@@ -89,7 +89,7 @@ review5 = Review.create!(user_id: user2.id, listing_id: listing1.id,
   many wildlife along the way, including big horn sheep!')
 
 review6 = Review.create!(user_id: user3.id, listing_id: listing1.id,
-  body: 'Wow, Going-to-the-Sun road was absolutely breathatking' )
+  body: 'Wow, Going-to-the-Sun road was absolutely breathtaking' )
 
 booking1 = Booking.create!(guest_id: user3.id, listing_id: listing2.id,
   start_date: Date.new(2018, 2, 3), end_date: Date.new(2018, 2, 5),
