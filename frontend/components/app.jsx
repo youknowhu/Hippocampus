@@ -15,10 +15,12 @@ const App = () => {
   return (
     <div>
       <Nav />
-        <Route path="/listings/:listingId" component={ListingContainer} />
-        <Route path="/" component={Main} />
-        <Route exact path="/login" component={LoginFormContainer} />
-        <Route exact path="/signup" component={SignupFormContainer} />
+        <Switch>
+          <Route path="/listings/:listingId" component={ListingContainer} />
+          <Route path="/" component={Main} />
+        </Switch>
+        <Route path="/login" component={LoginFormContainer} />
+        <Route path="/signup" component={SignupFormContainer} />
       <Footer />
     </div>
   )
