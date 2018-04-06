@@ -566,39 +566,75 @@ footer {
   font-size: 14px;
   color: #8b0000; }
 
-.reviews-index {
+.reviews-section {
   display: flex;
   flex-direction: column; }
-  .reviews-index strong {
+  .reviews-section strong {
     color: #333333;
     font-weight: 700;
     font-size: 16px; }
-  .reviews-index .reviews-header {
+  .reviews-section .reviews-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
-    .reviews-index .reviews-header a {
+    .reviews-section .reviews-header a {
       color: #40d9ac; }
-    .reviews-index .reviews-header a:hover {
+    .reviews-section .reviews-header a:hover {
       color: #333333;
       text-decoration: underline; }
-  .reviews-index .reviews-index-item {
+  .reviews-section .review-form {
+    margin: 30px 10px;
+    display: flex;
+    justify-content: space-between; }
+    .reviews-section .review-form aside {
+      width: 10%; }
+      .reviews-section .review-form aside img {
+        border-radius: 50%; }
+      .reviews-section .review-form aside p {
+        padding-top: 10px;
+        text-align: center;
+        color: #333333; }
+    .reviews-section .review-form main {
+      width: 84%; }
+      .reviews-section .review-form main form {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: flex-end; }
+      .reviews-section .review-form main textarea {
+        width: 95%;
+        height: 5vw;
+        border: 1px solid #ebebeb;
+        font-size: 16px;
+        color: #333333;
+        resize: none;
+        padding: 10px;
+        margin-bottom: 20px; }
+      .reviews-section .review-form main button {
+        width: 25%;
+        background-color: #40d9ac;
+        color: white;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        padding: 20px 20px; }
+  .reviews-section .reviews-index-item {
     display: flex;
     margin: 30px 10px;
     justify-content: space-between; }
-    .reviews-index .reviews-index-item aside {
-      width: 12%; }
-      .reviews-index .reviews-index-item aside img {
+    .reviews-section .reviews-index-item aside {
+      width: 10%; }
+      .reviews-section .reviews-index-item aside img {
         border-radius: 50%; }
-    .reviews-index .reviews-index-item main {
+    .reviews-section .reviews-index-item main {
       width: 84%;
       padding-bottom: 30px;
       border-bottom: 1px solid #ebebeb; }
-      .reviews-index .reviews-index-item main h2 {
+      .reviews-section .reviews-index-item main h2 {
         padding-top: 15px;
         font-weight: 700;
         color: #333333; }
-      .reviews-index .reviews-index-item main .date {
+      .reviews-section .reviews-index-item main .date {
         font-size: 14px;
         color: #a1a1a1;
         padding-bottom: 15px; }

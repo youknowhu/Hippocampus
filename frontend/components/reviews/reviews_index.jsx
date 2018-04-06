@@ -9,33 +9,30 @@ class ReviewsIndex extends React.Component {
   }
 
   render() {
-    console.log('render');
-    console.log(this.props);
     if (Object.keys(this.props.users).length === 0) {
       return (
         <div> </div>
       )
     } else {
-
       const { reviews, users, listing } = this.props;
+      const sortedReviews = reviews.sort((review1, review2) => {
+        if (review1.createdAt < review2.createdAt) {
+          return 1
+        } else {
+          return -1
+        }
+      });
 
       return (
-        <div className="reviews-index">
-          <div className="reviews-header">
-            <p>
-              <strong>{reviews.length} Reviews</strong>
-            </p>
-            <span>
-              <Link to={`/listings/1/reviews/new`}>Add Review</Link>
-            </span>
-          </div>
-
+        <div>
           {
-            reviews.map(review => (
+            sortedReviews.map(review => (
               <ReviewsIndexItem
                 key={review.id}
                 review={review}
                 user={users[review.userId]}
+                currentUser={this.props.currentUser}
+                deleteReview={this.props.deleteReview}
               />
             ))
           }

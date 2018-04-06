@@ -1,8 +1,9 @@
 import React from 'react';
 import DateFormat from 'dateformat';
-// need to add an edit or delete button
+import { Link } from 'react-router-dom';
 
 class ReviewsIndexItem extends React.Component {
+
   render() {
     const { user, review } = this.props;
     const reviewDate = new Date(review.createdAt);
@@ -19,6 +20,20 @@ class ReviewsIndexItem extends React.Component {
             {reviewDateFormatted}
           </p>
           <p>{review.body}</p>
+          {
+            this.props.currentUser.id === review.userId ?
+            <div className="review-actions">
+              <button onClick={() => this.props.deleteReview(review.id)}>
+                Delete Review
+              </button>
+              <p> · </p>
+              <Link to={`/listings/${review.listingId}/reviews/${review.id}/edit`}>
+                Edit Review
+              </Link>
+            </div>
+            :
+            <div> </div>
+          }
         </main>
       </div>
     )

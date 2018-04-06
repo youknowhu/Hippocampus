@@ -1,7 +1,9 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Link } from 'react-router-dom';
 import ListingSlider from './listing_slider.jsx';
 import ReviewsIndexContainer from '../reviews/reviews_index_container';
+import CreateReviewFormContainer from '../reviews/create_review_form_container';
+import UpdateReviewFormContainer from '../reviews/update_review_form_container';
 import Bookings from '../bookings/bookings';
 
 class Listing extends React.Component {
@@ -58,6 +60,10 @@ class Listing extends React.Component {
         listing.isCamping ? 'Camping' : 'Glamping';
       const petFriendly =
         listing.allowsPets ? 'Yes' : 'No';
+      const numReviews =
+          this.props.numReviews ===  1 ?
+          this.props.numReviews + " Review" :
+          this.props.numReviews + " Reviews";
 
       return (
         <main className="listing-page">
@@ -121,12 +127,29 @@ class Listing extends React.Component {
                     <p>current conditions</p>
                   </div>
                   <div className="vibe-square">
-                    <h3>{Math.round(this.state.temperature)}°F</h3>
+                    <h3>{ Math.round(this.state.temperature) }°F</h3>
                     <p>temperature</p>
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="reviews-section">
+                <div className="reviews-header">
+                  <p>
+                    <strong>{numReviews}</strong>
+                  </p>
+                  <span>
+                    {
+                      this.props.currentUser === null ? <div> </div> :
+                      <Link to={`/listings/${listing.id}/reviews/new`}>
+                        Add Review
+                      </Link>
+                    }
+                  </span>
+                </div>
+                <Route exact path="/listings/:listingId/reviews/new"
+                  component={CreateReviewFormContainer} />
+                <Route exact path="/listings/:listingId/reviews/:reviewId/edit"
+                  component={UpdateReviewFormContainer} />
                 <ReviewsIndexContainer />
               </div>
             </section>

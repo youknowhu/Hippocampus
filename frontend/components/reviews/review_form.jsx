@@ -1,29 +1,45 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-//import create review? or pass in via the container.
-
-const currentUser = {
-  id: 2,
-  username: 'youknowhu',
-  firstName: 'Kimmy',
-  lastName: 'Allgeier',
-  imgUrl: "http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg"
-}
-
 class ReviewForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = this.props.review;
+  }
+
+  update(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.action(this.state)
+      .then(() => this.props.history.push(`/listings/${this.state.listingId}`));
+  }
+
   render() {
-    <div>
-      <aside className="review-user">
-        <img src={currentUser.imgUrl}/>
-      </aside>
-      <main className="review-body">
-        <textarea
-          placeholder="Have you stayed here? Leave a review for the Hippocampus community"
-        />
-        <button>Add Review</button>
-      </main>
-    </div>
+    const { currentUser, formType } = this.props;
+    return (
+      <div className="review-form">
+        <aside className="review-user">
+          <img src={currentUser.imgUrl}/>
+          <p>{currentUser.firstName}</p>
+        </aside>
+        <main className="review-body">
+          <form onSubmit={this.handleSubmit}>
+            <textarea
+              onChange={this.update('body')}
+              value={this.state.body}
+              placeholder="Have you stayed here? Leave a review for the Hippocampus community."
+            />
+            <button>{formType}</button>
+          </form>
+        </main>
+      </div>
+    )
   }
 }
 

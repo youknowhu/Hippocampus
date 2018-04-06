@@ -7,11 +7,15 @@ const msp = (state, ownProps) => {
   const listing = state.entities.listings[ownProps.match.params.listingId] || {};
   const hostId = listing.hostId;
   const host = state.entities.users[hostId] || {}
+  const numReviews = Object.keys(state.entities.reviews).length
+  const currentUser = state.session.currentUser;
 
   return {
     listing,
     listingPhotos: Object.values(state.entities.listingPhotos),
     host,
+    numReviews,
+    currentUser
   };
 };
 
