@@ -1,5 +1,7 @@
 import React from 'react';
-import ListingSlider from './listing_slider.jsx'
+import ListingSlider from './listing_slider.jsx';
+import ReviewsIndex from '../reviews/reviews_index';
+import Bookings from '../bookings/bookings';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -123,9 +125,14 @@ class Listing extends React.Component {
                   </div>
                 </div>
               </div>
+              <div>
+                <ReviewsIndex />
+              </div>
             </section>
             <section className="listing-right">
+              <Bookings />
             </section>
+
           </div>
         </main >
       )

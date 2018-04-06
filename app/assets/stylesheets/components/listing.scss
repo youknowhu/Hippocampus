@@ -118,13 +118,14 @@
             width: 30%;
             text-align: center;
             margin: 0 auto;
-            height: 250px;
+            height: 12.5vw;
             border: 1px solid $light-gray;
 
             h3 {
-              font-size: 40px;
+              font-size: 2.75vw;
               color: $dark-gray;
-              margin: 0;
+              margin: 0px 10px;
+              line-height: 1.2;
             }
 
             p {
