@@ -32,7 +32,7 @@ user5 = User.create!(username: 'bubblybetty', password: 'password',
     first_name: 'Betty', last_name: 'Boop', zip: '95120',
     img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
 
-user5 = User.create!(username: 'nps', password: 'password',
+user6 = User.create!(username: 'nps', password: 'password',
     first_name: 'National Park Services', last_name: '_', zip: '20001',
     img_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/US-NationalParkService-Logo.svg')
 
@@ -49,7 +49,15 @@ listing1 = Listing.create!(host_id: user5.id, title: 'Glacier National Park',
   lat: 48.6587896, lng: -118.3283786,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522783893/glacier_national_park.jpg' )
 
-listing2 = Listing.create!(host_id: user2.id, title: 'Treehouse Getaway',
+listing2 = Listing.create!(host_id: user2.id, title: 'Strawberry Fields',
+  body: 'Come pick fresh wild strawberries in our fields and camp out
+  under the stars. Get Back to the outdoors, Ob-La-Di, Ob-La-Da.',
+  daily_cost: 25, is_private: true, is_camping: true, allows_pets: true,
+  max_capacity: 15, check_in_after: '2 PM', check_out_before: '11 AM',
+  lat: 37.6387602, lng: -122.2063796,
+  icon_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522867205/iceland_lake_myvatn_camping-1090749.jpg')
+
+listing3 = Listing.create!(host_id: user2.id, title: 'Treehouse Getaway',
   body: 'Relive your childhood and spend a few days in a remote treehouse.
   Your mind, body, and soul will thank you.',
   daily_cost: 40, is_private: true, is_camping: false, allows_pets: false,
@@ -57,13 +65,6 @@ listing2 = Listing.create!(host_id: user2.id, title: 'Treehouse Getaway',
   lat: 37.7610734, lng: -122.4320376,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522866762/oval2.jpg' )
 
-listing3 = Listing.create!(host_id: user2.id, title: 'Strawberry Fields',
-  body: 'Come pick fresh wild strawberries in our fields and camp out
-  under the stars. Get Back to the outdoors, Ob-La-Di, Ob-La-Da.',
-  daily_cost: 25, is_private: true, is_camping: true, allows_pets: true,
-  max_capacity: 15, check_in_after: '2 PM', check_out_before: '11 AM',
-  lat: 37.6387602, lng: -122.2063796,
-  icon_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522867205/iceland_lake_myvatn_camping-1090749.jpg')
 
 review1 = Review.create!(user_id: user5.id, listing_id: listing2.id,
   body: 'I took my husband and children to this treehouse last weekend
@@ -82,7 +83,7 @@ review3 = Review.create!(user_id: user4.id, listing_id: listing2.id,
 
 review4 = Review.create!(user_id: user3.id, listing_id: listing3.id,
   body: 'Access to fresh wild strawberries in the California sun?
-  That sold me and I had an awesome weekend there' )
+  Sold.' )
 
 review5 = Review.create!(user_id: user2.id, listing_id: listing1.id,
   body: 'I highly recommend doing the Grinnell glacier hike. We saw
@@ -154,3 +155,15 @@ listing_photos11 = ListingPhoto.create!(listing_id: listing1.id,
 listing_photos12 = ListingPhoto.create!(listing_id: listing1.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522904738/glacier6.jpg',
   order: 7)
+
+listing_photos13 = ListingPhoto.create!(listing_id: listing2.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523035592/lawn_chairs.jpg',
+  order: 3)
+
+listing_photos14 = ListingPhoto.create!(listing_id: listing2.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523035573/wild_strawberries.jpg',
+  order: 4)
+
+listing_photos10 = ListingPhoto.create!(listing_id: listing2.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523035573/strawberry_fields.jpg',
+  order: 5)

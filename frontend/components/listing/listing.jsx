@@ -1,9 +1,8 @@
 import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import ListingSlider from './listing_slider.jsx';
-import ReviewsIndex from '../reviews/reviews_index';
+import ReviewsIndexContainer from '../reviews/reviews_index_container';
 import Bookings from '../bookings/bookings';
-// import ReviewForm from '../reviews/review_form';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -128,9 +127,7 @@ class Listing extends React.Component {
                 </div>
               </div>
               <div>
-                <ReviewsIndex
-                  listing={listing}
-                />
+                <ReviewsIndexContainer />
               </div>
             </section>
             <section className="listing-right">
