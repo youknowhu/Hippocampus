@@ -126,11 +126,11 @@ class Listing extends React.Component {
                 </div>
               </div>
               <div>
-                <ReviewsIndex />
+
               </div>
             </section>
             <section className="listing-right">
-              <Bookings />
+
             </section>
 
           </div>
