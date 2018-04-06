@@ -16,9 +16,9 @@ const App = () => {
     <div>
       <Nav />
         <Route path="/listings/:listingId" component={ListingContainer} />
-        <Route exact path="/" component={Main} />
-        <Route path="/login" component={LoginFormContainer} />
-        <Route path="/signup" component={SignupFormContainer} />
+        <Route path="/" component={Main} />
+        <Route exact path="/login" component={LoginFormContainer} />
+        <Route exact path="/signup" component={SignupFormContainer} />
       <Footer />
     </div>
   )

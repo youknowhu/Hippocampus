@@ -1,7 +1,7 @@
 export const fetchElevation = (latlng) => (
   $.ajax({
     method: 'GET',
-    url: `https://maps.googleapis.com/maps/api/elevation/json?locations=${latlng}&key=AIzaSyBy09f56athKNyKG2QqWYjxbu-HF6Ls9EE`,
+    url: `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/elevation/json?locations=${latlng}&key=AIzaSyBy09f56athKNyKG2QqWYjxbu-HF6Ls9EE`,
   })
 );
 
