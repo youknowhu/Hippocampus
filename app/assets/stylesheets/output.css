@@ -191,7 +191,7 @@ header {
     .listing-page .listing-content .listing-left {
       width: 70%; }
       .listing-page .listing-content .listing-left p {
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 200;
         letter-spacing: 0.03em; }
       .listing-page .listing-content .listing-left > div {
@@ -212,7 +212,7 @@ header {
         height: 50px;
         border-radius: 25px; }
       .listing-page .listing-content .listing-left .listing-about .host-info, .listing-page .listing-content .listing-left .listing-about h3, .listing-page .listing-content .listing-left .listing-about p {
-        font-size: 14px;
+        font-size: 15px;
         padding-top: 0px;
         margin: 0; }
         .listing-page .listing-content .listing-left .listing-about .host-info h3, .listing-page .listing-content .listing-left .listing-about .host-info p, .listing-page .listing-content .listing-left .listing-about h3 h3, .listing-page .listing-content .listing-left .listing-about h3 p, .listing-page .listing-content .listing-left .listing-about p h3, .listing-page .listing-content .listing-left .listing-about p p {
@@ -222,13 +222,13 @@ header {
         background: white;
         box-sizing: border-box; }
         .listing-page .listing-content .listing-left .listing-details li {
-          font-size: 14px;
+          font-size: 15px;
           margin: 5px 0px;
           font-weight: 200;
           letter-spacing: 0.03em; }
         .listing-page .listing-content .listing-left .listing-details strong {
           font-weight: 700;
-          font-size: 14px; }
+          font-size: 15px; }
       .listing-page .listing-content .listing-left .listing-vibe {
         display: flex;
         flex-direction: column; }
@@ -255,7 +255,7 @@ header {
               margin: 0px 10px;
               line-height: 1.2; }
             .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square p {
-              font-size: 14px;
+              font-size: 15px;
               color: #777777;
               font-weight: 200; }
     .listing-page .listing-content .listing-right {
