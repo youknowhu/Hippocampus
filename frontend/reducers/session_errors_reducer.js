@@ -8,8 +8,6 @@ export default (state = [], action) => {
       return action.errors;
     case CLEAR_ERRORS:
       return [];
-    case RECEIVE_CURRENT_USER:
-      return [];
     default:
       return state;
   }

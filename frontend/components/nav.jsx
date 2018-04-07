@@ -11,7 +11,9 @@ class NavBar extends React.Component {
 
   handleLogout(e)  {
     e.preventDefault();
+    debugger
     this.props.logout();
+    debugger
   }
 
   render() {

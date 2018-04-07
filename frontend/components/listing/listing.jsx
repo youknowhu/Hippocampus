@@ -22,14 +22,16 @@ class Listing extends React.Component {
     if (this.props.listing.id != newProps.match.params.listingId) {
       this.props.fetchListing(newProps.match.params.listingId)
         .then(() => this.getElevation())
-        .then(() => this.getWeather())
+        .then(() => this.getWeather());
     }
   }
 
-
   componentDidMount() {
-    this.props.fetchListing(this.props.match.params.listingId);
+    this.props.fetchListing(this.props.match.params.listingId)
+      .then(() => this.getElevation())
+      .then(() => this.getWeather());
   }
+
 
   getElevation() {
     const { listing } = this.props;
@@ -131,6 +133,13 @@ class Listing extends React.Component {
                     <p>temperature</p>
                   </div>
                 </div>
+              </div>
+              <div className="listing-features">
+                <aside>
+                  <p>Features & Activities</p>
+                </aside>
+                <main>
+                </main>
               </div>
               <div className="reviews-section">
                 <div className="reviews-header">

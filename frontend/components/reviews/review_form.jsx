@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -35,7 +35,10 @@ class ReviewForm extends React.Component {
               value={this.state.body}
               placeholder="Have you stayed here? Leave a review for the Hippocampus community."
             />
-            <button>{formType}</button>
+            <div className="review-form-actions"> 
+              <Link to={`/listings/${this.state.listingId}`} >Cancel</Link>
+              <button>{formType}</button>
+            </div>
           </form>
         </main>
       </div>

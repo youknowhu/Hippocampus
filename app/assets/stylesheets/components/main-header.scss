@@ -7,8 +7,8 @@
 
   h2 {
     font-weight: 600;
-    font-size: 64px;
-    color: #33334D;
+    font-size: 7.5vh;
+    color: $dark-gray;
     line-height: 1.1;
     display: block;
     padding-right: 100px;
@@ -38,8 +38,8 @@
 
 
     .main-search-box {
-      width: 550px;
-      height: 200px;
+      width: 32.5vw;
+      height: 22.5vh;
       display: flex;
       box-sizing: border-box;
       flex-direction: column;
@@ -60,6 +60,7 @@
         vertical-align: middle;
         line-height: 100px;//hardcoded. Should fix this!
         letter-spacing: 0.7px;
+        font-weight: 200;
       }
 
       .find-camping {

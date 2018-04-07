@@ -15,6 +15,7 @@
 
     a {
       color: $green-cyan;
+      font-size: 14px;
     }
 
     a:hover {
@@ -50,7 +51,7 @@
         display: flex;
         flex-direction: column;
         margin: 0 auto;
-        align-items: flex-end;
+
       }
 
       textarea {
@@ -64,8 +65,7 @@
         margin-bottom: 20px;
       }
 
-      button {
-        width: 25%;
+      button{
         background-color: $green-cyan;
         color: white;
         font-weight: 700;
@@ -73,12 +73,35 @@
         text-align: center;
         padding: 20px 20px;
       }
+
+      a {
+        color: $green-cyan;
+        line-height: 16px;
+        vertical-align: middle;
+        align-content: center;
+        top: 50%;
+        padding: 20px 30px;
+      }
+
+      a:hover {
+        color: $dark-gray;
+        text-decoration: underline;
+      }
+
+      button:hover {
+        background-color: $darker-green;
+      }
+
+      .review-form-actions {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 
   .reviews-index-item {
     display: flex;
-    margin: 30px 10px;
+    margin: 20px 10px;
     justify-content: space-between;
 
     aside {
@@ -104,6 +127,36 @@
         font-size: 14px;
         color: $lighter-gray;
         padding-bottom: 15px;
+      }
+    }
+
+    .review-actions {
+      display: flex;
+      padding-top: 10px;
+
+      a, button {
+        top: 50%;
+        margin: 0;
+        padding-top: 0;
+        font-size: 14px;
+        align-content: center;
+        color: $green-cyan;
+        display: block;
+        height: 20px;
+        line-height: 20px;
+      }
+
+      a:hover, button:hover {
+        color: $dark-gray;
+        text-decoration: underline;
+      }
+
+      p {
+        text-align: center;
+        padding: 0px 10px;
+        color: $dark-gray;
+        font-size: 12px;
+        line-height: 20px;
       }
     }
   }

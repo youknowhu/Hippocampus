@@ -206,7 +206,7 @@ header {
       .listing-page .listing-content .listing-left h1 {
         font-weight: bold;
         color: #333333;
-        font-size: 40px; }
+        font-size: 6vh; }
       .listing-page .listing-content .listing-left .listing-about img {
         width: auto;
         height: 50px;
@@ -250,7 +250,7 @@ header {
             height: 12vw;
             border: 1px solid #ebebeb; }
             .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square h3 {
-              font-size: 2.25vw;
+              font-size: 4vh;
               color: #333333;
               margin: 0px 10px;
               line-height: 1.2; }
@@ -341,8 +341,8 @@ footer {
   padding-bottom: 250px; }
   .main-header h2 {
     font-weight: 600;
-    font-size: 64px;
-    color: #33334D;
+    font-size: 7.5vh;
+    color: #333333;
     line-height: 1.1;
     display: block;
     padding-right: 100px; }
@@ -360,8 +360,8 @@ footer {
       .main-header .row .subtext strong {
         font-weight: 700; }
     .main-header .row .main-search-box {
-      width: 550px;
-      height: 200px;
+      width: 32.5vw;
+      height: 22.5vh;
       display: flex;
       box-sizing: border-box;
       flex-direction: column;
@@ -377,7 +377,8 @@ footer {
         .main-header .row .main-search-box .location-search > * {
           vertical-align: middle;
           line-height: 100px;
-          letter-spacing: 0.7px; }
+          letter-spacing: 0.7px;
+          font-weight: 200; }
         .main-header .row .main-search-box .location-search .find-camping {
           color: #2d2d2d; }
         .main-header .row .main-search-box .location-search input {
@@ -578,7 +579,8 @@ footer {
     flex-direction: row;
     justify-content: space-between; }
     .reviews-section .reviews-header a {
-      color: #40d9ac; }
+      color: #40d9ac;
+      font-size: 14px; }
     .reviews-section .reviews-header a:hover {
       color: #333333;
       text-decoration: underline; }
@@ -599,8 +601,7 @@ footer {
       .reviews-section .review-form main form {
         display: flex;
         flex-direction: column;
-        margin: 0 auto;
-        align-items: flex-end; }
+        margin: 0 auto; }
       .reviews-section .review-form main textarea {
         width: 95%;
         height: 5vw;
@@ -611,16 +612,30 @@ footer {
         padding: 10px;
         margin-bottom: 20px; }
       .reviews-section .review-form main button {
-        width: 25%;
         background-color: #40d9ac;
         color: white;
         font-weight: 700;
         font-size: 16px;
         text-align: center;
         padding: 20px 20px; }
+      .reviews-section .review-form main a {
+        color: #40d9ac;
+        line-height: 16px;
+        vertical-align: middle;
+        align-content: center;
+        top: 50%;
+        padding: 20px 30px; }
+      .reviews-section .review-form main a:hover {
+        color: #333333;
+        text-decoration: underline; }
+      .reviews-section .review-form main button:hover {
+        background-color: #3cc69e; }
+      .reviews-section .review-form main .review-form-actions {
+        display: flex;
+        justify-content: flex-end; }
   .reviews-section .reviews-index-item {
     display: flex;
-    margin: 30px 10px;
+    margin: 20px 10px;
     justify-content: space-between; }
     .reviews-section .reviews-index-item aside {
       width: 10%; }
@@ -638,5 +653,27 @@ footer {
         font-size: 14px;
         color: #a1a1a1;
         padding-bottom: 15px; }
+    .reviews-section .reviews-index-item .review-actions {
+      display: flex;
+      padding-top: 10px; }
+      .reviews-section .reviews-index-item .review-actions a, .reviews-section .reviews-index-item .review-actions button {
+        top: 50%;
+        margin: 0;
+        padding-top: 0;
+        font-size: 14px;
+        align-content: center;
+        color: #40d9ac;
+        display: block;
+        height: 20px;
+        line-height: 20px; }
+      .reviews-section .reviews-index-item .review-actions a:hover, .reviews-section .reviews-index-item .review-actions button:hover {
+        color: #333333;
+        text-decoration: underline; }
+      .reviews-section .reviews-index-item .review-actions p {
+        text-align: center;
+        padding: 0px 10px;
+        color: #333333;
+        font-size: 12px;
+        line-height: 20px; }
 
 /*# sourceMappingURL=output.css.map */

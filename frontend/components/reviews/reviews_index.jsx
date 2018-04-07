@@ -17,9 +17,9 @@ class ReviewsIndex extends React.Component {
       const { reviews, users, listing } = this.props;
       const sortedReviews = reviews.sort((review1, review2) => {
         if (review1.createdAt < review2.createdAt) {
-          return 1
+          return 1;
         } else {
-          return -1
+          return -1;
         }
       });
 

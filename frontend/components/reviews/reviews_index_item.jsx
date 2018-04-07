@@ -7,7 +7,10 @@ class ReviewsIndexItem extends React.Component {
   render() {
     const { user, review } = this.props;
     const reviewDate = new Date(review.createdAt);
+    console.log('reviewdate', reviewDate)
+    console.log('createdat', review.createdAt)
     const reviewDateFormatted = DateFormat('mmm dS, yyyy')
+    console.log('formatted', reviewDateFormatted)
 
     return (
       <div className="reviews-index-item">
@@ -23,13 +26,13 @@ class ReviewsIndexItem extends React.Component {
           {
             this.props.currentUser.id === review.userId ?
             <div className="review-actions">
-              <button onClick={() => this.props.deleteReview(review.id)}>
-                Delete Review
-              </button>
-              <p> · </p>
               <Link to={`/listings/${review.listingId}/reviews/${review.id}/edit`}>
                 Edit Review
               </Link>
+              <p> • </p>
+              <button onClick={() => this.props.deleteReview(review.id)}>
+                Delete Review
+              </button>
             </div>
             :
             <div> </div>
