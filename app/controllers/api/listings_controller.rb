@@ -1,6 +1,7 @@
 class Api::ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
+    @reviews = @listing.reviews.order(created_at: :desc).pluck(:id)
   end
 
   def index
@@ -8,6 +9,7 @@ class Api::ListingsController < ApplicationController
       .includes(:reviews)
       .includes(:bookings)
       .includes(:listing_photos)
+
   end
 
   private

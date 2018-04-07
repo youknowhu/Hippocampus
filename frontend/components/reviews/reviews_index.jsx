@@ -6,7 +6,9 @@ import ReviewsIndexItem from './reviews_index_item';
 class ReviewsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchAllUsers();
+    console.log('did mount');
   }
+
 
   render() {
     if (Object.keys(this.props.users).length === 0) {
@@ -14,27 +16,18 @@ class ReviewsIndex extends React.Component {
         <div> </div>
       )
     } else {
-      const { reviews, users, listing } = this.props;
-      const sortedReviews = reviews.sort((review1, review2) => {
-        if (review1.createdAt < review2.createdAt) {
-          return 1;
-        } else {
-          return -1;
-        }
-      });
-
+      const { reviews, sortedReviews, users, listing } = this.props;
       return (
         <div>
           {
-            sortedReviews.map(review => (
+            sortedReviews.map(reviewId =>
               <ReviewsIndexItem
-                key={review.id}
-                review={review}
-                user={users[review.userId]}
+                key={reviewId}
+                review={reviews[reviewId]}
+                user={users[reviews[reviewId].userId]}
                 currentUser={this.props.currentUser}
-                deleteReview={this.props.deleteReview}
-              />
-            ))
+                deleteReview={this.props.deleteReview} />
+            )
           }
         </div>
       )

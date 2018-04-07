@@ -131,14 +131,14 @@
             border: 1px solid $light-gray;
 
             h3 {
-              font-size: 4vh;
+              font-size: 2vw;
               color: $dark-gray;
               margin: 0px 10px;
               line-height: 1.2;
             }
 
             p {
-              font-size: 15px;
+              font-size: 1vw;
               color: $gray;
               font-weight: 200;
             }
@@ -146,6 +146,20 @@
 
         }
 
+      }
+    }
+
+    .listing-features {
+      img {
+        height: 24px;
+        width: 24px;
+        padding-right: 20px;
+        color: $dark-gray;
+      }
+
+      li {
+        display: flex;
+        margin-bottom: 10px;
       }
     }
 

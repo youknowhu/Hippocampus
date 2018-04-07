@@ -86,8 +86,8 @@ review4 = Review.create!(user_id: user3.id, listing_id: listing2.id,
   Sold.' )
 
 review5 = Review.create!(user_id: user2.id, listing_id: listing1.id,
-  body: 'I highly recommend doing the Grinnell glacier hike. We saw
-  many wildlife along the way, including big horn sheep!')
+  body: 'I highly recommend the Grinnell Glacier hike.
+  We saw many wildlife along the way, including big horn sheep!')
 
 review6 = Review.create!(user_id: user3.id, listing_id: listing1.id,
   body: 'Wow, Going-to-the-Sun road was absolutely breathtaking' )

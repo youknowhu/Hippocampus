@@ -11,8 +11,8 @@ class Listing extends React.Component {
     super(props)
     this.state = {
       elevation: 0,
-      weather: null,
-      temperature: null,
+      weather: 'slightly cloudy',
+      temperature: 65,
     }
 
     this.getElevation = this.getElevation.bind(this);
@@ -117,6 +117,36 @@ class Listing extends React.Component {
                   </ul>
                 </main>
               </div>
+              <div className="listing-features">
+                <aside>
+                  <p>Features & Activities</p>
+                </aside>
+                <main>
+                  <ul>
+                    <li>
+                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523117615/Icons/ic_terrain_black_24px.svg" />
+                      <p> Mountainous Terrain </p>
+                    </li>
+                    <li>
+                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523118475/ic_directions_walk_black_24px.svg" />
+                      <p> Hiking Trails </p>
+                    </li>
+                    <li>
+                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523117612/Icons/ic_directions_bike_black_24px.svg" />
+                      <p> Bike Trails </p>
+                    </li>
+                    <li>
+                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523117612/Icons/ic_beach_access_black_24px.svg" />
+                      <p> Beach Access </p>
+                    </li>
+                    <li>
+                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523117615/Icons/ic_rowing_black_24px.svg" />
+                      <p> Rowing </p>
+                    </li>
+
+                  </ul>
+                </main>
+              </div>
               <div className="listing-vibe">
                 <h2> The vibe at {listing.title} </h2>
                 <div className='vibe-squares'>
@@ -134,13 +164,7 @@ class Listing extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="listing-features">
-                <aside>
-                  <p>Features & Activities</p>
-                </aside>
-                <main>
-                </main>
-              </div>
+
               <div className="reviews-section">
                 <div className="reviews-header">
                   <p>

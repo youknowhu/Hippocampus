@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { logout } from '../actions/session_actions';
 
 class NavBar extends React.Component {
@@ -11,9 +11,8 @@ class NavBar extends React.Component {
 
   handleLogout(e)  {
     e.preventDefault();
-    debugger
-    this.props.logout();
-    debugger
+    console.log(this.props.history);
+    this.props.logout()
   }
 
   render() {
@@ -47,18 +46,18 @@ class NavBar extends React.Component {
               <h4>
                 <Link to="/" onClick={this.handleLogout}>Log Out</Link>
               </h4>
-          }
-        </div>
-      </header>
-    )
-  }
+            }
+          </div>
+        </header>
+      )
+    }
 }
 
-const mapStateToProps = state => {
-  return {
-    currentUser: state.session.currentUser,
+  const mapStateToProps = (state, ownProps) => {
+    return {
+      currentUser: state.session.currentUser,
+    }
   }
-}
 
 
 const mapDispatchToProps = dispatch => {

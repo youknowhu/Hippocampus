@@ -250,14 +250,22 @@ header {
             height: 12vw;
             border: 1px solid #ebebeb; }
             .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square h3 {
-              font-size: 4vh;
+              font-size: 2vw;
               color: #333333;
               margin: 0px 10px;
               line-height: 1.2; }
             .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square p {
-              font-size: 15px;
+              font-size: 1vw;
               color: #777777;
               font-weight: 200; }
+    .listing-page .listing-content .listing-features img {
+      height: 24px;
+      width: 24px;
+      padding-right: 20px;
+      color: #333333; }
+    .listing-page .listing-content .listing-features li {
+      display: flex;
+      margin-bottom: 10px; }
     .listing-page .listing-content .listing-right {
       width: 30%;
       margin: 0 auto;

@@ -33,3 +33,5 @@ json.reviews do
     end
   end
 end
+
+json.sortedReviews @reviews

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ReviewForm from './review_form';
 import { fetchReview, updateReview } from '../../actions/review_actions';
+import { fetchSingleListing } from '../../actions/listing_actions';
 
 const msp = (state, ownProps) => {
   const currentUser = state.session.currentUser;
@@ -19,6 +20,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => ({
   action: review => dispatch(updateReview(review)),
   fetchReview: id => dispatch(fetchReview(id)),
+  fetchSingleListing: id => dispatch(fetchSingleListing(id)),
 });
 
 class UpdateReviewForm extends React.Component {
@@ -33,14 +35,14 @@ class UpdateReviewForm extends React.Component {
   }
 
   render() {
-    const { action, formType, review, currentUser } = this.props;
-    console.log(this.props)
+    const { action, formType, review, currentUser, fetchSingleListing } = this.props;
     return (
       <ReviewForm
         action={action}
         formType={formType}
         review={review}
-        currentUser={currentUser} />
+        currentUser={currentUser}
+        fetchSingleListing={fetchSingleListing} />
     );
   }
 }
