@@ -27,7 +27,8 @@ class ReviewsIndexItem extends React.Component {
                 Edit Review
               </Link>
               <p> • </p>
-              <button onClick={() => this.props.deleteReview(review.id)}>
+              <button onClick={
+                () => this.props.deleteReview(review.id)}>
                 Delete Review
               </button>
             </div>

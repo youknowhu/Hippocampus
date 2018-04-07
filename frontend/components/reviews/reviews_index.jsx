@@ -6,17 +6,17 @@ import ReviewsIndexItem from './reviews_index_item';
 class ReviewsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchAllUsers();
-    console.log('did mount');
   }
 
-
   render() {
+    console.log('render');
     if (Object.keys(this.props.users).length === 0) {
       return (
         <div> </div>
       )
     } else {
       const { reviews, sortedReviews, users, listing } = this.props;
+      console.log(this.props);
       return (
         <div>
           {
