@@ -14,7 +14,7 @@ import Main from './main';
 const App = () => {
   return (
     <div>
-      <Nav />
+      <Route path="/" component={Nav} />
         <Switch>
           <Route path="/listings/:listingId" component={ListingContainer} />
           <Route path="/" component={Main} />

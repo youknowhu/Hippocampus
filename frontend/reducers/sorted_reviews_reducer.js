@@ -5,7 +5,6 @@ import { REMOVE_REVIEW } from '../actions/review_actions';
 const SortedReviewsReducer = (state = [], action) => {
   Object.freeze(state);
   let newState;
-  console.log(state);
 
   switch (action.type) {
     case RECEIVE_SINGLE_LISTING:
