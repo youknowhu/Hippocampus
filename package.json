@@ -11,6 +11,7 @@
     "jquery": "^3.3.1",
     "lodash": "^4.17.5",
     "react": "^16.3.0",
+    "react-day-picker": "^7.1.4",
     "react-dom": "^16.3.0",
     "react-modal": "^3.3.2",
     "react-redux": "^5.0.7",

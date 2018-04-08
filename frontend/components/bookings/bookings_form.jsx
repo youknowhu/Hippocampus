@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import format from 'date-fns/format';
+import parse from 'date-fns/parse';
 
 
 class BookingsForm extends React.Component {
@@ -34,7 +36,7 @@ class BookingsForm extends React.Component {
       formatDate: format,
       parseDate: parse
     }
-    
+
     if (!listing) {
       return (<div> </div>)
     } else {
