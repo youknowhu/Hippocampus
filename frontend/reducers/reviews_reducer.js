@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 import { RECEIVE_SINGLE_LISTING } from '../actions/listing_actions';
-import { RECEIVE_REVIEW, REMOVE_REVIEW, RECEIVE_REVIEWS } from '../actions/review_actions';
+import { RECEIVE_REVIEW, REMOVE_REVIEW} from '../actions/review_actions';
 
 const ReviewsReducer = (state = {}, action) => {
   Object.freeze(state);
