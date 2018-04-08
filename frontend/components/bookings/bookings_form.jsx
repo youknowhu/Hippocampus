@@ -27,7 +27,6 @@ class BookingsForm extends React.Component {
   render() {
     console.log(this.props)
     const { bookings, currentUser, listing, booking } = this.props;
-<<<<<<< HEAD
     const dateSettings = {
       clickUnselectsDay: true,
       placeholder: "Select date",
@@ -35,11 +34,7 @@ class BookingsForm extends React.Component {
       formatDate: format,
       parseDate: parse
     }
-
-
-=======
->>>>>>> parent of e4b3bfa... Download React DayPicker and DateFormat
-
+    
     if (!listing) {
       return (<div> </div>)
     } else {
