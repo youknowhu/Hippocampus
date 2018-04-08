@@ -4,7 +4,7 @@ import ListingSlider from './listing_slider.jsx';
 import ReviewsIndexContainer from '../reviews/reviews_index_container';
 import CreateReviewFormContainer from '../reviews/create_review_form_container';
 import UpdateReviewFormContainer from '../reviews/update_review_form_container';
-import Bookings from '../bookings/bookings';
+import BookingsFormContainer from '../bookings/bookings_form_container';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -187,7 +187,7 @@ class Listing extends React.Component {
               </div>
             </section>
             <section className="listing-right">
-              <button>Book Site</button>
+              <BookingsFormContainer />
             </section>
           </div>
         </main >

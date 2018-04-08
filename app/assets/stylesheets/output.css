@@ -185,11 +185,11 @@ header {
       color: #40d9ac; }
   .listing-page .listing-content {
     padding-top: 100px;
-    width: 60vw;
+    width: 65vw;
     margin: 0 auto;
     display: flex; }
     .listing-page .listing-content .listing-left {
-      width: 70%; }
+      width: 65%; }
       .listing-page .listing-content .listing-left p {
         font-size: 15px;
         font-weight: 200;
@@ -267,19 +267,10 @@ header {
       display: flex;
       margin-bottom: 10px; }
     .listing-page .listing-content .listing-right {
-      width: 30%;
+      width: 35%;
       margin: 0 auto;
       padding-left: 50px;
       text-align: center; }
-      .listing-page .listing-content .listing-right button {
-        box-sizing: border-box;
-        background-color: #40d9ac;
-        width: 90%;
-        color: white;
-        font-weight: 700;
-        font-size: 16px;
-        text-align: center;
-        padding: 20px 20px; }
 
 footer {
   background-color: #3e7e96;
@@ -683,5 +674,25 @@ footer {
         color: #333333;
         font-size: 12px;
         line-height: 20px; }
+
+.booking-form {
+  padding-left: 50px; }
+  .booking-form .booking-header {
+    display: flex;
+    width: 100%; }
+    .booking-form .booking-header button, .booking-form .booking-header h2 {
+      box-sizing: border-box;
+      font-weight: 200;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      padding: 25px 65px; }
+    .booking-form .booking-header button {
+      background-color: #40d9ac; }
+    .booking-form .booking-header button:hover {
+      background-color: #3cc69e; }
+    .booking-form .booking-header h2 {
+      background-color: #3cc69e;
+      padding: 25px; }
 
 /*# sourceMappingURL=output.css.map */

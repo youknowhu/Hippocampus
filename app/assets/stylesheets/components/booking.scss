@@ -1,0 +1,31 @@
+.booking-form {
+  padding-left: 50px;
+
+  .booking-header {
+    display: flex;
+    width: 100%;
+
+    button, h2 {
+      box-sizing: border-box;
+      font-weight: 200;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      padding: 25px 65px;
+    }
+
+    button {
+      background-color: $green-cyan;
+    }
+
+    button:hover {
+      background-color: $darker-green;
+    }
+
+    h2 {
+      background-color: $darker-green;
+      padding: 25px;
+    }
+  }
+
+}

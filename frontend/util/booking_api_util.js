@@ -22,9 +22,10 @@ export const createBooking = bookingParams => (
   })
 );
 
+
 export const deleteBooking = id => (
   $.ajax({
     url: `/api/bookings/${id}`,
     method: 'DELETE',
-  }),
+  })
 );

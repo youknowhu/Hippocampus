@@ -9,14 +9,12 @@ class ReviewsIndex extends React.Component {
   }
 
   render() {
-    console.log('render');
     if (Object.keys(this.props.users).length === 0) {
       return (
         <div> </div>
       )
     } else {
       const { reviews, sortedReviews, users, listing } = this.props;
-      console.log(this.props);
       return (
         <div>
           {
