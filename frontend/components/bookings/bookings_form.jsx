@@ -35,7 +35,7 @@ class BookingsForm extends React.Component {
       placeholder: "Select date",
       format: 'M/D/YYYY',
       formatDate: format,
-      parseDate: parse,
+      parseDate: parse
     }
 
 
