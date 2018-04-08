@@ -1,9 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import format from 'date-fns/format';
-import parse from 'date-fns/parse';
-
 
 
 class BookingsForm extends React.Component {
@@ -29,7 +25,9 @@ class BookingsForm extends React.Component {
 
 
   render() {
+    console.log(this.props)
     const { bookings, currentUser, listing, booking } = this.props;
+<<<<<<< HEAD
     const dateSettings = {
       clickUnselectsDay: true,
       placeholder: "Select date",
@@ -39,18 +37,17 @@ class BookingsForm extends React.Component {
     }
 
 
+=======
+>>>>>>> parent of e4b3bfa... Download React DayPicker and DateFormat
 
     if (!listing) {
       return (<div> </div>)
     } else {
       return (
-        <form className="booking-form" onSubmit={this.handleSubmit}>
-          <div className="booking-header">
+        <form className="booking-form">
+          <div className='booking-header'>
             <h2>${listing.dailyCost}</h2>
             <button>Book Site</button>
-          </div>
-          <div className="booking-params">
-              <DayPickerInput {...dateSettings} />
           </div>
         </form>
       )

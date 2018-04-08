@@ -1,0 +1,29 @@
+.ui-datepicker {
+  color: $gray;
+  border: 1px solid $light-gray;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.ui-datepicker-header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.ui-datepicker-prev {
+  float: left;
+  cursor: pointer;
+}
+.ui-datepicker-next {
+  float: right;
+  cursor: pointer;
+}
+
+.ui-datepicker-title {
+  font-weight: 700;
+}
+
+.ui-datepicker-next, .ui-datepicker-prev {
+  color: $green-cyan;
+  font-weight: 700;
+}
