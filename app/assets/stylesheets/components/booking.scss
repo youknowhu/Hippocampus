@@ -11,7 +11,7 @@
       color: white;
       font-size: 18px;
       text-align: center;
-      padding: 25px 25px;
+      padding: 25px 10px;
     }
 
     button, a {
@@ -176,4 +176,10 @@
     width: 15px;
     padding-top: 3px;
   }
+}
+
+.booking-errors {
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: #8b0000;
 }

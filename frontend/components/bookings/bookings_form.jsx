@@ -38,10 +38,23 @@ class BookingsForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return(
+      <ul className="booking-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
     this.props.createBooking(this.state)
+      .then(() => this.props.clearBookingErrors())
       .then(() => this.props.fetchSingleListing(this.state.listingId))
       .then(() => this.props.history.push(`/listings/${this.state.listingId}`));
   }
@@ -71,9 +84,9 @@ class BookingsForm extends React.Component {
         </div>
       )
     } else if (currentUserBookings !==  null ) {
-      const startDateFormatted = DateFormat(currentUserBookings.start_date, 'UTC:m/d/yyyy')
-      const endDateFormatted = DateFormat(currentUserBookings.end_date,'UTC:m/d/yyyy')
-      const numDays = (this.state.endDate - this.state.startDate)/1000/60/60/24
+      const checkinFormatted = DateFormat(currentUserBookings.check_in, 'UTC:m/d/yyyy')
+      const checkoutFormatted = DateFormat(currentUserBookings.check_out,'UTC:m/d/yyyy')
+      const numDays = (new Date(checkoutFormatted) - new Date(checkinFormatted))/1000/24/60/60
       const resDays =
           numDays ===  1 ? numDays + " night" : numDays + " nights";
 
@@ -86,11 +99,11 @@ class BookingsForm extends React.Component {
           <div className="booking-selections">
             <div className="booking-field-date">
               <h3>Check In</h3>
-              <p className="booked-field">{startDateFormatted}</p>
+              <p className="booked-field">{checkinFormatted}</p>
             </div>
             <div className="booking-field-date">
               <h3>Check Out</h3>
-              <p className="booked-field">{endDateFormatted}</p>
+              <p className="booked-field">{checkoutFormatted}</p>
             </div>
             <div className="booking-field-guests">
               <h3>Guests</h3>
@@ -115,17 +128,18 @@ class BookingsForm extends React.Component {
         </div>
       )
     } else {
-      const numDays = (this.state.endDate - this.state.startDate)/1000/60/60/24
+      const numDays = (this.state.checkOut - this.state.checkIn)/1000/60/60/24
+      console.log(this.state);
 
       const resDays =
           numDays ===  1 ? numDays + " night" : numDays + " nights";
 
       const startModifier = {
-        selectedStart: this.state.startDate,
+        selectedStart: this.state.checkIn,
       }
 
       const endModifier = {
-        selectedEnd: this.state.endDate,
+        selectedEnd: this.state.checkOut,
       }
 
       return (
@@ -139,13 +153,13 @@ class BookingsForm extends React.Component {
               <h3>Check In</h3>
               <DayPickerInput
                 {...dateSettings}
-                value={this.state.startDate}
-                onDayChange={this.handleDayChange('startDate')}
+                value={this.state.checkIn}
+                onDayChange={this.handleDayChange('checkIn')}
                 dayPickerProps={ {
                   disabledDays: [
                     { before: new Date() },
-                    { after: new Date(this.state.endDate) }],
-                  selectedDays: this.state.endDate,
+                    { after: new Date(this.state.checkOut) }],
+                  selectedDays: this.state.checkOut,
                 }}
                 />
             </div>
@@ -153,12 +167,12 @@ class BookingsForm extends React.Component {
               <h3>Check Out</h3>
               <DayPickerInput
                 {...dateSettings}
-                value={this.state.endDate}
-                onDayChange={this.handleDayChange('endDate')}
+                value={this.state.checkOut}
+                onDayChange={this.handleDayChange('checkOut')}
                 dayPickerProps={ {
-                  disabledDays: 
-                    { before: new Date(this.state.startDate) },
-                  selectedDays: this.state.startDate,
+                  disabledDays:
+                    { before: new Date(this.state.checkIn) },
+                  selectedDays: this.state.checkIn,
                 }}
               />
             </div>
@@ -173,7 +187,7 @@ class BookingsForm extends React.Component {
           </div>
           <div className="booking-total">
           {
-            (this.state.startDate && this.state.endDate && numDays >= 1) ?
+            (this.state.checkIn && this.state.checkOut && numDays >= 1) ?
             <div className="booking-total-shown">
               <h3>Total</h3>
                 <div className="booking-total-calc">
@@ -183,6 +197,10 @@ class BookingsForm extends React.Component {
             </div>
             :
             <div> </div>
+          }
+          {
+            (this.props.errors.length > 0) ?
+              this.renderErrors() :  <div> </div>
           }
           </div>
         </form>

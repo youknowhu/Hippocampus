@@ -2,12 +2,12 @@ class Api::ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @reviews = @listing.reviews.order(created_at: :desc).pluck(:id)
-    @guests = @listing.bookings.where('start_date > ?', Date.today).pluck(:guest_id)
+    @guests = @listing.bookings.where('check_in > ?', Date.today).pluck(:guest_id)
 
     if logged_in?
       @current_user_bookings = current_user.bookings
         .where('listing_id = ?', @listing.id)
-        .where('start_date > ?', Date.today)
+        .where('check_in > ?', Date.today)
     else
       @current_user_bookings = {}
     end

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import BookingsForm from './bookings_form';
 import { fetchSingleListing } from '../../actions/listing_actions';
-import { createBooking, deleteBooking } from '../../actions/booking_actions'
+import { createBooking, deleteBooking, clearBookingErrors } from '../../actions/booking_actions'
 
 const msp = (state) => {
   const bookings =  state.entities.bookings || {};
@@ -10,11 +10,12 @@ const msp = (state) => {
   const currentUserBookings = state.entities.currentUserBookings;
   const booking = {
     guestId: currentUser.id, listingId: listing.id,
-    numGuests: 1, startDate: '', endDate: ''
+    numGuests: 1, checkIn: '', checkOut: ''
   };
+  const errors = state.errors.bookingErrors;
 
   return {
-    bookings, listing, currentUser, booking, currentUserBookings,
+    bookings, listing, currentUser, booking, currentUserBookings, errors,
   }
 }
 
@@ -23,6 +24,7 @@ const mdp = dispatch => ({
   fetchSingleListing: id => dispatch(fetchSingleListing(id)),
   deleteBooking: id => dispatch(deleteBooking(id)),
   createBooking: booking => dispatch(createBooking(booking)),
+  clearBookingErrors: () => dispatch(clearBookingErrors())
 });
 
 

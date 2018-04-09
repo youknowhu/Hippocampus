@@ -97,7 +97,8 @@ with a class attribute containing 'col-' */
   border-spacing: 0;
   user-select: none;
   margin: 0 1rem;
-  margin-top: 1rem; }
+  margin-top: 1rem;
+  color: #777777; }
 
 .DayPicker-NavButton {
   position: absolute;
@@ -134,7 +135,8 @@ with a class attribute containing 'col-' */
 
 .DayPicker-Caption > div {
   font-size: 1.15rem;
-  font-weight: 500; }
+  font-weight: 700;
+  color: #333333; }
 
 .DayPicker-Weekdays {
   margin-top: 1rem;
@@ -148,7 +150,7 @@ with a class attribute containing 'col-' */
   padding: 0.5rem;
   font-size: 0.875em;
   text-align: center;
-  color: #8b9898; }
+  color: #333333; }
 
 .DayPicker-Weekday abbr[title] {
   border-bottom: none;
@@ -196,7 +198,7 @@ with a class attribute containing 'col-' */
 
 /* Default modifiers */
 .DayPicker-Day--today {
-  color: #d0021b;
+  color: #40d9ac;
   font-weight: 700; }
 
 .DayPicker-Day--outside {
@@ -217,16 +219,19 @@ with a class attribute containing 'col-' */
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
   position: relative;
-  color: #f0f8ff;
-  background-color: #4a90e2;
-  border-radius: 100%; }
+  background-color: #3cc69e;
+  color: white;
+  border-radius: 50%; }
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
-  background-color: #51a0fa; }
+  background-color: #3cc69e;
+  color: white;
+  border-radius: 50%; }
 
 .DayPicker:not(.DayPicker--interactionDisabled)
 .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-  background-color: #f0f8ff;
+  background-color: #3cc69e;
+  color: white;
   border-radius: 50%; }
 
 /* DayPickerInput */
@@ -242,6 +247,12 @@ with a class attribute containing 'col-' */
   position: absolute;
   background: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); }
+
+.DayPicker-day--selectedStart {
+  background-color: red; }
+
+.DayPicker-Day--selectedEnd {
+  background-color: red; }
 
 header {
   display: flex;
@@ -829,7 +840,7 @@ footer {
       color: white;
       font-size: 18px;
       text-align: center;
-      padding: 25px 25px; }
+      padding: 25px 10px; }
     .booking-form .booking-header button, .booking-form .booking-header a {
       background-color: #40d9ac;
       width: 75%; }
@@ -935,5 +946,10 @@ footer {
     font-size: 14px;
     width: 15px;
     padding-top: 3px; }
+
+.booking-errors {
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: #8b0000; }
 
 /*# sourceMappingURL=output.css.map */

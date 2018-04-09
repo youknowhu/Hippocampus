@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  validates :guest_id, :listing_id, :start_date, :end_date, :num_guests,
+  validates :guest_id, :listing_id, :check_in, :check_out, :num_guests,
     presence: true
 
   belongs_to :listing
