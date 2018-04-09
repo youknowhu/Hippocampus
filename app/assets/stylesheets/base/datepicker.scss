@@ -22,6 +22,7 @@
   user-select: none;
   margin: 0 1rem;
   margin-top: 1rem;
+  color: $gray;
 }
 
 .DayPicker-NavBar {
@@ -44,6 +45,7 @@
 
 .DayPicker-NavButton:hover {
   opacity: 0.8;
+
 }
 
 .DayPicker-NavButton--prev {
@@ -68,7 +70,8 @@
 
 .DayPicker-Caption > div {
   font-size: 1.15rem;
-  font-weight: 500;
+  font-weight: 700;
+  color: $dark-gray;
 }
 
 .DayPicker-Weekdays {
@@ -85,7 +88,7 @@
   padding: 0.5rem;
   font-size: 0.875em;
   text-align: center;
-  color: #8b9898;
+  color: $dark-gray;
 }
 
 .DayPicker-Weekday abbr[title] {
@@ -143,7 +146,7 @@
 /* Default modifiers */
 
 .DayPicker-Day--today {
-  color: #d0021b;
+  color: $green-cyan;
   font-weight: 700;
 }
 
@@ -170,19 +173,23 @@
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
   position: relative;
-  color: #f0f8ff;
-  background-color: #4a90e2;
-  border-radius: 100%;
+  background-color: $darker-green;
+  color: white;
+  border-radius: 50%
 }
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
-  background-color: #51a0fa;
+  background-color: $darker-green;
+  color: white;
+  border-radius: 50%
 }
 
 .DayPicker:not(.DayPicker--interactionDisabled)
   .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-  background-color: #f0f8ff;
-  border-radius: 50%;
+  background-color: $darker-green;
+  color: white;
+  border-radius: 50%
+
 }
 
 /* DayPickerInput */
@@ -203,35 +210,10 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+.DayPicker-day--selectedStart {
+  background-color: red;
+}
 
-//
-//
-// .ui-datepicker {
-//   color: $gray;
-//   border: 1px solid $light-gray;
-//   padding: 10px;
-//   font-size: 15px;
-// }
-//
-// .ui-datepicker-header {
-//   font-weight: bold;
-//   text-align: center;
-// }
-//
-// .ui-datepicker-prev {
-//   float: left;
-//   cursor: pointer;
-// }
-// .ui-datepicker-next {
-//   float: right;
-//   cursor: pointer;
-// }
-//
-// .ui-datepicker-title {
-//   font-weight: 700;
-// }
-//
-// .ui-datepicker-next, .ui-datepicker-prev {
-//   color: $green-cyan;
-//   font-weight: 700;
-// }
+.DayPicker-Day--selectedEnd {
+  background-color: red;
+}

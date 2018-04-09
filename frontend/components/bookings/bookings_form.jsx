@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
+import DayPicker from 'react-day-picker';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import DateFormat from 'dateformat';
@@ -54,6 +55,7 @@ class BookingsForm extends React.Component {
       format: 'M/D/YYYY',
       formatDate: format,
       parseDate: parse,
+      dayPickerProps:{ disabledDays: {before: new Date()}}
     }
 
 
@@ -71,6 +73,10 @@ class BookingsForm extends React.Component {
     } else if (currentUserBookings !==  null ) {
       const startDateFormatted = DateFormat(currentUserBookings.start_date, 'UTC:m/d/yyyy')
       const endDateFormatted = DateFormat(currentUserBookings.end_date,'UTC:m/d/yyyy')
+      const numDays = (this.state.endDate - this.state.startDate)/1000/60/60/24
+      const resDays =
+          numDays ===  1 ? numDays + " night" : numDays + " nights";
+
 
       return (
         <div className="booking-form">
@@ -91,18 +97,36 @@ class BookingsForm extends React.Component {
               <p className="booked-guests">{currentUserBookings.num_guests}</p>
             </div>
           </div>
+          <div className="booking-total-shown">
+            <h3>Total</h3>
+              <div className="booking-total-calc">
+                <p> ${listing.dailyCost} x {resDays}</p>
+                <h3> ${listing.dailyCost * numDays}</h3>
+              </div>
+          </div>
           <div className="booking-cancel">
             <a onClick={() =>
               this.props.deleteBooking(currentUserBookings.id)
                 .then(() => this.props.fetchSingleListing(this.state.listingId))
             }>
-              Cancel Booking
+              Cancel Reservation
             </a>
           </div>
         </div>
       )
     } else {
       const numDays = (this.state.endDate - this.state.startDate)/1000/60/60/24
+
+      const resDays =
+          numDays ===  1 ? numDays + " night" : numDays + " nights";
+
+      const startModifier = {
+        selectedStart: this.state.startDate,
+      }
+
+      const endModifier = {
+        selectedEnd: this.state.endDate,
+      }
 
       return (
         <form className="booking-form" onSubmit={this.handleSubmit}>
@@ -117,6 +141,12 @@ class BookingsForm extends React.Component {
                 {...dateSettings}
                 value={this.state.startDate}
                 onDayChange={this.handleDayChange('startDate')}
+                dayPickerProps={ {
+                  disabledDays: [
+                    { before: new Date() },
+                    { after: new Date(this.state.endDate) }],
+                  selectedDays: this.state.endDate,
+                }}
                 />
             </div>
             <div className="booking-field-date">
@@ -125,6 +155,11 @@ class BookingsForm extends React.Component {
                 {...dateSettings}
                 value={this.state.endDate}
                 onDayChange={this.handleDayChange('endDate')}
+                dayPickerProps={ {
+                  disabledDays: 
+                    { before: new Date(this.state.startDate) },
+                  selectedDays: this.state.startDate,
+                }}
               />
             </div>
             <div className="booking-field-guests">
@@ -142,7 +177,7 @@ class BookingsForm extends React.Component {
             <div className="booking-total-shown">
               <h3>Total</h3>
                 <div className="booking-total-calc">
-                  <p> ${listing.dailyCost} x {numDays} night(s)</p>
+                  <p> ${listing.dailyCost} x {resDays}</p>
                   <h3> ${listing.dailyCost * numDays}</h3>
                 </div>
             </div>
