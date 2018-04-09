@@ -37,7 +37,8 @@
     display: flex;
 
     .listing-left {
-      width: 65%;
+      width: 67%;
+      padding-right: 75px;
 
       p {
         font-size: 15px;
@@ -77,6 +78,7 @@
           font-size: 15px;
           padding-top: 0px;
           margin: 0;
+          padding-right: 7px;
 
 
           h3, p {
@@ -164,9 +166,8 @@
     }
 
     .listing-right {
-      width: 35%;
+      width: 33%;
       margin: 0 auto;
-      padding-left: 50px;
       text-align: center;
 
     }

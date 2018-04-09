@@ -1,5 +1,5 @@
 .booking-form {
-  padding-left: 50px;
+  width: 100%;
 
   .booking-header {
     display: flex;
@@ -16,6 +16,7 @@
 
     button {
       background-color: $green-cyan;
+      width: 75%;
     }
 
     button:hover {
@@ -25,7 +26,57 @@
     h2 {
       background-color: $darker-green;
       padding: 25px;
+      width: 25%;
     }
   }
 
+  .booking-selections{
+    display: flex;
+    width: 100%;
+
+    .booking-field {
+      border-left: 1px solid $light-gray;
+      border-bottom: 1px solid $light-gray;
+      width: 33%;
+      padding: 12px 8px;
+
+
+      h3, input {
+        width: 100%;
+        font-size: 14px;
+        color: $dark-gray;
+        text-align: left;
+        margin: 0;
+      }
+
+      input {
+        font-weight: 200;
+      }
+    }
+
+    .booking-field:last-child {
+      border-right: 1px solid $light-gray;
+    }
+
+    .booking-guests {
+      display: flex;
+      justify-content: flex-start;
+
+      > * {
+        padding: 0px 5px;
+      }
+
+      p {
+        color: $dark-gray;
+      }
+
+      button {
+        font-weight: bold;
+      }
+    }
+
+    .booking-total {
+      border: 1px solid $light-gray;
+    }
+  }
 }
