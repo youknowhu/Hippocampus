@@ -68,7 +68,7 @@ class BookingsForm extends React.Component {
             <button onClick={this.handleSubmit}>Book Site</button>
           </div>
           <div className="booking-selections">
-            <div className="booking-field">
+            <div className="booking-field-date">
               <h3>Check In</h3>
               <DayPickerInput
                 {...dateSettings}
@@ -76,7 +76,7 @@ class BookingsForm extends React.Component {
                 onDayChange={this.handleDayChange('startDate')}
                 />
             </div>
-            <div className="booking-field">
+            <div className="booking-field-date">
               <h3>Check Out</h3>
               <DayPickerInput
                 {...dateSettings}
@@ -84,7 +84,7 @@ class BookingsForm extends React.Component {
                 onDayChange={this.handleDayChange('endDate')}
               />
             </div>
-            <div className="booking-field">
+            <div className="booking-field-guests">
               <h3>Guests</h3>
               <div className="booking-guests">
                 <a onClick={this.handleStep('-')}> - </a>

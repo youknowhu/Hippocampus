@@ -9,7 +9,7 @@ const msp = (state) => {
   const currentUser = state.session.currentUser || {};
   const booking = {
     guestId: currentUser.id, listingId: listing.id,
-    numGuests: 1, totalCost: 0, startDate: '', endDate: ''
+    numGuests: 1, startDate: '', endDate: ''
   };
 
   return {

@@ -99,27 +99,27 @@ review7 = Review.create!(user_id: user5.id, listing_id: listing2.id,
 
 booking1 = Booking.create!(guest_id: user3.id, listing_id: listing2.id,
   start_date: Date.new(2018, 2, 3), end_date: Date.new(2018, 2, 5),
-  num_guests: 4, total_cost: 80)
+  num_guests: 4)
 
 booking2 = Booking.create!(guest_id: user4.id, listing_id: listing2.id,
   start_date: Date.new(2018, 2, 10), end_date: Date.new(2018, 2, 15),
-  num_guests: 5, total_cost: 200)
+  num_guests: 5)
 
 booking3 = Booking.create!(guest_id: user5.id, listing_id: listing2.id,
   start_date: Date.new(2018, 2, 20), end_date: Date.new(2018, 2, 22),
-  num_guests: 3, total_cost: 80)
+  num_guests: 3)
 
 booking4 = Booking.create!(guest_id: user3.id, listing_id: listing3.id,
   start_date: Date.new(2018, 3, 1), end_date: Date.new(2018, 3, 4),
-  num_guests: 11, total_cost: 75)
+  num_guests: 11)
 
 booking5 = Booking.create!(guest_id: user4.id, listing_id: listing3.id,
   start_date: Date.new(2018, 3, 13), end_date: Date.new(2018, 3, 15),
-  num_guests: 12, total_cost: 50)
+  num_guests: 12)
 
 booking6 = Booking.create!(guest_id: user2.id, listing_id: listing1.id,
   start_date: Date.new(2018, 4, 1), end_date: Date.new(2018, 4, 4),
-  num_guests: 5, total_cost: 75)
+  num_guests: 5)
 
 listing_photos1 = ListingPhoto.create!(listing_id: listing3.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522866762/oval2.jpg',

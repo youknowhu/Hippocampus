@@ -11,7 +11,7 @@
       color: white;
       font-size: 18px;
       text-align: center;
-      padding: 25px 65px;
+      padding: 25px 25px;
     }
 
     button {
@@ -26,7 +26,7 @@
     h2 {
       background-color: $darker-green;
       padding: 25px;
-      width: 25%;
+      
     }
   }
 
@@ -34,10 +34,10 @@
     display: flex;
     width: 100%;
 
-    .booking-field {
+    .booking-field-date {
       border-left: 1px solid $light-gray;
       border-bottom: 1px solid $light-gray;
-      width: 33%;
+      width: 37%;
       padding: 12px 8px;
 
 
@@ -54,8 +54,25 @@
       }
     }
 
-    .booking-field:last-child {
+    .booking-field-guests {
+      border-left: 1px solid $light-gray;
+      border-bottom: 1px solid $light-gray;
       border-right: 1px solid $light-gray;
+      width: 26%;
+      padding: 12px 8px;
+
+
+      h3, input {
+        width: 100%;
+        font-size: 14px;
+        color: $dark-gray;
+        text-align: left;
+        margin: 0;
+      }
+
+      input {
+        font-weight: 200;
+      }
     }
 
     .booking-guests {

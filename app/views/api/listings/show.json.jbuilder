@@ -20,7 +20,7 @@ json.bookings do
   @listing.bookings.each do |booking|
     json.set! booking.id do
       json.extract! booking, :id, :guest_id, :listing_id, :start_date,
-        :end_date, :num_guests, :total_cost, :created_at
+        :end_date, :num_guests, :created_at
     end
   end
 end

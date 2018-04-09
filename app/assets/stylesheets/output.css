@@ -331,7 +331,7 @@ header {
     margin: 0 auto;
     display: flex; }
     .listing-page .listing-content .listing-left {
-      width: 67%;
+      width: 70%;
       padding-right: 75px; }
       .listing-page .listing-content .listing-left p {
         font-size: 15px;
@@ -411,7 +411,7 @@ header {
       display: flex;
       margin-bottom: 10px; }
     .listing-page .listing-content .listing-right {
-      width: 33%;
+      width: 30%;
       margin: 0 auto;
       text-align: center; }
 
@@ -829,7 +829,7 @@ footer {
       color: white;
       font-size: 18px;
       text-align: center;
-      padding: 25px 65px; }
+      padding: 25px 25px; }
     .booking-form .booking-header button {
       background-color: #40d9ac;
       width: 75%; }
@@ -837,26 +837,37 @@ footer {
       background-color: #3cc69e; }
     .booking-form .booking-header h2 {
       background-color: #3cc69e;
-      padding: 25px;
-      width: 25%; }
+      padding: 25px; }
   .booking-form .booking-selections {
     display: flex;
     width: 100%; }
-    .booking-form .booking-selections .booking-field {
+    .booking-form .booking-selections .booking-field-date {
       border-left: 1px solid #ebebeb;
       border-bottom: 1px solid #ebebeb;
-      width: 33%;
+      width: 37%;
       padding: 12px 8px; }
-      .booking-form .booking-selections .booking-field h3, .booking-form .booking-selections .booking-field input {
+      .booking-form .booking-selections .booking-field-date h3, .booking-form .booking-selections .booking-field-date input {
         width: 100%;
         font-size: 14px;
         color: #333333;
         text-align: left;
         margin: 0; }
-      .booking-form .booking-selections .booking-field input {
+      .booking-form .booking-selections .booking-field-date input {
         font-weight: 200; }
-    .booking-form .booking-selections .booking-field:last-child {
-      border-right: 1px solid #ebebeb; }
+    .booking-form .booking-selections .booking-field-guests {
+      border-left: 1px solid #ebebeb;
+      border-bottom: 1px solid #ebebeb;
+      border-right: 1px solid #ebebeb;
+      width: 26%;
+      padding: 12px 8px; }
+      .booking-form .booking-selections .booking-field-guests h3, .booking-form .booking-selections .booking-field-guests input {
+        width: 100%;
+        font-size: 14px;
+        color: #333333;
+        text-align: left;
+        margin: 0; }
+      .booking-form .booking-selections .booking-field-guests input {
+        font-weight: 200; }
     .booking-form .booking-selections .booking-guests {
       display: flex;
       justify-content: flex-start;
