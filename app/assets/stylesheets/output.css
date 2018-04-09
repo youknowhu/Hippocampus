@@ -342,7 +342,7 @@ header {
     margin: 0 auto;
     display: flex; }
     .listing-page .listing-content .listing-left {
-      width: 70%;
+      width: 67%;
       padding-right: 75px; }
       .listing-page .listing-content .listing-left p {
         font-size: 15px;
@@ -422,7 +422,7 @@ header {
       display: flex;
       margin-bottom: 10px; }
     .listing-page .listing-content .listing-right {
-      width: 30%;
+      width: 33%;
       margin: 0 auto;
       text-align: center; }
 
