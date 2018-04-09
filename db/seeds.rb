@@ -98,27 +98,27 @@ review7 = Review.create!(user_id: user5.id, listing_id: listing2.id,
   grey donuts.' )
 
 booking1 = Booking.create!(guest_id: user3.id, listing_id: listing2.id,
-  start_date: Date.new(2018, 2, 3), end_date: Date.new(2018, 2, 5),
+  check_in: Date.new(2018, 2, 3), check_out: Date.new(2018, 2, 5),
   num_guests: 4)
 
 booking2 = Booking.create!(guest_id: user4.id, listing_id: listing2.id,
-  start_date: Date.new(2018, 2, 10), end_date: Date.new(2018, 2, 15),
+  check_in: Date.new(2018, 2, 10), check_out: Date.new(2018, 2, 15),
   num_guests: 5)
 
 booking3 = Booking.create!(guest_id: user5.id, listing_id: listing2.id,
-  start_date: Date.new(2018, 2, 20), end_date: Date.new(2018, 2, 22),
+  check_in: Date.new(2018, 2, 20), check_out: Date.new(2018, 2, 22),
   num_guests: 3)
 
 booking4 = Booking.create!(guest_id: user3.id, listing_id: listing3.id,
-  start_date: Date.new(2018, 3, 1), end_date: Date.new(2018, 3, 4),
+  check_in: Date.new(2018, 3, 1), check_out: Date.new(2018, 3, 4),
   num_guests: 11)
 
 booking5 = Booking.create!(guest_id: user4.id, listing_id: listing3.id,
-  start_date: Date.new(2018, 3, 13), end_date: Date.new(2018, 3, 15),
+  check_in: Date.new(2018, 3, 13), check_out: Date.new(2018, 3, 15),
   num_guests: 12)
 
 booking6 = Booking.create!(guest_id: user2.id, listing_id: listing1.id,
-  start_date: Date.new(2018, 4, 1), end_date: Date.new(2018, 4, 4),
+  check_in: Date.new(2018, 4, 1), check_out: Date.new(2018, 4, 4),
   num_guests: 5)
 
 listing_photos1 = ListingPhoto.create!(listing_id: listing3.id,
