@@ -560,7 +560,8 @@ footer {
           color: white;
           text-align: center;
           vertical-align: middle;
-          line-height: 100px;
+          padding-top: 30px;
+          margin: 0;
           width: 30%; }
 
 .search-subtext {
@@ -585,7 +586,7 @@ footer {
     border-bottom: 1px solid #ebebeb; }
 
 .discover-filters {
-  width: 60vw;
+  width: 75vw;
   margin: 0 auto; }
   .discover-filters > h2 {
     text-align: center;
@@ -607,8 +608,8 @@ footer {
       .discover-filters .discover-grid .discover-square .crop {
         height: 100%;
         position: relative;
-        width: 340px;
-        height: 340px; }
+        width: 360px;
+        height: 360px; }
         .discover-filters .discover-grid .discover-square .crop img {
           display: block;
           min-height: 100%;
@@ -767,7 +768,7 @@ footer {
       .reviews-section .review-form main button {
         background-color: #40d9ac;
         color: white;
-        font-weight: 700;
+        font-weight: 200;
         font-size: 16px;
         text-align: center;
         padding: 20px 20px; }

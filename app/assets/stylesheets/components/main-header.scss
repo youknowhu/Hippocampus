@@ -105,8 +105,9 @@
         color: white;
         text-align: center;
         vertical-align: middle;
-        line-height: 100px;
-        width: 30%;//hardcoded. Should fix this!
+        padding-top: 30px; //hardcoded.
+        margin: 0;
+        width: 30%;
         }
       }
     }

@@ -8,7 +8,8 @@ const BookingsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_SINGLE_LISTING:
-      return action.payload.bookings;
+    newState = merge({}, action.payload.bookings);
+    return newState;
     case RECEIVE_BOOKING:
       newState = merge({}, state, { [action.booking.id]: action.booking });
       return newState;

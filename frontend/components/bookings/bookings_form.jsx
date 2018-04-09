@@ -60,6 +60,8 @@ class BookingsForm extends React.Component {
   }
 
 
+
+
   render() {
     const { bookings, currentUser, listing, booking, currentUserBookings } = this.props;
     const dateSettings = {
@@ -79,7 +81,7 @@ class BookingsForm extends React.Component {
         <div className="booking-form">
           <div className='booking-header'>
             <h2>${listing.dailyCost}</h2>
-            <Link to="/login">Log In To Book Site</Link>
+            <Link to="/login">Log In To Book</Link>
           </div>
         </div>
       )

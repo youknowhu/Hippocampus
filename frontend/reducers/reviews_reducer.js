@@ -8,7 +8,8 @@ const ReviewsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_SINGLE_LISTING:
-      return action.payload.reviews;
+      newState = merge({}, action.payload.reviews);
+      return newState;
     case RECEIVE_REVIEW:
       newState = merge({}, state, { [action.review.id]: action.review });
       return newState;
