@@ -1,10 +1,12 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Link, withRouter } from 'react-router-dom';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import DayPicker from 'react-day-picker';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import DateFormat from 'dateformat';
+
 
 
 class BookingsForm extends React.Component {
@@ -14,6 +16,8 @@ class BookingsForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleStep = this.handleStep.bind(this);
+    this.renderStickyForm = this.renderStickyForm.bind(this);
+    this.myRef = React.createRef();
   }
 
   update(field) {
@@ -28,6 +32,10 @@ class BookingsForm extends React.Component {
     };
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.renderStickyForm);
+  }
+
   handleStep(stepParam) {
     return e => {
       if (stepParam === '+' && (this.state.numGuests + 1 <= this.props.listing.maxCapacity)) {
@@ -35,6 +43,19 @@ class BookingsForm extends React.Component {
       } else if (stepParam === '-' && (this.state.numGuests - 1 >= 1)) {
         this.setState({ numGuests: (this.state.numGuests - 1) })
       }
+    }
+  }
+
+  renderStickyForm() {
+    const bookingForm = this.myRef.current;
+    const stickyPosition = 400;
+    console.log(window.pageYOffset)
+    bookingForm.addEventListener('scroll', () => console.log('scroll!'))
+
+    if (window.pageYOffset >= stickyPosition) {
+      bookingForm.classList.add('sticky')
+    } else {
+      bookingForm.classList.remove('sticky')
     }
   }
 
@@ -78,7 +99,7 @@ class BookingsForm extends React.Component {
       return (<div> </div>)
     } else if ( Object.keys(currentUser).length === 0 ) { //user logged out
       return (
-        <div className="booking-form">
+        <div onScroll={ ()=> this.renderStickyForm} id="booking-form" ref={this.myRef}>
           <div className='booking-header'>
             <h2>${listing.dailyCost}</h2>
             <Link to="/login">Log In To Book</Link>
@@ -94,7 +115,7 @@ class BookingsForm extends React.Component {
 
 
       return (
-        <div className="booking-form">
+        <div id="booking-form" ref={this.myRef} onScroll={() => this.renderStickyForm} >
           <div className='booked-header'>
             <button>Booked Reservation</button>
           </div>
@@ -145,7 +166,8 @@ class BookingsForm extends React.Component {
       }
 
       return (
-        <form className="booking-form" onSubmit={this.handleSubmit}>
+        <form id="booking-form" ref={this.myRef}
+        onSubmit={this.handleSubmit} onScroll={ () => this.renderStickyForm} >
           <div className='booking-header'>
             <h2>${listing.dailyCost}</h2>
             <button onClick={this.handleSubmit}>Book Site</button>

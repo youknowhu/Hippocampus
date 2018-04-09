@@ -830,119 +830,124 @@ footer {
         font-size: 12px;
         line-height: 20px; }
 
-.booking-form {
-  width: 100%; }
-  .booking-form .booking-header {
+.sticky {
+  position: fixed;
+  top: 75px;
+  background-color: white; }
+
+#booking-form {
+  width: 300px; }
+  #booking-form .booking-header {
     display: flex;
     width: 100%; }
-    .booking-form .booking-header button, .booking-form .booking-header h2, .booking-form .booking-header a {
+    #booking-form .booking-header button, #booking-form .booking-header h2, #booking-form .booking-header a {
       box-sizing: border-box;
       font-weight: 200;
       color: white;
       font-size: 16px;
       text-align: center;
       padding: 25px 10px; }
-    .booking-form .booking-header button, .booking-form .booking-header a {
+    #booking-form .booking-header button, #booking-form .booking-header a {
       background-color: #40d9ac;
       width: 75%; }
-    .booking-form .booking-header button:hover, .booking-form .booking-header a:hover {
+    #booking-form .booking-header button:hover, #booking-form .booking-header a:hover {
       background-color: #3cc69e; }
-    .booking-form .booking-header h2 {
+    #booking-form .booking-header h2 {
       background-color: #3cc69e;
       padding: 25px; }
-  .booking-form .booking-selections {
+  #booking-form .booking-selections {
     display: flex;
     width: 100%; }
-    .booking-form .booking-selections .booking-field-date {
+    #booking-form .booking-selections .booking-field-date {
       border-left: 1px solid #ebebeb;
       border-bottom: 1px solid #ebebeb;
       width: 34%;
       padding: 15px 10px; }
-      .booking-form .booking-selections .booking-field-date h3, .booking-form .booking-selections .booking-field-date input, .booking-form .booking-selections .booking-field-date p {
+      #booking-form .booking-selections .booking-field-date h3, #booking-form .booking-selections .booking-field-date input, #booking-form .booking-selections .booking-field-date p {
         width: 100%;
         font-size: 14px;
         color: #333333;
         text-align: left;
         margin: 0; }
-      .booking-form .booking-selections .booking-field-date input {
+      #booking-form .booking-selections .booking-field-date input {
         font-weight: 200; }
-    .booking-form .booking-selections .booking-field-guests {
+    #booking-form .booking-selections .booking-field-guests {
       border-left: 1px solid #ebebeb;
       border-bottom: 1px solid #ebebeb;
       border-right: 1px solid #ebebeb;
       width: 32%;
       padding: 15px 10px; }
-      .booking-form .booking-selections .booking-field-guests h3, .booking-form .booking-selections .booking-field-guests input {
+      #booking-form .booking-selections .booking-field-guests h3, #booking-form .booking-selections .booking-field-guests input {
         width: 100%;
         font-size: 14px;
         color: #333333;
         text-align: left;
         margin: 0; }
-      .booking-form .booking-selections .booking-field-guests input, .booking-form .booking-selections .booking-field-guests p {
+      #booking-form .booking-selections .booking-field-guests input, #booking-form .booking-selections .booking-field-guests p {
         font-weight: 200; }
-    .booking-form .booking-selections .booking-guests {
+    #booking-form .booking-selections .booking-guests {
       display: flex;
       justify-content: flex-start;
       padding-top: 3px; }
-      .booking-form .booking-selections .booking-guests > * {
+      #booking-form .booking-selections .booking-guests > * {
         padding: 0px 5px;
         font-size: 14px;
         color: #333333;
         font-weight: 200; }
-      .booking-form .booking-selections .booking-guests a:hover {
+      #booking-form .booking-selections .booking-guests a:hover {
         cursor: pointer; }
-  .booking-form .booking-total-shown {
+  #booking-form .booking-total-shown {
     border: 1px solid #ebebeb;
     border-top: none;
     display: flex;
     flex-direction: column;
     padding: 15px 10px; }
-    .booking-form .booking-total-shown .booking-total-calc {
+    #booking-form .booking-total-shown .booking-total-calc {
       display: flex;
       justify-content: space-between; }
-    .booking-form .booking-total-shown h3 {
+    #booking-form .booking-total-shown h3 {
       box-sizing: border-box;
       font-size: 14px;
       color: #333333;
       text-align: left;
       margin: 0; }
-    .booking-form .booking-total-shown p {
+    #booking-form .booking-total-shown p {
       box-sizing: border-box;
       padding: 0;
       font-weight: 200;
       font-size: 14px; }
-  .booking-form .booked-header {
+  #booking-form .booked-header {
     display: flex;
     width: 100%; }
-    .booking-form .booked-header button, .booking-form .booked-header h2, .booking-form .booked-header a {
+    #booking-form .booked-header button, #booking-form .booked-header h2, #booking-form .booked-header a {
       box-sizing: border-box;
       font-weight: 200;
       color: white;
       font-size: 18px;
       text-align: center;
       padding: 25px 25px; }
-    .booking-form .booked-header h2, .booking-form .booked-header button {
+    #booking-form .booked-header h2, #booking-form .booked-header button {
       background-color: #3cc69e; }
-    .booking-form .booked-header button {
+    #booking-form .booked-header button {
       width: 100%;
       cursor: default; }
-  .booking-form .booking-cancel {
+  #booking-form .booking-cancel {
     padding: 10px; }
-    .booking-form .booking-cancel a {
+    #booking-form .booking-cancel a {
       color: #40d9ac;
       line-height: 16px;
       vertical-align: middle;
       align-content: center;
       top: 50%;
       padding: 20px 30px; }
-    .booking-form .booking-cancel a:hover {
+    #booking-form .booking-cancel a:hover {
       color: #333333;
       text-decoration: underline;
       cursor: pointer; }
-  .booking-form .booked-field {
+  #booking-form .booked-field {
     font-weight: 200;
     padding-top: 3px; }
-  .booking-form .booked-guests {
+  #booking-form .booked-guests {
     font-weight: 200;
     font-size: 14px;
     width: 15px;
@@ -952,5 +957,11 @@ footer {
   padding-bottom: 5px;
   font-size: 14px;
   color: #8b0000; }
+
+.map {
+  width: 1000px;
+  height: 1000px;
+  background-color: white;
+  position: relative; }
 
 /*# sourceMappingURL=output.css.map */

@@ -1,5 +1,11 @@
- .booking-form {
-  width: 100%;
+.sticky {
+  position: fixed;
+  top: 75px;
+  background-color: white;
+}
+
+ #booking-form {
+  width: 300px;
 
   .booking-header {
     display: flex;
