@@ -1,8 +1,9 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
+import DateFormat from 'dateformat';
 
 
 class BookingsForm extends React.Component {
@@ -46,7 +47,7 @@ class BookingsForm extends React.Component {
 
 
   render() {
-    const { bookings, currentUser, listing, booking } = this.props;
+    const { bookings, currentUser, listing, booking, currentUserBookings } = this.props;
     const dateSettings = {
       clickUnselectsDay: true,
       placeholder: "Select date",
@@ -58,6 +59,48 @@ class BookingsForm extends React.Component {
 
     if (!listing) {
       return (<div> </div>)
+    } else if ( Object.keys(currentUser).length === 0 ) { //user logged out
+      return (
+        <div className="booking-form">
+          <div className='booking-header'>
+            <h2>${listing.dailyCost}</h2>
+            <Link to="/login">Log In To Book Site</Link>
+          </div>
+        </div>
+      )
+    } else if (currentUserBookings !==  null ) {
+      const startDateFormatted = DateFormat(currentUserBookings.start_date, 'UTC:m/d/yyyy')
+      const endDateFormatted = DateFormat(currentUserBookings.end_date,'UTC:m/d/yyyy')
+
+      return (
+        <div className="booking-form">
+          <div className='booked-header'>
+            <button>Booked Reservation</button>
+          </div>
+          <div className="booking-selections">
+            <div className="booking-field-date">
+              <h3>Check In</h3>
+              <p className="booked-field">{startDateFormatted}</p>
+            </div>
+            <div className="booking-field-date">
+              <h3>Check Out</h3>
+              <p className="booked-field">{endDateFormatted}</p>
+            </div>
+            <div className="booking-field-guests">
+              <h3>Guests</h3>
+              <p className="booked-guests">{currentUserBookings.num_guests}</p>
+            </div>
+          </div>
+          <div className="booking-cancel">
+            <a onClick={() =>
+              this.props.deleteBooking(currentUserBookings.id)
+                .then(() => this.props.fetchSingleListing(this.state.listingId))
+            }>
+              Cancel Booking
+            </a>
+          </div>
+        </div>
+      )
     } else {
       const numDays = (this.state.endDate - this.state.startDate)/1000/60/60/24
 

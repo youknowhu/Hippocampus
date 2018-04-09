@@ -6,8 +6,7 @@ class ReviewsIndexItem extends React.Component {
 
   render() {
     const { user, review } = this.props;
-    const reviewDate = new Date(review.createdAt);
-    const reviewDateFormatted = DateFormat('mmm dS, yyyy')
+    const reviewDateFormatted = DateFormat(review.createdAt, 'mmm dS, yyyy')
 
     return (
       <div className="reviews-index-item">

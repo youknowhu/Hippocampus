@@ -5,7 +5,7 @@
     display: flex;
     width: 100%;
 
-    button, h2 {
+    button, h2, a {
       box-sizing: border-box;
       font-weight: 200;
       color: white;
@@ -14,19 +14,19 @@
       padding: 25px 25px;
     }
 
-    button {
+    button, a {
       background-color: $green-cyan;
       width: 75%;
     }
 
-    button:hover {
+    button:hover, a:hover {
       background-color: $darker-green;
     }
 
     h2 {
       background-color: $darker-green;
       padding: 25px;
-      
+
     }
   }
 
@@ -37,11 +37,11 @@
     .booking-field-date {
       border-left: 1px solid $light-gray;
       border-bottom: 1px solid $light-gray;
-      width: 37%;
-      padding: 12px 8px;
+      width: 34%;
+      padding: 15px 10px;
 
 
-      h3, input {
+      h3, input, p {
         width: 100%;
         font-size: 14px;
         color: $dark-gray;
@@ -58,8 +58,8 @@
       border-left: 1px solid $light-gray;
       border-bottom: 1px solid $light-gray;
       border-right: 1px solid $light-gray;
-      width: 26%;
-      padding: 12px 8px;
+      width: 32%;
+      padding: 15px 10px;
 
 
       h3, input {
@@ -70,8 +70,9 @@
         margin: 0;
       }
 
-      input {
+      input, p {
         font-weight: 200;
+
       }
     }
 
@@ -99,6 +100,7 @@
     border-top: none;
     display: flex;
     flex-direction: column;
+    padding: 15px 10px;
 
     .booking-total-calc {
       display: flex;
@@ -107,7 +109,6 @@
 
     h3 {
       box-sizing: border-box;
-      padding: 5px 8px;
       font-size: 14px;
       color: $dark-gray;
       text-align: left;
@@ -119,9 +120,60 @@
       padding: 0;
       font-weight: 200;
       font-size: 14px;
-      padding: 5px 8px;
     }
-
   }
 
+  .booked-header {
+    display: flex;
+    width: 100%;
+
+    button, h2, a {
+      box-sizing: border-box;
+      font-weight: 200;
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      padding: 25px 25px;
+
+    }
+
+    h2, button {
+      background-color: $darker-green;
+    }
+
+    button {
+      width: 100%;
+      cursor: default;
+    }
+  }
+
+  .booking-cancel {
+    padding: 10px;
+    a {
+      color: $green-cyan;
+      line-height: 16px;
+      vertical-align: middle;
+      align-content: center;
+      top: 50%;
+      padding: 20px 30px;
+    }
+
+    a:hover {
+      color: $dark-gray;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .booked-field {
+    font-weight: 200;
+    padding-top: 3px;
+  }
+
+  .booked-guests {
+    font-weight: 200;
+    font-size: 14px;
+    width: 15px;
+    padding-top: 3px;
+  }
 }

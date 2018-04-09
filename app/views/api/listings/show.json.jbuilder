@@ -34,4 +34,5 @@ json.reviews do
   end
 end
 
-json.sortedReviews @reviews
+json.sorted_reviews @reviews
+json.current_user_bookings @current_user_bookings[0]
