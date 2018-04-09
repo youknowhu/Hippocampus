@@ -40,13 +40,12 @@ class BookingsForm extends React.Component {
     e.preventDefault();
 
     this.props.createBooking(this.state)
-      .then(() => thisprops.fetchSingleListing(this.state.listingId))
+      .then(() => this.props.fetchSingleListing(this.state.listingId))
       .then(() => this.props.history.push(`/listings/${this.state.listingId}`));
   }
 
 
   render() {
-    console.log(this.state)
     const { bookings, currentUser, listing, booking } = this.props;
     const dateSettings = {
       clickUnselectsDay: true,
@@ -66,7 +65,7 @@ class BookingsForm extends React.Component {
         <form className="booking-form" onSubmit={this.handleSubmit}>
           <div className='booking-header'>
             <h2>${listing.dailyCost}</h2>
-            <button>Book Site</button>
+            <button onClick={this.handleSubmit}>Book Site</button>
           </div>
           <div className="booking-selections">
             <div className="booking-field">
@@ -88,24 +87,26 @@ class BookingsForm extends React.Component {
             <div className="booking-field">
               <h3>Guests</h3>
               <div className="booking-guests">
-                <button onClick={this.handleStep('-')}> - </button>
+                <a onClick={this.handleStep('-')}> - </a>
                   <p> {this.state.numGuests} </p>
-                <button onClick={this.handleStep('+')}> + </button>
+                <a onClick={this.handleStep('+')}> + </a>
               </div>
             </div>
           </div>
+          <div className="booking-total">
           {
-            (this.state.startDate && this.state.endDate) ?
-            <div className="booking-total">
+            (this.state.startDate && this.state.endDate && numDays >= 1) ?
+            <div className="booking-total-shown">
               <h3>Total</h3>
-              <div className="booking-total-calc">
-                <p> ${listing.dailyCost} x {numDays} night(s)</p>
-                <p> ${listing.dailyCost * numDays}</p>
-              </div>
+                <div className="booking-total-calc">
+                  <p> ${listing.dailyCost} x {numDays} night(s)</p>
+                  <h3> ${listing.dailyCost * numDays}</h3>
+                </div>
             </div>
             :
             <div> </div>
           }
+          </div>
         </form>
       )
     }

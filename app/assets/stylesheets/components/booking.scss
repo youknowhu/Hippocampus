@@ -61,22 +61,50 @@
     .booking-guests {
       display: flex;
       justify-content: flex-start;
+      padding-top: 3px;
 
       > * {
         padding: 0px 5px;
-      }
-
-      p {
+        font-size: 14px;
         color: $dark-gray;
+        font-weight: 200;
       }
 
-      button {
-        font-weight: bold;
-      }
-    }
+      a:hover {
+        cursor: pointer;
 
-    .booking-total {
-      border: 1px solid $light-gray;
+      }
     }
   }
+
+  .booking-total-shown {
+    border: 1px solid $light-gray;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+
+    .booking-total-calc {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h3 {
+      box-sizing: border-box;
+      padding: 5px 8px;
+      font-size: 14px;
+      color: $dark-gray;
+      text-align: left;
+      margin: 0;
+    }
+
+    p {
+      box-sizing: border-box;
+      padding: 0;
+      font-weight: 200;
+      font-size: 14px;
+      padding: 5px 8px;
+    }
+
+  }
+
 }

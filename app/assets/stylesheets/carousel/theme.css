@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+  @charset 'UTF-8';
 .slick-dots,.slick-next,.slick-prev
 {position:absolute;display:block;padding:0}
 .slick-dots li button:before,.slick-next:before,.slick-prev:before

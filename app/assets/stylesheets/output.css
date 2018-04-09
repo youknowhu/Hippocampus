@@ -321,7 +321,8 @@ header {
       height: 50vh; }
     .listing-page .listing-photos .slick-prev:before, .listing-page .listing-photos .slick-next:before {
       color: #a1a1a1;
-      font-size: 24px; }
+      font-size: 24px;
+      font-family: 'slick'; }
     .listing-page .listing-photos .slick-prev:hover:before, .listing-page .listing-photos .slick-next:hover:before {
       color: #40d9ac; }
   .listing-page .listing-content {
@@ -858,14 +859,35 @@ footer {
       border-right: 1px solid #ebebeb; }
     .booking-form .booking-selections .booking-guests {
       display: flex;
-      justify-content: flex-start; }
+      justify-content: flex-start;
+      padding-top: 3px; }
       .booking-form .booking-selections .booking-guests > * {
-        padding: 0px 5px; }
-      .booking-form .booking-selections .booking-guests p {
-        color: #333333; }
-      .booking-form .booking-selections .booking-guests button {
-        font-weight: bold; }
-    .booking-form .booking-selections .booking-total {
-      border: 1px solid #ebebeb; }
+        padding: 0px 5px;
+        font-size: 14px;
+        color: #333333;
+        font-weight: 200; }
+      .booking-form .booking-selections .booking-guests a:hover {
+        cursor: pointer; }
+  .booking-form .booking-total-shown {
+    border: 1px solid #ebebeb;
+    border-top: none;
+    display: flex;
+    flex-direction: column; }
+    .booking-form .booking-total-shown .booking-total-calc {
+      display: flex;
+      justify-content: space-between; }
+    .booking-form .booking-total-shown h3 {
+      box-sizing: border-box;
+      padding: 5px 8px;
+      font-size: 14px;
+      color: #333333;
+      text-align: left;
+      margin: 0; }
+    .booking-form .booking-total-shown p {
+      box-sizing: border-box;
+      padding: 0;
+      font-weight: 200;
+      font-size: 14px;
+      padding: 5px 8px; }
 
 /*# sourceMappingURL=output.css.map */
