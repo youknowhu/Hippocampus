@@ -340,7 +340,8 @@ header {
     padding-top: 100px;
     width: 65vw;
     margin: 0 auto;
-    display: flex; }
+    display: flex;
+    z-index: 2; }
     .listing-page .listing-content .listing-left {
       width: 67%;
       padding-right: 75px; }

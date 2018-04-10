@@ -18,6 +18,7 @@ class BookingsForm extends React.Component {
     this.handleStep = this.handleStep.bind(this);
     this.renderStickyForm = this.renderStickyForm.bind(this);
     this.myRef = React.createRef();
+
   }
 
   update(field) {
@@ -76,11 +77,11 @@ class BookingsForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
+    debugger;
     this.props.createBooking(this.state)
-      .then(() => this.props.clearBookingErrors())
-      .then(() => this.props.fetchSingleListing(this.state.listingId))
-      .then(() => this.props.history.push(`/listings/${this.state.listingId}`));
+      .then(() => this.props.clearBookingErrors());
+      // .then(() => this.props.fetchSingleListing(this.state.listingId))
+      // .then(() => this.props.history.push(`/listings/${this.state.listingId}`));
   }
 
 

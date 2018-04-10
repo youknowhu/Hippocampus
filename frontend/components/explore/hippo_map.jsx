@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom';
 import MarkerManager from '../../util/marker_manager';
 
 const mapOptions = {
-  center: { lat: 37.7758, lng: -122.435},
-  zoom: 5.5,
+  center: { lat: 36.7855129, lng: -119.8646011},
+  zoom: 7,
 }
 
 
@@ -61,6 +61,7 @@ class HippoMap extends React.Component {
     this.clearMarkers();
     const filteredListings = this.applyFilters();
     console.log(filteredListings)
+    const icon = 'http://res.cloudinary.com/deor0br3s/image/upload/c_scale,w_100/v1523399623/Hippo_Marker_3.png'
 
     filteredListings.forEach(listing => {
       const listingPos = { lat: listing.lat, lng: listing.lng};
@@ -69,6 +70,7 @@ class HippoMap extends React.Component {
         position: listingPos,
         map: this.map,
         title: listing.title,
+        icon: icon,
       })
 
       this.markers.push(marker);

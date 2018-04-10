@@ -2,7 +2,7 @@ class Api::ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @reviews = @listing.reviews.order(created_at: :desc).pluck(:id)
-    
+
     if logged_in?
       @current_user_bookings = current_user.bookings
         .where('listing_id = ?', @listing.id)
@@ -17,7 +17,11 @@ class Api::ListingsController < ApplicationController
       .includes(:reviews)
       .includes(:bookings)
       .includes(:listing_photos)
+  end
 
+  def home_index
+    @listings = Listing.all
+    render 'api/listings/home_index.json.jbuilder'
   end
 
   private
