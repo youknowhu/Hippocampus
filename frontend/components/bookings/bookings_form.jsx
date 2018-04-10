@@ -36,6 +36,10 @@ class BookingsForm extends React.Component {
     window.addEventListener('scroll', this.renderStickyForm);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.renderStickyForm)
+  }
+
   handleStep(stepParam) {
     return e => {
       if (stepParam === '+' && (this.state.numGuests + 1 <= this.props.listing.maxCapacity)) {

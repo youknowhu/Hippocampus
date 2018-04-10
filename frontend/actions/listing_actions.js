@@ -3,9 +3,9 @@ import * as APIUtil from '../util/listing_api_util';
 export const RECEIVE_ALL_LISTINGS = 'RECEIVE_ALL_LISTINGS';
 export const RECEIVE_SINGLE_LISTING = 'RECEIVE_SINGLE_LISTING';
 
-const receiveAllListings = listings => ({
+const receiveAllListings = payload => ({
   type: RECEIVE_ALL_LISTINGS,
-  listings
+  payload
 });
 
 const receiveSingleListing = payload => ({

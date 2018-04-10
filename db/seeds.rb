@@ -37,12 +37,8 @@ user6 = User.create!(username: 'nps', password: 'password',
     img_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/US-NationalParkService-Logo.svg')
 
 listing1 = Listing.create!(host_id: user6.id, title: 'Glacier National Park',
-  body: "Glacier National Park is a 1,583-sq.-mi. wilderness area in
-  Montana's Rocky Mountains, with glacier-carved peaks and valleys
-  running to the Canadian border. It's crossed by the mountainous
-  Going-to-the-Sun Road. Among more than 700 miles of hiking trails,
-  it has a route to photogenic Hidden Lake. Other activities include
-  backpacking, cycling and camping. Diverse wildlife ranges from
+  body: "Glacier National Park's glacier-carved peaks and valleys
+  running to the Canadian border. Diverse wildlife ranges from
   mountain goats to grizzly bears.",
   daily_cost: 25, is_private: false, is_camping: true, allows_pets: false,
   max_capacity: 10, check_in_after: '2 PM', check_out_before: '12 PM',
@@ -55,7 +51,7 @@ listing2 = Listing.create!(host_id: user2.id, title: 'Strawberry Fields',
   daily_cost: 25, is_private: true, is_camping: true, allows_pets: true,
   max_capacity: 15, check_in_after: '2 PM', check_out_before: '11 AM',
   lat: 37.6387602, lng: -122.2063796,
-  icon_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522867205/iceland_lake_myvatn_camping-1090749.jpg')
+  icon_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523317167/wild_strawberries_cropped.jpg')
 
 listing3 = Listing.create!(host_id: user2.id, title: 'Treehouse Getaway',
   body: 'Relive your childhood and spend a few days in a remote treehouse.
@@ -63,35 +59,40 @@ listing3 = Listing.create!(host_id: user2.id, title: 'Treehouse Getaway',
   daily_cost: 40, is_private: true, is_camping: false, allows_pets: false,
   max_capacity: 5, check_in_after: '3 PM', check_out_before: '12 PM',
   lat: 37.7610734, lng: -122.4320376,
-  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522866762/oval2.jpg' )
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-4.jpg' )
 
 listing4 = Listing.create!(host_id: user6.id, title: 'Yellowstone',
-  body: "Yellowstone National Park is a nearly 3,500-sq.-mile wilderness recreation area atop a volcanic hot spot. Mostly in Wyoming, the park spreads into parts of Montana and Idaho too. Yellowstone features dramatic canyons, alpine rivers, lush forests, hot springs and gushing geysers, including its most famous, Old Faithful. It's also home to hundreds of animal species, including bears, wolves, bison, elk and antelope.",
+  body: "Yellowstone National Park was the first national park, and sits atop a super volcano, creating amazing sights
+  including the Grand Prismatic Spring.",
   daily_cost: 30, is_private: false, is_camping: true, allows_pets: true,
   max_capacity: 15, check_in_after: '1 PM', check_out_before: '12 PM',
   lat: 44.427963, lng: -110.588455,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522899844/yellowstone_cropped.jpg' )
 
 listing5 = Listing.create!(host_id: user6.id, title: 'Joshua Tree',
-  body: "Joshua Tree National Park is a vast protected area in southern California. It's characterized by rugged rock formations and stark desert landscapes. Named for the region’s twisted, bristled Joshua trees, the park straddles the cactus-dotted Colorado Desert and the Mojave Desert, which is higher and cooler. Keys View looks out over the Coachella Valley. Hiking trails weave through the boulders of Hidden Valley.",
+  body: "Joshua Tree has rugged rock formations and stark desert landscapes.
+  Named for the region’s twisted, bristled Joshua trees, the park straddles
+  the cactus-dotted Colorado Desert and the Mojave Desert",
   daily_cost: 15, is_private: false, is_camping: true, allows_pets: true,
   max_capacity: 12, check_in_after: '1 PM', check_out_before: '12 PM',
   lat: 33.873415, lng: -115.9009923,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522898893/joshua_tree_cropped.jpg' )
 
 listing6 = Listing.create!(host_id: user6.id, title: 'Zion National Park',
-  body: "Zion National Park is a southwest Utah nature preserve distinguished by Zion Canyon’s steep red cliffs. Zion Canyon Scenic Drive cuts through its main section, leading to forest trails along the Virgin River. The river flows to the Emerald Pools, which have waterfalls and a hanging garden. Also along the river, partly through deep chasms, is Zion Narrows wading hike.",
+  body: "Zion National Park has awe-insipring steep red cliffs. The most popular hikes
+  are the Narrows wading hike and Angels Landing.",
   daily_cost: 50, is_private: false, is_camping: true, allows_pets: false,
   max_capacity: 8, check_in_after: '3 PM', check_out_before: '11 AM',
   lat: 37.2982022, lng: -113.0263005,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522898903/Zion_National_Park.jpg' )
 
 listing7 = Listing.create!(host_id: user6.id, title: 'Channel Islands',
-  body: "Channel Islands National Park comprises 5 ecologically rich islands off the Southern California coast. Anacapa Island has trails to a 1932 lighthouse and clifftop Inspiration Point. Santa Cruz Island’s many sea caves include the vast Painted Cave. Santa Rosa Island features rare Torrey pines. Thousands of seals gather at San Miguel Island’s Point Bennett. Southernmost Santa Barbara Island draws nesting seabirds.",
+  body: "Channel Islands National Park comprises 5 ecologically rich
+  islands off the Southern California coast. There are many adorable island foxes that roam the island!",
   daily_cost: 25, is_private: false, is_camping: true, allows_pets: false,
   max_capacity: 8, check_in_after: '3 PM', check_out_before: '11 AM',
   lat: 33.9960737, lng: -119.7691632,
-  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522898894/channel_islands.jpg' )
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-4.jpg' )
 
 review1 = Review.create!(user_id: user5.id, listing_id: listing3.id,
   body: 'I took my husband and children to this treehouse last weekend
@@ -162,12 +163,16 @@ booking7 = Booking.create!(guest_id: user2.id, listing_id: listing4.id,
   num_guests: 5)
 
 listing_photos1 = ListingPhoto.create!(listing_id: listing3.id,
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522866762/oval2.jpg',
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-4.jpg',
   order: 1)
 
 listing_photos2 = ListingPhoto.create!(listing_id: listing3.id,
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522866832/glamping-1695468_1920.jpg',
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-5.jpg',
   order: 2)
+
+listing_photos3 = ListingPhoto.create!(listing_id: listing3.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-7.jpg',
+  order: 3)
 
 listing_photos4 = ListingPhoto.create!(listing_id: listing2.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522867205/iceland_lake_myvatn_camping-1090749.jpg',
@@ -324,3 +329,13 @@ listing_photos34 = ListingPhoto.create!(listing_id: listing7.id,
 listing_photos35 = ListingPhoto.create!(listing_id: listing7.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523305771/channel-islands-fox3.jpg',
   order: 6)
+
+
+#additional Treehouse
+listing_photos36 = ListingPhoto.create!(listing_id: listing3.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-3.jpg',
+  order: 4)
+
+listing_photos37 = ListingPhoto.create!(listing_id: listing3.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-2.jpg',
+  order: 5)

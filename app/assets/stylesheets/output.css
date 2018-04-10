@@ -958,10 +958,110 @@ footer {
   font-size: 14px;
   color: #8b0000; }
 
-.map {
-  width: 1000px;
-  height: 1000px;
+.explore-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100vw;
   background-color: white;
-  position: relative; }
+  position: relative;
+  padding-top: 100px; }
+  .explore-container .map {
+    width: 45%;
+    height: 1000px;
+    position: sticky; }
+  .explore-container .listings-index {
+    width: 43%;
+    background-color: white;
+    padding-bottom: 50px; }
+    .explore-container .listings-index .listings-index-item {
+      padding: 15px; }
+      .explore-container .listings-index .listings-index-item .listings-index-body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around; }
+        .explore-container .listings-index .listings-index-item .listings-index-body .listings-index-booking {
+          display: flex;
+          justify-content: flex-start;
+          height: 40px; }
+        .explore-container .listings-index .listings-index-item .listings-index-body h4 {
+          color: #333333;
+          font-size: 14px;
+          height: 40px;
+          line-height: 40px;
+          vertical-align: center;
+          margin: 0;
+          padding-left: 25px; }
+        .explore-container .listings-index .listings-index-item .listings-index-body button {
+          background-color: #40d9ac;
+          height: 40px;
+          font-weight: 700px;
+          color: white;
+          padding: 0px 40px;
+          font-size: 14px; }
+        .explore-container .listings-index .listings-index-item .listings-index-body p {
+          color: #777777;
+          font-size: 14px; }
+      .explore-container .listings-index .listings-index-item h2 {
+        font-weight: 700;
+        color: #333333; }
+      .explore-container .listings-index .listings-index-item .listings-index-link {
+        display: flex; }
+        .explore-container .listings-index .listings-index-item .listings-index-link img {
+          width: 250px;
+          height: 250px; }
+    .explore-container .listings-index .listings-index-item:hover {
+      background-color: #f9f9f9; }
+  .explore-container .explore-filters {
+    margin-left: 15px;
+    width: 12%;
+    background-color: #f9f9f9; }
+    .explore-container .explore-filters h2 {
+      font-size: 14px;
+      padding-left: 15px;
+      padding-top: 20px;
+      font-weight: 700; }
+    .explore-container .explore-filters li {
+      padding: 5px 0px; }
+    .explore-container .explore-filters h3 {
+      padding-left: 15px;
+      text-align: left;
+      color: #333333;
+      font-weight: 700px;
+      font-size: 18px; }
+    .explore-container .explore-filters .explore-filters-list {
+      color: #2d2d2d;
+      padding: 0px; }
+      .explore-container .explore-filters .explore-filters-list .checkbox-filter {
+        opacity: 0;
+        position: absolute; }
+      .explore-container .explore-filters .explore-filters-list .checkbox-filter, .explore-container .explore-filters .explore-filters-list .checkbox-label {
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer; }
+      .explore-container .explore-filters .explore-filters-list .checkbox-label {
+        position: relative;
+        height: 15px;
+        line-height: 15px;
+        font-weight: 200px;
+        font-size: 14px;
+        vertical-align: middle;
+        padding-left: 15px; }
+      .explore-container .explore-filters .explore-filters-list .checkbox-filter + .checkbox-label:before {
+        content: '';
+        background: #fff;
+        border: 1px solid #ebebeb;
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        padding: 2px;
+        line-height: 15px;
+        margin-right: 10px;
+        text-align: center;
+        z-index: 1; }
+      .explore-container .explore-filters .explore-filters-list .checkbox-filter:checked + .checkbox-label:before {
+        background: #40d9ac;
+        border: 1px solid #40d9ac; }
 
 /*# sourceMappingURL=output.css.map */

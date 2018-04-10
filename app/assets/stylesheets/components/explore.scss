@@ -1,6 +1,155 @@
-.map {
-  width: 1000px;
-  height: 1000px;
+.explore-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100vw;
   background-color: white;
   position: relative;
+  padding-top: 100px;
+
+  .map {
+    width: 45%;
+    height: 1000px;
+    position: sticky;
+  }
+
+  .listings-index {
+    width: 43%;
+    background-color: white;
+    padding-bottom: 50px;
+
+    .listings-index-item {
+      padding: 15px;
+
+      .listings-index-body {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .listings-index-booking {
+          display: flex;
+          justify-content: flex-start;
+          height: 40px;
+
+          > * {
+
+          }
+        }
+
+        h4 {
+          color: $dark-gray;
+          font-size: 14px;
+          height: 40px;
+          line-height: 40px;
+          vertical-align: center;
+          margin: 0;
+          padding-left: 25px;
+        }
+
+        button {
+          background-color: $green-cyan;
+          height: 40px;
+          font-weight: 700px;
+          color: white;
+          padding: 0px 40px;
+          font-size: 14px;
+        }
+
+        p {
+          color: $gray;
+          font-size: 14px;
+        }
+      }
+
+      h2 {
+        font-weight: 700;
+        color: $dark-gray;
+      }
+
+
+      .listings-index-link {
+        display: flex;
+
+        img {
+          width: 250px;
+          height: 250px;
+        }
+      }
+    }
+
+    .listings-index-item:hover {
+      background-color: $lightest-lightest-gray;
+    }
+  }
+
+  .explore-filters {
+    margin-left: 15px;
+    width: 12%;
+    background-color: $lightest-lightest-gray;
+
+    h2 {
+      font-size: 14px;
+      padding-left: 15px;
+      padding-top: 20px;
+      font-weight: 700;
+    }
+
+    li {
+      padding: 5px 0px;
+    }
+
+    h3 {
+      padding-left: 15px;
+      text-align: left;
+      color: $dark-gray;
+      font-weight: 700px;
+      font-size: 18px;
+    }
+
+    .explore-filters-list {
+      color: $darkest-gray;
+      padding: 0px;
+
+      .checkbox-filter {
+        opacity: 0;
+        position: absolute;
+      }
+
+      .checkbox-filter, .checkbox-label {
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+      }
+
+      .checkbox-label {
+        position: relative;
+        height: 15px;
+        line-height: 15px;
+        font-weight: 200px;
+        font-size: 14px;
+        vertical-align: middle;
+        padding-left: 15px;
+      }
+
+      .checkbox-filter + .checkbox-label:before {
+        content: '';
+        background: #fff;
+        border: 1px solid $light-gray;
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        padding: 2px;
+        line-height: 15px;
+        margin-right: 10px;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .checkbox-filter:checked + .checkbox-label:before {
+        background: $green-cyan;
+        border: 1px solid $green-cyan;
+      }
+    }
+  }
 }
