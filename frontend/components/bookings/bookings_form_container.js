@@ -8,14 +8,10 @@ const msp = (state) => {
   const listing =  Object.values(state.entities.listings)[0];
   const currentUser = state.session.currentUser || {};
   const currentUserBookings = state.entities.currentUserBookings;
-  const booking = {
-    guestId: currentUser.id, listingId: listing.id,
-    numGuests: 1, checkIn: '', checkOut: ''
-  };
   const errors = state.errors.bookingErrors;
 
   return {
-    bookings, listing, currentUser, booking, currentUserBookings, errors,
+    bookings, listing, currentUser, currentUserBookings, errors,
   }
 }
 
