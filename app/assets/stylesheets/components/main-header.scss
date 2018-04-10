@@ -58,7 +58,7 @@
 
       > * {
         vertical-align: middle;
-        line-height: 100px;//hardcoded. Should fix this!
+        line-height: 12vh;
         letter-spacing: 0.7px;
         font-weight: 200;
       }
@@ -94,7 +94,7 @@
       .datepicker {
         border-right: 1px solid $lightest-gray;
         vertical-align: middle;
-        line-height: 100px;//hardcoded. Should fix this!
+        line-height: 12vh;
         font-size: 16px;
         width: 35%
       }
@@ -104,9 +104,9 @@
         font-weight: 700;
         color: white;
         text-align: center;
-        vertical-align: middle;
-        padding-top: 30px; //hardcoded.
+        line-height: 12vh;
         margin: 0;
+        padding: 0;
         width: 30%;
         }
       }
