@@ -33,7 +33,7 @@ const Main = () => {
             </p>
           </div>
         </section>
-        <section className="row right"><Link to="/listings/10">
+        <section className="row right"><Link to="/listings/13">
           <img src='http://res.cloudinary.com/deor0br3s/image/upload/v1522783893/glacier_national_park.jpg'/>
           <p className="main-header-image-footer">
             <strong>Glacier National Park</strong> hosted by U.S. National Park Service
