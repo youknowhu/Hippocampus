@@ -9,6 +9,12 @@ const defaultFilters = {
   glamping: false,
   group: false,
   pricing: 10000,
+  biking: false,
+  hiking: false,
+  water: false,
+  forest: false,
+  waterfall: false,
+  lake: false,
 }
 
 

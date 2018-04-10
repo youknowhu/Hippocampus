@@ -14,7 +14,10 @@ class Explore extends React.Component {
       <div className="explore-container">
         <ListingsFilterContainer />
         <ListingsIndexContainer />
-        <HippoMap />
+        <HippoMap
+          listings={ this.props.listings }
+          filters={ this.props.filters }
+        />
       </div>
     )
   }

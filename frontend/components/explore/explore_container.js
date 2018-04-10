@@ -4,7 +4,8 @@ import { fetchAllListings } from '../../actions/listing_actions'
 
 
 const msp = state => ({
-  listings: state.entities.listings,
+  listings: Object.values(state.entities.listings),
+  filters: state.ui.filters,
 })
 
 const mdp = dispatch => ({

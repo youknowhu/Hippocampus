@@ -964,15 +964,20 @@ footer {
   width: 100vw;
   background-color: white;
   position: relative;
-  padding-top: 100px; }
+  padding-top: 100px;
+  padding-bottom: 150px;
+  height: 90vh; }
   .explore-container .map {
     width: 45%;
-    height: 1000px;
+    height: 100%;
     position: sticky; }
   .explore-container .listings-index {
     width: 43%;
     background-color: white;
-    padding-bottom: 50px; }
+    padding-bottom: 50px;
+    height: 100%;
+    overflow: scroll;
+    box-sizing: border-box; }
     .explore-container .listings-index .listings-index-item {
       padding: 15px; }
       .explore-container .listings-index .listings-index-item .listings-index-body {
@@ -1013,13 +1018,14 @@ footer {
     .explore-container .listings-index .listings-index-item:hover {
       background-color: #f9f9f9; }
   .explore-container .explore-filters {
+    position: sticky;
     margin-left: 15px;
     width: 12%;
     background-color: #f9f9f9; }
     .explore-container .explore-filters h2 {
       font-size: 14px;
       padding-left: 15px;
-      padding-top: 20px;
+      padding-top: 15px;
       font-weight: 700; }
     .explore-container .explore-filters li {
       margin: 5px 0px; }
@@ -1029,6 +1035,15 @@ footer {
       color: #333333;
       font-weight: 700px;
       font-size: 18px; }
+    .explore-container .explore-filters button {
+      background-color: #f9f9f9;
+      color: #40d9ac;
+      font-size: 14px;
+      padding-left: 30%;
+      padding-top: 30px; }
+    .explore-container .explore-filters button:hover {
+      color: #333333;
+      text-decoration: underline; }
     .explore-container .explore-filters .explore-filters-list {
       color: #2d2d2d;
       padding: 0px; }

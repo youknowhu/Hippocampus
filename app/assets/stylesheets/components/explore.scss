@@ -5,10 +5,12 @@
   background-color: white;
   position: relative;
   padding-top: 100px;
+  padding-bottom: 150px;
+  height: 90vh;
 
   .map {
     width: 45%;
-    height: 1000px;
+    height: 100%;
     position: sticky;
   }
 
@@ -16,6 +18,9 @@
     width: 43%;
     background-color: white;
     padding-bottom: 50px;
+    height: 100%;
+    overflow: scroll;
+    box-sizing: border-box;
 
     .listings-index-item {
       padding: 15px;
@@ -83,6 +88,7 @@
   }
 
   .explore-filters {
+    position: sticky;
     margin-left: 15px;
     width: 12%;
     background-color: $lightest-lightest-gray;
@@ -90,7 +96,7 @@
     h2 {
       font-size: 14px;
       padding-left: 15px;
-      padding-top: 20px;
+      padding-top: 15px;
       font-weight: 700;
     }
 
@@ -104,6 +110,19 @@
       color: $dark-gray;
       font-weight: 700px;
       font-size: 18px;
+    }
+
+    button {
+      background-color: $lightest-lightest-gray;
+      color: $green-cyan;
+      font-size: 14px;
+      padding-left: 30%;
+      padding-top: 30px;
+    }
+
+    button:hover {
+      color: $dark-gray;
+      text-decoration: underline;
     }
 
     .explore-filters-list {
