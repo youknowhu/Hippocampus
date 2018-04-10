@@ -25,7 +25,12 @@ class NavBar extends React.Component {
           <Link to="/"><img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/> </Link>
           <nav className="discover-nav">
             <ul>
-              <li className="search"><i className="fa fa-search"></i><strong>Search</strong></li>
+              <li className="search">
+                  <Link to="/explore">
+                    <i className="fa fa-search"></i>
+                    <strong>Search</strong>
+                  </Link>
+                </li>
               <li><label>Camping</label></li>
               <li><label>Hosting</label></li>
               <li><label>Scouting</label></li>

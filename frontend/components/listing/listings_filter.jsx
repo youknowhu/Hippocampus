@@ -12,12 +12,17 @@ class ListingsFilter extends React.Component {
 
       return (
         <div className="explore-filters">
-          <h2> Features </h2>
+          <h2> Accomodations </h2>
           <ul className='explore-filters-list'>
             <li className='filters-list-item'>
               <input id='pet-friendly-filter'
               className='checkbox-filter' type='checkbox'/>
               <label for='pet-friendly-filter' className='checkbox-label'>Pet Friendly</label>
+            </li>
+            <li className='filters-list-item'>
+              <input id='camping-filter'
+              className='checkbox-filter' type='checkbox'/>
+              <label for='camping-filter' className='checkbox-label'>Camping</label>
             </li>
             <li className='filters-list-item'>
               <input id='glamping-filter'
@@ -42,7 +47,49 @@ class ListingsFilter extends React.Component {
               className='checkbox-filter' type='checkbox'/>
               <label for='less-than-50-filter' className='checkbox-label'>Less than $50/night</label>
             </li>
+            <li className='filters-list-item'>
+              <input id='less-than-100-filter'
+              className='checkbox-filter' type='checkbox'/>
+              <label for='less-than-100-filter' className='checkbox-label'>Less than $100/night</label>
+            </li>
           </ul>
+          <h2> Activities </h2>
+          <ul className='explore-filters-list'>
+            <li className='filters-list-item'>
+              <input id='biking-filter'
+              className='checkbox-filter' type='checkbox'/>
+              <label for='biking-filter' className='checkbox-label'>Biking</label>
+            </li>
+            <li className='filters-list-item'>
+              <input id='hiking-filter'
+              className='checkbox-filter' type='checkbox'/>
+              <label for='hiking-filter' className='checkbox-label'>Hiking</label>
+            </li>
+            <li className='filters-list-item'>
+              <input id='water-sports-filter'
+              className='checkbox-filter' type='checkbox'/>
+              <label for='water-sports-filter' className='checkbox-label'>Water Sports</label>
+            </li>
+          </ul>
+          <h2> Terrain </h2>
+          <ul className='explore-filters-list'>
+            <li className='filters-list-item'>
+              <input id='forest-filter'
+              className='checkbox-filter' type='checkbox'/>
+              <label for='forest-filter' className='checkbox-label'>Forest</label>
+            </li>
+            <li className='filters-list-item'>
+              <input id='waterfall-filter'
+              className='checkbox-filter' type='checkbox'/>
+              <label for='waterfall-filter' className='checkbox-label'>Waterfall</label>
+            </li>
+            <li className='filters-list-item'>
+              <input id='lake-filter'
+              className='checkbox-filter' type='checkbox'/>
+              <label for='lake-filter' className='checkbox-label'>Lake</label>
+            </li>
+          </ul>
+
         </div>
       )
     }

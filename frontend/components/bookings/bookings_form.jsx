@@ -53,7 +53,6 @@ class BookingsForm extends React.Component {
   renderStickyForm() {
     const bookingForm = this.myRef.current;
     const stickyPosition = 400;
-    console.log(window.pageYOffset)
     bookingForm.addEventListener('scroll', () => console.log('scroll!'))
 
     if (window.pageYOffset >= stickyPosition) {
@@ -156,7 +155,6 @@ class BookingsForm extends React.Component {
       )
     } else {
       const numDays = (this.state.checkOut - this.state.checkIn)/1000/60/60/24
-      console.log(this.state);
 
       const resDays =
           numDays ===  1 ? numDays + " night" : numDays + " nights";

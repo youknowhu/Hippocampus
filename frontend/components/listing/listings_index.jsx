@@ -11,9 +11,7 @@ class ListingsIndex extends React.Component {
 
   render() {
     const { listings } = this.props;
-    console.log(this.props);
-    console.log(listings);
-
+    
     if (listings.length === 0) {
       return (
         <div> </div>

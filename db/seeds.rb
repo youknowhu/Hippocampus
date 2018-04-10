@@ -92,7 +92,7 @@ listing7 = Listing.create!(host_id: user6.id, title: 'Channel Islands',
   daily_cost: 25, is_private: false, is_camping: true, allows_pets: false,
   max_capacity: 8, check_in_after: '3 PM', check_out_before: '11 AM',
   lat: 33.9960737, lng: -119.7691632,
-  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-4.jpg' )
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522898894/channel_islands.jpg' )
 
 review1 = Review.create!(user_id: user5.id, listing_id: listing3.id,
   body: 'I took my husband and children to this treehouse last weekend

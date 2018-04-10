@@ -95,7 +95,7 @@
     }
 
     li {
-      padding: 5px 0px;
+      margin: 5px 0px;
     }
 
     h3 {
@@ -134,12 +134,12 @@
       .checkbox-filter + .checkbox-label:before {
         content: '';
         background: #fff;
-        border: 1px solid $light-gray;
+        border: 1px solid $lighter-gray;
         display: inline-block;
         vertical-align: middle;
-        width: 15px;
-        height: 15px;
-        padding: 2px;
+        width: 13px;
+        height: 13px;
+        padding: 2.5px;
         line-height: 15px;
         margin-right: 10px;
         text-align: center;

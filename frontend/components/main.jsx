@@ -11,10 +11,12 @@ const Main = () => {
             <h1>Search, discover and book over <strong>25</strong> campsites, ranches, vineyards, farms, public parks and more.</h1>
           </div>
           <div className="main-search-box">
-            <div className="location-search">
-              <input type="text" name="location" className="find-camping" placeholder="Find camping near..."/>
-              <i className="fa fa-search"></i>
-            </div>
+            <Link to="/explore">
+              <div className="location-search">
+                <input type="text" name="location" className="find-camping" placeholder="Find camping near..."/>
+                <i className="fa fa-search"></i>
+              </div>
+            </Link>
             <div className="dates-search">
               <input type="text" name="check-in-date"
                className="datepicker" placeholder="Check In"/>

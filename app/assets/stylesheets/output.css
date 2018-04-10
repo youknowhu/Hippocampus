@@ -1022,7 +1022,7 @@ footer {
       padding-top: 20px;
       font-weight: 700; }
     .explore-container .explore-filters li {
-      padding: 5px 0px; }
+      margin: 5px 0px; }
     .explore-container .explore-filters h3 {
       padding-left: 15px;
       text-align: left;
@@ -1050,12 +1050,12 @@ footer {
       .explore-container .explore-filters .explore-filters-list .checkbox-filter + .checkbox-label:before {
         content: '';
         background: #fff;
-        border: 1px solid #ebebeb;
+        border: 1px solid #a1a1a1;
         display: inline-block;
         vertical-align: middle;
-        width: 15px;
-        height: 15px;
-        padding: 2px;
+        width: 13px;
+        height: 13px;
+        padding: 2.5px;
         line-height: 15px;
         margin-right: 10px;
         text-align: center;
