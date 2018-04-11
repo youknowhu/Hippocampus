@@ -29,6 +29,14 @@ class ListingsIndex extends React.Component {
       filteredListings = filteredListings.filter(listing => listing.maxCapacity >= 15)
     }
 
+    if (filters['private'] === true) {
+      filteredListings = filteredListings.filter(listing => listing.isPrivate === true)
+    }
+
+    if (filters['public'] === true) {
+      filteredListings = filteredListings.filter(listing => listing.isPrivate === false)
+    }
+
     filteredListings = filteredListings.filter(listing => listing.dailyCost < filters.pricing)
     return filteredListings;
   }
@@ -39,12 +47,21 @@ class ListingsIndex extends React.Component {
 
     if (listings.length === 0) {
       return (
-        <div> </div>
+        <div></div>
       )
     } else {
       const filteredListings = this.applyFilters();
+      const numListings =
+          filteredListings.length ===  1 ?
+          filteredListings.length + " Listing" :
+          filteredListings.length + " Listings";
       return (
         <div className="listings-index">
+          <p>
+            <strong>
+              {numListings}
+            </strong>
+          </p>
           {
             filteredListings.map(listing =>
               <ListingsIndexItem

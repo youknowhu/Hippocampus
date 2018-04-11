@@ -15,6 +15,8 @@ const defaultFilters = {
   forest: false,
   waterfall: false,
   lake: false,
+  public: false,
+  private: false,
 }
 
 

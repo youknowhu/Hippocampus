@@ -53,6 +53,14 @@ class HippoMap extends React.Component {
       filteredListings = filteredListings.filter(listing => listing.maxCapacity >= 15)
     }
 
+    if (filters['private'] === true) {
+      filteredListings = filteredListings.filter(listing => listing.isPrivate === true)
+    }
+
+    if (filters['public'] === true) {
+      filteredListings = filteredListings.filter(listing => listing.isPrivate === false)
+    }
+
     filteredListings = filteredListings.filter(listing => listing.dailyCost < filters.pricing)
     return filteredListings;
   }

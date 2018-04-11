@@ -14,7 +14,7 @@ Review.delete_all
 
 user1 = User.create!(username: 'guest', password: 'password',
   first_name: 'Guest', last_name: 'Login', zip: '94104',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406459/grey_hippo_user_default_1.png')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406588/grey_hippo_user_default_2.png')
 
 user2 = User.create!(username: 'youknowhu', password: 'password',
   first_name: 'Kimmy', last_name: 'Allgeier', zip: '94612',
@@ -22,15 +22,15 @@ user2 = User.create!(username: 'youknowhu', password: 'password',
 
 user3 = User.create!(username: 'sillysally', password: 'password',
   first_name: 'Sally', last_name: 'Smith', zip: '94110',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406459/grey_hippo_user_default_1.png')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406588/grey_hippo_user_default_2.png')
 
 user4 = User.create!(username: 'jollyjimmy', password: 'password',
   first_name: 'Jimmy', last_name: 'Johnson', zip: '94901',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406459/grey_hippo_user_default_1.png')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406588/grey_hippo_user_default_2.png')
 
 user5 = User.create!(username: 'bubblybetty', password: 'password',
     first_name: 'Betty', last_name: 'Boop', zip: '95120',
-    img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406459/grey_hippo_user_default_1.png')
+    img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406588/grey_hippo_user_default_2.png')
 
 user6 = User.create!(username: 'nps', password: 'password',
     first_name: 'National Park Services', last_name: '_', zip: '20001',
@@ -41,7 +41,7 @@ listing1 = Listing.create!(host_id: user6.id, title: 'Glacier National Park',
   Keep an eye out for mountain goats to grizzly bears.",
   daily_cost: 25, is_private: false, is_camping: true, allows_pets: false,
   max_capacity: 10, check_in_after: '2 PM', check_out_before: '12 PM',
-  lat: 48.6587896, lng: -118.3283786,
+  lat: 48.6587896, lng: -113.7870225,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522783893/glacier_national_park.jpg' )
 
 listing2 = Listing.create!(host_id: user2.id, title: 'Strawberry Fields',
@@ -49,7 +49,7 @@ listing2 = Listing.create!(host_id: user2.id, title: 'Strawberry Fields',
   under the stars. Get Back to the outdoors, Ob-La-Di, Ob-La-Da.',
   daily_cost: 25, is_private: true, is_camping: true, allows_pets: true,
   max_capacity: 15, check_in_after: '2 PM', check_out_before: '11 AM',
-  lat: 37.6387602, lng: -122.2063796,
+  lat: 39.3266467, lng: -124.1996707,
   icon_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523317167/wild_strawberries_cropped.jpg')
 
 listing3 = Listing.create!(host_id: user2.id, title: 'Treehouse Getaway',
@@ -92,6 +92,32 @@ listing7 = Listing.create!(host_id: user6.id, title: 'Channel Islands',
   max_capacity: 8, check_in_after: '3 PM', check_out_before: '11 AM',
   lat: 33.9960737, lng: -119.7691632,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522898894/channel_islands.jpg' )
+
+listing8 = Listing.create!(host_id: user6.id, title: 'Yosemite',
+  body: "Yosemite National Park is in California’s Sierra Nevada mountains.
+  It’s famed for its giant sequoias, towering Bridalveil Fall and the granite cliffs
+  of El Capitan and Half Dome.",
+  daily_cost: 45, is_private: false, is_camping: true, allows_pets: true,
+  max_capacity: 20, check_in_after: '3 PM', check_out_before: '11 AM',
+  lat: 37.8651011, lng: -119.5383294,
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1522899727/yosemite_cropped.jpg' )
+
+listing9 = Listing.create!(host_id: user6.id, title: 'Crater Lake',
+  body: "Crater Lake inspires awe. A violent eruption triggered the
+  collapse of a tall peak, creating the deepest lake in the USA
+  and perhaps the most pristine on earth.",
+  daily_cost: 20, is_private: false, is_camping: true, allows_pets: false,
+  max_capacity: 8, check_in_after: '1 PM', check_out_before: '10 AM',
+  lat: 42.9415361, lng: -122.1773799,
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523414536/crater%20lake/craterlake-cropped.jpg' )
+
+listing10 = Listing.create!(host_id: user4.id, title: 'Igloo Winter Wonderland',
+  body: "Cozy up in our glass igloo and watching the night sky as you fall asleep.
+  There is great heating which keeps the igloo nice and warm even during cold winter months.",
+  daily_cost: 125, is_private: true, is_camping: false, allows_pets: false,
+  max_capacity: 5, check_in_after: '3 PM', check_out_before: '11 AM',
+  lat: 52.0464236, lng: -122.1686292,
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523418519/igloo-zebra-cropped.jpg' )
 
 review1 = Review.create!(user_id: user5.id, listing_id: listing3.id,
   body: 'I took my husband and children to this treehouse last weekend
@@ -338,3 +364,62 @@ listing_photos36 = ListingPhoto.create!(listing_id: listing3.id,
 listing_photos37 = ListingPhoto.create!(listing_id: listing3.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-2.jpg',
   order: 5)
+
+#yosemite
+listing_photos38 = ListingPhoto.create!(listing_id: listing8.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522899727/yosemite_cropped.jpg',
+  order: 1)
+
+listing_photos39 = ListingPhoto.create!(listing_id: listing8.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523407693/yosemite/yosemite-glacier.jpg',
+  order: 2)
+
+listing_photos40 = ListingPhoto.create!(listing_id: listing8.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523407695/yosemite/yosemite-lake.jpg',
+  order: 3)
+
+listing_photos41 = ListingPhoto.create!(listing_id: listing8.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523407701/yosemite/yosemite-squirrel.jpg',
+  order: 4)
+
+listing_photos42 = ListingPhoto.create!(listing_id: listing8.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523408380/yosemite-halfdome.jpg',
+  order: 5)
+
+#crater lake
+listing_photos43 = ListingPhoto.create!(listing_id: listing9.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523414428/crater%20lake/craterlake-snow.jpg',
+  order: 1)
+
+listing_photos44 = ListingPhoto.create!(listing_id: listing9.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523414431/crater%20lake/craterlake-lake.jpg',
+  order: 2)
+
+listing_photos45 = ListingPhoto.create!(listing_id: listing9.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523414427/crater%20lake/craterlake-island2.jpg',
+  order: 3)
+
+listing_photos46 = ListingPhoto.create!(listing_id: listing9.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523415762/crater%20lake/craterlake-stance.jpg',
+  order: 4)
+
+listing_photos47 = ListingPhoto.create!(listing_id: listing9.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523415762/crater%20lake/craterlake-wildflowers.jpg',
+  order: 5)
+
+#igloo
+listing_photos48 = ListingPhoto.create!(listing_id: listing10.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523416809/igloo/15090498739_6c76843936_o.jpg',
+  order: 1)
+
+listing_photos49 = ListingPhoto.create!(listing_id: listing10.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523416753/igloo/igloo-open.jpg',
+  order: 2)
+
+listing_photos50 = ListingPhoto.create!(listing_id: listing10.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523416531/igloo/igloo-dogs.jpg',
+  order: 3)
+
+listing_photos52 = ListingPhoto.create!(listing_id: listing10.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523416531/igloo/igloo-skiresort.jpg',
+  order: 4)

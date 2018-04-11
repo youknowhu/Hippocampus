@@ -4,9 +4,9 @@
   width: 100vw;
   background-color: white;
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 150px;
-  height: 90vh;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  height: 92vh;
 
   .map {
     width: 45%;
@@ -14,10 +14,17 @@
     position: sticky;
   }
 
+  strong {
+    margin-left: 80%;
+    font-weight: 700;
+    color: $dark-gray;
+    letter-spacing: 0.05em;
+  }
+
   .listings-index {
+    padding-top: 15px;
     width: 43%;
     background-color: white;
-    padding-bottom: 50px;
     height: 100%;
     overflow: scroll;
     box-sizing: border-box;

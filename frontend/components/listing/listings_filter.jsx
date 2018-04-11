@@ -35,11 +35,57 @@ class ListingsFilter extends React.Component {
     }
   }
 
+  handleListingFilter(category) {
+    const { filters, removeSingleFilter,
+      receiveSingleFilter } = this.props;
+
+    return e => {
+      if (category === 'private') {
+        if (filters['private'] === true) {
+          removeSingleFilter('private');
+        } else {
+          removeSingleFilter('public');
+          receiveSingleFilter('private');
+        }
+      } else if (category === 'public') {
+        if (filters['public'] === true) {
+          removeSingleFilter('public');
+        } else {
+          removeSingleFilter('private');
+          receiveSingleFilter('public');
+        }
+      }
+    }
+  }
+
   render() {
     const { filters } = this.props;
 
     return (
       <div className="explore-filters">
+        <h2> Listing Type </h2>
+        <ul className='explore-filters-list'>
+          <li className='filters-list-item'>
+            <input id='public-filter'
+            className='checkbox-filter'
+            name='listing-filter'
+            type='radio'
+            onClick={this.handleListingFilter('public')}
+            checked={ filters['public'] === true }
+            />
+            <label htmlFor='public-filter' className='checkbox-label'>Public</label>
+          </li>
+          <li className='filters-list-item'>
+            <input id='private-filter'
+            className='checkbox-filter'
+            name='listing-filter'
+            type='radio'
+            onClick={this.handleListingFilter('private')}
+            checked={ filters['private'] === true }
+            />
+          <label htmlFor='private-filter' className='checkbox-label'>Private</label>
+          </li>
+        </ul>
         <h2> Accomodations </h2>
         <ul className='explore-filters-list'>
           <li className='filters-list-item'>
@@ -52,24 +98,6 @@ class ListingsFilter extends React.Component {
             <label htmlFor='pet-friendly-filter' className='checkbox-label'>Pet Friendly</label>
           </li>
           <li className='filters-list-item'>
-            <input id='camping-filter'
-            className='checkbox-filter'
-            type='checkbox'
-            onClick={this.toggle('camping')}
-            checked={ filters['camping'] === true }
-            />
-            <label htmlFor='camping-filter' className='checkbox-label'>Camping Only</label>
-          </li>
-          <li className='filters-list-item'>
-            <input id='glamping-filter'
-            className='checkbox-filter'
-            type='checkbox'
-            onClick={this.toggle('glamping')}
-            checked={ filters['glamping'] === true }
-            />
-            <label htmlFor='glamping-filter' className='checkbox-label'>Glamping Only</label>
-          </li>
-          <li className='filters-list-item'>
             <input id='group-filter'
             className='checkbox-filter'
             type='checkbox'
@@ -78,6 +106,25 @@ class ListingsFilter extends React.Component {
             />
             <label htmlFor='group-filter' className='checkbox-label'>Group Site (15+)</label>
           </li>
+          <li className='filters-list-item'>
+            <input id='camping-filter'
+            className='checkbox-filter'
+            type='checkbox'
+            onClick={this.toggle('camping')}
+            checked={ filters['camping'] === true }
+            />
+            <label htmlFor='camping-filter' className='checkbox-label'>Camping</label>
+          </li>
+          <li className='filters-list-item'>
+            <input id='glamping-filter'
+            className='checkbox-filter'
+            type='checkbox'
+            onClick={this.toggle('glamping')}
+            checked={ filters['glamping'] === true }
+            />
+            <label htmlFor='glamping-filter' className='checkbox-label'>Glamping</label>
+          </li>
+
         </ul>
         <h2> Pricing </h2>
         <ul className='explore-filters-list'>
