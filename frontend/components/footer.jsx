@@ -15,33 +15,30 @@ export default () => {
                 <div className="col-md-4 col-md-offset-1 col-xs-4 footer-col">
                   <h5>Browse</h5>
                   <ul className="list-unstyled">
-                    <li><a href="/host">Host campers</a></li>
-                    <li><a href="/discover">Discover Camps</a></li>
-                    <li><a href="/gift">Gift Cards</a></li>
-                    <li><a target="_blank" href="http://hipcamp.helpscoutdocs.com">
-                      Help</a></li>
-                    <li><a href="/about#contact">Contact</a></li>
+                    <li><a href="https://github.com/youknowhu">Host campers</a></li>
+                    <li><a href="https://github.com/youknowhu">Discover Camps</a></li>
+                    <li><a href="https://github.com/youknowhu">Gift Cards</a></li>
+                    <li><a href="https://github.com/youknowhu">Contact</a></li>
                   </ul>
                 </div>
                 <div className="col-md-4 col-xs-4 footer-col">
                   <h5>About</h5>
                   <ul className="list-unstyled">
-                    <li><a href="/journal">Journal</a></li>
-                    <li><a href="/about#our-story">Our Story</a></li>
-                    <li><a href="/about#the-team">The Team</a></li>
-                    <li><a href="/about#careers">Careers</a></li>
-                    <li><a target="_blank" href="http://hipca.mp/thepresskit">Press Kit</a></li>
+                    <li><a href="https://github.com/youknowhu">Journal</a></li>
+                    <li><a href="https://github.com/youknowhu">Our Story</a></li>
+                    <li><a href="https://github.com/youknowhu">The Team</a></li>
+                    <li><a href="https://github.com/youknowhu">Careers</a></li>
                   </ul>
                 </div>
                 <div className="col-md-3 col-xs-4 footer-col">
                   <h5>Social</h5>
-                    <ul className="list-unstyled">
-                      <li><a href="#"><span className="icon fa fa-facebook-official"></span> Facebook</a></li>
-                      <li><a  href="#"><span className="icon fa fa-twitter"></span> Twitter</a></li>
-                      <li><a  href="#"><span className="icon fa fa-instagram"></span> Instagram</a></li>
-                      <li><a  href="#"><span className="icon fa fa-pinterest-p"></span> Pinterest</a></li>
-                      <li><a href="#"><span className="icon fa fa-spotify"></span> Spotify</a></li>
-                    </ul>
+                      <ul className="list-unstyled">
+                        <li><a href="https://github.com/youknowhu"><span className="icon fa fa-facebook-official"></span> Facebook</a></li>
+                        <li><a  href="https://github.com/youknowhu"><span className="icon fa fa-twitter"></span> Twitter</a></li>
+                        <li><a  href="https://github.com/youknowhu"><span className="icon fa fa-instagram"></span> Instagram</a></li>
+                        <li><a  href="https://github.com/youknowhu"><span className="icon fa fa-pinterest-p"></span> Pinterest</a></li>
+                        <li><a href="https://github.com/youknowhu"><span className="icon fa fa-spotify"></span> Spotify</a></li>
+                      </ul>
                 </div>
               </div>
             </div>
@@ -53,7 +50,7 @@ export default () => {
         <div className="container">
           <div className="bottom">
             <div className="pull-left">
-              Made in California. A HipCamp Clone.
+              Made in California. <a href="https://www.hipcamp.com"> A HipCamp Clone. </a>
             </div>
             <div className="pull-right">
               <a href="/terms">Terms of Service</a> •

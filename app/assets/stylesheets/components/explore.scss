@@ -8,16 +8,23 @@
   padding-bottom: 100px;
   height: 92vh;
 
-  .map {
+  .map-container {
     width: 45%;
     height: 100%;
-    position: sticky;
+
+
+    .map {
+      z-index: 4;
+      position: relative;
+      height: 95%;
+    }
   }
 
   strong {
-    margin-left: 84%;
+    margin-left: 87%;
     font-weight: 700;
     color: $dark-gray;
+    font-size: 14px;
   }
 
   .listings-index {
@@ -177,4 +184,24 @@
       }
     }
   }
+}
+
+.infowindow {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+
+  .infowindow-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .info-window-title {
+    font-weight: 700;
+    color: $dark-gray;
+  }
+}
+
+img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
+    display: none;
 }

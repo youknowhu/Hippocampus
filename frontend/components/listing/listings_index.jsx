@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ListingsIndexItem from './listings_index_item';
-//Will need to pass edit and delete review methods to Review Index Item
 
 class ListingsIndex extends React.Component {
   componentDidMount() {

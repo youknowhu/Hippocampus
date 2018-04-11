@@ -49,7 +49,7 @@ listing2 = Listing.create!(host_id: user2.id, title: 'Strawberry Fields',
   under the stars. Get Back to the outdoors, Ob-La-Di, Ob-La-Da.',
   daily_cost: 25, is_private: true, is_camping: true, allows_pets: true,
   max_capacity: 15, check_in_after: '2 PM', check_out_before: '11 AM',
-  lat: 39.3266467, lng: -124.1996707,
+  lat: 37.9842472, lng:-122.7745122,
   icon_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523317167/wild_strawberries_cropped.jpg')
 
 listing3 = Listing.create!(host_id: user2.id, title: 'Treehouse Getaway',
@@ -57,7 +57,7 @@ listing3 = Listing.create!(host_id: user2.id, title: 'Treehouse Getaway',
   Your mind, body, and soul will thank you.',
   daily_cost: 40, is_private: true, is_camping: false, allows_pets: false,
   max_capacity: 5, check_in_after: '3 PM', check_out_before: '12 PM',
-  lat: 37.7610734, lng: -122.4320376,
+  lat: 39.290669, lng: -122.8719349,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523316823/treehouse/treehouse-4.jpg' )
 
 listing4 = Listing.create!(host_id: user6.id, title: 'Yellowstone',
@@ -116,8 +116,17 @@ listing10 = Listing.create!(host_id: user4.id, title: 'Igloo Winter Wonderland',
   There is great heating which keeps the igloo nice and warm even during cold winter months.",
   daily_cost: 125, is_private: true, is_camping: false, allows_pets: false,
   max_capacity: 5, check_in_after: '3 PM', check_out_before: '11 AM',
-  lat: 52.0464236, lng: -122.1686292,
+  lat: 49.2577142, lng: -123.194115,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523418519/igloo-zebra-cropped.jpg' )
+
+listing11 = Listing.create!(host_id: user5.id, title: 'Airstream Dream',
+  body: "The airstream with designs originating from the 1930s is truly a timeless
+  classic. There is a reason why it has stood the test of time.
+  You can stay in our backyard, or bring the aistream to our nearby state parks.",
+  daily_cost: 85, is_private: true, is_camping: false, allows_pets: false,
+  max_capacity: 5, check_in_after: '2 PM', check_out_before: '10 AM',
+  lat: 44.061115, lng: -121.3848556,
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523471874/airstream/airstream_cropped.jpg' )
 
 review1 = Review.create!(user_id: user5.id, listing_id: listing3.id,
   body: 'I took my husband and children to this treehouse last weekend
@@ -422,4 +431,22 @@ listing_photos50 = ListingPhoto.create!(listing_id: listing10.id,
 
 listing_photos52 = ListingPhoto.create!(listing_id: listing10.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523416531/igloo/igloo-skiresort.jpg',
+  order: 4)
+
+
+#igloo
+listing_photos53 = ListingPhoto.create!(listing_id: listing11.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523471874/airstream/airstream.jpg',
+  order: 1)
+
+listing_photos54 = ListingPhoto.create!(listing_id: listing11.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523471874/airstream/airstream-4.jpg',
+  order: 2)
+
+listing_photos55 = ListingPhoto.create!(listing_id: listing11.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523471874/airstream/airstream-5.jpg',
+  order: 3)
+
+listing_photos56 = ListingPhoto.create!(listing_id: listing11.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523471874/airstream/airstream-3.jpg',
   order: 4)

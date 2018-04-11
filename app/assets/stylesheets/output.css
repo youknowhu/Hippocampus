@@ -969,17 +969,24 @@ footer {
   width: 100vw;
   background-color: white;
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 150px;
-  height: 90vh; }
-  .explore-container .map {
+  padding-top: 70px;
+  padding-bottom: 100px;
+  height: 92vh; }
+  .explore-container .map-container {
     width: 45%;
-    height: 100%;
-    position: sticky; }
+    height: 100%; }
+    .explore-container .map-container .map {
+      z-index: 4;
+      position: relative;
+      height: 95%; }
+  .explore-container strong {
+    margin-left: 84%;
+    font-weight: 700;
+    color: #333333; }
   .explore-container .listings-index {
+    padding-top: 15px;
     width: 43%;
     background-color: white;
-    padding-bottom: 50px;
     height: 100%;
     overflow: scroll;
     box-sizing: border-box; }
@@ -1083,5 +1090,19 @@ footer {
       .explore-container .explore-filters .explore-filters-list .checkbox-filter:checked + .checkbox-label:before {
         background: #40d9ac;
         border: 1px solid #40d9ac; }
+
+.infowindow {
+  width: 200px;
+  height: 200px;
+  overflow: hidden; }
+  .infowindow .infowindow-image {
+    width: 100px;
+    height: 100px; }
+  .infowindow .info-window-title {
+    font-weight: 700;
+    color: #333333; }
+
+img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
+  display: none; }
 
 /*# sourceMappingURL=output.css.map */

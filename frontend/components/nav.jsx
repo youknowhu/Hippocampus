@@ -7,6 +7,12 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.geocoder = new google.maps.Geocoder();
+
+    this.state = {
+      searchInput: '',
+    }
   }
 
   handleLogout(e)  {
@@ -18,6 +24,12 @@ class NavBar extends React.Component {
     }
   }
 
+  handleInput() {
+    return e => {
+      this.setState({ searchInput: e.target.value})
+    }
+  }
+
   render() {
       return (
       <header className="nav-header">
@@ -26,10 +38,14 @@ class NavBar extends React.Component {
           <nav className="discover-nav">
             <ul>
               <li className="search">
-                  <Link to="/explore">
-                    <i className="fa fa-search"></i>
-                    <strong>Search</strong>
-                  </Link>
+                  <i className="fa fa-search"></i>
+                  <input
+                    id="pac-input"
+                    className="controls"
+                    type="text"
+                    placeholder="Search Box"
+                    onChange={this.handleInput()}
+                    value={this.state.searchInput}/>
                 </li>
               <li><label>Camping</label></li>
               <li><label>Hosting</label></li>
