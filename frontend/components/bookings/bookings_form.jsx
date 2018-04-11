@@ -6,18 +6,24 @@ import DayPicker from 'react-day-picker';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import DateFormat from 'dateformat';
+import merge from 'lodash/merge';
 
 
 
 class BookingsForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.booking;
+    this.state = {
+      numGuests: 1,
+      checkIn: '',
+      checkOut: ''
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleStep = this.handleStep.bind(this);
     this.renderStickyForm = this.renderStickyForm.bind(this);
-    this.myRef = React.createRef();
+    this.bookingRef = React.createRef();
 
   }
 
@@ -35,10 +41,14 @@ class BookingsForm extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.renderStickyForm);
+    const bookingForm = this.bookingRef.current;
+    const domRect = bookingForm.getBoundingClientRect();
+    this.stickyPos = domRect.y - 70;
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.renderStickyForm)
+    this.props.clearBookingErrors();
   }
 
   handleStep(stepParam) {
@@ -52,11 +62,9 @@ class BookingsForm extends React.Component {
   }
 
   renderStickyForm() {
-    const bookingForm = this.myRef.current;
-    const stickyPosition = 400;
-    bookingForm.addEventListener('scroll', () => console.log('scroll!'))
+    const bookingForm = this.bookingRef.current;
 
-    if (window.pageYOffset >= stickyPosition) {
+    if (window.pageYOffset >= this.stickyPos) {
       bookingForm.classList.add('sticky')
     } else {
       bookingForm.classList.remove('sticky')
@@ -77,18 +85,18 @@ class BookingsForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
+    const { currentUser, listing } = this.props;
+    this.state.listingId = listing.id;
+    this.state.guestId = currentUser.id;
+
     this.props.createBooking(this.state)
-      .then(() => this.props.clearBookingErrors());
-      // .then(() => this.props.fetchSingleListing(this.state.listingId))
-      // .then(() => this.props.history.push(`/listings/${this.state.listingId}`));
+      .then(() => this.props.clearBookingErrors())
+      .then(() => this.props.fetchSingleListing(this.state.listingId));
   }
 
 
-
-
   render() {
-    const { bookings, currentUser, listing, booking, currentUserBookings } = this.props;
+    const { bookings, currentUser, listing, currentUserBookings } = this.props;
     const dateSettings = {
       clickUnselectsDay: true,
       placeholder: "Select date",
@@ -103,7 +111,7 @@ class BookingsForm extends React.Component {
       return (<div> </div>)
     } else if ( Object.keys(currentUser).length === 0 ) { //user logged out
       return (
-        <div onScroll={ ()=> this.renderStickyForm} id="booking-form" ref={this.myRef}>
+        <div onScroll={ ()=> this.renderStickyForm} id="booking-form" ref={this.bookingRef}>
           <div className='booking-header'>
             <h2>${listing.dailyCost}</h2>
             <Link to="/login">Log In To Book</Link>
@@ -119,7 +127,7 @@ class BookingsForm extends React.Component {
 
 
       return (
-        <div id="booking-form" ref={this.myRef} onScroll={() => this.renderStickyForm} >
+        <div id="booking-form" ref={this.bookingRef} onScroll={() => this.renderStickyForm} >
           <div className='booked-header'>
             <button>Booked Reservation</button>
           </div>
@@ -147,7 +155,7 @@ class BookingsForm extends React.Component {
           <div className="booking-cancel">
             <a onClick={() =>
               this.props.deleteBooking(currentUserBookings.id)
-                .then(() => this.props.fetchSingleListing(this.state.listingId))
+              .then(() => this.props.fetchSingleListing(listing.id))
             }>
               Cancel Reservation
             </a>
@@ -169,7 +177,7 @@ class BookingsForm extends React.Component {
       }
 
       return (
-        <form id="booking-form" ref={this.myRef}
+        <form id="booking-form" ref={this.bookingRef}
         onSubmit={this.handleSubmit} onScroll={ () => this.renderStickyForm} >
           <div className='booking-header'>
             <h2>${listing.dailyCost}</h2>

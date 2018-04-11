@@ -14,7 +14,7 @@ Review.delete_all
 
 user1 = User.create!(username: 'guest', password: 'password',
   first_name: 'Guest', last_name: 'Login', zip: '94104',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406459/grey_hippo_user_default_1.png')
 
 user2 = User.create!(username: 'youknowhu', password: 'password',
   first_name: 'Kimmy', last_name: 'Allgeier', zip: '94612',
@@ -22,24 +22,23 @@ user2 = User.create!(username: 'youknowhu', password: 'password',
 
 user3 = User.create!(username: 'sillysally', password: 'password',
   first_name: 'Sally', last_name: 'Smith', zip: '94110',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406459/grey_hippo_user_default_1.png')
 
 user4 = User.create!(username: 'jollyjimmy', password: 'password',
   first_name: 'Jimmy', last_name: 'Johnson', zip: '94901',
-  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406459/grey_hippo_user_default_1.png')
 
 user5 = User.create!(username: 'bubblybetty', password: 'password',
     first_name: 'Betty', last_name: 'Boop', zip: '95120',
-    img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1522982253/blue_hippo_logo_-_gray_bg_2.svg')
+    img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523406459/grey_hippo_user_default_1.png')
 
 user6 = User.create!(username: 'nps', password: 'password',
     first_name: 'National Park Services', last_name: '_', zip: '20001',
     img_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/US-NationalParkService-Logo.svg')
 
 listing1 = Listing.create!(host_id: user6.id, title: 'Glacier National Park',
-  body: "Glacier National Park's glacier-carved peaks and valleys
-  running to the Canadian border. Diverse wildlife ranges from
-  mountain goats to grizzly bears.",
+  body: "Glacier National Park has magnificient glacier-carved peaks and valleys.
+  Keep an eye out for mountain goats to grizzly bears.",
   daily_cost: 25, is_private: false, is_camping: true, allows_pets: false,
   max_capacity: 10, check_in_after: '2 PM', check_out_before: '12 PM',
   lat: 48.6587896, lng: -118.3283786,
@@ -115,7 +114,7 @@ review4 = Review.create!(user_id: user3.id, listing_id: listing2.id,
 
 review5 = Review.create!(user_id: user2.id, listing_id: listing1.id,
   body: 'I highly recommend the Grinnell Glacier hike.
-  We saw many wildlife along the way, including big horn sheep!')
+  We saw wildlife along the way, including big horn sheep!')
 
 review6 = Review.create!(user_id: user3.id, listing_id: listing1.id,
   body: 'Wow, Going-to-the-Sun road was absolutely breathtaking' )

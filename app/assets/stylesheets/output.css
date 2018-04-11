@@ -264,13 +264,15 @@ header {
   right: 0;
   background-color: white;
   width: 100vw;
-  z-index: 1;
+  z-index: 3;
   height: 70px; }
   header .nav-left {
-    display: flex; }
+    display: flex;
+    z-index: 1; }
   header .nav-right {
     padding: 0px 45px;
-    display: flex; }
+    display: flex;
+    z-index: 1; }
     header .nav-right a {
       box-sizing: border-box;
       color: #40d9ac;
@@ -341,7 +343,8 @@ header {
     width: 65vw;
     margin: 0 auto;
     display: flex;
-    z-index: 2; }
+    position: relative;
+    z-index: 1; }
     .listing-page .listing-content .listing-left {
       width: 67%;
       padding-right: 75px; }
@@ -935,7 +938,7 @@ footer {
   #booking-form .booking-cancel {
     padding: 10px; }
     #booking-form .booking-cancel a {
-      color: #40d9ac;
+      color: #8b0000;
       line-height: 16px;
       vertical-align: middle;
       align-content: center;

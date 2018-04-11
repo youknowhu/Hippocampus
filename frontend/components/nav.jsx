@@ -22,7 +22,7 @@ class NavBar extends React.Component {
       return (
       <header className="nav-header">
         <div className="nav-left">
-          <Link to="/"><img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/> </Link>
+          <Link to="/"><img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1523405170/Hippocampus_Logo_-_hippo_image_1.svg"/> </Link>
           <nav className="discover-nav">
             <ul>
               <li className="search">
