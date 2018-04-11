@@ -68,7 +68,6 @@ class HippoMap extends React.Component {
   addListings() {
     this.clearMarkers();
     const filteredListings = this.applyFilters();
-    console.log(filteredListings)
     const icon = 'http://res.cloudinary.com/deor0br3s/image/upload/c_scale,w_100/v1523399623/Hippo_Marker_3.png'
 
     filteredListings.forEach(listing => {

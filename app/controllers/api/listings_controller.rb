@@ -20,7 +20,8 @@ class Api::ListingsController < ApplicationController
   end
 
   def home_index
-    @listings = Listing.all
+    npsHost = User.find_by_username('nps');
+    @listings = Listing.where('host_id = ?', npsHost.id)
     render 'api/listings/home_index.json.jbuilder'
   end
 

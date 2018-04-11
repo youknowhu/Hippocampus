@@ -14,7 +14,7 @@ const receiveSingleListing = payload => ({
   payload
 });
 
-const fetchHomePageListings = payload => ({
+const receiveHomePageListings = payload => ({
   type: RECEIVE_HOME_PAGE_LISTINGS,
   payload
 })
@@ -27,4 +27,9 @@ export const fetchAllListings = () => dispatch => (
 export const fetchSingleListing = (id) => dispatch => (
   APIUtil.fetchSingleListing(id).then(listing =>
     dispatch(receiveSingleListing(listing)))
+);
+
+export const fetchHomePageListings = () => dispatch => (
+  APIUtil.fetchHomePageListings().then(listings =>
+    dispatch(receiveHomePageListings(listings)))
 );

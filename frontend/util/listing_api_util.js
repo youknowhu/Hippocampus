@@ -15,6 +15,6 @@ export const fetchSingleListing = (id) => (
 export const fetchHomePageListings = () => (
   $.ajax({
     method: 'GET',
-    url: `/api/listings/${id}`,
+    url: `/api/home_index`,
   })
 );
