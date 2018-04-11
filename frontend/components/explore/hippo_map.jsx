@@ -16,13 +16,11 @@ class HippoMap extends React.Component {
       searchInput: '',
     }
 
-    this.handleInput = this.handleInput.bind(this);
     this.geocoder = new google.maps.Geocoder();
   }
 
   componentDidUpdate() {
     this.addListings();
-
   }
 
   componentDidMount() {
@@ -45,8 +43,9 @@ class HippoMap extends React.Component {
           this.geocoder.geocode({ 'address': geolocation}, (results, status) => {
             if (status === 'OK') {
               if (results[0]) {
-                this.map.setZoom(7);
+                this.map.setZoom(6.5);
                 this.map.setCenter(results[0].geometry.location);
+                console.log(this.map.getBounds())
               } else {
                 window.alert('No results found');
               }
@@ -56,12 +55,6 @@ class HippoMap extends React.Component {
           });
         }
       }
-    }
-  }
-
-  handleInput() {
-    return e => {
-      this.setState({ searchInput: e.target.value})
     }
   }
 
@@ -160,7 +153,21 @@ class HippoMap extends React.Component {
       this.markers.push(marker);
     })
 
-    if (filteredListings.length > 0) {
+    if (this.props.geolocation.length > 0) {
+      this.geocoder.geocode({ 'address': this.props.geolocation}, (results, status) => {
+        if (status === 'OK') {
+          if (results[0]) {
+            this.map.setZoom(8);
+            this.map.setCenter(results[0].geometry.location);
+            console.log(this.map.getBounds())
+          } else {
+            window.alert('No results found');
+          }
+        } else {
+          window.alert('Geocoder failed due to: ' + status);
+        }
+      });
+    } else if (filteredListings.length > 0) {
       this.map.fitBounds(bounds);
     }
 
@@ -172,14 +179,6 @@ class HippoMap extends React.Component {
     const { listings, filters } = this.props;
     return (
       <div className="map-container">
-        <input
-          id="pac-input"
-          className="controls"
-          type="text"
-          placeholder="Search Box"
-          onChange={this.handleInput()}
-          onKeyPress={this.handleEnter()}
-          value={this.state.searchInput}/>
         <div className="map" ref={map => this.mapNode = map }>
           MAP
         </div>

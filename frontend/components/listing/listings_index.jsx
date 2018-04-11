@@ -3,14 +3,23 @@ import { Link, withRouter } from 'react-router-dom';
 import ListingsIndexItem from './listings_index_item';
 
 class ListingsIndex extends React.Component {
+  constructor(props) {
+    super(props)
+    this.geocoder = new google.maps.Geocoder();
+  }
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchAllListings();
   }
 
   applyFilters() {
-    const { listings, filters } = this.props;
+    const { listings, filters, geolocation } = this.props;
+
     let filteredListings = listings;
+
+    this.geocoder.geocode({ 'address': geolocation}, (results, status) => {
+      debugger;
+    })
 
     if (filters['pets'] === true) {
       filteredListings = filteredListings.filter(listing => listing.allowsPets === true)
@@ -37,6 +46,8 @@ class ListingsIndex extends React.Component {
     }
 
     filteredListings = filteredListings.filter(listing => listing.dailyCost < filters.pricing)
+
+
     return filteredListings;
   }
 

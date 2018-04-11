@@ -2,16 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { logout } from '../actions/session_actions';
+import { receiveGeolocationEntry } from '../actions/geolocation_actions';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleInput = this.handleInput.bind(this);
-    this.geocoder = new google.maps.Geocoder();
+    this.handleClear = this.handleClear.bind(this);
 
     this.state = {
-      searchInput: '',
+      searchInput: this.props.geolocation,
     }
   }
 
@@ -26,7 +27,23 @@ class NavBar extends React.Component {
 
   handleInput() {
     return e => {
-      this.setState({ searchInput: e.target.value})
+      this.setState({ searchInput: e.target.value}, this.handleEnter)
+    }
+  }
+
+  handleEnter() {
+    return e => {
+      if (e.charCode == '13') {
+        this.props.receiveGeolocationEntry(this.state.searchInput);
+        this.props.history.push("/explore")
+      }
+    }
+  }
+
+  handleClear() {
+    return e => {
+      this.props.receiveGeolocationEntry('')
+      this.setState({searchInput: ''})
     }
   }
 
@@ -43,14 +60,12 @@ class NavBar extends React.Component {
                     id="pac-input"
                     className="controls"
                     type="text"
-                    placeholder="Search Box"
+                    placeholder="Find camping near..."
                     onChange={this.handleInput()}
+                    onKeyPress={this.handleEnter()}
                     value={this.state.searchInput}/>
+                  <h2 onClick={this.handleClear()}>x</h2>
                 </li>
-              <li><label>Camping</label></li>
-              <li><label>Hosting</label></li>
-              <li><label>Scouting</label></li>
-              <li><label>About</label></li>
             </ul>
           </nav>
         </div>
@@ -87,6 +102,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout()),
+    receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry))
   }
 }
 

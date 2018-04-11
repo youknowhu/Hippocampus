@@ -17,6 +17,7 @@ class Explore extends React.Component {
         <HippoMap
           listings={ this.props.listings }
           filters={ this.props.filters }
+          geolocation={ this.props.geolocation }
         />
       </div>
     )

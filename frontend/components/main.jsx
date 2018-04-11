@@ -3,10 +3,36 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { receiveSingleFilter, receivePricingFilter } from '../actions/filter_actions';
 import { fetchHomePageListings } from '../actions/listing_actions';
+import { receiveGeolocationEntry } from '../actions/geolocation_actions';
 
 class HomeMain extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
+
+    this.state = {
+      searchInput: '',
+    }
+  }
+
   componentDidMount() {
     this.props.fetchHomePageListings();
+  }
+
+  handleInput() {
+    return e => {
+      this.setState({ searchInput: e.target.value}, this.handleEnter)
+    }
+  }
+
+  handleEnter() {
+    return e => {
+      if (e.charCode == '13') {
+        this.props.receiveGeolocationEntry(this.state.searchInput);
+        this.props.history.push("/explore")
+      }
+    }
   }
 
   render() {
@@ -25,12 +51,17 @@ class HomeMain extends React.Component {
                 <h1>Search, discover and book over <strong>25</strong> campsites, ranches, vineyards, farms, public parks and more.</h1>
               </div>
               <div className="main-search-box">
-                <Link to="/explore">
-                  <div className="location-search">
-                    <input type="text" name="location" className="find-camping" placeholder="Find camping near..."/>
-                    <i className="fa fa-search"></i>
-                  </div>
-                </Link>
+                <div className="location-search">
+                <input
+                  id="pac-input"
+                  className="controls"
+                  type="text"
+                  placeholder="Find camping near..."
+                  onChange={this.handleInput()}
+                  onKeyPress={this.handleEnter()}
+                  value={this.state.searchInput}/>
+                  <i className="fa fa-search"></i>
+                </div>
                 <div className="dates-search">
                   <input type="text" name="check-in-date"
                    className="datepicker" placeholder="Check In"/>
@@ -43,7 +74,9 @@ class HomeMain extends React.Component {
               </div>
               <div className="search-subtext">
                 <p className="discover-subtext">
-                  or Discover the best camps near me           <i className="fa fa-long-arrow-right"></i>
+                  <Link to="/explore"> 
+                    or Discover the best camps near me           <i className="fa fa-long-arrow-right"></i>
+                  </Link>
                 </p>
               </div>
             </section>
@@ -204,6 +237,7 @@ const mapDispatchToProps = dispatch => {
     fetchHomePageListings: () => dispatch(fetchHomePageListings()),
     receiveSingleFilter: filter => dispatch(receiveSingleFilter(filter)),
     receivePricingFilter: amount => dispatch(receivePricingFilter(amount)),
+    receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry)),
   }
 }
 
