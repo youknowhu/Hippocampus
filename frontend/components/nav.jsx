@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { logout } from '../actions/session_actions';
 import { receiveGeolocationEntry, receiveMapBounds } from '../actions/geolocation_actions';
+import { loadModal } from '../actions/modal_actions';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class NavBar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleClear = this.handleClear.bind(this);
+    this.showLogin = this.showLogin.bind(this);
 
 
     this.state = {
@@ -17,8 +19,11 @@ class NavBar extends React.Component {
     }
   }
 
+  showLogin() {
+    this.props.loadModal('login');
+  }
+
   componentWillReceiveProps(nextProps) {
-    debugger;
     if (this.props.geolocation != nextProps.geolocation) {
       this.setState({ searchInput: nextProps.geolocation})
     }
@@ -91,11 +96,11 @@ class NavBar extends React.Component {
           {
             (this.props.currentUser === null) ?
               <h4>
-                <Link to="/login" >Log In</Link>
+                <button onClick={this.showLogin}>Log In</button>
               </h4>
               :
               <h4>
-                <Link to="/" onClick={this.handleLogout}>Log Out</Link>
+                <button onClick={this.handleLogout}>Log Out</button>
               </h4>
             }
           </div>
@@ -117,6 +122,7 @@ const mapDispatchToProps = dispatch => {
     logout: () => dispatch(logout()),
     receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry)),
     receiveMapBounds: bounds => dispatch(receiveMapBounds(bounds)),
+    loadModal: modalType => dispatch(loadModal(modalType)),
   }
 }
 

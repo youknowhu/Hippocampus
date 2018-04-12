@@ -21,7 +21,7 @@ header {
     display: flex;
     z-index: 1;
 
-    a {
+    a, button {
       box-sizing: border-box;
       color: $green-cyan;
       font-size: 16px;

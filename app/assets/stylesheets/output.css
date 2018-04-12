@@ -273,7 +273,7 @@ header {
     padding: 0px 45px;
     display: flex;
     z-index: 1; }
-    header .nav-right a {
+    header .nav-right a, header .nav-right button {
       box-sizing: border-box;
       color: #40d9ac;
       font-size: 16px;
@@ -699,7 +699,7 @@ footer {
   padding: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: #fff;
-  z-index: 1; }
+  z-index: 4; }
   .modal h3 {
     font-size: 24px;
     margin: 0 auto;
@@ -740,7 +740,8 @@ footer {
     .modal .modal-footer a {
       padding-top: 10px;
       text-decoration: underline;
-      font-weight: 700; }
+      font-weight: 700;
+      cursor: pointer; }
 
 .modal-close {
   position: absolute;
@@ -1016,9 +1017,10 @@ footer {
   height: 92vh; }
   .explore-container .map-container {
     width: 45%;
-    height: 100%; }
+    height: 100%;
+    z-index: 2; }
     .explore-container .map-container .map {
-      z-index: 4;
+      z-index: 2;
       position: relative;
       height: 95%; }
   .explore-container strong {

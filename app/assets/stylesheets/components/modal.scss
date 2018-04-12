@@ -21,7 +21,7 @@
   padding: 25px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: #fff;
-  z-index: 1;
+  z-index: 4;
 
   h3 {
     font-size: 24px;
@@ -79,6 +79,7 @@
       padding-top: 10px;
       text-decoration: underline;
       font-weight: 700;
+      cursor: pointer;
     }
   }
 }

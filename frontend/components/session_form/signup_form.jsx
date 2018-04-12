@@ -13,7 +13,7 @@ class SignupForm extends React.Component {
       username: '',
       password: '',
       zip: '',
-      showModal: true,
+      showModal: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openModal = this.openModal.bind(this);
@@ -28,10 +28,16 @@ class SignupForm extends React.Component {
      this.props.clearErrors();
   }
 
+  componentWillReceiveProps(nextProps) {
+    debugger;
+    if (nextProps.modal === 'signup') {
+      this.setState({ showModal: true })
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup(this.state)
-      .then(() => this.props.history.push("/"))
       .then(() => this.closeModal());
   }
 
@@ -42,7 +48,7 @@ class SignupForm extends React.Component {
 
   closeModal() {
     this.setState({showModal: false});
-    this.props.history.push("/");
+    this.props.hideModal();
   }
 
   renderErrors() {

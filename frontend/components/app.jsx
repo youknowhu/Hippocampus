@@ -21,8 +21,8 @@ const App = () => {
           <Route path="/explore" component={ExploreContainer} />
           <Route path="/" component={Main} />
         </Switch>
-        <Route path="/login" component={LoginFormContainer} />
-        <Route path="/signup" component={SignupFormContainer} />
+        <LoginFormContainer />
+        <SignupFormContainer />
       <Footer />
     </div>
   )
