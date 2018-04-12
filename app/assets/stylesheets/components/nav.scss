@@ -11,12 +11,12 @@ header {
   z-index: 3;
   height: 70px;
 
-  .nav-left{
+  .nav-left {
     display: flex;
     z-index: 1;
   }
 
-  .nav-right{
+  .nav-right {
     padding: 0px 45px;
     display: flex;
     z-index: 1;
@@ -84,26 +84,37 @@ header {
 
     ul {
       display: flex;
+      flex-direction: row;
 
       li {
         margin: 0px 10px;
-        width: 60px;
         height: 70px;
-        text-align: center;
         line-height: 70px;
         vertical-align: center;
+        min-width: 100px;
+
+        input {
+          width: 250px;
+        }
 
         label {
+          margin-left: 15px;
           letter-spacing: 0.04em;
+          color: $green-cyan;
           font-weight: 200;
+          width: 200px;
+          text-align: center;
         }
+
+        label:hover {
+          color: $gray;
+          border-bottom: 1px solid $gray;
+          cursor: pointer;
+        }
+
       }
     }
 
-
-    li:hover {
-      border-bottom: 2px solid $green-cyan;
-    }
 
     .search:hover {
       border-bottom: none;

@@ -65,7 +65,10 @@ class NavBar extends React.Component {
                     onChange={this.handleInput()}
                     onKeyPress={this.handleEnter()}
                     value={this.state.searchInput}/>
-                  <h2 onClick={this.handleClear()}>x</h2>
+                    {
+                      (this.state.searchInput === '') ?
+                        <div> </div> : <h2 onClick={this.handleClear()}>x</h2>
+                    }
                 </li>
             </ul>
           </nav>

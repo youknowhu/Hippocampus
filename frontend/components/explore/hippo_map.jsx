@@ -80,7 +80,7 @@ class HippoMap extends React.Component {
 
             if (results[0]) {
               window.localStorage.setItem(geolocation, JSON.stringify(results))
-              this.map.setZoom(8);
+              this.map.setZoom(8.5);
               this.map.setCenter(results[0].geometry.location);
               const mapBounds = this.map.getBounds();
               this.map.fitBounds(mapBounds);

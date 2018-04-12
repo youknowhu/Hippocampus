@@ -141,7 +141,7 @@ listing13 = Listing.create!(host_id: user3.id, title: 'Woodlands Cabin',
   minute drive to Lake Tahoe and 30 minutes from three ski resorts. ",
   daily_cost:40, is_private: true, is_camping: false, allows_pets: false,
   max_capacity: 8, check_in_after: '2 PM', check_out_before: '12 PM',
-  lat: 38.930204, lng: -120.078765,
+  lat: 38.888938, lng: -120.353527,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523507813/cabin/cabin-1_cropped.jpg' )
 
 review1 = Review.create!(user_id: user5.id, listing_id: listing3.id,

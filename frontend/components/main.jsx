@@ -52,11 +52,14 @@ class HomeMain extends React.Component {
               </div>
               <div className="main-search-box">
                 <div className="location-search">
+                <Link to='/explore'>
+                  <label>Explore All Listings</label>
+                </Link>
                 <input
                   id="pac-input"
                   className="controls"
                   type="text"
-                  placeholder="Find camping near..."
+                  placeholder="Explore All Listings"
                   onChange={this.handleInput()}
                   onKeyPress={this.handleEnter()}
                   value={this.state.searchInput}/>
@@ -74,7 +77,7 @@ class HomeMain extends React.Component {
               </div>
               <div className="search-subtext">
                 <p className="discover-subtext">
-                  <Link to="/explore"> 
+                  <Link to="/explore">
                     or Discover the best camps near me           <i className="fa fa-long-arrow-right"></i>
                   </Link>
                 </p>

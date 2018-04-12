@@ -316,19 +316,27 @@ header {
       font-weight: 700;
       margin-left: 5px; }
     header .discover-nav ul {
-      display: flex; }
+      display: flex;
+      flex-direction: row; }
       header .discover-nav ul li {
         margin: 0px 10px;
-        width: 60px;
         height: 70px;
-        text-align: center;
         line-height: 70px;
-        vertical-align: center; }
+        vertical-align: center;
+        min-width: 100px; }
+        header .discover-nav ul li input {
+          width: 250px; }
         header .discover-nav ul li label {
+          margin-left: 15px;
           letter-spacing: 0.04em;
-          font-weight: 200; }
-    header .discover-nav li:hover {
-      border-bottom: 2px solid #40d9ac; }
+          color: #40d9ac;
+          font-weight: 200;
+          width: 200px;
+          text-align: center; }
+        header .discover-nav ul li label:hover {
+          color: #777777;
+          border-bottom: 1px solid #777777;
+          cursor: pointer; }
     header .discover-nav .search:hover {
       border-bottom: none; }
 
