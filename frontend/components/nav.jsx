@@ -35,6 +35,7 @@ class NavBar extends React.Component {
     return e => {
       if (e.charCode == '13') {
         this.props.receiveGeolocationEntry(this.state.searchInput);
+        window.localStorage.clear()
         this.props.history.push("/explore")
       }
     }

@@ -23,7 +23,10 @@ class MarkerManager {
       .filter(listing => !this.markers[listing.id])
       .forEach(newListing => this.createMarkerFromListing(newListing))
 
-    if (listings.length > 0) {
+    if (listings.length === 1) {
+      this.map.setZoom(7);
+      this.map.setCenter({lat: listings[0].lat, lng: listings[0].lng });
+    } else if (listings.length > 0) {
       this.map.fitBounds(this.bounds);
     }
 

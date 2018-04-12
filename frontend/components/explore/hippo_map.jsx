@@ -18,6 +18,7 @@ class HippoMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.listings);
+    this.orientMap();
   }
 
   componentDidUpdate() {
@@ -101,23 +102,24 @@ class HippoMap extends React.Component {
     console.log('orient map');
     //
     const { geolocation } = this.props;
-    const mapBounds = this.map.getBounds();
-    // debugger;
     //
     if (geolocation.length > 0) {
-      const results = window.localStorage.getItem(geolocation);
-      debugger;
+      const results = JSON.parse(window.localStorage.getItem(geolocation));
+      console.log('geolocation', geolocation);
+      console.log('results', results);
+
     //
       if (!results) {
-        debugger
         this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
           if (status === 'OK') {
+
             if (results[0]) {
               window.localStorage.setItem(geolocation, JSON.stringify(results))
               this.map.setZoom(8);
               this.map.setCenter(results[0].geometry.location);
+              const mapBounds = this.map.getBounds();
               this.props.receiveMapBounds(mapBounds);
-              debugger;
+              this.map.fitBounds(mapBounds);
             } else {
               window.alert('No results found');
             }
@@ -125,7 +127,7 @@ class HippoMap extends React.Component {
             window.alert('Geocoder failed due to: ' + status);
           }
         })
-      }
+      } 
     }
   }
 
