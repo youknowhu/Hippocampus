@@ -19,24 +19,17 @@ class HippoMap extends React.Component {
     this.geocoder = new google.maps.Geocoder();
   }
 
-  componentDidUpdate() {
-    this.addListingMarkers();
-    this.orientMap();
-  }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps != this.props) {
-  //     this.addListingMarkers();
-  //     this.orientMap();
-  //   }
-  // }
-
   componentDidMount() {
-    console.log('component mounted');
+    console.log('did mount');
     this.map = new google.maps.Map(this.mapNode, mapOptions);
   }
 
+  componentWillReceiveProps() {
+    this.addListingMarkers();
+  }
+
   clearMarkers() {
+    console.log('clear markers');
     this.markers.forEach(marker =>
       marker.setMap(null)
     )
@@ -87,7 +80,7 @@ class HippoMap extends React.Component {
     const icon = 'http://res.cloudinary.com/deor0br3s/image/upload/c_scale,w_100/v1523399623/Hippo_Marker_3.png'
     this.bounds = new google.maps.LatLngBounds();
 
-    filteredListings.forEach(listing => {
+    this.filteredListings.forEach(listing => {
       const listingPos = { lat: listing.lat, lng: listing.lng};
 
       const marker = new google.maps.Marker({
@@ -116,6 +109,7 @@ class HippoMap extends React.Component {
 
       this.bounds.extend(marker.getPosition());
 
+
       marker.addListener('mouseover', () => {
         infowindow.open(this.map, marker)
       });
@@ -124,55 +118,94 @@ class HippoMap extends React.Component {
         infowindow.close(this.map, marker)
       });
 
-      // marker.addListener('click', () => {
-      //   this.map.setZoom(6);
-      //   this.map.setCenter(marker.getPosition());
-      // });
-
       this.markers.push(marker);
     })
 
 
-
+    this.orientMap();
   }
+
+  // orientMap() {
+  //   console.log('orient map');
+  //
+  //   const { geolocation } = this.props;
+  //
+  //   if (geolocation.length > 0) {
+  //     const results = JSON.parse(window.localStorage.getItem(geolocation));
+  //     if (results) {
+  //       this.map.setZoom(8);
+  //       this.map.setCenter(results[0].geometry.location);
+  //       this.props.receiveMapBounds(this.map.getBounds())
+  //     } else {
+  //       this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
+  //         if (status === 'OK') {
+  //           if (results[0]) {
+  //             window.localStorage.setItem(geolocation, JSON.stringify(results))
+  //             this.map.setZoom(8);
+  //             this.map.setCenter(results[0].geometry.location);
+  //             this.props.receiveMapBounds(this.map.getBounds());
+  //           } else {
+  //             window.alert('No results found');
+  //           }
+  //         }  else {
+  //           window.alert('Geocoder failed due to: ' + status);
+  //         }
+  //       })
+  //     }
+  //   } else if (this.filteredListings.length > 0) {
+  //     this.map.fitBounds(this.bounds);
+  //   }
+  // }
 
   orientMap() {
     console.log('orient map');
 
     const { geolocation } = this.props;
+    const mapBounds = this.map.getBounds();
 
-    if (!window.localStorage.getItem(geolocation) && geolocation.length > 0) {
-      this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
-        if (status === 'OK') {
-          if (results[0]) {
-            window.localStorage.setItem(geolocation, JSON.stringify(results))
-            this.map.setZoom(8);
-            this.map.setCenter(results[0].geometry.location);
-            this.props.receiveMapBounds(this.map.getBounds());
-          } else {
-            window.alert('No results found');
+    if (geolocation.length > 0) {
+      const results = JSON.parse(window.localStorage.getItem(geolocation));
+      if (results) {
+        this.map.setZoom(8);
+        this.map.setCenter(results[0].geometry.location);
+        this.props.receiveMapBounds(mapBounds);
+      } else {
+        this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
+          if (status === 'OK') {
+            if (results[0]) {
+              window.localStorage.setItem(geolocation, JSON.stringify(results))
+              this.map.setZoom(8);
+              this.map.setCenter(results[0].geometry.location);
+              this.props.receiveMapBounds(mapBounds);
+            } else {
+              window.alert('No results found');
+            }
+          }  else {
+            window.alert('Geocoder failed due to: ' + status);
           }
-        }  else {
-          window.alert('Geocoder failed due to: ' + status);
-        }
-      })
-    } else if (this.props.listings.length > 0) {
+        })
+      }
+    } else if (this.filteredListings.length > 0) {
       this.map.fitBounds(this.bounds);
     }
   }
 
-
-
   render() {
     console.log('render');
     const { listings, filters } = this.props;
-    return (
-      <div className="map-container">
-        <div className="map" ref={map => this.mapNode = map }>
-          MAP
+
+    if (Object.keys(listings) === 0 ) {
+      return (<div> </div> )
+    } else {
+
+      return (
+        <div className="map-container">
+          <div className="map" ref={map => this.mapNode = map }>
+            MAP
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
 
