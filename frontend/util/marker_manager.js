@@ -4,7 +4,6 @@ class MarkerManager {
   constructor(map, handleClick){
     this.map = map;
     this.markers = {};
-
   }
 
   clearMarkers(listingsObj) {

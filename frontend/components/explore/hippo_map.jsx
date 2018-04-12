@@ -66,6 +66,16 @@ class HippoMap extends React.Component {
     return filteredListings;
   }
 
+  // registerListeners() {
+  //   google.maps.event.addListener(this.map, 'idle', () => {
+  //     const { north, south, east, west } = this.map.getBounds().toJSON();
+  //     const bounds = {
+  //       northEast: { lat:north, lng: east },
+  //       southWest: { lat: south, lng: west } };
+  //     this.props.receiveMapBounds(bounds);
+  //   });
+  // }
+
   orientMap() {
     const { geolocation } = this.props;
     if (geolocation.length > 0) {
@@ -79,7 +89,8 @@ class HippoMap extends React.Component {
               this.map.setZoom(8);
               this.map.setCenter(results[0].geometry.location);
               const mapBounds = this.map.getBounds();
-              this.props.receiveMapBounds(mapBounds);
+              this.map.fitBounds(mapBounds);
+              this.props.receiveMapBounds(this.map.getBounds());
               this.map.fitBounds(mapBounds);
             } else {
               window.alert('No results found');
