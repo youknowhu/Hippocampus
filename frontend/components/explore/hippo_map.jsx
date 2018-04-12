@@ -23,6 +23,7 @@ class HippoMap extends React.Component {
   componentDidUpdate() {
     this.filteredListings = this.applyFilters();
     this.MarkerManager.updateMarkers(this.filteredListings);
+    this.orientMap();
   }
 
 
@@ -64,57 +65,6 @@ class HippoMap extends React.Component {
     return filteredListings;
   }
 
-  // addListingMarkers() {
-  //   console.log('adding listing markers');
-  //   this.clearMarkers();
-  //   this.filteredListings = this.applyFilters();
-  //   const icon = 'http://res.cloudinary.com/deor0br3s/image/upload/c_scale,w_100/v1523399623/Hippo_Marker_3.png'
-  //   this.bounds = new google.maps.LatLngBounds();
-  //
-  //   this.filteredListings.forEach(listing => {
-  //     const listingPos = { lat: listing.lat, lng: listing.lng};
-  //
-  //     const marker = new google.maps.Marker({
-  //       position: listingPos,
-  //       map: this.map,
-  //       title: listing.title,
-  //       icon: icon,
-  //     });
-  //
-  //     const infowindow = new google.maps.InfoWindow({
-  //       content:
-  //       `<div className="infowindow"
-  //         style="padding-left: 20px;"
-  //         >
-  //         <h2 className="infowindow-title"
-  //           style="font-weight: bold;
-  //           font-size: 14px;
-  //           text-align: center;
-  //           color: #777777;
-  //           padding-top: 5px;
-  //           "> ${listing.title} </h2>
-  //
-  //       </div>`,
-  //       maxWidth: 400,
-  //     });
-  //
-  //     this.bounds.extend(marker.getPosition());
-  //
-  //
-  //     marker.addListener('mouseover', () => {
-  //       infowindow.open(this.map, marker)
-  //     });
-  //
-  //     marker.addListener('mouseout', () => {
-  //       infowindow.close(this.map, marker)
-  //     });
-  //
-  //     this.markers.push(marker);
-  //   })
-  //
-  //
-  //   this.orientMap();
-  // }
 
   // orientMap() {
   //   console.log('orient map');
@@ -147,38 +97,37 @@ class HippoMap extends React.Component {
   //   }
   // }
 
-  // orientMap() {
-  //   console.log('orient map');
-  //
-  //   const { geolocation } = this.props;
-  //   const mapBounds = this.map.getBounds();
-  //
-  //   if (geolocation.length > 0) {
-  //     const results = JSON.parse(window.localStorage.getItem(geolocation));
-  //     if (results) {
-  //       this.map.setZoom(8);
-  //       this.map.setCenter(results[0].geometry.location);
-  //       this.props.receiveMapBounds(mapBounds);
-  //     } else {
-  //       this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
-  //         if (status === 'OK') {
-  //           if (results[0]) {
-  //             window.localStorage.setItem(geolocation, JSON.stringify(results))
-  //             this.map.setZoom(8);
-  //             this.map.setCenter(results[0].geometry.location);
-  //             this.props.receiveMapBounds(mapBounds);
-  //           } else {
-  //             window.alert('No results found');
-  //           }
-  //         }  else {
-  //           window.alert('Geocoder failed due to: ' + status);
-  //         }
-  //       })
-  //     }
-  //   } else if (this.filteredListings.length > 0) {
-  //     this.map.fitBounds(this.bounds);
-  //   }
-  // }
+  orientMap() {
+    console.log('orient map');
+    //
+    const { geolocation } = this.props;
+    const mapBounds = this.map.getBounds();
+    // debugger;
+    //
+    if (geolocation.length > 0) {
+      const results = window.localStorage.getItem(geolocation);
+      debugger;
+    //
+      if (!results) {
+        debugger
+        this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
+          if (status === 'OK') {
+            if (results[0]) {
+              window.localStorage.setItem(geolocation, JSON.stringify(results))
+              this.map.setZoom(8);
+              this.map.setCenter(results[0].geometry.location);
+              this.props.receiveMapBounds(mapBounds);
+              debugger;
+            } else {
+              window.alert('No results found');
+            }
+          }  else {
+            window.alert('Geocoder failed due to: ' + status);
+          }
+        })
+      }
+    }
+  }
 
   render() {
     const { listings, filters } = this.props;

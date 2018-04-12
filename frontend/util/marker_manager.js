@@ -16,7 +16,6 @@ class MarkerManager {
 
     this.clearMarkers(listingsObj)
     this.bounds = new google.maps.LatLngBounds();
-    console.log('bounds in marker manager', this.bounds)
 
     listings.forEach(listing => listingsObj[listing.id] = listing);
 
