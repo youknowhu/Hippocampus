@@ -11,11 +11,10 @@
   .map-container {
     width: 45%;
     height: 100%;
-    z-index: 2;
 
 
     .map {
-      z-index: 2;
+      z-index: 0;
       position: relative;
       height: 95%;
     }

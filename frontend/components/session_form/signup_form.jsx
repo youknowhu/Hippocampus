@@ -18,6 +18,7 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.showLogin = this.showLogin.bind(this);
   }
 
   update(field) {
@@ -29,7 +30,7 @@ class SignupForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger;
+    console.log(nextProps)
     if (nextProps.modal === 'signup') {
       this.setState({ showModal: true })
     }
@@ -45,6 +46,10 @@ class SignupForm extends React.Component {
     this.setState({showModal: true});
   }
 
+  showLogin() {
+    this.setState({showModal: false});
+    this.props.loadModal('login');
+  }
 
   closeModal() {
     this.setState({showModal: false});
@@ -64,8 +69,8 @@ class SignupForm extends React.Component {
   }
 
 
-
   render() {
+    console.log(this.props.modal);
     return (
       <div className="react-modal-form">
         <Modal
@@ -77,7 +82,7 @@ class SignupForm extends React.Component {
         >
           <form className="modal-form" onSubmit={this.handleSubmit}>
 
-            <img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1522784845/hippocampus_logo.svg"/>
+            <img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1523404915/Hippocampus_Logo_-_hippo_image.svg"/>
             <p>Your next adventure is waiting.</p>
 
             <div className="input">
@@ -137,7 +142,7 @@ class SignupForm extends React.Component {
 
             <div className="modal-footer">
               <p>
-                Already have a Hippocampus account? <br /><Link to="/login">Log In</Link>
+                Already have a Hippocampus account? <br /><a onClick={this.showLogin}>Log In</a>
               </p>
             </div>
           </form>
