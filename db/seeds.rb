@@ -128,6 +128,22 @@ listing11 = Listing.create!(host_id: user5.id, title: 'Airstream Dream',
   lat: 44.061115, lng: -121.3848556,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523471874/airstream/airstream_cropped.jpg' )
 
+listing12 = Listing.create!(host_id: user2.id, title: 'Desert Yurt',
+  body: "Our desert yurt can be your next weekend getaway. This yurt is designed
+  to be very temperate so you can stay cool even in Arizona's hot summer months.",
+  daily_cost:120, is_private: true, is_camping: false, allows_pets: true,
+  max_capacity: 15, check_in_after: '2 PM', check_out_before: '10 AM',
+  lat: 33.744921, lng: -112.844791,
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523506353/nomadic-cropped.jpg' )
+
+listing13 = Listing.create!(host_id: user3.id, title: 'Woodlands Cabin',
+  body: "The Woodlands Cabin is nestled between a redwood grove and is a 20
+  minute drive to Lake Tahoe and 30 minutes from three ski resorts. ",
+  daily_cost:40, is_private: true, is_camping: false, allows_pets: false,
+  max_capacity: 8, check_in_after: '2 PM', check_out_before: '12 PM',
+  lat: 38.930204, lng: -120.078765,
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523507813/cabin/cabin-1_cropped.jpg' )
+
 review1 = Review.create!(user_id: user5.id, listing_id: listing3.id,
   body: 'I took my husband and children to this treehouse last weekend
   and it was absolutely wonderful. Kimmy was a wonderful host, and
@@ -450,3 +466,45 @@ listing_photos55 = ListingPhoto.create!(listing_id: listing11.id,
 listing_photos56 = ListingPhoto.create!(listing_id: listing11.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523471874/airstream/airstream-3.jpg',
   order: 4)
+
+#yurt
+listing_photos57 = ListingPhoto.create!(listing_id: listing12.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523506239/yurt-1441610_1920.jpg',
+  order: 1)
+
+listing_photos58 = ListingPhoto.create!(listing_id: listing12.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523506238/nomadic-life-692656_1920.jpg',
+  order: 2)
+
+listing_photos59 = ListingPhoto.create!(listing_id: listing12.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523506241/yurt-2827308_1920.jpg',
+  order: 3)
+
+listing_photos60 = ListingPhoto.create!(listing_id: listing12.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523506238/yurt-1798218_1920.jpg',
+  order: 4)
+
+listing_photos61 = ListingPhoto.create!(listing_id: listing12.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523506238/yurt-486866_1920.jpg',
+  order: 5)
+
+#cabin
+listing_photos62 = ListingPhoto.create!(listing_id: listing13.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523507669/cabin/cabin-1.jpg',
+  order: 1)
+
+listing_photos63 = ListingPhoto.create!(listing_id: listing13.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523508593/cabin/cabin-3.jpg',
+  order: 2)
+
+listing_photos64 = ListingPhoto.create!(listing_id: listing13.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523508593/cabin/cabin-bench.jpg',
+  order: 3)
+
+listing_photos65 = ListingPhoto.create!(listing_id: listing13.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523509692/cabin/cabin-6.jpg',
+  order: 4)
+
+listing_photos66 = ListingPhoto.create!(listing_id: listing13.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523508593/cabin/cabin-5.jpg',
+  order: 5)

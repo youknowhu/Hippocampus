@@ -42,17 +42,14 @@ class ListingsIndex extends React.Component {
     }
 
     filteredListings = filteredListings.filter(listing => listing.dailyCost < filters.pricing)
-    console.log('before map filter', filteredListings);
-    if (Object.keys(mapBounds).length > 0) {
-      filteredListings = filteredListings.filter(listing =>
-        listing.lat > mapBounds.f.b &&
-        listing.lat < mapBounds.f.f &&
-        listing.lng > mapBounds.b.f &&
-        listing.lng < mapBounds.b.b
-      )
-    }
-
-    console.log(filteredListings);
+    // if (Object.keys(mapBounds).length > 0) {
+    //   filteredListings = filteredListings.filter(listing =>
+    //     listing.lat > mapBounds.f.b &&
+    //     listing.lat < mapBounds.f.f &&
+    //     listing.lng > mapBounds.b.f &&
+    //     listing.lng < mapBounds.b.b
+    //   )
+    // }
 
     return filteredListings;
   }
