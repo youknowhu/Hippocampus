@@ -4,7 +4,7 @@ import MarkerManager from '../../util/marker_manager';
 
 const mapOptions = {
   center: { lat: 36.7855129, lng: -119.8646011},
-  zoom: 6,
+  zoom: 7,
 }
 
 class HippoMap extends React.Component {
@@ -17,14 +17,14 @@ class HippoMap extends React.Component {
   componentDidMount() {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    this.MarkerManager.updateMarkers(this.props.listings);
-    this.orientMap();
+    this.MarkerManager.updateMarkers(this.props.listings, this.props.geolocation);
   }
 
   componentDidUpdate() {
     this.filteredListings = this.applyFilters();
-    this.MarkerManager.updateMarkers(this.filteredListings);
-    this.orientMap();
+    this.MarkerManager.updateMarkers(this.filteredListings,
+      this.props.geolocation,
+      this.props.receiveMapBounds)
   }
 
 
@@ -66,31 +66,6 @@ class HippoMap extends React.Component {
     return filteredListings;
   }
 
-  orientMap() {
-    const { geolocation } = this.props;
-    if (geolocation.length > 0) {
-      const results = JSON.parse(window.localStorage.getItem(geolocation));
-      if (!results) {
-        this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
-          if (status === 'OK') {
-
-            if (results[0]) {
-              window.localStorage.setItem(geolocation, JSON.stringify(results))
-              this.map.setZoom(8);
-              this.map.setCenter(results[0].geometry.location);
-              const mapBounds = this.map.getBounds();
-              this.props.receiveMapBounds(mapBounds);
-              this.map.fitBounds(mapBounds);
-            } else {
-              window.alert('No results found');
-            }
-          }  else {
-            window.alert('Geocoder failed due to: ' + status);
-          }
-        })
-      }
-    }
-  }
 
   render() {
     const { listings, filters } = this.props;
