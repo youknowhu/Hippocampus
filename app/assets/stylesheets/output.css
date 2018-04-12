@@ -522,7 +522,7 @@ footer {
   padding-bottom: 250px; }
   .main-header h2 {
     font-weight: 600;
-    font-size: 7.5vh;
+    font-size: 7vh;
     color: #333333;
     line-height: 1.1;
     display: block;
@@ -533,11 +533,24 @@ footer {
     width: 50%; }
     .main-header .row .subtext {
       padding-top: 20px;
-      padding-bottom: 30px; }
+      padding-bottom: 15px; }
       .main-header .row .subtext h1 {
         color: #a1a1a1;
         font-weight: 200;
         font-size: 20px; }
+        .main-header .row .subtext h1 a {
+          text-align: center;
+          color: #40d9ac;
+          font-weight: 300;
+          padding-bottom: 10px;
+          padding-left: 15px; }
+        .main-header .row .subtext h1 a:hover {
+          color: #a1a1a1;
+          text-decoration: underline; }
+        .main-header .row .subtext h1 i {
+          padding-left: 1px;
+          font-size: 20px;
+          font-weight: 700; }
       .main-header .row .subtext strong {
         font-weight: 700; }
     .main-header .row .main-search-box {
@@ -563,7 +576,8 @@ footer {
         .main-header .row .main-search-box .location-search .find-camping {
           color: #2d2d2d; }
         .main-header .row .main-search-box .location-search input {
-          font-size: 18px; }
+          font-size: 18px;
+          width: 100%; }
         .main-header .row .main-search-box .location-search i {
           font-size: 20px; }
       .main-header .row .main-search-box .dates-search {
@@ -594,11 +608,6 @@ footer {
 
 .search-subtext {
   padding: 20px; }
-  .search-subtext .discover-subtext {
-    text-align: center;
-    color: #333333;
-    font-weight: 300;
-    font-size: 14px; }
 
 .main-header-image-footer {
   flex-direction: column;

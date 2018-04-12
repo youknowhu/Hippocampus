@@ -48,20 +48,23 @@ class HomeMain extends React.Component {
             <section className="row left">
               <h2>Adventure is waiting.</h2>
               <div className="subtext">
-                <h1>Search, discover and book over <strong>25</strong> campsites, ranches, vineyards, farms, public parks and more.</h1>
+                <h1>Search, discover and book over <strong>15</strong> campsites, ranches, vineyards, farms, public parks and more.
+                  <Link to="/explore">
+                    Explore all listings <i className="fa fa-long-arrow-right"></i>
+                  </Link>
+                </h1>
+              </div>
+              <div className="search-subtext">
+
               </div>
               <div className="main-search-box">
                 <div className="location-search">
-                <Link to='/explore'>
-                  <label>Explore All Listings</label>
-                </Link>
                 <input
                   id="pac-input"
                   className="controls"
                   type="text"
-                  placeholder="Explore All Listings"
+                  placeholder="Or find camping near..."
                   onChange={this.handleInput()}
-                  onKeyPress={this.handleEnter()}
                   value={this.state.searchInput}/>
                   <i className="fa fa-search"></i>
                 </div>
@@ -71,16 +74,9 @@ class HomeMain extends React.Component {
                   <input type="text" name="check-out-date"
                    className="datepicker" placeholder="Check Out"/ >
                   <div className="search-button">
-                    Search
+                    <Link to='/explore'> Search </Link>
                   </div>
                 </div>
-              </div>
-              <div className="search-subtext">
-                <p className="discover-subtext">
-                  <Link to="/explore">
-                    or Discover the best camps near me           <i className="fa fa-long-arrow-right"></i>
-                  </Link>
-                </p>
               </div>
             </section>
             <section className="row right"><Link to={`/listings/${listings[0].id}`}>
