@@ -24,6 +24,7 @@ class BookingsForm extends React.Component {
     this.handleStep = this.handleStep.bind(this);
     this.renderStickyForm = this.renderStickyForm.bind(this);
     this.bookingRef = React.createRef();
+    this.showLogin = this.showLogin.bind(this);
 
   }
 
@@ -31,6 +32,10 @@ class BookingsForm extends React.Component {
     return e => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  showLogin() {
+    this.props.loadModal('login');
   }
 
   handleDayChange(dateParam) {
@@ -120,7 +125,7 @@ class BookingsForm extends React.Component {
         <div onScroll={ ()=> this.renderStickyForm} id="booking-form" ref={this.bookingRef}>
           <div className='booking-header'>
             <h2>${listing.dailyCost}</h2>
-            <Link to="/login">Log In To Book</Link>
+            <button onClick={this.showLogin}>Log In To Book</button>
           </div>
         </div>
       )
