@@ -43,7 +43,13 @@ class BookingsForm extends React.Component {
     window.addEventListener('scroll', this.renderStickyForm);
     const bookingForm = this.bookingRef.current;
     const domRect = bookingForm.getBoundingClientRect();
-    this.stickyPos = domRect.y < 0 ? 400 : domRect.y - 70; 
+    this.stickyPos = domRect.y < 0 ? 400 : domRect.y - 70;
+
+    if (this.props.searchDates) {
+      this.setState({ checkIn: this.props.searchDates.checkIn })
+      this.setState({ checkOut: this.props.searchDates.checkOut })
+    }
+
   }
 
   componentWillUnmount() {

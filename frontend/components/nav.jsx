@@ -17,6 +17,13 @@ class NavBar extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    debugger;
+    if (this.props.geolocation != nextProps.geolocation) {
+      this.setState({ searchInput: nextProps.geolocation})
+    }
+  }
+
   handleLogout(e)  {
     e.preventDefault();
     this.props.logout();
@@ -65,7 +72,7 @@ class NavBar extends React.Component {
                     placeholder="Find camping near..."
                     onChange={this.handleInput()}
                     onKeyPress={this.handleEnter()}
-                    value={this.props.geolocation || this.state.searchInput}/>
+                    value={this.state.searchInput}/>
                     {
                       (this.state.searchInput === '') ?
                         <div> </div> : <h2 onClick={this.handleClear()}>x</h2>
@@ -100,7 +107,7 @@ class NavBar extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    geolocation: state.ui.geolocation,
+    geolocation: state.ui.geo.geolocation,
   }
 }
 

@@ -9,9 +9,10 @@ const msp = (state) => {
   const currentUser = state.session.currentUser || {};
   const currentUserBookings = state.entities.currentUserBookings;
   const errors = state.errors.bookingErrors;
+  const searchDates = state.ui.dates;
 
   return {
-    bookings, listing, currentUser, currentUserBookings, errors,
+    bookings, listing, currentUser, currentUserBookings, errors, searchDates,
   }
 }
 
