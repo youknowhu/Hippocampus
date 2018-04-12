@@ -11,6 +11,7 @@ class NavBar extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleClear = this.handleClear.bind(this);
 
+
     this.state = {
       searchInput: '',
     }
@@ -64,7 +65,7 @@ class NavBar extends React.Component {
                     placeholder="Find camping near..."
                     onChange={this.handleInput()}
                     onKeyPress={this.handleEnter()}
-                    value={this.state.searchInput}/>
+                    value={this.props.geolocation || this.state.searchInput}/>
                     {
                       (this.state.searchInput === '') ?
                         <div> </div> : <h2 onClick={this.handleClear()}>x</h2>
@@ -99,6 +100,7 @@ class NavBar extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
+    geolocation: state.ui.geolocation,
   }
 }
 

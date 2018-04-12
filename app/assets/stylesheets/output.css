@@ -610,6 +610,9 @@ footer {
           margin: 0;
           padding: 0;
           width: 30%; }
+          .main-header .row .main-search-box .dates-search .search-button button {
+            background-color: #40d9ac;
+            font-size: 18px; }
 
 .search-subtext {
   padding: 20px; }

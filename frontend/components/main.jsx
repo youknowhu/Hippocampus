@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { receiveSingleFilter, receivePricingFilter } from '../actions/filter_actions';
 import { fetchHomePageListings } from '../actions/listing_actions';
 import { receiveGeolocationEntry } from '../actions/geolocation_actions';
+import { receiveSearchDates } from '../actions/dates_actions';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import DayPicker from 'react-day-picker';
 import format from 'date-fns/format';
@@ -14,7 +15,6 @@ class HomeMain extends React.Component {
   constructor(props) {
     super(props);
     this.handleInput = this.handleInput.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
 
     this.state = {
       searchInput: '',
@@ -44,25 +44,14 @@ class HomeMain extends React.Component {
   }
 
   handleSearch() {
-    return e => {
-      this.props.receiveGeolocationEntry(this.state.searchInput);
-      this.props.receiveSearchDates({ checkIn: this.state.checkIn,
-        checkOut: this.state.checkOut })
-    }
-  }
-
-  handleEnter() {
-    return e => {
-      if (e.charCode == '13') {
-        this.props.receiveGeolocationEntry(this.state.searchInput);
-        this.props.history.push("/explore")
-      }
-    }
+    this.props.receiveGeolocationEntry(this.state.searchInput);
+    this.props.receiveSearchDates({ checkIn: this.state.checkIn,
+      checkOut: this.state.checkOut })
+    this.props.history.push('/explore');
   }
 
   render() {
     const { listings, filters } = this.props;
-    console.log(this.state);
     if (listings.length < 2) {
       return (
         <div></div>
@@ -140,7 +129,7 @@ class HomeMain extends React.Component {
                     />
                   </div>
                   <div className="search-button">
-                    <Link to='/explore'> Search </Link>
+                    <button onClick={this.handleSearch}> Search </button>
                   </div>
                 </div>
               </div>
@@ -303,6 +292,7 @@ const mapDispatchToProps = dispatch => {
     receiveSingleFilter: filter => dispatch(receiveSingleFilter(filter)),
     receivePricingFilter: amount => dispatch(receivePricingFilter(amount)),
     receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry)),
+    receiveSearchDates: dates => dispatch(receiveSearchDates(dates)),
   }
 }
 
