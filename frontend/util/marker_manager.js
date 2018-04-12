@@ -4,6 +4,10 @@ class MarkerManager {
   constructor(map, handleClick){
     this.map = map;
     this.markers = {};
+<<<<<<< HEAD
+=======
+    this.geocoder = new google.maps.Geocoder();
+>>>>>>> master
   }
 
   clearMarkers(listingsObj) {
@@ -12,7 +16,7 @@ class MarkerManager {
       .forEach((listingId) => this.removeMarker(this.markers[listingId]))
   }
 
-  updateMarkers(listings, bounds){
+  updateMarkers(listings, geolocation, mapBounds){
     const listingsObj = {};
 
     this.clearMarkers(listingsObj)
@@ -31,6 +35,7 @@ class MarkerManager {
       this.map.fitBounds(this.bounds);
     }
 
+    this.orientMap(geolocation, mapBounds);
   }
 
   createMarkerFromListing(listing) {
@@ -79,6 +84,28 @@ class MarkerManager {
   removeMarker(marker) {
     this.markers[marker.listingId].setMap(null);
     delete this.markers[marker.listingId];
+  }
+
+  orientMap(geolocation, mapBounds) {
+    if (geolocation.length > 0) {
+      const results = JSON.parse(window.localStorage.getItem(geolocation));
+      if (!results) {
+        this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
+          if (status === 'OK') {
+
+            if (results[0]) {
+              window.localStorage.setItem(geolocation, JSON.stringify(results));
+              this.map.setCenter(results[0].geometry.location);
+              this.map.setZoom(7.5);
+            } else {
+              window.alert('No results found');
+            }
+          }  else {
+            window.alert('Geocoder failed due to: ' + status);
+          }
+        })
+      }
+    }
   }
 }
 

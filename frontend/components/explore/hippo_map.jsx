@@ -4,7 +4,7 @@ import MarkerManager from '../../util/marker_manager';
 
 const mapOptions = {
   center: { lat: 36.7855129, lng: -119.8646011},
-  zoom: 6,
+  zoom: 7,
 }
 
 class HippoMap extends React.Component {
@@ -17,14 +17,14 @@ class HippoMap extends React.Component {
   componentDidMount() {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    this.MarkerManager.updateMarkers(this.props.listings);
-    this.orientMap();
+    this.MarkerManager.updateMarkers(this.props.listings, this.props.geolocation);
   }
 
   componentDidUpdate() {
     this.filteredListings = this.applyFilters();
-    this.MarkerManager.updateMarkers(this.filteredListings);
-    this.orientMap();
+    this.MarkerManager.updateMarkers(this.filteredListings,
+      this.props.geolocation,
+      this.props.receiveMapBounds)
   }
 
 
@@ -66,15 +66,7 @@ class HippoMap extends React.Component {
     return filteredListings;
   }
 
-  // registerListeners() {
-  //   google.maps.event.addListener(this.map, 'idle', () => {
-  //     const { north, south, east, west } = this.map.getBounds().toJSON();
-  //     const bounds = {
-  //       northEast: { lat:north, lng: east },
-  //       southWest: { lat: south, lng: west } };
-  //     this.props.receiveMapBounds(bounds);
-  //   });
-  // }
+<<<<<<< HEAD
 
   orientMap() {
     const { geolocation } = this.props;
@@ -102,7 +94,6 @@ class HippoMap extends React.Component {
       }
     }
   }
-
   render() {
     const { listings, filters } = this.props;
 
