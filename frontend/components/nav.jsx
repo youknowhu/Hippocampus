@@ -12,7 +12,7 @@ class NavBar extends React.Component {
     this.handleClear = this.handleClear.bind(this);
 
     this.state = {
-      searchInput: this.props.geolocation,
+      searchInput: '',
     }
   }
 

@@ -13,13 +13,9 @@ class ListingsIndex extends React.Component {
   }
 
   applyFilters() {
-    const { listings, filters, geolocation } = this.props;
+    const { listings, filters, geolocation, mapBounds } = this.props;
 
     let filteredListings = listings;
-
-    this.geocoder.geocode({ 'address': geolocation}, (results, status) => {
-      debugger;
-    })
 
     if (filters['pets'] === true) {
       filteredListings = filteredListings.filter(listing => listing.allowsPets === true)
@@ -46,6 +42,11 @@ class ListingsIndex extends React.Component {
     }
 
     filteredListings = filteredListings.filter(listing => listing.dailyCost < filters.pricing)
+
+    // filteredListings = filteredListings.filter(listing => {
+    //   (listing.lat > )
+    // })
+
 
 
     return filteredListings;

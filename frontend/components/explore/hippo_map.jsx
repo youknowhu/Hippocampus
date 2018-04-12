@@ -20,10 +20,19 @@ class HippoMap extends React.Component {
   }
 
   componentDidUpdate() {
-    this.addListings();
+    this.addListingMarkers();
+    this.orientMap();
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps != this.props) {
+  //     this.addListingMarkers();
+  //     this.orientMap();
+  //   }
+  // }
+
   componentDidMount() {
+    console.log('component mounted');
     this.map = new google.maps.Map(this.mapNode, mapOptions);
   }
 
@@ -33,32 +42,8 @@ class HippoMap extends React.Component {
     )
   }
 
-  //ui geolocation
-  handleEnter() {
-    return e => {
-      if (e.charCode == '13') {
-        const geolocation = this.state.searchInput;
-
-        if (geolocation.length > 3) {
-          this.geocoder.geocode({ 'address': geolocation}, (results, status) => {
-            if (status === 'OK') {
-              if (results[0]) {
-                this.map.setZoom(6.5);
-                this.map.setCenter(results[0].geometry.location);
-                console.log(this.map.getBounds())
-              } else {
-                window.alert('No results found');
-              }
-            } else {
-              window.alert('Geocoder failed due to: ' + status);
-            }
-          });
-        }
-      }
-    }
-  }
-
   applyFilters() {
+    console.log('apply filters');
     const { listings, filters } = this.props;
 
     if (filters === undefined) {
@@ -95,11 +80,12 @@ class HippoMap extends React.Component {
     return filteredListings;
   }
 
-  addListings() {
+  addListingMarkers() {
+    console.log('adding listing markers');
     this.clearMarkers();
-    const filteredListings = this.applyFilters();
+    this.filteredListings = this.applyFilters();
     const icon = 'http://res.cloudinary.com/deor0br3s/image/upload/c_scale,w_100/v1523399623/Hippo_Marker_3.png'
-    const bounds = new google.maps.LatLngBounds();
+    this.bounds = new google.maps.LatLngBounds();
 
     filteredListings.forEach(listing => {
       const listingPos = { lat: listing.lat, lng: listing.lng};
@@ -118,24 +104,17 @@ class HippoMap extends React.Component {
           >
           <h2 className="infowindow-title"
             style="font-weight: bold;
-            font-size: 20px;
+            font-size: 14px;
             text-align: center;
-            color: #333333;
-            padding-bottom: 7px;"> ${listing.title} </h2>
-          <img className="infowindow-image"
-            style="width: 250px;
-            height: 250px;"
-            src="${listing.iconUrl}"/>
-          <p style="
-          text-align: center;
-          font-size: 14px;
-          color: #777777;
-          padding-top: 7px;">$${listing.dailyCost}/night</p>
+            color: #777777;
+            padding-top: 5px;
+            "> ${listing.title} </h2>
+
         </div>`,
         maxWidth: 400,
       });
 
-      bounds.extend(marker.getPosition());
+      this.bounds.extend(marker.getPosition());
 
       marker.addListener('mouseover', () => {
         infowindow.open(this.map, marker)
@@ -145,37 +124,47 @@ class HippoMap extends React.Component {
         infowindow.close(this.map, marker)
       });
 
-      marker.addListener('click', () => {
-        this.map.setZoom(6);
-        this.map.setCenter(marker.getPosition());
-      });
+      // marker.addListener('click', () => {
+      //   this.map.setZoom(6);
+      //   this.map.setCenter(marker.getPosition());
+      // });
 
       this.markers.push(marker);
     })
 
-    if (this.props.geolocation.length > 0) {
-      this.geocoder.geocode({ 'address': this.props.geolocation}, (results, status) => {
+
+
+  }
+
+  orientMap() {
+    console.log('orient map');
+
+    const { geolocation } = this.props;
+
+    if (!window.localStorage.getItem(geolocation) && geolocation.length > 0) {
+      this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
         if (status === 'OK') {
           if (results[0]) {
+            window.localStorage.setItem(geolocation, JSON.stringify(results))
             this.map.setZoom(8);
             this.map.setCenter(results[0].geometry.location);
-            console.log(this.map.getBounds())
+            this.props.receiveMapBounds(this.map.getBounds());
           } else {
             window.alert('No results found');
           }
-        } else {
+        }  else {
           window.alert('Geocoder failed due to: ' + status);
         }
-      });
-    } else if (filteredListings.length > 0) {
-      this.map.fitBounds(bounds);
+      })
+    } else if (this.props.listings.length > 0) {
+      this.map.fitBounds(this.bounds);
     }
-
   }
 
 
 
   render() {
+    console.log('render');
     const { listings, filters } = this.props;
     return (
       <div className="map-container">

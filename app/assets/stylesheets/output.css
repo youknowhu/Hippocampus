@@ -295,7 +295,23 @@ header {
     font-size: 15px; }
     header .discover-nav .search {
       margin: 0px 10px;
-      width: 80px; }
+      width: 80px;
+      display: flex;
+      z-index: 4;
+      padding-left: 20px; }
+      header .discover-nav .search i {
+        line-height: 70px; }
+      header .discover-nav .search input {
+        padding-left: 20px;
+        font-size: 15px;
+        font-weight: 200;
+        text-align: left; }
+      header .discover-nav .search h2 {
+        color: #333333;
+        line-height: 70px;
+        cursor: pointer;
+        font-weight: 200;
+        text-align: left; }
     header .discover-nav strong {
       font-weight: 700;
       margin-left: 5px; }
@@ -980,9 +996,10 @@ footer {
       position: relative;
       height: 95%; }
   .explore-container strong {
-    margin-left: 84%;
+    margin-left: 87%;
     font-weight: 700;
-    color: #333333; }
+    color: #333333;
+    font-size: 14px; }
   .explore-container .listings-index {
     padding-top: 15px;
     width: 43%;

@@ -18,6 +18,7 @@ class Explore extends React.Component {
           listings={ this.props.listings }
           filters={ this.props.filters }
           geolocation={ this.props.geolocation }
+          receiveMapBounds={this.props.receiveMapBounds}
         />
       </div>
     )
