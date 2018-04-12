@@ -25,14 +25,14 @@ class MarkerManager {
       .filter(listing => !this.markers[listing.id])
       .forEach(newListing => this.createMarkerFromListing(newListing))
 
-    if (listings.length === 1) {
+    if (geolocation.length > 0) {
+      return
+    } else if (listings.length === 1) {
       this.map.setZoom(7);
       this.map.setCenter({lat: listings[0].lat, lng: listings[0].lng });
     } else if (listings.length > 0) {
       this.map.fitBounds(this.bounds);
     }
-
-    // this.orientMap(geolocation, mapBounds);
   }
 
   createMarkerFromListing(listing) {
@@ -83,27 +83,6 @@ class MarkerManager {
     delete this.markers[marker.listingId];
   }
 
-  // orientMap(geolocation, mapBounds) {
-  //   if (geolocation.length > 0) {
-  //     const results = JSON.parse(window.localStorage.getItem(geolocation));
-  //     if (!results) {
-  //       this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
-  //         if (status === 'OK') {
-  //
-  //           if (results[0]) {
-  //             window.localStorage.setItem(geolocation, JSON.stringify(results));
-  //             this.map.setCenter(results[0].geometry.location);
-  //             this.map.setZoom(7.5);
-  //           } else {
-  //             window.alert('No results found');
-  //           }
-  //         }  else {
-  //           window.alert('Geocoder failed due to: ' + status);
-  //         }
-  //       })
-  //     }
-  //   }
-  // }
 }
 
 export default MarkerManager;
