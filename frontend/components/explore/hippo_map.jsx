@@ -18,6 +18,7 @@ class HippoMap extends React.Component {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.listings, this.props.geolocation);
+    this.orientMap();
   }
 
   componentDidUpdate() {
@@ -25,6 +26,7 @@ class HippoMap extends React.Component {
     this.MarkerManager.updateMarkers(this.filteredListings,
       this.props.geolocation,
       this.props.receiveMapBounds)
+    this.orientMap();
   }
 
 
@@ -65,8 +67,6 @@ class HippoMap extends React.Component {
 
     return filteredListings;
   }
-
-<<<<<<< HEAD
 
   orientMap() {
     const { geolocation } = this.props;
