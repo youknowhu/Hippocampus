@@ -1,3 +1,5 @@
+// import { withRouter } from 'react-router-dom';
+
 class MarkerManager {
   constructor(map, handleClick){
     this.map = map;
@@ -64,6 +66,10 @@ class MarkerManager {
 
     marker.addListener('mouseout', () => {
       infowindow.close(this.map, marker)
+    });
+
+    marker.addListener('click', () => {
+      s
     });
 
 

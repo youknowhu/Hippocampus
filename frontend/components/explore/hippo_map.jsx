@@ -66,49 +66,10 @@ class HippoMap extends React.Component {
     return filteredListings;
   }
 
-
-  // orientMap() {
-  //   console.log('orient map');
-  //
-  //   const { geolocation } = this.props;
-  //
-  //   if (geolocation.length > 0) {
-  //     const results = JSON.parse(window.localStorage.getItem(geolocation));
-  //     if (results) {
-  //       this.map.setZoom(8);
-  //       this.map.setCenter(results[0].geometry.location);
-  //       this.props.receiveMapBounds(this.map.getBounds())
-  //     } else {
-  //       this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
-  //         if (status === 'OK') {
-  //           if (results[0]) {
-  //             window.localStorage.setItem(geolocation, JSON.stringify(results))
-  //             this.map.setZoom(8);
-  //             this.map.setCenter(results[0].geometry.location);
-  //             this.props.receiveMapBounds(this.map.getBounds());
-  //           } else {
-  //             window.alert('No results found');
-  //           }
-  //         }  else {
-  //           window.alert('Geocoder failed due to: ' + status);
-  //         }
-  //       })
-  //     }
-  //   } else
-  //   }
-  // }
-
   orientMap() {
-    console.log('orient map');
-    //
     const { geolocation } = this.props;
-    //
     if (geolocation.length > 0) {
       const results = JSON.parse(window.localStorage.getItem(geolocation));
-      console.log('geolocation', geolocation);
-      console.log('results', results);
-
-    //
       if (!results) {
         this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
           if (status === 'OK') {
@@ -127,7 +88,7 @@ class HippoMap extends React.Component {
             window.alert('Geocoder failed due to: ' + status);
           }
         })
-      } 
+      }
     }
   }
 

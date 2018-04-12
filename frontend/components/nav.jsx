@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import { logout } from '../actions/session_actions';
-import { receiveGeolocationEntry } from '../actions/geolocation_actions';
+import { receiveGeolocationEntry, receiveMapBounds } from '../actions/geolocation_actions';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -43,7 +43,7 @@ class NavBar extends React.Component {
 
   handleClear() {
     return e => {
-      this.props.receiveGeolocationEntry('')
+      this.props.receiveGeolocationEntry('');
       this.setState({searchInput: ''})
     }
   }
@@ -103,7 +103,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout()),
-    receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry))
+    receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry)),
+    receiveMapBounds: bounds => dispatch(receiveMapBounds(bounds)),
   }
 }
 
