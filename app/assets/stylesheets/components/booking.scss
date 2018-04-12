@@ -40,26 +40,6 @@
     display: flex;
     width: 100%;
 
-    .booking-field-date {
-      border-left: 1px solid $light-gray;
-      border-bottom: 1px solid $light-gray;
-      width: 34%;
-      padding: 15px 10px;
-
-
-      h3, input, p {
-        width: 100%;
-        font-size: 14px;
-        color: $dark-gray;
-        text-align: left;
-        margin: 0;
-      }
-
-      input {
-        font-weight: 200;
-      }
-    }
-
     .booking-field-guests {
       border-left: 1px solid $light-gray;
       border-bottom: 1px solid $light-gray;
@@ -189,4 +169,24 @@
   padding-bottom: 5px;
   font-size: 14px;
   color: #8b0000;
+}
+
+.booking-field-date {
+  border-left: 1px solid $light-gray;
+  border-bottom: 1px solid $light-gray;
+  width: 34%;
+  padding: 15px 10px;
+
+
+  h3, input, p {
+    width: 100%;
+    font-size: 14px;
+    color: $dark-gray;
+    text-align: left;
+    margin: 0;
+  }
+
+  input {
+    font-weight: 200;
+  }
 }

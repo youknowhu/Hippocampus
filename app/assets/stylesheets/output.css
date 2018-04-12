@@ -590,12 +590,17 @@ footer {
         .main-header .row .main-search-box .dates-search > * {
           letter-spacing: 0.7px;
           padding: 0 15px; }
-        .main-header .row .main-search-box .dates-search .datepicker {
-          border-right: 1px solid #eeeeee;
+        .main-header .row .main-search-box .dates-search .booking-field-date {
+          border: none;
           vertical-align: middle;
           line-height: 12vh;
           font-size: 16px;
           width: 35%; }
+          .main-header .row .main-search-box .dates-search .booking-field-date input {
+            color: #333333;
+            font-size: 18px; }
+        .main-header .row .main-search-box .dates-search .booking-field-date + .checkout {
+          border-left: 1px solid #eeeeee; }
         .main-header .row .main-search-box .dates-search .search-button {
           background-color: #40d9ac;
           font-weight: 700;
@@ -895,19 +900,6 @@ footer {
   #booking-form .booking-selections {
     display: flex;
     width: 100%; }
-    #booking-form .booking-selections .booking-field-date {
-      border-left: 1px solid #ebebeb;
-      border-bottom: 1px solid #ebebeb;
-      width: 34%;
-      padding: 15px 10px; }
-      #booking-form .booking-selections .booking-field-date h3, #booking-form .booking-selections .booking-field-date input, #booking-form .booking-selections .booking-field-date p {
-        width: 100%;
-        font-size: 14px;
-        color: #333333;
-        text-align: left;
-        margin: 0; }
-      #booking-form .booking-selections .booking-field-date input {
-        font-weight: 200; }
     #booking-form .booking-selections .booking-field-guests {
       border-left: 1px solid #ebebeb;
       border-bottom: 1px solid #ebebeb;
@@ -995,6 +987,20 @@ footer {
   padding-bottom: 5px;
   font-size: 14px;
   color: #8b0000; }
+
+.booking-field-date {
+  border-left: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  width: 34%;
+  padding: 15px 10px; }
+  .booking-field-date h3, .booking-field-date input, .booking-field-date p {
+    width: 100%;
+    font-size: 14px;
+    color: #333333;
+    text-align: left;
+    margin: 0; }
+  .booking-field-date input {
+    font-weight: 200; }
 
 .explore-container {
   display: flex;

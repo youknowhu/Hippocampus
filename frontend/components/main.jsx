@@ -4,6 +4,11 @@ import { Link, withRouter } from 'react-router-dom';
 import { receiveSingleFilter, receivePricingFilter } from '../actions/filter_actions';
 import { fetchHomePageListings } from '../actions/listing_actions';
 import { receiveGeolocationEntry } from '../actions/geolocation_actions';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import DayPicker from 'react-day-picker';
+import format from 'date-fns/format';
+import parse from 'date-fns/parse';
+import DateFormat from 'dateformat';
 
 class HomeMain extends React.Component {
   constructor(props) {
@@ -13,16 +18,36 @@ class HomeMain extends React.Component {
 
     this.state = {
       searchInput: '',
+      checkIn: '',
+      checkOut: '',
     }
+
+    this.handleDayChange = this.handleDayChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchHomePageListings();
   }
 
+
+  handleDayChange(dateParam) {
+    return day => {
+      this.setState({ [dateParam]: day });
+    };
+  }
+
   handleInput() {
     return e => {
       this.setState({ searchInput: e.target.value}, this.handleEnter)
+    }
+  }
+
+  handleSearch() {
+    return e => {
+      this.props.receiveGeolocationEntry(this.state.searchInput);
+      this.props.receiveSearchDates({ checkIn: this.state.checkIn,
+        checkOut: this.state.checkOut })
     }
   }
 
@@ -37,11 +62,29 @@ class HomeMain extends React.Component {
 
   render() {
     const { listings, filters } = this.props;
+    console.log(this.state);
     if (listings.length < 2) {
       return (
         <div></div>
       )
     } else {
+
+      const dateSettings = {
+        clickUnselectsDay: true,
+        format: 'M/D/YYYY',
+        formatDate: format,
+        parseDate: parse,
+        dayPickerProps:{ disabledDays: {before: new Date()}}
+      }
+
+      const startModifier = {
+        selectedStart: this.state.checkIn,
+      }
+
+      const endModifier = {
+        selectedEnd: this.state.checkOut,
+      }
+
       return (
         <div>
           <main className="main-header">
@@ -63,16 +106,39 @@ class HomeMain extends React.Component {
                   id="pac-input"
                   className="controls"
                   type="text"
-                  placeholder="Or find camping near..."
+                  placeholder="Find camping near..."
                   onChange={this.handleInput()}
                   value={this.state.searchInput}/>
                   <i className="fa fa-search"></i>
                 </div>
                 <div className="dates-search">
-                  <input type="text" name="check-in-date"
-                   className="datepicker" placeholder="Check In"/>
-                  <input type="text" name="check-out-date"
-                   className="datepicker" placeholder="Check Out"/ >
+                  <div className="booking-field-date">
+                    <DayPickerInput
+                      {...dateSettings}
+                      value={this.state.checkIn}
+                      onDayChange={this.handleDayChange('checkIn')}
+                      placeholder='Check In'
+                      dayPickerProps={ {
+                        disabledDays: [
+                          { before: new Date() },
+                          { after: new Date(this.state.checkOut) }],
+                        selectedDays: this.state.checkOut,
+                      }}
+                      />
+                  </div>
+                  <div className="booking-field-date checkout">
+                    <DayPickerInput
+                      {...dateSettings}
+                      value={this.state.checkOut}
+                      onDayChange={this.handleDayChange('checkOut')}
+                      placeholder='Check Out'
+                      dayPickerProps={ {
+                        disabledDays:
+                          { before: new Date(this.state.checkIn) },
+                        selectedDays: this.state.checkIn,
+                      }}
+                    />
+                  </div>
                   <div className="search-button">
                     <Link to='/explore'> Search </Link>
                   </div>
