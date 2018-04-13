@@ -5,12 +5,13 @@
 A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/Redux front-end.
 
 
-##Contents
+## Contents
+[Features](features-markdown)
 
-##Features 
+## [Features](#features-markdown) 
 
-##Technologies Used
+## Technologies Used
 
-##Highlighted Featuers
+## Project Highlights and Challenges
 
-##Project Plan
+## Next Steps
