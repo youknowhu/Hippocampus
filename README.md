@@ -24,7 +24,8 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
   * sdfksjdlfsdfsdfdfdfd
 #### Reviews
 #### Bookings
-![bookings video](https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif)
+<img src="https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif" width="90%">
+
 #### Search
 
 ## Application Highlights
