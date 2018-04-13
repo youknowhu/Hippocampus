@@ -6,7 +6,7 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 
 
 ## Contents
-[Technologies Used](#technologies-used) | [Features](#features) | [Application Highlights](#application-highlights) | [Planned Work](#planned-work)
+[Technologies Used](#technologies-used) | [Features](#features) | [Planned Work](#planned-work)
 
 ## Technologies Used
 #### Backend
@@ -42,13 +42,11 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 
 #### Search
 ![explore gif](https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif)
-* Users can se
+* Search can filter listings by multiple categories (e.g. "glamping", "pet-friendly", and "less than $25/night").
+* Search can also filter by location
+* Search zooms and re-orients based on filter criteria. 
+* Search incorporates custom Google Maps components, including a custom Hippocampus marker.
 
-## Application Highlights
-
-#### Explore Page
-The explore page utilized complex front-end UI filters including Google Maps 
-![explore gif](https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif)
 
 ## Planned Work
 * Incorporate CSS media queries to ensure optimal user experience on any screen size.  
