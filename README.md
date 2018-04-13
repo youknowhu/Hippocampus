@@ -17,20 +17,37 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 
 #### Frontend
 * Frontend Framework: React/Redux (v16.3.0/v3.7.2)
+* Notable React Libraries Used: react-slick (photo carousel), react-day-picker (date input), react-modal (login form)
 * Styling: SCSS
 
 ## Features
 #### Listings
-  * sdfksjdlfsdfsdfdfdfd
+![listings page](http://res.cloudinary.com/deor0br3s/image/upload/v1523658759/Screen_Shot_2018-04-13_at_2.33.46_PM.png)
+* Listings showcase their photos using the react-slick photo carousel.
+* Listings display their elevation and current weather using their coordinates to ping Google Maps and Open Weather. 
+* Listings also display reviews and booking.
+
 #### Reviews
+![reviews snippet](http://res.cloudinary.com/deor0br3s/image/upload/v1523658750/Screen_Shot_2018-04-13_at_2.40.14_PM.png)
+* All users can view list of reviews
+* Logged in users can take the following actions: 
+  * Add a new review
+  * Edit an existing review they wrote
+  * Delete an existing review they wrote. 
+
 #### Bookings
-<img src="https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif" width="90%">
+![bookings gif](https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif)
+* Logged in users can book or cancel a listing
+* If not logged in, users will be prompted to log in.
 
 #### Search
+![explore gif](https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif)
+* Users can se
 
 ## Application Highlights
 
-* Explore page utilizing front-end UI filters and Google Maps API
+#### Explore Page
+The explore page utilized complex front-end UI filters including Google Maps 
 ![explore gif](https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif)
 
 ## Planned Work
