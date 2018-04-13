@@ -30,7 +30,8 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 
 ## Application Highlights
 
-* asdfasdfasdf
+* Explore page utilizing front-end UI filters and Google Maps API
+![explore gif](https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif)
 
 ## Planned Work
 * Incorporate CSS media queries to ensure optimal user experience on any screen size.  
