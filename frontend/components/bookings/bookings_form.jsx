@@ -140,7 +140,7 @@ class BookingsForm extends React.Component {
       return (
         <div id="booking-form" ref={this.bookingRef} onScroll={() => this.renderStickyForm} >
           <div className='booked-header'>
-            <button>Booked Reservation</button>
+            <button>Reservation Booked</button>
           </div>
           <div className="booking-selections">
             <div className="booking-field-date">

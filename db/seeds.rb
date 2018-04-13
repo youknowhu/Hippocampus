@@ -131,7 +131,7 @@ listing11 = Listing.create!(host_id: user5.id, title: 'Airstream Dream',
 listing12 = Listing.create!(host_id: user2.id, title: 'Desert Yurt',
   body: "Our desert yurt can be your next weekend getaway. This yurt is designed
   to be very temperate so you can stay cool even in Arizona's hot summer months.",
-  daily_cost:120, is_private: true, is_camping: false, allows_pets: true,
+  daily_cost: 120, is_private: true, is_camping: false, allows_pets: true,
   max_capacity: 15, check_in_after: '2 PM', check_out_before: '10 AM',
   lat: 33.744921, lng: -112.844791,
   icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523506353/nomadic-cropped.jpg' )
@@ -139,10 +139,27 @@ listing12 = Listing.create!(host_id: user2.id, title: 'Desert Yurt',
 listing13 = Listing.create!(host_id: user3.id, title: 'Woodlands Cabin',
   body: "The Woodlands Cabin is nestled between a redwood grove and is a 20
   minute drive to Lake Tahoe and 30 minutes from three ski resorts. ",
-  daily_cost:40, is_private: true, is_camping: false, allows_pets: false,
+  daily_cost: 40, is_private: true, is_camping: false, allows_pets: false,
   max_capacity: 8, check_in_after: '2 PM', check_out_before: '12 PM',
   lat: 38.888938, lng: -120.353527,
-  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523507813/cabin/cabin-1_cropped.jpg' )
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523507813/cabin/cabin-1_cropped.jpg')
+
+listing14 = Listing.create!(host_id: user4.id, title: 'Bewitching Big Sur',
+  body: "To get to the Big Sur camping spot, enjoy a nice drive along Highway 1
+  and across the iconic Bixby Bridge. Get lost in the woods and across log bridges and creeks.",
+  daily_cost: 20, is_private: false, is_camping: true, allows_pets: true,
+  max_capacity: 16, check_in_after: '2 PM', check_out_before: '12 PM',
+  lat: 36.2562592, lng: -121.6456678,
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523588784/bigsur/bigsur-coast-cropped.jpg')
+
+listing15 = Listing.create!(host_id: user3.id, title: 'Rusty Red Rocks',
+  body: "This hidden gem is only a thirty minute drive from Las Vegas.
+  Come by for a quick day trip scrambling through red rock valleys,
+  or spend the weekend and watch some epic climbs!",
+  daily_cost: 15, is_private: false, is_camping: true, allows_pets: true,
+  max_capacity: 10, check_in_after: '2 PM', check_out_before: '12 PM',
+  lat: 36.1577477, lng: -115.4734946,
+  icon_url:'http://res.cloudinary.com/deor0br3s/image/upload/v1523594136/10735284_362381637263374_1693600252_n.jpg')
 
 review1 = Review.create!(user_id: user5.id, listing_id: listing3.id,
   body: 'I took my husband and children to this treehouse last weekend
@@ -507,4 +524,48 @@ listing_photos65 = ListingPhoto.create!(listing_id: listing13.id,
 
 listing_photos66 = ListingPhoto.create!(listing_id: listing13.id,
   img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523508593/cabin/cabin-5.jpg',
+  order: 5)
+
+
+#bigsur
+listing_photos67 = ListingPhoto.create!(listing_id: listing14.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523587860/bigsur/17056169627_ae0dff184f_b.jpg',
+  order: 1)
+
+listing_photos68 = ListingPhoto.create!(listing_id: listing14.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523591494/bigsur-hiking-smaller.jpg',
+  order: 2)
+
+listing_photos69 = ListingPhoto.create!(listing_id: listing14.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523588433/bigsur/bigsur-creek.jpg',
+  order: 3)
+
+listing_photos70 = ListingPhoto.create!(listing_id: listing14.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523588432/bigsur/bigsur-road.jpg',
+  order: 4)
+
+listing_photos71 = ListingPhoto.create!(listing_id: listing14.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523588433/bigsur/bigsur-creek2.jpg',
+  order: 5)
+
+
+#redrocks
+listing_photos72 = ListingPhoto.create!(listing_id: listing15.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523594136/10735284_362381637263374_1693600252_n.jpg',
+  order: 1)
+
+listing_photos73 = ListingPhoto.create!(listing_id: listing15.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523594129/redrock_rock.jpg',
+  order: 2)
+
+listing_photos74 = ListingPhoto.create!(listing_id: listing15.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523594128/redrock_valley.jpg',
+  order: 3)
+
+listing_photos75 = ListingPhoto.create!(listing_id: listing15.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523594128/redrock-grass.jpg',
+  order: 4)
+
+listing_photos76 = ListingPhoto.create!(listing_id: listing15.id,
+  img_url: 'http://res.cloudinary.com/deor0br3s/image/upload/v1523594127/redrock_climbing.jpg',
   order: 5)

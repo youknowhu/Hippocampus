@@ -6,13 +6,13 @@ export default () => {
       <section className="footer-main">
         <div className="footer-container">
           <div className="row">
-            <div className="col-sm-6 footer-col left">
+            <div className="footer-col left">
               <h5>Hippocampus is everywhere you want to camp.</h5>
               <p>Discover unique experiences on ranches, nature preserves, farms, vineyards, and public campgrounds across the U.S. Book tent camping, treehouses, cabins, yurts, primitive backcountry sites, car camping, airstreams, tiny houses, RV camping, glamping tents and more. </p>
             </div>
-            <div className="col-sm-6">
+            <div>
               <div className="row">
-                <div className="col-md-4 col-md-offset-1 col-xs-4 footer-col">
+                <div className="footer-col">
                   <h5>Browse</h5>
                   <ul className="list-unstyled">
                     <li><a href="https://github.com/youknowhu">Host campers</a></li>
@@ -21,7 +21,7 @@ export default () => {
                     <li><a href="https://github.com/youknowhu">Contact</a></li>
                   </ul>
                 </div>
-                <div className="col-md-4 col-xs-4 footer-col">
+                <div className="footer-col">
                   <h5>About</h5>
                   <ul className="list-unstyled">
                     <li><a href="https://github.com/youknowhu">Journal</a></li>
@@ -30,7 +30,7 @@ export default () => {
                     <li><a href="https://github.com/youknowhu">Careers</a></li>
                   </ul>
                 </div>
-                <div className="col-md-3 col-xs-4 footer-col">
+                <div className="footer-col">
                   <h5>Social</h5>
                       <ul className="list-unstyled">
                         <li><a href="https://github.com/youknowhu"><span className="icon fa fa-facebook-official"></span> Facebook</a></li>

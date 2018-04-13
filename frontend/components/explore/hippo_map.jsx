@@ -89,8 +89,6 @@ class HippoMap extends React.Component {
             } else {
               window.alert('No results found');
             }
-          }  else {
-            window.alert('Geocoder failed due to: ' + status);
           }
         })
       }
