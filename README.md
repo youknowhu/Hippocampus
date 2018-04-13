@@ -6,9 +6,9 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 
 
 ## Contents
-[Features](features-markdown)
+[Features](#Features)
 
-## [Features](#features-markdown) 
+## Features
 
 ## Technologies Used
 
