@@ -26,6 +26,9 @@ header {
       color: $green-cyan;
       font-size: 16px;
       font-weight: 700;
+      vertical-align: middle;
+      padding-top: 3px;
+      // line-height: 70px;
     }
 
     a:hover {
@@ -33,12 +36,6 @@ header {
       border-bottom: 1px solid $gray;
     }
 
-    h2 {
-      font-size: 16px;
-      padding-top: 21px;
-      padding-right: 200px;
-      color: $gray;
-    }
   }
   .logo {
     width: 255px;
@@ -48,22 +45,24 @@ header {
   }
 
   .discover-nav {
-    font-size: 15px;
+    font-size: 18px;
 
     .search {
       margin: 0px 10px;
-      width: 80px;
+      width: 225px;
       display: flex;
       z-index: 4;
       padding-left: 20px;
+      padding-right: 20px;
 
       i {
         line-height: 70px;
+        font-size: 20px;
       }
 
       input {
         padding-left: 20px;
-        font-size:   15px;
+        font-size:   16px;
         font-weight: 200;
         text-align: left;
       }
@@ -85,13 +84,15 @@ header {
     ul {
       display: flex;
       flex-direction: row;
+      justify-content: flex-start;
 
       li {
         margin: 0px 10px;
         height: 70px;
         line-height: 70px;
         vertical-align: center;
-        min-width: 100px;
+        min-width: 30px;
+
 
         input {
           width: 250px;
@@ -106,20 +107,50 @@ header {
           text-align: center;
         }
 
+
+
         label:hover {
           color: $gray;
           border-bottom: 1px solid $gray;
           cursor: pointer;
         }
-
       }
     }
-
-
     .search:hover {
       border-bottom: none;
     }
 
   }
 
+}
+
+.mylinks {
+  i {
+    color: $gray;
+    font-size: 20px;
+  }
+}
+
+
+.current-user-info {
+  display: flex;
+  line-height: 70px;
+  padding-right: 10px;
+
+  > * {
+    padding: 0px 5px;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+  }
+  h2 {
+    font-size: 16px;
+    line-height: 70px;
+    padding-right: 30px;
+    color: $gray;
+  }
 }

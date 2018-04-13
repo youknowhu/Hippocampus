@@ -277,33 +277,32 @@ header {
       box-sizing: border-box;
       color: #40d9ac;
       font-size: 16px;
-      font-weight: 700; }
+      font-weight: 700;
+      vertical-align: middle;
+      padding-top: 3px; }
     header .nav-right a:hover {
       color: #777777;
       border-bottom: 1px solid #777777; }
-    header .nav-right h2 {
-      font-size: 16px;
-      padding-top: 21px;
-      padding-right: 200px;
-      color: #777777; }
   header .logo {
     width: 255px;
     height: 70px;
     padding: 0px 20px;
     border-right: 1px solid #ebebeb; }
   header .discover-nav {
-    font-size: 15px; }
+    font-size: 18px; }
     header .discover-nav .search {
       margin: 0px 10px;
-      width: 80px;
+      width: 225px;
       display: flex;
       z-index: 4;
-      padding-left: 20px; }
+      padding-left: 20px;
+      padding-right: 20px; }
       header .discover-nav .search i {
-        line-height: 70px; }
+        line-height: 70px;
+        font-size: 20px; }
       header .discover-nav .search input {
         padding-left: 20px;
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 200;
         text-align: left; }
       header .discover-nav .search h2 {
@@ -317,13 +316,14 @@ header {
       margin-left: 5px; }
     header .discover-nav ul {
       display: flex;
-      flex-direction: row; }
+      flex-direction: row;
+      justify-content: flex-start; }
       header .discover-nav ul li {
         margin: 0px 10px;
         height: 70px;
         line-height: 70px;
         vertical-align: center;
-        min-width: 100px; }
+        min-width: 30px; }
         header .discover-nav ul li input {
           width: 250px; }
         header .discover-nav ul li label {
@@ -339,6 +339,27 @@ header {
           cursor: pointer; }
     header .discover-nav .search:hover {
       border-bottom: none; }
+
+.mylinks i {
+  color: #777777;
+  font-size: 20px; }
+
+.current-user-info {
+  display: flex;
+  line-height: 70px;
+  padding-right: 10px; }
+  .current-user-info > * {
+    padding: 0px 5px; }
+  .current-user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: 15px; }
+  .current-user-info h2 {
+    font-size: 16px;
+    line-height: 70px;
+    padding-right: 30px;
+    color: #777777; }
 
 .listing-page {
   display: flex;
@@ -519,7 +540,7 @@ footer {
   display: flex;
   box-sizing: border-box;
   top: 110px;
-  padding-bottom: 250px; }
+  padding-bottom: 23.5vh; }
   .main-header h2 {
     font-weight: 600;
     font-size: 7vh;
@@ -528,7 +549,7 @@ footer {
     display: block;
     padding-right: 100px; }
   .main-header .left {
-    padding: 30px 150px; }
+    padding: 3vw 8.5vw; }
   .main-header .row {
     width: 50%; }
     .main-header .row .subtext {
@@ -537,7 +558,7 @@ footer {
       .main-header .row .subtext h1 {
         color: #a1a1a1;
         font-weight: 200;
-        font-size: 20px; }
+        font-size: 2.25vh; }
         .main-header .row .subtext h1 a {
           text-align: center;
           color: #40d9ac;
@@ -549,12 +570,12 @@ footer {
           text-decoration: underline; }
         .main-header .row .subtext h1 i {
           padding-left: 1px;
-          font-size: 20px;
+          font-size: 2.25vh;
           font-weight: 700; }
       .main-header .row .subtext strong {
         font-weight: 700; }
     .main-header .row .main-search-box {
-      width: 32.5vw;
+      width: 100%;
       height: 22.5vh;
       display: flex;
       box-sizing: border-box;
@@ -741,10 +762,13 @@ footer {
       color: #2d2d2d;
       font-weight: 200; }
     .modal .modal-footer a {
+      color: #40d9ac;
       padding-top: 10px;
-      text-decoration: underline;
-      font-weight: 700;
+      font-size: 14px;
       cursor: pointer; }
+    .modal .modal-footer a:hover {
+      text-decoration: underline;
+      color: #2d2d2d; }
 
 .modal-close {
   position: absolute;

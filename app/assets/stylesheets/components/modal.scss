@@ -76,10 +76,15 @@
     }
 
     a {
+      color: $green-cyan;
       padding-top: 10px;
-      text-decoration: underline;
-      font-weight: 700;
+      font-size: 14px;
       cursor: pointer;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: $darkest-gray;
     }
   }
 }
