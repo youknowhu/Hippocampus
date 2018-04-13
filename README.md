@@ -33,5 +33,5 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 ## Planned Improvements
 * Incorporate CSS media queries to ensure optimal user experience on any screen size.  
 * Add front-end and back-end testing (Jest and RSpec)
-* Implement "Saves" feature, enabling users to heart their favorite listings.
-* Implement "User Profile" feature, where users will be able 
+* Add "Saves" feature, enabling users to heart their favorite listings.
+* Add "User Profile" feature, where users will be able 
