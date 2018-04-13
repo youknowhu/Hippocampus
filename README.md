@@ -2,7 +2,10 @@
 # [Hippocampus](https://camp-hippocampus.herokuapp.com/)
 ![Logo](https://res.cloudinary.com/deor0br3s/image/upload/v1523651286/HippocampusPNG.png)
 
-A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/Redux front-end.
+Hippocampus was inspired by [HipCamp](https://www.hipcamp.com/). Hippocampus is a site to find awesome campsites and glampsites around the U.S. I chose this website to clone because I love the outdoors, camping, and especially going to national parks and wanted to share the beautiful places I have been and hope to go. 
+
+Hippocampus utilizes Rails/PostgreSQL backend and React/Redux frontend.Hippocampus was built in two weeks, but I plan to continue iterating on this website. 
+
 
 
 ## Contents
