@@ -1,5 +1,4 @@
-![Hippocampus logo](https://github.com/youknowhu/Hippocampus/blob/master/lib/assets/Hippocampus%20Logo%20-%20hippo%20image.jpg)
-
+![Logo](https://res.cloudinary.com/deor0br3s/image/upload/v1523651286/HippocampusPNG.png)
 # Hippocampus
 A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/Redux front-end.
 
