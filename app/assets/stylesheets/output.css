@@ -544,12 +544,12 @@ footer {
   display: flex;
   box-sizing: border-box;
   top: 110px;
-  padding-bottom: 23.5vh; }
+  padding-bottom: 15vw; }
   .main-header h2 {
     font-weight: 600;
-    font-size: 7vh;
+    font-size: 3.5vw;
     color: #333333;
-    line-height: 1.1;
+    line-height: 1;
     display: block;
     padding-right: 100px; }
   .main-header .left {
@@ -562,7 +562,7 @@ footer {
       .main-header .row .subtext h1 {
         color: #a1a1a1;
         font-weight: 200;
-        font-size: 2.25vh; }
+        font-size: 1.25vw; }
         .main-header .row .subtext h1 a {
           text-align: center;
           color: #40d9ac;
@@ -580,7 +580,7 @@ footer {
         font-weight: 700; }
     .main-header .row .main-search-box {
       width: 100%;
-      height: 22.5vh;
+      height: 12.5vw;
       display: flex;
       box-sizing: border-box;
       flex-direction: column;
@@ -595,16 +595,16 @@ footer {
         padding: 0 15px; }
         .main-header .row .main-search-box .location-search > * {
           vertical-align: middle;
-          line-height: 12vh;
+          line-height: 6vw;
           letter-spacing: 0.7px;
           font-weight: 200; }
         .main-header .row .main-search-box .location-search .find-camping {
           color: #2d2d2d; }
         .main-header .row .main-search-box .location-search input {
-          font-size: 18px;
+          font-size: 1vw;
           width: 100%; }
         .main-header .row .main-search-box .location-search i {
-          font-size: 20px; }
+          font-size: 1vw; }
       .main-header .row .main-search-box .dates-search {
         border-top: 1px solid #eeeeee;
         display: flex;
@@ -618,12 +618,12 @@ footer {
         .main-header .row .main-search-box .dates-search .booking-field-date {
           border: none;
           vertical-align: middle;
-          line-height: 12vh;
-          font-size: 16px;
+          line-height: 6vw;
+          font-size: 1vw;
           width: 35%; }
           .main-header .row .main-search-box .dates-search .booking-field-date input {
             color: #333333;
-            font-size: 18px; }
+            font-size: 1vw; }
         .main-header .row .main-search-box .dates-search .booking-field-date + .checkout {
           border-left: 1px solid #eeeeee; }
         .main-header .row .main-search-box .dates-search .search-button {
@@ -631,13 +631,14 @@ footer {
           font-weight: 700;
           color: white;
           text-align: center;
-          line-height: 12vh;
+          line-height: 6vw;
           margin: 0;
           padding: 0;
+          padding-top: 0.2vw;
           width: 30%; }
           .main-header .row .main-search-box .dates-search .search-button button {
             background-color: #40d9ac;
-            font-size: 18px; }
+            font-size: 1vw; }
 
 .search-subtext {
   padding: 20px; }
@@ -1179,5 +1180,26 @@ footer {
 
 img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
   display: none; }
+
+.no-results {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 0 auto;
+  padding-left: 15%;
+  padding-top: 40px; }
+  .no-results h2 {
+    font-size: 2vh;
+    color: #777777;
+    font-weight: 200;
+    vertical-align: middle;
+    padding-top: 30px;
+    width: 70%;
+    padding-left: 50px; }
+  .no-results img {
+    width: 5vw;
+    height: 5vw;
+    text-align: center;
+    margin: 0; }
 
 /*# sourceMappingURL=output.css.map */

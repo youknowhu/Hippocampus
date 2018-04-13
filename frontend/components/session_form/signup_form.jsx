@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import merge from 'lodash/merge';
 import { Link, withRouter } from 'react-router-dom';
 
 
@@ -30,10 +31,6 @@ class SignupForm extends React.Component {
     Modal.setAppElement('body');
   }
 
-  componentDidMount() {
-     this.props.clearErrors();
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.modal === 'signup') {
       this.setState({ showModal: true })
@@ -51,12 +48,21 @@ class SignupForm extends React.Component {
   }
 
   showLogin() {
+    this.props.clearErrors();
+
     this.setState({showModal: false});
     this.props.loadModal('login');
   }
 
   closeModal() {
-    this.setState({showModal: false});
+    this.props.clearErrors();
+    this.setState({showModal: false,
+      firstName: '',
+      lastName: '',
+      username: '',
+      password: '',
+      zip: ''
+    });
     this.props.hideModal();
   }
 

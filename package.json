@@ -20,10 +20,12 @@
     "react-router-dom": "^4.2.2",
     "react-slick": "^0.23.1",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "slick-carousel": "^1.8.1",
     "webpack": "^3.4.1"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   },
   "description": "![Hippocampus logo](https://github.com/youknowhu/Hippocampus/blob/master/lib/assets/Hippocampus%20Logo%20-%20hippo%20image.jpg)",
   "version": "1.0.0",

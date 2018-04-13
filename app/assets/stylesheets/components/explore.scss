@@ -35,6 +35,7 @@
     overflow: scroll;
     box-sizing: border-box;
 
+
     .listings-index-item {
       padding: 15px;
 
@@ -204,4 +205,30 @@
 
 img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
     display: none;
+}
+
+.no-results {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 0 auto;
+  padding-left: 15%;
+  padding-top: 40px;
+
+  h2 {
+    font-size: 2vh;
+    color: $gray;
+    font-weight: 200;
+    vertical-align: middle;
+    padding-top: 30px;
+    width: 70%;
+    padding-left: 50px;
+  }
+
+  img {
+    width: 5vw;
+    height: 5vw;
+    text-align: center;
+    margin: 0;
+  }
 }

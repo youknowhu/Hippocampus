@@ -28,10 +28,6 @@ class LoginForm extends React.Component {
     Modal.setAppElement('body');
   }
 
-  componentDidMount() {
-     this.props.clearErrors();
-  }
-
   componentWillReceiveProps(nextProps) {
     if (nextProps.modal === 'login') {
       this.setState({ showModal: true })
@@ -39,6 +35,7 @@ class LoginForm extends React.Component {
   }
 
   showSignup() {
+    this.props.clearErrors();
     this.setState({showModal: false})
     this.props.loadModal('signup');
   }
@@ -63,7 +60,11 @@ class LoginForm extends React.Component {
 
 
   closeModal() {
-    this.setState({showModal: false});
+    this.props.clearErrors();
+    this.setState({showModal: false,
+      username: '',
+      password: '',
+    });
     this.props.hideModal();
   }
 

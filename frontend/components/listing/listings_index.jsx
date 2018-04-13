@@ -65,27 +65,44 @@ class ListingsIndex extends React.Component {
       )
     } else {
       const filteredListings = this.applyFilters();
-      const numListings =
-          filteredListings.length ===  1 ?
-          filteredListings.length + " Listing" :
-          filteredListings.length + " Listings";
-      return (
-        <div className="listings-index">
-          <p>
-            <strong>
-              {numListings}
-            </strong>
-          </p>
-          {
-            filteredListings.map(listing =>
-              <ListingsIndexItem
-                key={listing.id}
-                listing={listing}
-              />
-            )
-          }
-        </div>
-      )
+
+      if (filteredListings.length === 0) {
+        return (
+          <div className="listings-index">
+            <p>
+              <strong>
+                0 Listings
+              </strong>
+            </p>
+            <div className='no-results'>
+              <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523404313/hippo_head.png"/>
+              <h2> No listings match your current search. </h2>
+            </div>
+          </div>
+        )
+      } else {
+        const numListings =
+            filteredListings.length ===  1 ?
+            filteredListings.length + " Listing" :
+            filteredListings.length + " Listings";
+        return (
+          <div className="listings-index">
+            <p>
+              <strong>
+                {numListings}
+              </strong>
+            </p>
+            {
+              filteredListings.map(listing =>
+                <ListingsIndexItem
+                  key={listing.id}
+                  listing={listing}
+                />
+              )
+            }
+          </div>
+        )
+      }
     }
   }
 }
