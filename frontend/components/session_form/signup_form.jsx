@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router-dom';
 
+
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -25,12 +26,15 @@ class SignupForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
   componentDidMount() {
      this.props.clearErrors();
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps)
     if (nextProps.modal === 'signup') {
       this.setState({ showModal: true })
     }
@@ -70,10 +74,10 @@ class SignupForm extends React.Component {
 
 
   render() {
-    console.log(this.props.modal);
     return (
       <div className="react-modal-form">
         <Modal
+          id="signupform"
           isOpen={this.state.showModal}
           onRequestClose={this.closeModal}
           shouldCloseOnOverlayClick={true}

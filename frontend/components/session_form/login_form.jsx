@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router-dom';
 
+
 class LoginForm extends React.Component {
 
   constructor(props) {
@@ -21,6 +22,10 @@ class LoginForm extends React.Component {
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
   }
 
   componentDidMount() {
@@ -76,10 +81,13 @@ class LoginForm extends React.Component {
 
 
 
+
+
   render() {
     return (
-      <div className="react-modal-form">
+      <div id="react-modal-form" className="react-modal-form">
         <Modal
+          id="loginform"
           isOpen={this.state.showModal}
           onRequestClose={this.closeModal}
           shouldCloseOnOverlayClick={true}
@@ -116,10 +124,10 @@ class LoginForm extends React.Component {
             <div className="submit">
               <button>Log In</button>
             </div>
-
+            <br />
             <div className="modal-footer">
-              <p> Don't have a Hippocampus account?  <br /> <br />
-                <a onClick={this.showSignup}>Sign Up</a>  or use a <br />
+              <p> Don't have a Hippocampus account?  <br />
+                <a onClick={this.showSignup}>Sign Up</a> &nbsp;&nbsp; | &nbsp;&nbsp;
                 <a onClick={this.handleDemo}>Demo Login</a>
               </p>
             </div>

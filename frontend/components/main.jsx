@@ -99,7 +99,7 @@ class HomeMain extends React.Component {
             <section className="row left">
               <h2>Adventure is waiting.</h2>
               <div className="subtext">
-                <h1>Search, discover and book over <strong>15</strong> campsites, ranches, vineyards, farms, public parks and more.
+                <h1>Search, explore and book from <strong>15</strong> campsites, glampsites, and more.
                   <Link to="/explore">
                     Explore all listings <i className="fa fa-long-arrow-right"></i>
                   </Link>
@@ -111,7 +111,6 @@ class HomeMain extends React.Component {
               <div className="main-search-box">
                 <div className="location-search">
                 <input
-                  id="pac-input"
                   className="controls"
                   type="text"
                   placeholder="Find camping near..."

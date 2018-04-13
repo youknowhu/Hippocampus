@@ -71,7 +71,6 @@ class NavBar extends React.Component {
               <li className="search">
                   <i className="fa fa-search"></i>
                   <input
-                    id="pac-input"
                     className="controls"
                     type="text"
                     placeholder="Find camping near..."
@@ -83,16 +82,26 @@ class NavBar extends React.Component {
                         <div> </div> : <h2 onClick={this.handleClear()}>x</h2>
                     }
                 </li>
+                <li className='mylinks'>
+                  <a href="https://github.com/youknowhu"> <i className="fa fa-github"></i></a>
+                </li>
+                <li className='mylinks'>
+                  <a href="https://www.linkedin.com/in/kimberly-hu/"> <i className="fa fa-linkedin"></i> </a>
+                </li>
             </ul>
           </nav>
         </div>
         <div className="nav-right">
-        {
+          {
           (this.props.currentUser === undefined || this.props.currentUser === null) ?
-            <div> </div>
+            <div>
+            </div>
             :
-            <h2>Hello, {this.props.currentUser.firstName}</h2>
-        }
+              <div className='current-user-info'>
+                <img src={this.props.currentUser.imgUrl} />
+                <h2>{this.props.currentUser.firstName} </h2>
+              </div>
+          }
           {
             (this.props.currentUser === null) ?
               <h4>
