@@ -8,8 +8,8 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 [Technologies Used](#technologies-used) | [Features](#features) | [Application Highlights](#applciation-highlights) | [Next Steps](#next-steps)
 
 ## Technologies Used
-* Backend
-* Frontend
+#### Backend
+#### Frontend
 
 ## Features
 * Listings
