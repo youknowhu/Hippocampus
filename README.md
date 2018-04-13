@@ -38,14 +38,14 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 ---
 
 ### Bookings
-![bookings gif](https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif)
+<img src="https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif" width="65%")
 * Logged in users can book or cancel a listing
 * If not logged in, users will be prompted to log in.
 ---
 
 
 ### Search
-![explore gif](https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif)
+<img src="https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif" width="65%")
 * Search can filter listings by multiple categories (e.g. "glamping", "pet-friendly", and "less than $25/night").
 * Search can also filter by location
 * Search zooms and re-orients based on filter criteria. 
