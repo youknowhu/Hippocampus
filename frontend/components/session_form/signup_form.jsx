@@ -92,7 +92,7 @@ class SignupForm extends React.Component {
         >
           <form className="modal-form" onSubmit={this.handleSubmit}>
 
-            <img className="logo" src="http://res.cloudinary.com/deor0br3s/image/upload/v1523404915/Hippocampus_Logo_-_hippo_image.svg"/>
+            <img className="logo" src="https://res.cloudinary.com/deor0br3s/image/upload/v1523404915/Hippocampus_Logo_-_hippo_image.svg"/>
             <p>Your next adventure is waiting.</p>
 
             <div className="input">
