@@ -5,18 +5,19 @@
 A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/Redux front-end.
 
 ## Contents
-[Features](#features) | [Technologies Used](#technologies-used) | [Project Highlights](#project-highlights) | [Next Steps](#next-steps)
-
-## Features
-* asdfasdf
-* asdfasdf
-* asdfasdfasdf
-* asdf
+[Technologies Used](#technologies-used) | [Features](#features) | [Application Highlights](#applciation-highlights) | [Next Steps](#next-steps)
 
 ## Technologies Used
-* asdfasdfasdf
+* Backend
+* Frontend
 
-## Project Highlights
+## Features
+* Listings
+* Reviews
+* Bookings
+* Search
+
+## App Highlights
 
 * asdfasdfasdf
 
