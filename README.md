@@ -4,12 +4,20 @@
 # Hippocampus
 A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/Redux front-end.
 
+
 ## Contents
-[Technologies Used](#technologies-used) | [Features](#features) | [Application Highlights](#applciation-highlights) | [Next Steps](#next-steps)
+[Technologies Used](#technologies-used) | [Features](#features) | [Application Highlights](#application-highlights) | [Next Steps](#next-steps)
 
 ## Technologies Used
-#### Backend
-#### Frontend
+### Backend
+* **Backend Framework:** Ruby on Rails (v5.1.5)
+* **Database:** PostgreSQL (v2.1.3)
+* **User Authentication:** Created with BCrypt (v3.1.7)
+* **External APIs:** Google Maps API & Open Weather Map API
+
+### Frontend
+* **Frontend Framework:** React/Redux (v16.3.0/v3.7.2)
+* **Styling:** SCSS
 
 ## Features
 * Listings
@@ -17,7 +25,7 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 * Bookings
 * Search
 
-## App Highlights
+## Application Highlights
 
 * asdfasdfasdf
 
