@@ -36,7 +36,10 @@ class LoginForm extends React.Component {
 
   showSignup() {
     this.props.clearErrors();
-    this.setState({showModal: false})
+    this.setState({showModal: false,
+      password: '',
+      username: ''
+    });
     this.props.loadModal('signup');
   }
 

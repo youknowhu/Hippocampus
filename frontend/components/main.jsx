@@ -101,7 +101,7 @@ class HomeMain extends React.Component {
               <div className="subtext">
                 <h1>Search, explore and book from <strong>15</strong> campsites, glampsites, and more.
                   <Link to="/explore">
-                    Explore all listings <i className="fa fa-long-arrow-right"></i>
+                    Explore listings <i className="fa fa-long-arrow-right"></i>
                   </Link>
                 </h1>
               </div>
