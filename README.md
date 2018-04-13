@@ -10,14 +10,14 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 
 ## Technologies Used
 ### Backend
-* **Backend Framework:** Ruby on Rails (v5.1.5)
-* **Database:** PostgreSQL (v2.1.3)
-* **User Authentication:** Created with BCrypt (v3.1.7)
-* **External APIs:** Google Maps API & Open Weather Map API
+* _Backend Framework:_ Ruby on Rails (v5.1.5)
+* _Database:_ PostgreSQL (v2.1.3)
+* _User Authentication:_ Created with BCrypt (v3.1.7)
+* _External APIs:_ Google Maps API & Open Weather Map API
 
 ### Frontend
-* **Frontend Framework:** React/Redux (v16.3.0/v3.7.2)
-* **Styling:** SCSS
+* _Frontend Framework:_ React/Redux (v16.3.0/v3.7.2)
+* _Styling:_ SCSS
 
 ## Features
 * Listings
