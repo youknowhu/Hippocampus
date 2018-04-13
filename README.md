@@ -6,7 +6,7 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 
 
 ## Contents
-[Technologies Used](#technologies-used) | [Features](#features) | [Application Highlights](#application-highlights) | [Next Steps](#next-steps)
+[Technologies Used](#technologies-used) | [Features](#features) | [Application Highlights](#application-highlights) | [Planned Work](#planned-work)
 
 ## Technologies Used
 #### Backend
@@ -20,18 +20,18 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 * Styling: SCSS
 
 ## Features
-* Listings
+#### Listings
   * sdfksjdlfsdfsdfdfdfd
-* Reviews
-* Bookings
-![bookings video](https://gph.is/2vbMClr)
-* Search
+#### Reviews
+#### Bookings
+![bookings video](https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif)
+#### Search
 
 ## Application Highlights
 
 * asdfasdfasdf
 
-## Planned Improvements
+## Planned Work
 * Incorporate CSS media queries to ensure optimal user experience on any screen size.  
 * Add front-end and back-end testing (Jest and RSpec)
 * Add "Saves" feature, enabling users to heart their favorite listings.
