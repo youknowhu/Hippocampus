@@ -6,7 +6,8 @@ import reviews from './reviews_reducer';
 import sortedReviews from './sorted_reviews_reducer';
 import bookings from './bookings_reducer';
 import currentUserBookings from './current_user_bookings_reducer';
+import external from './external_api_reducer';
 
 export default combineReducers({
-  users, listings, listingPhotos, reviews, sortedReviews, bookings, currentUserBookings,
+  users, listings, listingPhotos, reviews, sortedReviews, bookings, currentUserBookings, external
 });

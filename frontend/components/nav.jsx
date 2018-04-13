@@ -12,6 +12,7 @@ class NavBar extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleClear = this.handleClear.bind(this);
     this.showLogin = this.showLogin.bind(this);
+    this.handleenter = this.handleEnter.bind(this);
 
 
     this.state = {
@@ -49,7 +50,10 @@ class NavBar extends React.Component {
       if (e.charCode == '13') {
         this.props.receiveGeolocationEntry(this.state.searchInput);
         window.localStorage.clear()
-        this.props.history.push("/explore")
+
+        if (this.props.history.location.pathname !== '/explore') {
+          this.props.history.push('/explore')
+        }
       }
     }
   }
@@ -82,10 +86,10 @@ class NavBar extends React.Component {
                         <div> </div> : <h2 onClick={this.handleClear()}>x</h2>
                     }
                 </li>
-                <li className='mylinks'>
+                <li className='github'>
                   <a href="https://github.com/youknowhu"> <i className="fa fa-github"></i></a>
                 </li>
-                <li className='mylinks'>
+                <li className='linkedin'>
                   <a href="https://www.linkedin.com/in/kimberly-hu/"> <i className="fa fa-linkedin"></i> </a>
                 </li>
             </ul>

@@ -12,4 +12,20 @@ class Listing < ApplicationRecord
   belongs_to :host,
   foreign_key: :host_id,
   class_name: :User
+
+  def elevation
+    latlng = self.lat.to_s + "," + self.lng.to_s
+    res = HTTParty.get "https://maps.googleapis.com/maps/api/elevation/json?locations=#{latlng}&key=#{ENV['GOOGLE_API']}", {accept: :json}
+    res['results'][0]['elevation']
+  end
+
+  def weather
+    res = HTTParty.get "http://api.openweathermap.org/data/2.5/weather?lat=#{self.lat}&lon=#{self.lng}&APPID=#{ENV['OPEN_WEATHER_API']}&units=imperial", {accept: :json}
+    res['weather'][0]['description']
+  end
+
+  def temp
+    res = HTTParty.get "http://api.openweathermap.org/data/2.5/weather?lat=#{self.lat}&lon=#{self.lng}&APPID=#{ENV['OPEN_WEATHER_API']}&units=imperial", {accept: :json}
+    res['main']['temp']
+  end
 end

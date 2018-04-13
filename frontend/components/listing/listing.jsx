@@ -14,40 +14,17 @@ class Listing extends React.Component {
       weather: 'slightly cloudy',
       temperature: 65,
     }
-
-    this.getElevation = this.getElevation.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
     if (this.props.listing.id != newProps.match.params.listingId) {
       this.props.fetchListing(newProps.match.params.listingId)
-        .then(() => this.getElevation())
-        .then(() => this.getWeather());
     }
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchListing(this.props.match.params.listingId)
-      .then(() => this.getElevation())
-      .then(() => this.getWeather());
-  }
-
-
-  getElevation() {
-    const { listing } = this.props;
-    const latlng = listing.lat.toString() + "," + listing.lng.toString();
-    this.props.fetchElevation(latlng)
-      .then(resp =>
-        this.setState({elevation: resp.results[0].elevation }));
-  }
-
-  getWeather() {
-    const { listing } = this.props;
-    this.props.fetchWeather(listing.lat, listing.lng)
-      .then(resp => this.setState({weather: resp.weather[0].description}))
-    this.props.fetchWeather(listing.lat, listing.lng)
-      .then(resp => this.setState({temperature: resp.main.temp}))
   }
 
   render() {
@@ -56,7 +33,7 @@ class Listing extends React.Component {
         <div> </div>
       )
     } else {
-      const { host, listing } = this.props;
+      const { host, listing, external } = this.props;
       const listingType =
         listing.isPrivate ? 'Private' : 'Public';
       const accomodations =
@@ -152,15 +129,15 @@ class Listing extends React.Component {
                 <h2> The vibe at {listing.title} </h2>
                 <div className='vibe-squares'>
                   <div className="vibe-square">
-                    <h3>{Math.round(this.state.elevation * 3.28)}ft</h3>
+                    <h3>{Math.round(external.elevation * 3.28)}ft</h3>
                     <p>elevation</p>
                   </div>
                   <div className="vibe-square">
-                    <h3>{this.state.weather}</h3>
+                    <h3>{external.weather}</h3>
                     <p>current conditions</p>
                   </div>
                   <div className="vibe-square">
-                    <h3>{ Math.round(this.state.temperature) }°F</h3>
+                    <h3>{ Math.round(external.temp) }°F</h3>
                     <p>temperature</p>
                   </div>
                 </div>

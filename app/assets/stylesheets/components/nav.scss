@@ -124,13 +124,15 @@ header {
 
 }
 
-.mylinks {
-  i {
-    color: $gray;
-    font-size: 20px;
-  }
+.github {
+  color: $gray;
+  font-size: 26px;
 }
 
+.linkedin {
+  color: $gray;
+  font-size: 22px;
+}
 
 .current-user-info {
   display: flex;

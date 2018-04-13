@@ -340,9 +340,13 @@ header {
     header .discover-nav .search:hover {
       border-bottom: none; }
 
-.mylinks i {
+.github {
   color: #777777;
-  font-size: 20px; }
+  font-size: 26px; }
+
+.linkedin {
+  color: #777777;
+  font-size: 22px; }
 
 .current-user-info {
   display: flex;

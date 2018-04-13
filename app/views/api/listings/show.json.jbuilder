@@ -34,5 +34,11 @@ json.reviews do
   end
 end
 
+json.external do
+  json.elevation @listing.elevation
+  json.weather @listing.weather
+  json.temp @listing.temp
+end
+
 json.sorted_reviews @reviews
 json.current_user_bookings @current_user_bookings[0]
