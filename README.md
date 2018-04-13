@@ -21,13 +21,13 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 * Styling: SCSS
 
 ## Features
-#### Listings
+### Listings
 ![listings page](http://res.cloudinary.com/deor0br3s/image/upload/v1523658759/Screen_Shot_2018-04-13_at_2.33.46_PM.png)
 * Listings showcase their photos using the react-slick photo carousel.
 * Listings display their elevation and current weather using their coordinates to ping Google Maps and Open Weather. 
 * Listings also display reviews and booking.
 
-#### Reviews
+### Reviews
 ![reviews snippet](http://res.cloudinary.com/deor0br3s/image/upload/v1523658750/Screen_Shot_2018-04-13_at_2.40.14_PM.png)
 * All users can view list of reviews
 * Logged in users can take the following actions: 
@@ -35,17 +35,21 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
   * Edit an existing review they wrote
   * Delete an existing review they wrote. 
 
-#### Bookings
+
+### Bookings
 ![bookings gif](https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif)
 * Logged in users can book or cancel a listing
 * If not logged in, users will be prompted to log in.
 
-#### Search
+
+
+### Search
 ![explore gif](https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif)
 * Search can filter listings by multiple categories (e.g. "glamping", "pet-friendly", and "less than $25/night").
 * Search can also filter by location
 * Search zooms and re-orients based on filter criteria. 
 * Search incorporates custom Google Maps components, including a custom Hippocampus marker.
+
 
 
 ## Planned Work
