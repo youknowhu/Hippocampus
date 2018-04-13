@@ -26,6 +26,7 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 * Listings showcase their photos using the react-slick photo carousel.
 * Listings display their elevation and current weather using their coordinates to ping Google Maps and Open Weather. 
 * Listings also display reviews and booking.
+---
 
 ### Reviews
 ![reviews snippet](http://res.cloudinary.com/deor0br3s/image/upload/v1523658750/Screen_Shot_2018-04-13_at_2.40.14_PM.png)
@@ -34,13 +35,13 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
   * Add a new review
   * Edit an existing review they wrote
   * Delete an existing review they wrote. 
-
+---
 
 ### Bookings
 ![bookings gif](https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif)
 * Logged in users can book or cancel a listing
 * If not logged in, users will be prompted to log in.
-
+---
 
 
 ### Search
@@ -49,7 +50,6 @@ A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/
 * Search can also filter by location
 * Search zooms and re-orients based on filter criteria. 
 * Search incorporates custom Google Maps components, including a custom Hippocampus marker.
-
 
 
 ## Planned Work
