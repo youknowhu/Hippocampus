@@ -4,14 +4,24 @@
 # Hippocampus
 A full-stack HipCamp clone, using Ruby on Rails back-end, PostgreSQL, and React/Redux front-end.
 
-
 ## Contents
-[Features](#Features)
+[Features](#features) | [Technologies Used](#technologies-used)
 
 ## Features
+asdfasdf
+asdfasdf
+asdfasdfasdf
+asdf
 
 ## Technologies Used
+asdfasdfasdf
 
 ## Project Highlights and Challenges
 
+asdfasdfasdf
+
 ## Next Steps
+
+asdfasdf
+asdfasdf
+asdfasdf
