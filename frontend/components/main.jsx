@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { receiveSingleFilter, receivePricingFilter } from '../actions/filter_actions';
+import { receiveSingleFilter, receivePricingFilter, clearAllFilters } from '../actions/filter_actions';
 import { fetchHomePageListings } from '../actions/listing_actions';
 import { receiveGeolocationEntry } from '../actions/geolocation_actions';
 import { receiveSearchDates } from '../actions/dates_actions';
@@ -27,6 +27,7 @@ class HomeMain extends React.Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0,0)
     this.props.fetchHomePageListings();
   }
 
@@ -37,11 +38,29 @@ class HomeMain extends React.Component {
     };
   }
 
+
   handleInput() {
     return e => {
       this.setState({ searchInput: e.target.value}, this.handleEnter)
     }
   }
+
+  handleSingleFilter(category) {
+    return e => {
+      this.props.clearAllFilters();
+      this.props.receiveSingleFilter(category);
+      this.props.history.push('/explore')
+    }
+  }
+
+  handlePricingFilter(amount) {
+    return e => {
+      this.props.clearAllFilters();
+      this.props.receivePricingFilter(amount);
+      this.props.history.push('/explore');
+    }
+  }
+
 
   handleSearch() {
     this.props.receiveGeolocationEntry(this.state.searchInput);
@@ -147,43 +166,38 @@ class HomeMain extends React.Component {
 
               <div className="discover-square">
                 <div className="crop">
-                  <Link to={`/explore`} onClick={() => this.props.receivePricingFilter(25)}>
-                    <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898892/tent_cropped.jpg"/>
-                  </Link>
+                  <img onClick={this.handlePricingFilter(25)}
+                  src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898892/tent_cropped.jpg"/>
                 </div>
                 <footer className="discover-footer">
-                  <Link to={`/explore`} onClick={() => this.props.receivePricingFilter(25)}>
+                  <a onClick={this.handlePricingFilter(25)}>
                     <h2>Camping under $25</h2>
                     <p>Best options near me</p>
-                  </Link>
+                  </a>
                 </footer>
               </div>
 
               <div className="discover-square">
                 <div className="crop">
-                  <Link to={`/explore`} onClick={() => this.props.receiveSingleFilter('glamping')}>
-                    <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898891/glamping_cropped.jpg"/>
-                  </Link>
+                    <img onClick={this.handleSingleFilter('glamping')} src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898891/glamping_cropped.jpg"/>
                 </div>
                 <footer className="discover-footer">
-                  <Link to={`/explore`} onClick={() => this.props.receiveSingleFilter('glamping')}>
+                  <a onClick={this.handleSingleFilter('glamping')}>
                     <h2>Glamping</h2>
                     <p>Best options near me</p>
-                  </Link>
+                  </a>
                 </footer>
               </div>
 
               <div className="discover-square">
                 <div className="crop">
-                  <Link to={`/explore`} onClick={() => this.props.receiveSingleFilter('pets')}>
-                    <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898896/dogs_woods_cropped.jpg"/>
-                  </Link>
+                  <img onClick={this.handleSingleFilter('pets')} src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898896/dogs_woods_cropped.jpg"/>
                 </div>
                 <footer className="discover-footer">
-                  <Link to={`/explore`} onClick={() => this.props.receiveSingleFilter('pets')}>
+                  <a onClick={this.handleSingleFilter('pets')}>
                     <h2>Pet friendly camping</h2>
                     <p>Best options near me</p>
-                  </Link>
+                  </a>
                 </footer>
               </div>
 
@@ -290,6 +304,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchHomePageListings: () => dispatch(fetchHomePageListings()),
     receiveSingleFilter: filter => dispatch(receiveSingleFilter(filter)),
+    clearAllFilters: () =>  dispatch(clearAllFilters()),
     receivePricingFilter: amount => dispatch(receivePricingFilter(amount)),
     receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry)),
     receiveSearchDates: dates => dispatch(receiveSearchDates(dates)),

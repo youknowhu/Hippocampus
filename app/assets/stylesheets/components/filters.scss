@@ -26,6 +26,7 @@
       .crop {
         height: 100%;
         position: relative;
+        cursor: pointer;
         width: 20vw;
         height: 20vw;
 
@@ -40,13 +41,15 @@
           left: -100%;
           margin: auto;
           position: absolute;
-
+          cursor: pointer;
         }
+
       }
 
       .discover-footer {
         background-color: white;
         margin: 10px;
+        cursor: pointer;
 
         h2 {
           font-weight: 700;
