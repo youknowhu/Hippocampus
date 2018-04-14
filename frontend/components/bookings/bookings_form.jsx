@@ -114,7 +114,7 @@ class BookingsForm extends React.Component {
       format: 'M/D/YYYY',
       formatDate: format,
       parseDate: parse,
-      dayPickerProps:{ disabledDays: {before: new Date()}}
+      dayPickerProps:{ disabledDays: {before: new Date(Date.now() + 86400000)}}
     }
 
 
@@ -203,7 +203,7 @@ class BookingsForm extends React.Component {
                 onDayChange={this.handleDayChange('checkIn')}
                 dayPickerProps={ {
                   disabledDays: [
-                    { before: new Date() },
+                    { before: new Date(Date.now() + 86400000) },
                     { after: new Date(this.state.checkOut) }],
                   selectedDays: this.state.checkOut,
                 }}
