@@ -82,7 +82,7 @@ class HomeMain extends React.Component {
         format: 'M/D/YYYY',
         formatDate: format,
         parseDate: parse,
-        dayPickerProps:{ disabledDays: {before: new Date()}}
+        dayPickerProps:{ disabledDays: {before: new Date(Date.now() + 86400000)}}
       }
 
       const startModifier = {
@@ -127,7 +127,7 @@ class HomeMain extends React.Component {
                       placeholder='Check In'
                       dayPickerProps={ {
                         disabledDays: [
-                          { before: new Date() },
+                          { before: new Date(Date.now() + 86400000)},
                           { after: new Date(this.state.checkOut) }],
                         selectedDays: this.state.checkOut,
                       }}
