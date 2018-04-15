@@ -7,6 +7,7 @@ Hippocampus was inspired by [HipCamp](https://www.hipcamp.com/). Using Hippocamp
 Hippocampus utilizes Rails/PostgreSQL backend and React/Redux frontend.Hippocampus was built in two weeks, but I plan to continue iterating on this website.
 
 
+Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/wiki)
 
 ## Contents
 [Technologies Used](#technologies-used) | [Features](#features) | [Planned Work](#planned-work)
