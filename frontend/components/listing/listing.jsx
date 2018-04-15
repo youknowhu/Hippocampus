@@ -102,23 +102,23 @@ class Listing extends React.Component {
                 <main>
                   <ul>
                     <li>
-                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523117615/Icons/ic_terrain_black_24px.svg" />
+                      <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1523117615/Icons/ic_terrain_black_24px.svg" />
                       <p> Mountainous Terrain </p>
                     </li>
                     <li>
-                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523118475/ic_directions_walk_black_24px.svg" />
+                      <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1523118475/ic_directions_walk_black_24px.svg" />
                       <p> Hiking Trails </p>
                     </li>
                     <li>
-                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523117612/Icons/ic_directions_bike_black_24px.svg" />
+                      <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1523117612/Icons/ic_directions_bike_black_24px.svg" />
                       <p> Bike Trails </p>
                     </li>
                     <li>
-                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523117612/Icons/ic_beach_access_black_24px.svg" />
+                      <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1523117612/Icons/ic_beach_access_black_24px.svg" />
                       <p> Beach Access </p>
                     </li>
                     <li>
-                      <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523117615/Icons/ic_rowing_black_24px.svg" />
+                      <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1523117615/Icons/ic_rowing_black_24px.svg" />
                       <p> Rowing </p>
                     </li>
 
