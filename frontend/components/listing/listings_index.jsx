@@ -75,7 +75,7 @@ class ListingsIndex extends React.Component {
               </strong>
             </p>
             <div className='no-results'>
-              <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1523404313/hippo_head.png"/>
+              <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1523404313/hippo_head.png"/>
               <h2> No listings match your current search. </h2>
             </div>
           </div>

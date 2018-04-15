@@ -153,7 +153,7 @@ class HomeMain extends React.Component {
               </div>
             </section>
             <section className="row right"><Link to={`/listings/${listings[0].id}`}>
-              <img src='http://res.cloudinary.com/deor0br3s/image/upload/v1522783893/glacier_national_park.jpg'/>
+              <img src='https://res.cloudinary.com/deor0br3s/image/upload/v1522783893/glacier_national_park.jpg'/>
               <p className="main-header-image-footer">
                 <strong>Glacier National Park</strong> hosted by U.S. National Park Service
               </p></Link>
@@ -166,7 +166,7 @@ class HomeMain extends React.Component {
               <div className="discover-square">
                 <div className="crop">
                   <img onClick={this.handlePricingFilter(25)}
-                  src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898892/tent_cropped.jpg"/>
+                  src="https://res.cloudinary.com/deor0br3s/image/upload/v1522898892/tent_cropped.jpg"/>
                 </div>
                 <footer className="discover-footer">
                   <a onClick={this.handlePricingFilter(25)}>
@@ -178,7 +178,7 @@ class HomeMain extends React.Component {
 
               <div className="discover-square">
                 <div className="crop">
-                    <img onClick={this.handleSingleFilter('glamping')} src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898891/glamping_cropped.jpg"/>
+                    <img onClick={this.handleSingleFilter('glamping')} src="https://res.cloudinary.com/deor0br3s/image/upload/v1522898891/glamping_cropped.jpg"/>
                 </div>
                 <footer className="discover-footer">
                   <a onClick={this.handleSingleFilter('glamping')}>
@@ -190,7 +190,7 @@ class HomeMain extends React.Component {
 
               <div className="discover-square">
                 <div className="crop">
-                  <img onClick={this.handleSingleFilter('pets')} src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898896/dogs_woods_cropped.jpg"/>
+                  <img onClick={this.handleSingleFilter('pets')} src="https://res.cloudinary.com/deor0br3s/image/upload/v1522898896/dogs_woods_cropped.jpg"/>
                 </div>
                 <footer className="discover-footer">
                   <a onClick={this.handleSingleFilter('pets')}>
@@ -203,7 +203,7 @@ class HomeMain extends React.Component {
               <div className="discover-square">
                 <div className="crop">
                   <Link to={`/listings/${listings[3].id}`}>
-                    <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898903/Zion_National_Park.jpg"/>
+                    <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1522898903/Zion_National_Park.jpg"/>
                   </Link>
                 </div>
                 <footer className="discover-footer">
@@ -231,7 +231,7 @@ class HomeMain extends React.Component {
               <div className="discover-square">
                 <div className="crop">
                   <Link to={`/listings/${listings[0].id}`}>
-                    <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898891/glacier_lake_cropped.jpg"/>
+                    <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1522898891/glacier_lake_cropped.jpg"/>
                   </Link>
                 </div>
                 <div className="discover-footer">
@@ -245,7 +245,7 @@ class HomeMain extends React.Component {
               <div className="discover-square">
                 <div className="crop">
                   <Link to={`/listings/${listings[5].id}`}>
-                    <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1522899727/yosemite_cropped.jpg"/>
+                    <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1522899727/yosemite_cropped.jpg"/>
                   </Link>
                 </div>
                 <footer className="discover-footer">
@@ -259,7 +259,7 @@ class HomeMain extends React.Component {
               <div className="discover-square">
                 <div className="crop">
                   <Link to={`/listings/${listings[2].id}`}>
-                    <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1522898893/joshua_tree_cropped.jpg"/>
+                    <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1522898893/joshua_tree_cropped.jpg"/>
                   </Link>
                 </div>
                 <footer className="discover-footer">
@@ -273,7 +273,7 @@ class HomeMain extends React.Component {
               <div className="discover-square">
                 <div className="crop">
                   <Link to={`/listings/${listings[1].id}`}>
-                    <img src="http://res.cloudinary.com/deor0br3s/image/upload/v1522899844/yellowstone_cropped.jpg"/>
+                    <img src="https://res.cloudinary.com/deor0br3s/image/upload/v1522899844/yellowstone_cropped.jpg"/>
                   </Link>
                 </div>
                 <footer className="discover-footer">

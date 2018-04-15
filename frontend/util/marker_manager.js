@@ -36,7 +36,7 @@ class MarkerManager {
   }
 
   createMarkerFromListing(listing) {
-    const icon = 'http://res.cloudinary.com/deor0br3s/image/upload/c_scale,w_100/v1523399623/Hippo_Marker_3.png'
+    const icon = 'https://res.cloudinary.com/deor0br3s/image/upload/c_scale,w_100/v1523399623/Hippo_Marker_3.png'
     const position = new google.maps.LatLng(listing.lat, listing.lng);
     const marker = new google.maps.Marker({
       position,
