@@ -5,8 +5,11 @@ footer {
   display: block;
   box-sizing: border-box;
   color: $dark-gray;
-  font-size: 16px;
   position: relative;
+
+  .row .right {
+    width: 55vw;
+  }
 
   .footer-main {
     background-color: $dark-purple;
@@ -21,9 +24,11 @@ footer {
     background-position-y: 100%, 100%;
 
     .footer-container {
-      padding-top: 30px;
+      padding: 30px 0px;
       width: 80vw;
       margin: 0 auto;
+      display: flex;
+      justify-content: center;
     }
 
     h5 {
@@ -35,7 +40,7 @@ footer {
     li, a, p {
       font-weight:100;
       letter-spacing: 0.6px;
-      font-size: 11px;
+      font-size: 12.5px;
       line-height: 1.75;
     }
 
@@ -43,9 +48,6 @@ footer {
       margin: 0px 30px 0px 30px;
     }
 
-    .left {
-      margin: 21px 20px 0px 20px;
-    }
   }
 
   .footer-bottom {
@@ -81,4 +83,8 @@ footer {
       font-weight: 100;
     }
   }
+}
+
+.footer-left-col {
+  width: 40vw;
 }
