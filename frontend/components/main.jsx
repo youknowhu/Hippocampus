@@ -146,9 +146,8 @@ class HomeMain extends React.Component {
                       }}
                     />
                   </div>
-                  <div className="search-button">
-                    <button onClick={this.handleSearch}> Search </button>
-                  </div>
+                  <button onClick={this.handleSearch}> Search
+                  </button>
                 </div>
               </div>
             </section>

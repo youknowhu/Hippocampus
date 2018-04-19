@@ -16,13 +16,15 @@ const App = () => {
   return (
     <div>
       <Route path="/" component={Nav} />
-        <Switch>
-          <Route path="/listings/:listingId" component={ListingContainer} />
-          <Route path="/explore" component={ExploreContainer} />
-          <Route path="/" component={Main} />
-        </Switch>
-        <LoginFormContainer />
-        <SignupFormContainer />
+        <div className='main-class'>
+          <Switch>
+            <Route path="/listings/:listingId" component={ListingContainer} />
+            <Route path="/explore" component={ExploreContainer} />
+            <Route path="/" component={Main} />
+          </Switch>
+          <LoginFormContainer />
+          <SignupFormContainer />
+        </div> 
       <Footer />
     </div>
   )

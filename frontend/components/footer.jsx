@@ -17,21 +17,10 @@ export default () => {
           </div>
           <div className="row right">
             <div className="footer-col">
-              <h5>Browse</h5>
-              <ul className="list-unstyled">
-                <li><a href="https://github.com/youknowhu">Host campers</a></li>
-                <li><a href="https://github.com/youknowhu">Discover Camps</a></li>
-                <li><a href="https://github.com/youknowhu">Gift Cards</a></li>
-                <li><a href="https://github.com/youknowhu">Contact</a></li>
-              </ul>
-            </div>
-            <div className="footer-col">
               <h5>About</h5>
               <ul className="list-unstyled">
-                <li><a href="https://github.com/youknowhu">Journal</a></li>
                 <li><a href="https://github.com/youknowhu">My Story</a></li>
                 <li><a href="https://github.com/youknowhu">The Team</a></li>
-                <li><a href="https://github.com/youknowhu">Careers</a></li>
               </ul>
             </div>
             <div className="footer-col">

@@ -128,21 +128,18 @@
         border-left: 1px solid $lightest-gray;
       }
 
-      .search-button {
-        background-color: $green-cyan;
-        font-weight: 700;
-        color: white;
-        text-align: center;
-        line-height: 6vw;
-        margin: 0;
-        padding: 0;
-        padding-top: 0.2vw;
-        width: 30%;
-
-          button {
-            background-color: $green-cyan;
-            font-size: 1vw;
-          }
+        button {
+          background-color: $green-cyan;
+          font-size: 1vw;
+          background-color: $green-cyan;
+          font-weight: 700;
+          color: white;
+          text-align: center;
+          line-height: 6vw;
+          margin: 0;
+          padding: 0;
+          padding-top: 0.2vw;
+          width: 30%;
         }
       }
     }

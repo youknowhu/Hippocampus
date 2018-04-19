@@ -630,7 +630,9 @@ footer {
             font-size: 1vw; }
         .main-header .row .main-search-box .dates-search .booking-field-date + .checkout {
           border-left: 1px solid #eeeeee; }
-        .main-header .row .main-search-box .dates-search .search-button {
+        .main-header .row .main-search-box .dates-search button {
+          background-color: #40d9ac;
+          font-size: 1vw;
           background-color: #40d9ac;
           font-weight: 700;
           color: white;
@@ -640,9 +642,6 @@ footer {
           padding: 0;
           padding-top: 0.2vw;
           width: 30%; }
-          .main-header .row .main-search-box .dates-search .search-button button {
-            background-color: #40d9ac;
-            font-size: 1vw; }
 
 .search-subtext {
   padding: 20px; }
