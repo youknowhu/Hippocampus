@@ -88,9 +88,32 @@ orientMap() {
      }
    }
  }
+ ```
 
+#### CSS Position Sticky for Booking Form
+When scrolling through a listing, the booking form should remain visible on the screen so the user can easily book the site. Once the listing page loads, the coordinates of the booking form are retrieved and a scroll listener is added. Once the booking form hits the top of the screen, its position is changed to sticky. 
+
+``` javascript 
+
+ componentDidMount() {
+   window.addEventListener('scroll', this.renderStickyForm);
+   const bookingForm = this.bookingRef.current;
+   const domRect = bookingForm.getBoundingClientRect();
+   this.stickyPos = domRect.y < 0 ? 400 : domRect.y - 70;
+ }
+ 
+ renderStickyForm() {
+  const bookingForm = this.bookingRef.current;
+
+  if (window.pageYOffset >= this.stickyPos) {
+    bookingForm.classList.add('sticky')
+  } else {
+    bookingForm.classList.remove('sticky')
+  }
+}
 
 ```
+<img src="https://media.giphy.com/media/dl2cIqbUO75AHIaTmA/giphy.gif" width="500">
 
 
 ## Planned Work
