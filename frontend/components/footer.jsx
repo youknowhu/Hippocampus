@@ -8,11 +8,9 @@ export default () => {
           <div className="row left footer-col">
             <div className="footer-left-col">
               <h5>Hippocampus is everywhere you want to camp.</h5>
-              <p>Discover unique experiences on ranches, nature preserves,
-              farms, vineyards, and public campgrounds across the U.S. Book
-              tent camping, treehouses, cabins, yurts, primitive backcountry
-              sites, car camping, airstreams, tiny houses, RV camping, glamping
-              tents and more. </p>
+              <p>Discover unique experiences in igloos, treehouses and public campgrounds across the U.S. Book
+              tent camping, cabins, yurts, and primitive backcountry
+              sites, and more. </p>
             </div>
           </div>
           <div className="row right">
@@ -43,8 +41,7 @@ export default () => {
               Made in California. <a href="https://www.hipcamp.com"> A HipCamp Clone. </a>
             </div>
             <div className="pull-right">
-              <a href="/terms">Terms of Service</a> •
-              <a href="/privacy"> Privacy Policy</a> • © 2018 Hippocampus
+              © 2018 Hippocampus
             </div>
           </div>
         </div>
