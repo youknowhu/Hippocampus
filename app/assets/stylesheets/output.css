@@ -534,9 +534,11 @@ footer {
       justify-content: space-between; }
     footer .footer-bottom .pull-right {
       font-weight: 100;
-      letter-spacing: 0.4px; }
+      letter-spacing: 0.4px;
+      padding-right: 100px; }
     footer .footer-bottom .pull-left {
-      font-weight: 100; }
+      font-weight: 100;
+      padding-left: 70px; }
     footer .footer-bottom a {
       font-weight: 100; }
 
