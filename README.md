@@ -111,9 +111,9 @@ When scrolling through a listing, the booking form should remain visible on the 
   const bookingForm = this.bookingRef.current;
 
   if (window.pageYOffset >= this.stickyPos) {
-    bookingForm.classList.add('sticky')
+    bookingForm.classList.add('sticky');
   } else {
-    bookingForm.classList.remove('sticky')
+    bookingForm.classList.remove('sticky');
   }
 }
 
