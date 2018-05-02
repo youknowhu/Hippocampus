@@ -2,11 +2,12 @@
 # [Hippocampus](https://camp-hippocampus.herokuapp.com/)
 ![Logo](https://res.cloudinary.com/deor0br3s/image/upload/v1523651286/HippocampusPNG.png)
 
-Hippocampus was inspired by [HipCamp](https://www.hipcamp.com/). Using Hippocampus, you can find awesome campsites and glampsites around the U.S. I chose to build Hippocampus because I love the outdoors, going camping, and visiting national parks and I wanted to share the beautiful places I have been and hope to go.
+Hippocampus was inspired by [HipCamp](https://www.hipcamp.com/). Using Hippocampus, you can find awesome campsites and glampsites around the U.S. I chose to build Hippocampus because I love the outdoors, camping, and visiting national parks and I wanted to share the beautiful places I have been and hope to go.
 
 Hippocampus utilizes Rails/PostgreSQL backend and React/Redux frontend.Hippocampus was built in two weeks, but I plan to continue iterating on this website.
 
 
+Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/wiki)
 
 ## Contents
 [Technologies Used](#technologies-used) | [Features](#features) | [Planned Work](#planned-work)
