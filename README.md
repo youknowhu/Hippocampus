@@ -10,7 +10,7 @@ Hippocampus utilizes Rails/PostgreSQL backend and React/Redux frontend.Hippocamp
 Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/wiki)
 
 ## Contents
-[Technologies Used](#technologies-used) | [Features](#features) | [Planned Work](#planned-work)
+[Technologies Used](#technologies-used) | [Features](#features) |  [Code Highlights](#code-highlights) | [Planned Work](#planned-work)
 
 ## Technologies Used
 #### Backend
@@ -28,6 +28,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 
 ### Search
 <img src="https://media.giphy.com/media/1NXIaff5vLeYSdADIW/giphy.gif" width="500">
+
 * Search can filter listings by multiple categories (e.g. "glamping", "pet-friendly", and "less than $25/night").
 * Search can also filter by location
 * Search zooms and re-orients based on filter criteria.
@@ -53,9 +54,43 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ---
 
 ### Bookings
-<img src="https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif" width="600">
+<img src="https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif" width="500">
 * Logged in users can book or cancel a listing
 * If not logged in, users will be prompted to log in.
+
+## Code Highlights
+
+#### Client-side localStorage Caching
+For Google Maps API geolocation integration, localStorage caching was used to avoid duplicate calls, to achieve faster search retrieval, and to prevent storing superfluous data to the database. 
+
+
+``` javascript 
+
+orientMap() {
+   const { geolocation } = this.props;
+   if (geolocation.length > 0) {
+     const results = JSON.parse(window.localStorage.getItem(geolocation));
+     if (!results) {
+       this.geocoder.geocode({ 'address': geolocation},  (results, status) => {
+         if (status === 'OK') {
+
+           if (results[0]) {
+             window.localStorage.setItem(geolocation, JSON.stringify(results));
+             this.map.setZoom(8.5);
+             this.map.setCenter(results[0].geometry.location);
+             const mapBounds = this.map.getBounds();
+             this.map.fitBounds(mapBounds);
+           } else {
+             window.alert('No results found');
+           }
+         }
+       })
+     }
+   }
+ }
+
+
+```
 
 
 ## Planned Work
