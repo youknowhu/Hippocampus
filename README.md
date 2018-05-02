@@ -25,6 +25,16 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 * Styling: SCSS
 
 ## Features
+
+### Search
+<img src="https://media.giphy.com/media/1NXIaff5vLeYSdADIW/giphy.gif" width="500">
+* Search can filter listings by multiple categories (e.g. "glamping", "pet-friendly", and "less than $25/night").
+* Search can also filter by location
+* Search zooms and re-orients based on filter criteria.
+* Search incorporates custom Google Maps components, including a custom Hippocampus marker.
+
+--- 
+
 ### Listings
 ![listings page](https://res.cloudinary.com/deor0br3s/image/upload/v1523658759/Screen_Shot_2018-04-13_at_2.33.46_PM.png)
 * Listings showcase their photos using the react-slick photo carousel.
@@ -46,15 +56,6 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 <img src="https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif" width="600">
 * Logged in users can book or cancel a listing
 * If not logged in, users will be prompted to log in.
----
-
-
-### Search
-<img src="https://media.giphy.com/media/w6nOtmQLCUDf3VIGjV/giphy.gif" width="600">
-* Search can filter listings by multiple categories (e.g. "glamping", "pet-friendly", and "less than $25/night").
-* Search can also filter by location
-* Search zooms and re-orients based on filter criteria.
-* Search incorporates custom Google Maps components, including a custom Hippocampus marker.
 
 
 ## Planned Work
