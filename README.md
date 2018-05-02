@@ -33,7 +33,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ---
 
 ### Reviews
-<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1523658750/Screen_Shot_2018-04-13_at_2.40.14_PM.png" width="400">
+<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1523658750/Screen_Shot_2018-04-13_at_2.40.14_PM.png" width="500">
 
 * All users can view list of reviews
 * Logged in users can take the following actions:
