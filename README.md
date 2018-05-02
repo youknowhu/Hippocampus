@@ -118,6 +118,9 @@ When scrolling through a listing, the booking form should remain visible on the 
 }
 
 ```
+
+Booking form position sticky in action:
+
 <img src="https://media.giphy.com/media/dl2cIqbUO75AHIaTmA/giphy.gif" width="500">
 
 
