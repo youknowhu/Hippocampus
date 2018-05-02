@@ -299,15 +299,21 @@ header {
       padding-right: 20px; }
       header .discover-nav .search i {
         line-height: 70px;
-        font-size: 20px; }
+        font-size: 20px;
+        cursor: pointer;
+        color: #777777; }
       header .discover-nav .search input {
         padding-left: 20px;
         font-size: 16px;
         font-weight: 200;
-        text-align: left; }
+        text-align: left;
+        color: #777777; }
+      header .discover-nav .search ::placeholder {
+        color: #a1a1a1; }
       header .discover-nav .search h2 {
-        color: #333333;
+        color: #777777;
         line-height: 70px;
+        font-size: 20px;
         cursor: pointer;
         font-weight: 200;
         text-align: left; }
@@ -342,7 +348,8 @@ header {
 
 .github {
   color: #777777;
-  font-size: 26px; }
+  font-size: 26px;
+  padding-left: 100px; }
 
 .linkedin {
   color: #777777;
@@ -1074,7 +1081,7 @@ footer {
     .explore-container .listings-index .listings-index-item {
       padding: 15px; }
       .explore-container .listings-index .listings-index-item .listings-index-body {
-        padding: 15px;
+        padding: 15px 25px;
         display: flex;
         flex-direction: column;
         justify-content: space-around; }

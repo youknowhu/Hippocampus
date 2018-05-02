@@ -45,6 +45,14 @@ class NavBar extends React.Component {
     }
   }
 
+  handleExploreClick() {
+    return e => {
+      if (this.props.history.location.pathname !== '/explore') {
+        this.props.history.push('/explore')
+      }
+    }
+  }
+
   handleEnter() {
     return e => {
       if (e.charCode == '13') {
@@ -73,7 +81,8 @@ class NavBar extends React.Component {
           <nav className="discover-nav">
             <ul>
               <li className="search">
-                  <i className="fa fa-search"></i>
+                  <i className="fa fa-search"
+                  onClick={this.handleExploreClick()}></i>
                   <input
                     className="controls"
                     type="text"

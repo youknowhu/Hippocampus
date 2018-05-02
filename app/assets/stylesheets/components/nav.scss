@@ -58,6 +58,8 @@ header {
       i {
         line-height: 70px;
         font-size: 20px;
+        cursor: pointer;
+        color: $gray;
       }
 
       input {
@@ -65,11 +67,17 @@ header {
         font-size:   16px;
         font-weight: 200;
         text-align: left;
+        color: $gray;
+      }
+
+      ::placeholder {
+        color: $lighter-gray;
       }
 
       h2 {
-        color: $dark-gray;
+        color: $gray;
         line-height: 70px;
+        font-size: 20px;
         cursor: pointer;
         font-weight: 200;
         text-align: left;
@@ -127,6 +135,7 @@ header {
 .github {
   color: $gray;
   font-size: 26px;
+  padding-left: 100px;
 }
 
 .linkedin {
