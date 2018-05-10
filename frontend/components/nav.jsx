@@ -96,7 +96,7 @@ class NavBar extends React.Component {
                     }
                 </li>
                 <li className='github'>
-                  <a href="https://github.com/youknowhu"> <i className="fa fa-github"></i></a>
+                  <a href="https://github.com/youknowhu/Hippocampus"> <i className="fa fa-github"></i></a>
                 </li>
                 <li className='linkedin'>
                   <a href="https://www.linkedin.com/in/kimberly-hu/"> <i className="fa fa-linkedin"></i> </a>
