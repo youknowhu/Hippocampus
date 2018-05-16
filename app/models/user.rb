@@ -19,6 +19,7 @@ class User < ApplicationRecord
   class_name: :Booking
 
   has_many :reviews
+  has_many :saves
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
