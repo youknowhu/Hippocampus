@@ -1,0 +1,2 @@
+class Save < ApplicationRecord
+end
