@@ -24,10 +24,10 @@ export default () => {
             <div className="footer-col">
               <h5>Social</h5>
                   <ul className="list-unstyled">
-                    <li><a href="https://www.facebook.com/kimmyhu"><span className="icon fa fa-facebook-official"></span>  Facebook</a></li>
-                    <li><a href="https://www.instagram.com/youknowhu/"><span className="icon fa fa-instagram"></span>  Instagram</a></li>
-                    <li><a href="https://github.com/youknowhu"> <i className="fa fa-github"></i>  Github</a></li>
-                    <li><a href="https://www.linkedin.com/in/kimberly-hu/"> <i className="fa fa-linkedin"></i>  LinkedIn</a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/kimmyhu"><span className="icon fa fa-facebook-official"></span>  Facebook</a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/youknowhu/"><span className="icon fa fa-instagram"></span>  Instagram</a></li>
+                    <li><a target="_blank" href="https://github.com/youknowhu"> <i className="fa fa-github"></i>  Github</a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/kimberly-hu/"> <i className="fa fa-linkedin"></i>  LinkedIn</a></li>
                   </ul>
             </div>
           </div>
