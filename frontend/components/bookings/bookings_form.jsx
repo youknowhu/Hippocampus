@@ -16,15 +16,15 @@ class BookingsForm extends React.Component {
     this.state = {
       numGuests: 1,
       checkIn: '',
-      checkOut: ''
+      checkOut: '',
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDayChange = this.handleDayChange.bind(this);
     this.handleStep = this.handleStep.bind(this);
     this.renderStickyForm = this.renderStickyForm.bind(this);
-    this.bookingRef = React.createRef();
     this.showLogin = this.showLogin.bind(this);
+    this.bookingRef = React.createRef();
 
   }
 
@@ -51,23 +51,23 @@ class BookingsForm extends React.Component {
     this.stickyPos = domRect.y < 0 ? 400 : domRect.y - 70;
 
     if (this.props.searchDates) {
-      this.setState({ checkIn: this.props.searchDates.checkIn })
-      this.setState({ checkOut: this.props.searchDates.checkOut })
+      this.setState({ checkIn: this.props.searchDates.checkIn });
+      this.setState({ checkOut: this.props.searchDates.checkOut });
     }
 
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.renderStickyForm)
+    window.removeEventListener('scroll', this.renderStickyForm);
     this.props.clearBookingErrors();
   }
 
   handleStep(stepParam) {
     return e => {
       if (stepParam === '+' && (this.state.numGuests + 1 <= this.props.listing.maxCapacity)) {
-        this.setState({ numGuests: (this.state.numGuests + 1) })
+        this.setState({ numGuests: (this.state.numGuests + 1) });
       } else if (stepParam === '-' && (this.state.numGuests - 1 >= 1)) {
-        this.setState({ numGuests: (this.state.numGuests - 1) })
+        this.setState({ numGuests: (this.state.numGuests - 1) });
       }
     }
   }
@@ -76,9 +76,9 @@ class BookingsForm extends React.Component {
     const bookingForm = this.bookingRef.current;
 
     if (window.pageYOffset >= this.stickyPos) {
-      bookingForm.classList.add('sticky')
+      bookingForm.classList.add('sticky');
     } else {
-      bookingForm.classList.remove('sticky')
+      bookingForm.classList.remove('sticky');
     }
   }
 
@@ -130,9 +130,9 @@ class BookingsForm extends React.Component {
         </div>
       )
     } else if (currentUserBookings !==  null ) {
-      const checkinFormatted = DateFormat(currentUserBookings.check_in, 'UTC:m/d/yyyy')
-      const checkoutFormatted = DateFormat(currentUserBookings.check_out,'UTC:m/d/yyyy')
-      const numDays = (new Date(checkoutFormatted) - new Date(checkinFormatted))/1000/24/60/60
+      const checkinFormatted = DateFormat(currentUserBookings.check_in, 'UTC:m/d/yyyy');
+      const checkoutFormatted = DateFormat(currentUserBookings.check_out,'UTC:m/d/yyyy');
+      const numDays = (new Date(checkoutFormatted) - new Date(checkinFormatted))/1000/24/60/60;
       const resDays =
           numDays ===  1 ? numDays + " night" : numDays + " nights";
 
@@ -174,8 +174,7 @@ class BookingsForm extends React.Component {
         </div>
       )
     } else {
-      const numDays = (this.state.checkOut - this.state.checkIn)/1000/60/60/24
-
+      const numDays = (this.state.checkOut - this.state.checkIn)/1000/60/60/24;
       const resDays =
           numDays ===  1 ? numDays + " night" : numDays + " nights";
 
@@ -214,7 +213,7 @@ class BookingsForm extends React.Component {
               <DayPickerInput
                 {...dateSettings}
                 value={this.state.checkOut}
-                onDayChange={this.handleDayChange('checkOut')}
+                onDayChange={ this.handleDayChange('checkOut') }
                 dayPickerProps={ {
                   disabledDays:
                     { before: new Date(this.state.checkIn) },
