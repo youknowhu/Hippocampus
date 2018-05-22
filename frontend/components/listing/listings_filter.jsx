@@ -11,44 +11,54 @@ class ListingsFilter extends React.Component {
   }
 
   toggle(category) {
-    const { filters, removeSingleFilter,
-      receiveSingleFilter } = this.props;
+    const {
+      filters,
+      removeSingleFilter,
+      receiveSingleFilter
+    } = this.props;
 
     return e => {
-      if (filters[category] === true) {
-        removeSingleFilter(category)
+      if (filters[category]) {
+        removeSingleFilter(category);
       } else {
-        receiveSingleFilter(category)
+        receiveSingleFilter(category);
       }
     }
   }
 
   handlePricingFilter(amount) {
-    const { receivePricingFilter, removePricingFilter, filters } = this.props;
+    const {
+      receivePricingFilter,
+      removePricingFilter,
+      filters
+    } = this.props;
 
     return e => {
       if (filters['pricing'] === amount) {
-        removePricingFilter(amount)
+        removePricingFilter(amount);
       } else {
-        receivePricingFilter(amount)
+        receivePricingFilter(amount);
       }
     }
   }
 
   handleListingFilter(category) {
-    const { filters, removeSingleFilter,
-      receiveSingleFilter } = this.props;
+    const {
+      filters,
+      removeSingleFilter,
+      receiveSingleFilter
+    } = this.props;
 
     return e => {
       if (category === 'private') {
-        if (filters['private'] === true) {
+        if (filters['private']) {
           removeSingleFilter('private');
         } else {
           removeSingleFilter('public');
           receiveSingleFilter('private');
         }
       } else if (category === 'public') {
-        if (filters['public'] === true) {
+        if (filters['public']) {
           removeSingleFilter('public');
         } else {
           removeSingleFilter('private');
