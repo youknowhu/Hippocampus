@@ -72,6 +72,7 @@ class BookingsForm extends React.Component {
     }
   }
 
+  //Changes booking component CSS position to sticky when form hits top of viewer screen
   renderStickyForm() {
     const bookingForm = this.bookingRef.current;
 
