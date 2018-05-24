@@ -22,7 +22,7 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "slick-carousel": "^1.8.1",
-    "webpack": "^3.4.1"
+    "webpack": "^3.12.0"
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
@@ -40,7 +40,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "start": "webpack --watch"
   },
   "repository": {
     "type": "git",

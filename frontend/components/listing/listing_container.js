@@ -21,7 +21,7 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch => ({
-  fetchListing: id => dispatch(fetchSingleListing(id)),
+  fetchListing: id => dispatch(fetchSingleListing(id))
 });
 
 export default connect(msp, mdp)(Listing);

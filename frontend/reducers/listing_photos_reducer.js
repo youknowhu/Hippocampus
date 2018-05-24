@@ -1,5 +1,6 @@
-import { RECEIVE_SINGLE_LISTING }
-  from '../actions/listing_actions';
+import {
+  RECEIVE_SINGLE_LISTING
+} from '../actions/listing_actions';
 
 const ListingPhotosReducer = (state = {}, action) => {
   Object.freeze(state);

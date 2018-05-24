@@ -18,14 +18,15 @@ class Listing extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props.listing.id != newProps.match.params.listingId) {
-      this.props.fetchListing(newProps.match.params.listingId)
+      this.props.fetchListing(newProps.match.params.listingId);
     }
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.fetchListing(this.props.match.params.listingId)
+    this.props.fetchListing(this.props.match.params.listingId);
   }
+
 
   render() {
     if (this.props.listing.id === undefined) {
@@ -46,7 +47,8 @@ class Listing extends React.Component {
 
     return (
       <main className="listing-page">
-        <ListingSlider photos={this.props.listingPhotos}/>
+        <ListingSlider
+          photos={this.props.listingPhotos}/>
         <div className="listing-content">
           <section className="listing-left">
             <h1>{listing.title}</h1>
