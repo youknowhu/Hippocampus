@@ -2,6 +2,7 @@ class Api::ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @reviews = @listing.reviews.order(created_at: :desc).pluck(:id)
+    @saves = @listing.saves.pluck(:user_id)
 
     if logged_in?
       @current_user_bookings = current_user.bookings

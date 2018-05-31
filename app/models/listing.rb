@@ -8,7 +8,10 @@ class Listing < ApplicationRecord
   has_many :listing_photos
   has_many :reviews
   has_many :bookings
-  has_many :saves
+
+  has_many :saves,
+  foreign_key: :listing_id,
+  class_name: :Save
 
   belongs_to :host,
   foreign_key: :host_id,
