@@ -5,6 +5,7 @@ import ReviewsIndexContainer from '../reviews/reviews_index_container';
 import CreateReviewFormContainer from '../reviews/create_review_form_container';
 import UpdateReviewFormContainer from '../reviews/update_review_form_container';
 import BookingsFormContainer from '../bookings/bookings_form_container';
+import SavesContainer from '../saves/saves_container';
 
 class Listing extends React.Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class Listing extends React.Component {
         <div className="listing-content">
           <section className="listing-left">
             <h1>{listing.title}</h1>
+            <SavesContainer />
 
             <div className="listing-about">
               <aside>
