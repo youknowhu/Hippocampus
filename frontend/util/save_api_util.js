@@ -4,8 +4,8 @@ export const createSave = saveParams => (
     url: `/api/saves/`,
     data: {
       save: {
-        user_id: saveParams.user_id,
-        listing_id: saveParams.listing_id,
+        user_id: saveParams.userId,
+        listing_id: saveParams.listingId,
       }
     }
   })

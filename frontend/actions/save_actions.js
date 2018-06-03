@@ -20,8 +20,8 @@ export const createSave = saveParams => dispatch =>  (
   )
 );
 
-export const deleteSave = saveId => dispatch => (
-  APIUtil.deletSave(saveId).then(
+export const deleteSave = id => dispatch => (
+  APIUtil.deleteSave(id).then(
     save => dispatch(removeSave(saveId))
   )
 );

@@ -52,8 +52,12 @@ class Listing extends React.Component {
           photos={this.props.listingPhotos}/>
         <div className="listing-content">
           <section className="listing-left">
-            <h1>{listing.title}</h1>
-            <SavesContainer />
+            <div className="listing-header">
+              <h1>{listing.title}</h1>
+              <SavesContainer
+                listingId={this.props.listing.id}
+              />
+            </div>
 
             <div className="listing-about">
               <aside>

@@ -10,7 +10,7 @@ const SavesReducer = (state = [], action) => {
     case RECEIVE_SINGLE_LISTING:
       return action.payload.saveUsers;
     case RECEIVE_SAVE:
-      newState = [...state, action.save.user_id]
+      newState = [...state, action.save.userId];
       return newState;
     case REMOVE_SAVE:
       newState = state.filter(id => id !== action.saveId);

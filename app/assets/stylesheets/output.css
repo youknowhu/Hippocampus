@@ -486,6 +486,11 @@ header {
       margin: 0 auto;
       text-align: center; }
 
+.listing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
 footer {
   background-color: #3e7e96;
   display: block;
@@ -1213,5 +1218,19 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
     height: 5vw;
     text-align: center;
     margin: 0; }
+
+#listing-save {
+  color: #ec6e67;
+  font-size: 14px;
+  border: 0.25px solid #ec6e67;
+  margin: 0;
+  padding: 10px 25px;
+  height: 25px; }
+  #listing-save i {
+    margin-right: 5px; }
+
+#listing-save.saved {
+  color: white;
+  background: #ec6e67; }
 
 /*# sourceMappingURL=output.css.map */

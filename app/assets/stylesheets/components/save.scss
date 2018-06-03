@@ -1,0 +1,18 @@
+#listing-save {
+  color: $pink;
+  font-size: 14px;
+  border: 0.25px solid $pink;
+  margin: 0;
+  padding: 10px 25px;
+  height: 25px;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+
+#listing-save.saved {
+  color: white;
+  background: $pink;
+}
