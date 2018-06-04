@@ -22,6 +22,6 @@ export const createSave = saveParams => dispatch =>  (
 
 export const deleteSave = id => dispatch => (
   APIUtil.deleteSave(id).then(
-    save => dispatch(removeSave(saveId))
+    save => dispatch(removeSave(id))
   )
 );

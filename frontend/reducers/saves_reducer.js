@@ -2,23 +2,20 @@ import merge from 'lodash/merge';
 import { RECEIVE_SINGLE_LISTING } from '../actions/listing_actions';
 import { RECEIVE_SAVE, REMOVE_SAVE } from '../actions/save_actions';
 
-const SavesReducer = (state = [], action) => {
+const SavesReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
 
   switch (action.type) {
     case RECEIVE_SINGLE_LISTING:
-      return action.payload.saveUsers;
+      return action.payload.currentUserSave;
     case RECEIVE_SAVE:
-      newState = [...state, action.save.userId];
-      return newState;
+      return action.save;
     case REMOVE_SAVE:
-      newState = state.filter(id => id !== action.saveId);
-      return newState;
+      return {};
     default:
       return state;
   }
 };
-
 
 export default SavesReducer;

@@ -13,31 +13,25 @@ class Saves extends React.Component {
     })
   }
 
-  removeSave(userId) {
-    this.props.deleteSave({
-      save: {
-        listingId: this.props.listingId,
-        userId
-      }
-    })
+  removeSave(saveId) {
+    this.props.deleteSave(saveId)
   }
 
 
 
   render() {
-    const { currentUser } = this.props;
-    const currentUserLiked = this.props.saveUsers.includes(currentUser.id);
+    const { currentUser, currentUserSave } = this.props;
 
     if (!currentUser.id) {
       return ( <div> </div> );
     }
 
-    if (currentUserLiked) {
+    if (currentUserSave.id) {
       return (
         <button
           id="listing-save"
           className="saved"
-          onClick={() => this.removeSave(currentUser.id)}
+          onClick={() => this.removeSave(currentUserSave.id)}
           >
           <i className="fa fa-heart"> </i> Saved
         </button>

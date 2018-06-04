@@ -40,6 +40,6 @@ json.external do
   json.temp @listing.temp
 end
 
-json.saveUsers @saves
+json.current_user_save @current_user_save
 json.sorted_reviews @reviews
 json.current_user_bookings @current_user_bookings[0]

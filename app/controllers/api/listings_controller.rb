@@ -2,14 +2,18 @@ class Api::ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @reviews = @listing.reviews.order(created_at: :desc).pluck(:id)
-    @saves = @listing.saves
+
 
     if logged_in?
       @current_user_bookings = current_user.bookings
         .where('listing_id = ?', @listing.id)
         .where('check_in > ?', Date.today)
+
+      @current_user_save = current_user.saves
+        .where('listing_id = ?', @listing.id)[0]
     else
       @current_user_bookings = {}
+      @current_user_save = {}
     end
   end
 

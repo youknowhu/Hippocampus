@@ -7,7 +7,7 @@ import sortedReviews from './sorted_reviews_reducer';
 import bookings from './bookings_reducer';
 import currentUserBookings from './current_user_bookings_reducer';
 import external from './external_api_reducer';
-import saveUsers from './saves_reducer';
+import currentUserSave from './saves_reducer';
 
 export default combineReducers({
   users,
@@ -18,5 +18,5 @@ export default combineReducers({
   bookings,
   currentUserBookings,
   external,
-  saveUsers,
+  currentUserSave,
 });

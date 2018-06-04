@@ -18,8 +18,12 @@ class User < ApplicationRecord
   foreign_key: :guest_id,
   class_name: :Booking
 
+  has_many :saves,
+  foreign_key: :user_id,
+  class_name: :Save
+
+
   has_many :reviews
-  has_many :saves
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

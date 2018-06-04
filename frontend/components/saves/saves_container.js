@@ -3,7 +3,7 @@ import Saves from './saves';
 import { createSave, deleteSave } from '../../actions/save_actions';
 
 const mapStateToProps = state => ({
-  saveUsers: state.entities.saveUsers || {},
+  currentUserSave: state.entities.currentUserSave || {},
   currentUser: state.session.currentUser || {},
 });
 
