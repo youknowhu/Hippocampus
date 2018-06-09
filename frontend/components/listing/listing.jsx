@@ -28,6 +28,10 @@ class Listing extends React.Component {
     this.props.fetchListing(this.props.match.params.listingId);
   }
 
+  componentWillUnmount() {
+    this.props.clearListing();
+  }
+
 
   render() {
     if (this.props.listing.id === undefined) {

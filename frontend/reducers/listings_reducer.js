@@ -2,7 +2,8 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_ALL_LISTINGS,
   RECEIVE_SINGLE_LISTING,
-  RECEIVE_HOME_PAGE_LISTINGS
+  RECEIVE_HOME_PAGE_LISTINGS,
+  CLEAR_LISTING
 } from '../actions/listing_actions';
 
 

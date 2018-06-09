@@ -59,6 +59,7 @@ class BookingsForm extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.renderStickyForm);
+    this.setState({ checkIn: '', checkOut: ''});
     this.props.clearBookingErrors();
   }
 
@@ -109,13 +110,19 @@ class BookingsForm extends React.Component {
 
   render() {
     const { bookings, currentUser, listing, currentUserBookings } = this.props;
+    console.log(this.state);
+
     const dateSettings = {
       clickUnselectsDay: true,
       placeholder: "Select date",
       format: 'M/D/YYYY',
       formatDate: format,
       parseDate: parse,
-      dayPickerProps:{ disabledDays: {before: new Date(Date.now() + 86400000)}}
+      dayPickerProps: {
+        disabledDays: {
+          before: new Date(Date.now() + 86400000)
+        }
+      }
     }
 
 
@@ -131,6 +138,7 @@ class BookingsForm extends React.Component {
         </div>
       )
     } else if (currentUserBookings !==  null ) {
+      console.log('current user bookings', currentUserBookings);
       const checkinFormatted = DateFormat(currentUserBookings.check_in, 'UTC:m/d/yyyy');
       const checkoutFormatted = DateFormat(currentUserBookings.check_out,'UTC:m/d/yyyy');
       const numDays = (new Date(checkoutFormatted) - new Date(checkinFormatted))/1000/24/60/60;

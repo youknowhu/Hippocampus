@@ -1,6 +1,11 @@
-import { connect } from 'react-redux';
+import {
+  connect
+} from 'react-redux';
 import Listing from './listing'
-import { fetchSingleListing } from '../../actions/listing_actions'
+import {
+  fetchSingleListing,
+  clearListing
+} from '../../actions/listing_actions'
 
 const msp = (state, ownProps) => {
   const listing = state.entities.listings[ownProps.match.params.listingId] || {};
@@ -21,7 +26,8 @@ const msp = (state, ownProps) => {
 };
 
 const mdp = dispatch => ({
-  fetchListing: id => dispatch(fetchSingleListing(id))
+  fetchListing: id => dispatch(fetchSingleListing(id)),
+  clearListing: () => dispatch(clearListing())
 });
 
 export default connect(msp, mdp)(Listing);

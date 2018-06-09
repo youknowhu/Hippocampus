@@ -1,9 +1,13 @@
 import merge from 'lodash/merge';
+
 import {
   RECEIVE_SINGLE_LISTING,
   CLEAR_LISTING
  } from '../actions/listing_actions';
-import { REMOVE_BOOKING } from '../actions/booking_actions';
+
+import {
+  REMOVE_BOOKING
+} from '../actions/booking_actions';
 
 const CurrentUserBookings = (state = [], action) => {
   Object.freeze(state);
@@ -13,7 +17,7 @@ const CurrentUserBookings = (state = [], action) => {
     case RECEIVE_SINGLE_LISTING:
       return action.payload.currentUserBookings;
     case CLEAR_LISTING:
-      return [];  
+      return [];
     case REMOVE_BOOKING:
       return [];
     default:

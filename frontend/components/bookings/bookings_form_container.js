@@ -1,7 +1,13 @@
 import { connect } from 'react-redux';
 import BookingsForm from './bookings_form';
-import { fetchSingleListing } from '../../actions/listing_actions';
-import { createBooking, deleteBooking, clearBookingErrors } from '../../actions/booking_actions'
+import {
+  fetchSingleListing }
+from '../../actions/listing_actions';
+import {
+  createBooking,
+  deleteBooking,
+  clearBookingErrors
+} from '../../actions/booking_actions'
 import { loadModal } from '../../actions/modal_actions';
 
 const msp = (state) => {
