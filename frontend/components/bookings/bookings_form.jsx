@@ -110,7 +110,6 @@ class BookingsForm extends React.Component {
 
   render() {
     const { bookings, currentUser, listing, currentUserBookings } = this.props;
-    console.log(this.state);
 
     const dateSettings = {
       clickUnselectsDay: true,
@@ -138,7 +137,6 @@ class BookingsForm extends React.Component {
         </div>
       )
     } else if (currentUserBookings !==  null ) {
-      console.log('current user bookings', currentUserBookings);
       const checkinFormatted = DateFormat(currentUserBookings.check_in, 'UTC:m/d/yyyy');
       const checkoutFormatted = DateFormat(currentUserBookings.check_out,'UTC:m/d/yyyy');
       const numDays = (new Date(checkoutFormatted) - new Date(checkinFormatted))/1000/24/60/60;
