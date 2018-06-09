@@ -1,6 +1,12 @@
 import merge from 'lodash/merge';
-import { RECEIVE_SINGLE_LISTING } from '../actions/listing_actions';
-import { RECEIVE_REVIEW, REMOVE_REVIEW} from '../actions/review_actions';
+import {
+  RECEIVE_SINGLE_LISTING,
+  CLEAR_LISTING
+ } from '../actions/listing_actions';
+import {
+  RECEIVE_REVIEW,
+  REMOVE_REVIEW
+} from '../actions/review_actions';
 
 const ReviewsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -10,6 +16,8 @@ const ReviewsReducer = (state = {}, action) => {
     case RECEIVE_SINGLE_LISTING:
       newState = merge({}, action.payload.reviews);
       return newState;
+    case CLEAR_LISTING:
+      return {};
     case RECEIVE_REVIEW:
       newState = merge({}, state, { [action.review.id]: action.review });
       return newState;

@@ -1,10 +1,11 @@
 import {
-  RECEIVE_SINGLE_LISTING
+  RECEIVE_SINGLE_LISTING,
+  CLEAR_LISTING
 } from '../actions/listing_actions';
 
 import {
   LOCATION_CHANGE
-} from 'react-router-redux';
+} from 'connected-react-router';
 
 const ListingPhotosReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -12,7 +13,7 @@ const ListingPhotosReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_SINGLE_LISTING:
       return action.payload.listingPhotos;
-    case LOCATION_CHANGE:
+    case CLEAR_LISTING:
       return {};
     default:
       return state;

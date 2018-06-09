@@ -1,6 +1,9 @@
 import merge from 'lodash/merge';
-import { RECEIVE_ALL_LISTINGS, RECEIVE_SINGLE_LISTING, RECEIVE_HOME_PAGE_LISTINGS }
-  from '../actions/listing_actions';
+import {
+  RECEIVE_ALL_LISTINGS,
+  RECEIVE_SINGLE_LISTING,
+  RECEIVE_HOME_PAGE_LISTINGS
+} from '../actions/listing_actions';
 
 
 const listingsReducer = (state = {}, action) => {
@@ -11,6 +14,8 @@ const listingsReducer = (state = {}, action) => {
       return action.payload.listings;
     case RECEIVE_SINGLE_LISTING:
       return action.payload.listings;
+    case CLEAR_LISTING:
+      return {};
     case RECEIVE_HOME_PAGE_LISTINGS:
       return action.payload;
     default:

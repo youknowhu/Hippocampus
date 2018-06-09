@@ -1,4 +1,6 @@
-import { RECEIVE_SINGLE_LISTING } from '../actions/listing_actions';
+import {
+  RECEIVE_SINGLE_LISTING, CLEAR_LISTING
+} from '../actions/listing_actions';
 
 const ExternalAPIReducer = (state = [], action) => {
   Object.freeze(state);
@@ -7,6 +9,8 @@ const ExternalAPIReducer = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_SINGLE_LISTING:
       return action.payload.external;
+    case CLEAR_LISTING:
+      return [];
     default:
       return state;
   }

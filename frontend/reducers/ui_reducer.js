@@ -1,4 +1,6 @@
-import { combineReducers } from 'redux';
+import {
+  combineReducers
+} from 'redux';
 
 import filters from './filters_reducer';
 import geo from './geolocation_reducer';

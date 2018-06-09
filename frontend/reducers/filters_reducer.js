@@ -1,7 +1,11 @@
 import merge from 'lodash/merge';
-import { RECEIVE_SINGLE_FILTER, REMOVE_SINGLE_FILTER,
-  CLEAR_ALL_FILTERS, RECEIVE_PRICING_FILTER, REMOVE_PRICING_FILTER
-  } from '../actions/filter_actions';
+import {
+  RECEIVE_SINGLE_FILTER,
+  REMOVE_SINGLE_FILTER,
+  CLEAR_ALL_FILTERS,
+  RECEIVE_PRICING_FILTER,
+  REMOVE_PRICING_FILTER
+} from '../actions/filter_actions';
 
 const defaultFilters = {
   pets: false,

@@ -1,5 +1,7 @@
 import merge from 'lodash/merge' ;
-import { RECEIVE_SEARCH_DATES } from '../actions/dates_actions';
+import {
+  RECEIVE_SEARCH_DATES
+} from '../actions/dates_actions';
 
 const defaultState = {
   checkIn: '',

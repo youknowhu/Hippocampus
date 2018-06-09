@@ -1,5 +1,8 @@
 import merge from 'lodash/merge' ;
-import { RECEIVE_GEOLOCATION_ENTRY, RECEIVE_MAP_BOUNDS } from '../actions/geolocation_actions';
+import {
+  RECEIVE_GEOLOCATION_ENTRY,
+  RECEIVE_MAP_BOUNDS
+} from '../actions/geolocation_actions';
 
 const defaultState = {
   geolocation: {},
