@@ -8,8 +8,6 @@ import parse from 'date-fns/parse';
 import DateFormat from 'dateformat';
 import merge from 'lodash/merge';
 
-
-
 class BookingsForm extends React.Component {
   constructor(props) {
     super(props)
@@ -110,6 +108,7 @@ class BookingsForm extends React.Component {
 
   render() {
     const { bookings, currentUser, listing, currentUserBookings } = this.props;
+    console.log(currentUser);
 
     const dateSettings = {
       clickUnselectsDay: true,
@@ -127,7 +126,8 @@ class BookingsForm extends React.Component {
 
     if (!listing) {
       return (<div> </div>)
-    } else if ( Object.keys(currentUser).length === 0 ) { //user logged out
+    //not logged in
+    } else if (Object.keys(currentUser).length === 0) {
       return (
         <div onScroll={ ()=> this.renderStickyForm} id="booking-form" ref={this.bookingRef}>
           <div className='booking-header'>
@@ -136,13 +136,13 @@ class BookingsForm extends React.Component {
           </div>
         </div>
       )
-    } else if (currentUserBookings !==  null ) {
+    //current user has a booking for listing
+  } else if (currentUserBookings && currentUserBookings.length > 0) {
       const checkinFormatted = DateFormat(currentUserBookings.check_in, 'UTC:m/d/yyyy');
       const checkoutFormatted = DateFormat(currentUserBookings.check_out,'UTC:m/d/yyyy');
       const numDays = (new Date(checkoutFormatted) - new Date(checkinFormatted))/1000/24/60/60;
       const resDays =
           numDays ===  1 ? numDays + " night" : numDays + " nights";
-
 
       return (
         <div id="booking-form" ref={this.bookingRef} onScroll={() => this.renderStickyForm} >
@@ -180,6 +180,8 @@ class BookingsForm extends React.Component {
           </div>
         </div>
       )
+
+    //current user is logged in but does not have a booking.
     } else {
       const numDays = (this.state.checkOut - this.state.checkIn)/1000/60/60/24;
       const resDays =
