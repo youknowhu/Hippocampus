@@ -3,8 +3,9 @@ class Booking < ApplicationRecord
     presence: true
 
   belongs_to :listing
+  
   belongs_to :guest,
-  foreign_key: :guest_id,
-  class_name: :User
+    foreign_key: :guest_id,
+    class_name: :User
 
 end

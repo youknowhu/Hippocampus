@@ -10,12 +10,12 @@ class Listing < ApplicationRecord
   has_many :bookings
 
   has_many :saves,
-  foreign_key: :listing_id,
-  class_name: :Save
+    foreign_key: :listing_id,
+    class_name: :Save
 
   belongs_to :host,
-  foreign_key: :host_id,
-  class_name: :User
+    foreign_key: :host_id,
+    class_name: :User
 
   def elevation
     latlng = self.lat.to_s + "," + self.lng.to_s
