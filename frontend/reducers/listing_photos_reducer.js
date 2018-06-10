@@ -3,10 +3,6 @@ import {
   CLEAR_LISTING
 } from '../actions/listing_actions';
 
-import {
-  LOCATION_CHANGE
-} from 'connected-react-router';
-
 const ListingPhotosReducer = (state = {}, action) => {
   Object.freeze(state);
 
