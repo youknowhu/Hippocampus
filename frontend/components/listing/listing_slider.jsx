@@ -12,7 +12,6 @@ class ListingSlider extends React.Component {
     arrows: true,
     infinite: true,
     variableWidth: true,
-    lazyLoad: true,
     responsive: [
         {
           breakpoint: 900,
