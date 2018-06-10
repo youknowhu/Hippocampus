@@ -1066,7 +1066,7 @@ footer {
   background-color: white;
   position: relative;
   padding-top: 70px;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
   height: 92vh; }
   .explore-container .map-container {
     width: 45%;
@@ -1074,7 +1074,7 @@ footer {
     .explore-container .map-container .map {
       z-index: 0;
       position: relative;
-      height: 95%; }
+      height: 100%; }
   .explore-container strong {
     margin-left: 87%;
     font-weight: 700;

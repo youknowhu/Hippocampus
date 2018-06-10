@@ -1,5 +1,7 @@
-import { RECEIVE_BOOKING_ERRORS,
-  CLEAR_BOOKING_ERRORS } from '../actions/booking_actions';
+import {
+  RECEIVE_BOOKING_ERRORS,
+  CLEAR_BOOKING_ERRORS
+} from '../actions/booking_actions';
 
 export default (state = [], action) => {
   Object.freeze(state);

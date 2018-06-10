@@ -1,5 +1,6 @@
 import {
-  RECEIVE_SINGLE_LISTING, CLEAR_LISTING
+  RECEIVE_SINGLE_LISTING,
+  CLEAR_LISTING
 } from '../actions/listing_actions';
 
 const ExternalAPIReducer = (state = [], action) => {
