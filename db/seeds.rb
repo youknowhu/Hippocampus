@@ -66,7 +66,7 @@ listing4 = Listing.create!(host_id: user6.id, title: 'Yellowstone',
   daily_cost: 30, is_private: false, is_camping: true, allows_pets: true,
   max_capacity: 15, check_in_after: '1 PM', check_out_before: '12 PM',
   lat: 44.427963, lng: -110.588455,
-  icon_url:'https://res.cloudinary.com/deor0br3s/image/upload/q_auto/v1522899844yellowstone_cropped.jpg' )
+  icon_url:'https://res.cloudinary.com/deor0br3s/image/upload/q_auto/v1522899844/yellowstone_cropped.jpg' )
 
 listing5 = Listing.create!(host_id: user6.id, title: 'Joshua Tree',
   body: "Joshua Tree has rugged rock formations and stark desert landscapes.

@@ -73,7 +73,7 @@ class HomeMain extends React.Component {
     const { listings, filters } = this.props;
     if (listings.length < 2) {
       return (
-        <div></div>
+        <div id="loading-main"></div>
       )
     } else {
 

@@ -673,6 +673,10 @@ footer {
     font-weight: 700;
     border-bottom: 1px solid #ebebeb; }
 
+#loading-main {
+  height: 95vh;
+  background: white; }
+
 .discover-filters {
   width: 60vw;
   margin: 0 auto; }
