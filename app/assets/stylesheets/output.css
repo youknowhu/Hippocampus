@@ -491,6 +491,11 @@ header {
   justify-content: space-between;
   align-items: center; }
 
+@media screen and (max-width: 1500px) {
+  .listing-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; } }
 footer {
   background-color: #3e7e96;
   display: block;
@@ -1225,10 +1230,10 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
 
 #listing-save {
   color: #ec6e67;
-  font-size: 14px;
+  font-size: 13px;
   border: 0.25px solid #ec6e67;
   margin: 0;
-  padding: 10px 25px;
+  padding: 10px 20px;
   height: 25px; }
   #listing-save i {
     margin-right: 5px; }
