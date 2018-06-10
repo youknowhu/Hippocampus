@@ -212,7 +212,8 @@ class BookingsForm extends React.Component {
                 dayPickerProps={ {
                   disabledDays: [
                     { before: new Date(Date.now() + 86400000) },
-                    { after: new Date(this.state.checkOut) }],
+                    { after: new Date(this.state.checkOut) }
+                  ],
                   selectedDays: this.state.checkOut,
                 }}
                 />
@@ -245,8 +246,8 @@ class BookingsForm extends React.Component {
             <div className="booking-total-shown">
               <h3>Total</h3>
                 <div className="booking-total-calc">
-                  <p> ${listing.dailyCost} x {resDays}</p>
-                  <h3> ${listing.dailyCost * numDays}</h3>
+                  <p>${listing.dailyCost} x {resDays}</p>
+                  <h3>${listing.dailyCost * numDays}</h3>
                 </div>
             </div>
             :
