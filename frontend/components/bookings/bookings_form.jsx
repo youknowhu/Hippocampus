@@ -135,7 +135,7 @@ class BookingsForm extends React.Component {
         </div>
       )
     //current user has a booking for listing
-  } else if (currentUserBookings && currentUserBookings.length > 0) {
+  } else if (currentUserBookings) {
       const checkinFormatted = DateFormat(currentUserBookings.check_in, 'UTC:m/d/yyyy');
       const checkoutFormatted = DateFormat(currentUserBookings.check_out,'UTC:m/d/yyyy');
       const numDays = (new Date(checkoutFormatted) - new Date(checkinFormatted))/1000/24/60/60;
