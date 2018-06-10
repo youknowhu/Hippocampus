@@ -30,7 +30,7 @@
     justify-content: space-between;
 
     aside {
-      width: 10%;
+      width: 15%;
 
       img {
         border-radius: 50%
@@ -45,7 +45,7 @@
     }
 
     main {
-      width: 84%;
+      width: 80%;
 
       form {
         display: flex;
@@ -157,6 +157,50 @@
         color: $dark-gray;
         font-size: 12px;
         line-height: 20px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .reviews-section {
+    .reviews-header {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+    }
+
+    .reviews-index-item {
+      display: flex;
+      flex-direction: column;
+
+      aside {
+        margin: 0 auto;
+        width: 25%;
+      }
+
+      main {
+        width: 100%;
+      }
+
+      .review-body {
+        h2 {
+          text-align: center;
+        }
+
+        .date {
+          text-align: center;
+        }
+      }
+    }
+
+    .review-form {
+      main {
+        textarea {
+          font-size: 12px;
+        }
       }
     }
   }

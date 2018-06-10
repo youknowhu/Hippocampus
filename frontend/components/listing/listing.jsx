@@ -45,7 +45,7 @@ class Listing extends React.Component {
       listing.isCamping ? 'Camping' : 'Glamping';
     const petFriendly =
       listing.allowsPets ? 'Yes' : 'No';
-    const numReviews =  
+    const numReviews =
         this.props.numReviews ===  1 ?
           this.props.numReviews + " Review" :
           this.props.numReviews + " Reviews";
@@ -56,14 +56,14 @@ class Listing extends React.Component {
           photos={this.props.listingPhotos}/>
         <div className="listing-content">
           <section className="listing-left">
-            <div className="listing-header">
+            <div className="section-title listing-header">
               <h1>{listing.title}</h1>
               <SavesContainer
                 listingId={this.props.listing.id}
               />
             </div>
 
-            <div className="listing-about">
+            <div className="section-title listing-about">
               <aside>
                 <img src={host.imgUrl}/>
                 <div className="host-info">
@@ -76,7 +76,7 @@ class Listing extends React.Component {
               </main>
             </div>
 
-            <div className="listing-details">
+            <div className="section-title listing-details">
               <aside>
                 <p>Details</p>
               </aside>
@@ -106,7 +106,7 @@ class Listing extends React.Component {
                 </ul>
               </main>
             </div>
-            <div className="listing-features">
+            <div className="section-title listing-features">
               <aside>
                 <p>Features & Activities</p>
               </aside>
@@ -136,7 +136,7 @@ class Listing extends React.Component {
                 </ul>
               </main>
             </div>
-            <div className="listing-vibe">
+            <div className="section-title listing-vibe">
               <h2> The vibe at {listing.title} </h2>
               <div className='vibe-squares'>
                 <div className="vibe-square">

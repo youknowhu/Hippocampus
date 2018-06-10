@@ -12,6 +12,7 @@ class ListingSlider extends React.Component {
     arrows: true,
     infinite: true,
     variableWidth: true,
+    rows: 1,
     responsive: [
         {
           breakpoint: 900,
@@ -20,6 +21,7 @@ class ListingSlider extends React.Component {
             slidesToScroll: 1,
             infinite: true,
             variableWidth: false,
+            rows: 1,
           }
         },
       ]
