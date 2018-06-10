@@ -108,7 +108,6 @@ class BookingsForm extends React.Component {
 
   render() {
     const { bookings, currentUser, listing, currentUserBookings } = this.props;
-    console.log(currentUser);
 
     const dateSettings = {
       clickUnselectsDay: true,
@@ -122,7 +121,6 @@ class BookingsForm extends React.Component {
         }
       }
     }
-
 
     if (!listing) {
       return (<div> </div>)

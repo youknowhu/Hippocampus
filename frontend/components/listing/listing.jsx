@@ -35,7 +35,7 @@ class Listing extends React.Component {
 
   render() {
     if (this.props.listing.id === undefined) {
-      return ( <div> </div> )
+      return ( <div className="loading-main"> </div> )
     }
 
     const { host, listing, external } = this.props;
@@ -45,7 +45,7 @@ class Listing extends React.Component {
       listing.isCamping ? 'Camping' : 'Glamping';
     const petFriendly =
       listing.allowsPets ? 'Yes' : 'No';
-    const numReviews =
+    const numReviews =  
         this.props.numReviews ===  1 ?
           this.props.numReviews + " Review" :
           this.props.numReviews + " Reviews";
