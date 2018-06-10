@@ -1252,7 +1252,7 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
     flex-direction: column; }
     .reviews-section .reviews-index-item aside {
       margin: 0 auto;
-      width: 25%; }
+      width: 15%; }
     .reviews-section .reviews-index-item main {
       width: 100%; }
     .reviews-section .reviews-index-item .review-body h2 {
@@ -1275,13 +1275,22 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-start;
-    width: 85vw; }
+    width: 75vw; }
     .listing-page .listing-content .listing-left {
       width: 100%; }
       .listing-page .listing-content .listing-left .section-title aside {
         padding-bottom: 10px; }
         .listing-page .listing-content .listing-left .section-title aside > * {
           font-weight: 700; }
+      .listing-page .listing-content .listing-left .listing-vibe .vibe-squares {
+        justify-content: space-between;
+        width: 100%; }
+        .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square {
+          height: 20vw; }
+          .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square h3 {
+            font-size: 3vw; }
+          .listing-page .listing-content .listing-left .listing-vibe .vibe-squares .vibe-square p {
+            font-size: 1.5vw; }
       .listing-page .listing-content .listing-left > div {
         display: flex;
         flex-direction: column;
