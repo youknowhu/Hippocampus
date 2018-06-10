@@ -20,7 +20,6 @@
 @import "base/fonts.scss";
 @import "base/grid.scss";
 @import "base/datepicker.scss";
-// Grid
 
 // Components
 @import "components/nav.scss";
@@ -33,3 +32,6 @@
 @import "components/booking.scss";
 @import "components/explore.scss";
 @import "components/save.scss";
+
+//Responsive
+@import "responsive/responsive.scss";

@@ -1,0 +1,89 @@
+@media screen and (max-width: 1500px) {
+  .listing-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .reviews-section {
+    .reviews-header {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+    }
+
+    .reviews-index-item {
+      display: flex;
+      flex-direction: column;
+
+      aside {
+        margin: 0 auto;
+        width: 25%;
+      }
+
+      main {
+        width: 100%;
+      }
+
+      .review-body {
+        h2 {
+          text-align: center;
+        }
+
+        .date {
+          text-align: center;
+        }
+      }
+    }
+
+    .review-form {
+      display: flex;
+      flex-direction: column;
+
+      aside {
+        margin: 0 auto;
+        width: 25%;
+        padding-bottom: 15px;
+      }
+
+      main {
+        width: 100%;
+
+        textarea {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .listing-page {
+    .listing-content {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      width: 85vw;
+
+      .listing-left {
+        width: 100%;
+        .section-title {
+          aside {
+            padding-bottom: 10px;
+
+            > * {
+              font-weight: 700;
+            }
+          }
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
