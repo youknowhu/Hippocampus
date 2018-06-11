@@ -31,6 +31,7 @@
     "jest": "^23.1.0",
     "jest-enzyme": "^6.0.1",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.1",
     "regenerator-runtime": "^0.11.1"
   },
   "description": "![Hippocampus logo](https://github.com/youknowhu/Hippocampus/blob/master/lib/assets/Hippocampus%20Logo%20-%20hippo%20image.jpg)",
