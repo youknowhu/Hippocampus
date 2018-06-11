@@ -1,7 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
-import { receiveSingleFilter, receivePricingFilter, clearAllFilters } from '../actions/filter_actions';
+import {
+  Link,
+  withRouter
+} from 'react-router-dom';
+import {
+  receiveSingleFilter,
+  receivePricingFilter,
+  clearAllFilters
+} from '../actions/filter_actions';
 import { fetchHomePageListings } from '../actions/listing_actions';
 import { receiveGeolocationEntry } from '../actions/geolocation_actions';
 import { receiveSearchDates } from '../actions/dates_actions';

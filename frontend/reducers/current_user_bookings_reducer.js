@@ -9,7 +9,7 @@ import {
   REMOVE_BOOKING
 } from '../actions/booking_actions';
 
-const CurrentUserBookings = (state = [], action) => {
+const CurrentUserBookings = (state = null, action) => {
   Object.freeze(state);
   let newState;
 
@@ -17,9 +17,9 @@ const CurrentUserBookings = (state = [], action) => {
     case RECEIVE_SINGLE_LISTING:
       return action.payload.currentUserBookings;
     case CLEAR_LISTING:
-      return [];
+      return null;
     case REMOVE_BOOKING:
-      return [];
+      return null;
     default:
       return state;
   }

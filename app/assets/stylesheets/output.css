@@ -382,6 +382,8 @@ header {
     width: 95%;
     background: white;
     height: 50vh; }
+    .listing-page .listing-photos .custom-slider-css {
+      height: 50vh; }
     .listing-page .listing-photos .slick-slide {
       padding: 7px;
       height: 50vh; }
@@ -1271,6 +1273,8 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
       .reviews-section .review-form main textarea {
         font-size: 14px; }
 
+  .listing-page .listing-photos .custom-slider-css {
+    overflow-x: hidden; }
   .listing-page .listing-content {
     display: flex;
     flex-direction: column-reverse;

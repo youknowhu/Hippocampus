@@ -164,14 +164,13 @@ class BookingsForm extends React.Component {
           <div className="booking-total-shown">
             <h3>Total</h3>
               <div className="booking-total-calc">
-                <p> ${listing.dailyCost} x {resDays}</p>
-                <h3> ${listing.dailyCost * numDays}</h3>
+                <p>${listing.dailyCost} x {resDays}</p>
+                <h3>${listing.dailyCost * numDays}</h3>
               </div>
           </div>
           <div className="booking-cancel">
             <a onClick={() =>
               this.props.deleteBooking(currentUserBookings.id)
-              .then(() => this.props.fetchSingleListing(listing.id))
             }>
               Cancel Reservation
             </a>

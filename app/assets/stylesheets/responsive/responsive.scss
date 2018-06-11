@@ -60,6 +60,12 @@
   }
 
   .listing-page {
+    .listing-photos {
+      .custom-slider-css {
+          overflow-x: hidden;
+      }
+    }
+
     .listing-content {
       display: flex;
       flex-direction: column-reverse;
