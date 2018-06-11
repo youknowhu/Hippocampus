@@ -114,7 +114,7 @@ class ListingsFilter extends React.Component {
             onClick={this.toggle('group')}
             checked={ filters['group'] === true }
             />
-            <label htmlFor='group-filter' className='checkbox-label'>Group Site (15+)</label>
+            <label htmlFor='group-filter' className='checkbox-label'>Group (15+)</label>
           </li>
           <li className='filters-list-item'>
             <input id='camping-filter'
@@ -146,7 +146,7 @@ class ListingsFilter extends React.Component {
             onClick={ this.handlePricingFilter(25) }
             checked={ filters['pricing'] === 25 }
             />
-            <label htmlFor='less-than-25-filter' className='checkbox-label'>Less than $25/night</label>
+            <label htmlFor='less-than-25-filter' className='checkbox-label'>Under $25</label>
           </li>
           <li className='filters-list-item'>
             <input id='less-than-50-filter'
@@ -156,7 +156,7 @@ class ListingsFilter extends React.Component {
             onClick={ this.handlePricingFilter(50) }
             checked={ filters['pricing'] === 50 }
             />
-            <label htmlFor='less-than-50-filter' className='checkbox-label'>Less than $50/night</label>
+            <label htmlFor='less-than-50-filter' className='checkbox-label'>Under $50</label>
           </li>
           <li className='filters-list-item'>
             <input id='less-than-100-filter'
@@ -166,7 +166,7 @@ class ListingsFilter extends React.Component {
             onClick={ this.handlePricingFilter(100) }
             checked={ filters['pricing'] === 100 }
             />
-            <label htmlFor='less-than-100-filter' className='checkbox-label'>Less than $100/night</label>
+            <label htmlFor='less-than-100-filter' className='checkbox-label'>Under $100</label>
           </li>
         </ul>
         <h2> Activities </h2>

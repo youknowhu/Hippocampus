@@ -1078,7 +1078,7 @@ footer {
       position: relative;
       height: 100%; }
   .explore-container strong {
-    margin-left: 87%;
+    margin-left: 15px;
     font-weight: 700;
     color: #333333;
     font-size: 14px; }
@@ -1336,6 +1336,25 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
   #booking-form.sticky {
     position: relative;
     margin-bottom: 100px; } }
+@media screen and (max-width: 1200px) {
+  .explore-container .explore-filters h2 {
+    font-size: 12px; }
+  .explore-container .explore-filters .explore-filters-list .checkbox-label {
+    font-size: 11px; }
+  .explore-container .listings-index .listings-index-item h2 {
+    font-size: 18px; }
+  .explore-container .listings-index .listings-index-item .listings-index-body .listings-index-booking {
+    height: 30px; }
+  .explore-container .listings-index .listings-index-item .listings-index-body p {
+    font-size: 12px; }
+  .explore-container .listings-index .listings-index-item .listings-index-body button {
+    height: 30px;
+    padding: 0px 30px; }
+  .explore-container .listings-index .listings-index-item .listings-index-body h4 {
+    line-height: 30px; }
+  .explore-container .listings-index .listings-index-item .listings-index-link img {
+    width: 175px;
+    height: 175px; } }
 @media screen and (max-width: 550px) {
   #booking-form.sticky {
     position: relative;
@@ -1349,7 +1368,7 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
   .discover-filters {
     padding-top: 50px; } }
 .main-class {
-  min-height: 95vw;
+  min-height: 90vh;
   background: white; }
 
 /*# sourceMappingURL=output.css.map */

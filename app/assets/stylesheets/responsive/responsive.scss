@@ -194,6 +194,56 @@
     margin-bottom: 100px;
   }
 }
+@media screen and (max-width: 1200px) {
+  .explore-container {
+    .explore-filters {
+      h2 {
+        font-size: 12px;
+      }
+
+      .explore-filters-list {
+        .checkbox-label {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .listings-index {
+      .listings-index-item {
+        h2 {
+          font-size: 18px;
+        }
+
+        .listings-index-body {
+
+          .listings-index-booking {
+            height: 30px;
+          }
+          p {
+            font-size: 12px;
+          }
+
+          button {
+            height: 30px;
+            padding: 0px 30px;
+          }
+
+          h4 {
+            line-height: 30px;
+          }
+        }
+
+        .listings-index-link {
+          img {
+            width: 175px;
+            height: 175px;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width: 550px) {
   #booking-form.sticky {
@@ -206,7 +256,7 @@
     .row {
       width: 80%;
     }
-    
+
     .row.right {
       display: none;
     }
