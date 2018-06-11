@@ -1,93 +1,121 @@
-import PostsReducer from '../reducers/posts_reducer';
-import RootReducer from '../reducers/root_reducer';
-import { createStore } from 'redux';
+import UsersReducer from '../reducers/users_reducer';
+import ListingsReducer from '../reducers/listings_reducer';
+import ListingPhotosReducer from '../reducers/listing_photos_reducer';
+import ReviewsReducer from '../reducers/reviews_reducer';
+import SortedReviewsReducer from '../reducers/sorted_reviews_reducer';
+import BookingsReducer from '../reducers/bookings_reducer';
+import ExternalReducer from '../reducers/external_api_reducer';
 
 describe('Entities Reducers', () => {
-  describe('PostsReducer', () => {
+  describe('Users Reducer', () => {
     it('exports a function', () => {
-      expect(typeof PostsReducer).toEqual('function');
+      expect(typeof UsersReducer).toEqual('function');
     });
 
     it('should initialize with an empty object as the default state', () => {
-      expect(PostsReducer(undefined, {})).toEqual({});
+      expect(UsersReducer(undefined, {})).toEqual({});
     });
 
     it('should return the previous state if an action is not matched', () => {
       const oldState = { 1: 'oldState' };
-      const newState = PostsReducer(oldState, { type: 'unmatchedtype' });
+      const newState = UsersReducer(oldState, { type: 'unmatchedtype' });
       expect(newState).toEqual(oldState);
     });
+  });
 
-    describe('handling the RECEIVE_ALL_POSTS action', () => {
-      let action,
-          testPosts;
-
-      beforeEach(() => {
-        testPosts = { 1: 'testPost1', 2: 'testPost2' };
-        action = {
-          type: 'RECEIVE_ALL_POSTS',
-          posts: testPosts
-        };
-      });
-
-      it('should replace the state with the action\'s posts', () => {
-        const state = PostsReducer(undefined, action);
-        expect(state).toEqual(testPosts);
-      });
-
-      it('should not modify the old state', () => {
-        let oldState = { 1: 'oldState' };
-        PostsReducer(oldState, action);
-        expect(oldState).toEqual({ 1: 'oldState' });
-      });
+  describe('Listings Reducer', () => {
+    it('exports a function', () => {
+      expect(typeof ListingsReducer).toEqual('function');
     });
 
-    describe('handling the RECEIVE_POST action', () => {
-      let action,
-          testPost;
-
-      beforeEach(() => {
-        testPost = { id: 1, title: 'testPost' };
-        action = {
-          type: 'RECEIVE_POST',
-          post: testPost
-        };
-      });
-
-      it('should add the post to the state using the post id as a key', () => {
-        let state = PostsReducer(undefined, action);
-        expect(state[1]).toEqual(testPost);
-      });
-
-      it('should not affect the other posts in the state', () => {
-        let oldState = { 2: 'oldState' };
-        let state = PostsReducer(oldState, action);
-        expect(state[2]).toEqual('oldState');
-      });
+    it('should initialize with an empty object as the default state', () => {
+      expect(ListingsReducer(undefined, {})).toEqual({});
     });
 
-    describe('handling the REMOVE_POST action', () => {
-      let action,
-          testPost;
+    it('should return the previous state if an action is not matched', () => {
+      const oldState = { 1: 'oldState' };
+      const newState = ListingsReducer(oldState, { type: 'unmatchedtype' });
+      expect(newState).toEqual(oldState);
+    });
+  });
 
-      beforeEach(() => {
-        testPost = { id: 1, title: 'testPost' };
-        action = {
-          type: 'REMOVE_POST',
-          postId: testPost.id
-        };
-      });
+  describe('Listing Photos Reducer', () => {
+    it('exports a function', () => {
+      expect(typeof ListingPhotosReducer).toEqual('function');
+    });
 
-      it('should remove the correct post from the state', () => {
-        let state = PostsReducer({ 1: testPost }, action);
-        expect(typeof state[1]).toEqual('undefined');
-      });
+    it('should initialize with an empty object as the default state', () => {
+      expect(ListingPhotosReducer(undefined, {})).toEqual({});
+    });
 
-      it('should not affect the other posts in the state', () => {
-        let oldState = { 1: testPost, 2: 'oldState' };
-        let state = PostsReducer(oldState, action);
-        expect(state[2]).toEqual('oldState');
-      });
+    it('should return the previous state if an action is not matched', () => {
+      const oldState = { 1: 'oldState' };
+      const newState = ListingPhotosReducer(oldState, { type: 'unmatchedtype' });
+      expect(newState).toEqual(oldState);
+    });
+  });
+
+  describe('Reviews Reducer', () => {
+    it('exports a function', () => {
+      expect(typeof ReviewsReducer).toEqual('function');
+    });
+
+    it('should initialize with an empty object as the default state', () => {
+      expect(ReviewsReducer(undefined, {})).toEqual({});
+    });
+
+    it('should return the previous state if an action is not matched', () => {
+      const oldState = { 1: 'oldState' };
+      const newState = ReviewsReducer(oldState, { type: 'unmatchedtype' });
+      expect(newState).toEqual(oldState);
+    });
+  });
+
+  describe('Sorted Reviews Reducer', () => {
+    it('exports a function', () => {
+      expect(typeof SortedReviewsReducer).toEqual('function');
+    });
+
+    it('should initialize with an empty object as the default state', () => {
+      expect(SortedReviewsReducer(undefined, [])).toEqual([]);
+    });
+
+    it('should return the previous state if an action is not matched', () => {
+      const oldState = { 1: 'oldState' };
+      const newState = SortedReviewsReducer(oldState, { type: 'unmatchedtype' });
+      expect(newState).toEqual(oldState);
+    });
+  });
+
+  describe('Bookings Reducer', () => {
+    it('exports a function', () => {
+      expect(typeof BookingsReducer).toEqual('function');
+    });
+
+    it('should initialize with an empty object as the default state', () => {
+      expect(BookingsReducer(undefined, {})).toEqual({});
+    });
+
+    it('should return the previous state if an action is not matched', () => {
+      const oldState = { 1: 'oldState' };
+      const newState = BookingsReducer(oldState, { type: 'unmatchedtype' });
+      expect(newState).toEqual(oldState);
+    });
+  });
+
+  describe('External Reducer', () => {
+    it('exports a function', () => {
+      expect(typeof ExternalReducer).toEqual('function');
+    });
+
+    it('should initialize with an empty object as the default state', () => {
+      expect(ExternalReducer(undefined, {})).toEqual({});
+    });
+
+    it('should return the previous state if an action is not matched', () => {
+      const oldState = { 1: 'oldState' };
+      const newState = ExternalReducer(oldState, { type: 'unmatchedtype' });
+      expect(newState).toEqual(oldState);
     });
   });
 });
