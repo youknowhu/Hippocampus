@@ -8,6 +8,68 @@
 
 @media screen and (max-width: 1000px) {
 
+  .discover-filters {
+    width: 80vw;
+
+    .discover-grid {
+      .discover-square {
+        .crop {
+          width: 25vw;
+          height: 25vw;
+        }
+
+        .discover-footer {
+          h2 {
+            font-size: 14px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .main-header {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 5vw;
+    }
+
+    .row {
+      width: 65%;
+      margin: 0 auto;
+
+      .subtext {
+        h1 {
+          font-size: 1.75vw;
+        }
+      }
+
+      .main-search-box {
+        .dates-search {
+
+          button {
+            font-size: 1.35vw;
+          }
+          .booking-field-date {
+            input {
+              font-size: 1.35vw;
+            }
+          }
+        }
+        .location-search {
+          input {
+            font-size: 1.35vw;
+          }
+        }
+      }
+    }
+  }
+
   .reviews-section {
     .reviews-header {
       display: flex;
@@ -37,6 +99,8 @@
           text-align: center;
         }
       }
+
+
     }
 
     .review-form {
@@ -129,4 +193,17 @@
     position: relative;
     margin-bottom: 100px;
   }
+}
+
+@media screen and (max-width: 550px) {
+  #booking-form.sticky {
+    position: relative;
+    margin-bottom: 250px;
+  }
+
+    .main-header {
+      .row.right {
+        display: none;
+      }
+    }
 }
