@@ -7,7 +7,7 @@ const _nullUser = Object.freeze({
   currentUser: null
 });
 
-const sessionReducer = (state = _nullUser, action) => {
+const SessionReducer = (state = _nullUser, action) => {
   Object.freeze(state);
   let newState;
   switch (action.type) {
@@ -22,4 +22,4 @@ const sessionReducer = (state = _nullUser, action) => {
 };
 
 
-export default sessionReducer;
+export default SessionReducer;
