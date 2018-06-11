@@ -18,31 +18,28 @@ RSpec.describe Api::ReviewsController, type: :controller do
   end
 
   describe 'POST #create' do
-    # it { should route(:post, '/api/reviews').to(action: :create) }
-
-    context 'when logged in' do
-      before do
-        allow(controller).to receive(:current_user) { kimmy }
+    context 'with invalid params' do
+      before(:each) do
+        post :create, params: { review: { body: nil, user_id: kimmy.id, listing_id: nil} }
       end
 
-      # context 'with invalid params' do
-      #   it 'flashes errors' do
-      #     post :create, params: { review: review }
-      #     expect(flash[:errors]).to be_present
-      #   end
-      # end
+      it 'returns unprocessable entity status 422 and corresponding errors array' do
+        expect(response.status).to be(422)
+        expect(response.body).to include("Listing can't be blank")
+      end
+    end
 
-      context 'with valid params' do
-        it 'creates and adds review' do
-          params = { review: { body: 'such a beautiful national park', user_id: kimmy.id, listing_id: listing.id } }
-          post :create, params
-          expect(response).to include_json(
-              user_id: kimmy.id,
-              listing_id: listing.id,
-              id: review.id,
-              body: 'such a beautiful national park'
-          )
-        end
+    context 'with valid params' do
+      before(:each) do
+        post :create, params: { review: { body: 'such a beautiful national park', user_id: kimmy.id, listing_id: listing.id } }
+      end
+
+      it 'creates a new review' do
+        expect(response.status).to be(200)
+        expect(response).to render_template('api/reviews/show.json.jbuilder')
+        expect(response.request.request_parameters).to eq({
+          "review" => {"body" => "such a beautiful national park",
+          "listing_id" => listing.id.to_s, "user_id" => kimmy.id.to_s }})
       end
     end
   end
