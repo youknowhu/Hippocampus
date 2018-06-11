@@ -4,6 +4,7 @@ class Api::ReviewsController < ApplicationController
   end
   def show
     @review = Review.find(params[:id])
+    render 'api/reviews/show.json.jbuilder'
   end
 
   def create
