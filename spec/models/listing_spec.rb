@@ -25,7 +25,8 @@ RSpec.describe Listing,  type: :model do
 
     it 'fetches current temperature from Open Weather API' do
       result = listing1.temp
-      expect(result).to_not be_nil
+      expect(result).to be > -50
+      expect(result).to be < 150 
     end
   end
 
