@@ -1009,13 +1009,13 @@ footer {
     width: 100%; }
     #booking-form .booked-header button, #booking-form .booked-header h2, #booking-form .booked-header a {
       box-sizing: border-box;
-      font-weight: 200;
+      font-weight: 400;
       color: white;
       font-size: 18px;
       text-align: center;
       padding: 25px 25px; }
     #booking-form .booked-header h2, #booking-form .booked-header button {
-      background-color: #3cc69e; }
+      background-color: #2b9b7b; }
     #booking-form .booked-header button {
       width: 100%;
       cursor: default; }
@@ -1355,10 +1355,12 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
   .explore-container .listings-index .listings-index-item .listings-index-link img {
     width: 175px;
     height: 175px; } }
-@media screen and (max-width: 550px) {
-  #booking-form.sticky {
+@media screen and (max-device-width: 550px) {
+  #booking-form {
     position: relative;
-    margin-bottom: 250px; }
+    margin-bottom: 300px;
+    width: 450px;
+    z-index: 3; }
 
   .main-header .row {
     width: 80%; }

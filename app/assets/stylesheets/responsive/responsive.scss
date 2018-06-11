@@ -245,10 +245,12 @@
 }
 
 
-@media screen and (max-width: 550px) {
-  #booking-form.sticky {
+@media screen and (max-device-width: 550px) {
+  #booking-form {
     position: relative;
-    margin-bottom: 250px;
+    margin-bottom: 300px;
+    width: 450px;
+    z-index: 3;
   }
 
   .main-header {

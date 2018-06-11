@@ -115,16 +115,15 @@
 
     button, h2, a {
       box-sizing: border-box;
-      font-weight: 200;
+      font-weight: 400;
       color: white;
       font-size: 18px;
       text-align: center;
       padding: 25px 25px;
-
     }
 
     h2, button {
-      background-color: $darker-green;
+      background-color: $darkest-green;
     }
 
     button {

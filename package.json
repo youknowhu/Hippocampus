@@ -25,6 +25,10 @@
     "webpack": "^3.12.0"
   },
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^23.1.0",
+    "jest-enzyme": "^6.0.1",
     "redux-logger": "^3.0.6"
   },
   "description": "![Hippocampus logo](https://github.com/youknowhu/Hippocampus/blob/master/lib/assets/Hippocampus%20Logo%20-%20hippo%20image.jpg)",
@@ -38,7 +42,7 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "webpack": "webpack --watch",
     "postinstall": "webpack",
     "start": "webpack --watch"
