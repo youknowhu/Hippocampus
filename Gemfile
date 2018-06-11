@@ -44,7 +44,13 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry-rails';
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :development do

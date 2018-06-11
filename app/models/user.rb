@@ -2,7 +2,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   validates :username, :password_digest, :first_name, :last_name,
-    :session_token, :zip, presence: true
+    :session_token, :zip, :img_url, presence: true
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
   validates_format_of :zip, with: /^\d{5}(-\d{4})?$/, multiline: true,  message: "format should be '12345' or '12345-6789'"
