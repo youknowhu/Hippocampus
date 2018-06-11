@@ -18,7 +18,7 @@ describe('Dates Actions', () => {
       expect(typeof actions.receiveSearchDates).toEqual('function');
     });
 
-    it('receiveSearchDates shoudl create an action to RECEIVE_SEARCH_DATES', () => {
+    it('receiveSearchDates should create an action to RECEIVE_SEARCH_DATES', () => {
       const expectedAction = {
         type: actions.RECEIVE_SEARCH_DATES, dates
       };
