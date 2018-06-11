@@ -1341,8 +1341,13 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
     position: relative;
     margin-bottom: 250px; }
 
+  .main-header .row {
+    width: 80%; }
   .main-header .row.right {
-    display: none; } }
+    display: none; }
+
+  .discover-filters {
+    padding-top: 50px; } }
 .main-class {
   min-height: 95vw;
   background: white; }

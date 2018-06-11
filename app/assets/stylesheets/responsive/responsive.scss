@@ -201,9 +201,18 @@
     margin-bottom: 250px;
   }
 
-    .main-header {
-      .row.right {
-        display: none;
-      }
+  .main-header {
+
+    .row {
+      width: 80%;
     }
+    
+    .row.right {
+      display: none;
+    }
+  }
+
+  .discover-filters {
+    padding-top: 50px;
+  }
 }
