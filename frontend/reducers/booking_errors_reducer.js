@@ -3,7 +3,7 @@ import {
   CLEAR_BOOKING_ERRORS
 } from '../actions/booking_actions';
 
-export default (state = [], action) => {
+const BookingErrorsReducer  = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_BOOKING_ERRORS:
@@ -14,3 +14,5 @@ export default (state = [], action) => {
       return state;
   }
 };
+
+export default BookingErrorsReducer;
