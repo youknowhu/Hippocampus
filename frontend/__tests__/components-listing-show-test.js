@@ -9,8 +9,6 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import MockRouter from 'react-mock-router';
 
-console.log(mount);
-
 const  testListing = {
   listings: {
     31: {
