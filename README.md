@@ -36,7 +36,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ## Features
 
 ### Search
-<img src="https://media.giphy.com/media/1NXIaff5vLeYSdADIW/giphy.gif" width="500">
+<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528824095/Screen_Shot_2018-06-12_at_10.21.13_AM.png" >
 
 * Search can filter listings by multiple categories (e.g. "glamping", "pet-friendly", and "less than $25/night").
 * Search can also filter by location
@@ -63,7 +63,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ---
 
 ### Bookings
-<img src="https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif" width="500">
+<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528824009/Screen_Shot_2018-06-12_at_10.19.38_AM.png" width="500">
 
 * Logged in users can book or cancel a listing
 * If not logged in, users will be prompted to log in.
@@ -71,7 +71,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ---
 
 ### Saves
-<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528782911/Screen_Shot_2018-06-11_at_10.54.04_PM.png" width="500">
+<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528782911/Screen_Shot_2018-06-11_at_10.54.04_PM.png" width="450">
 
 * Logged in users can save or unsave a listing
 
@@ -130,10 +130,6 @@ When scrolling through a listing, the booking form should remain visible on the 
 }
 
 ```
-
-Booking form position sticky in action:
-
-<img src="https://media.giphy.com/media/dl2cIqbUO75AHIaTmA/giphy.gif" width="500">
 
 
 ## Planned Work
