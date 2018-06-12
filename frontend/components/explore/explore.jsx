@@ -9,11 +9,11 @@ import ListingsIndexContainer from '../listing/listings_index_container';
 
 class Explore extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
   }
 
   componentWillUnmount() {
@@ -36,7 +36,6 @@ class Explore extends React.Component {
     )
   }
 }
-
 const mapDispatchToProps = dispatch => {
   return {
     receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry)),
