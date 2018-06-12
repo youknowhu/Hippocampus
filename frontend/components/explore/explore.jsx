@@ -36,6 +36,7 @@ class Explore extends React.Component {
     )
   }
 }
+
 const mapDispatchToProps = dispatch => {
   return {
     receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry)),

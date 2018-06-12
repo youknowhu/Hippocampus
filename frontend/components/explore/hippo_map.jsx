@@ -39,34 +39,17 @@ class HippoMap extends React.Component {
       return listings;
     }
 
-    let filteredListings = listings;
+    const filteredListings = listings.filter(listing => {
+      if (filters['pets'] && !listing.allowsPets) return;
+      if (filters['camping'] && !listing.isCamping) return;
+      if (filters['glamping'] && listing.isCamping) return;
+      if (filters['group'] && listing.maxCapacity < 15) return;
+      if (filters['private'] && !listing.isPrivate) return;
+      if (filters['public'] && listing.isPrivate) return;
+      if (filters.pricing < listing.dailyCost) return;
 
-    if (filters['pets'] === true) {
-      filteredListings = filteredListings.filter(listing => listing.allowsPets === true)
-    }
-
-    if (filters['camping'] === true) {
-      filteredListings = filteredListings.filter(listing => listing.isCamping === true)
-    }
-
-    if (filters['glamping'] === true) {
-      filteredListings = filteredListings.filter(listing => listing.isCamping === false)
-    }
-
-    if (filters['group'] === true) {
-      filteredListings = filteredListings.filter(listing => listing.maxCapacity >= 15)
-    }
-
-    if (filters['private'] === true) {
-      filteredListings = filteredListings.filter(listing => listing.isPrivate === true)
-    }
-
-    if (filters['public'] === true) {
-      filteredListings = filteredListings.filter(listing => listing.isPrivate === false)
-    }
-
-    filteredListings = filteredListings.filter(listing => listing.dailyCost < filters.pricing)
-
+      return listing;
+    });
     return filteredListings;
   }
 

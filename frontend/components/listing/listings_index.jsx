@@ -15,33 +15,17 @@ class ListingsIndex extends React.Component {
   applyFilters() {
     const { listings, filters, geolocation, mapBounds } = this.props;
 
-    let filteredListings = listings;
+    let filteredListings = listings.filter(listing => {
+      if (filters['pets'] && !listing.allowsPets) return;
+      if (filters['camping'] && !listing.isCamping) return;
+      if (filters['glamping'] && listing.isCamping) return;
+      if (filters['group'] && listing.maxCapacity < 15) return;
+      if (filters['private'] && !listing.isPrivate) return;
+      if (filters['public'] && listing.isPrivate) return;
+      if (filters.pricing < listing.dailyCost) return;
 
-    if (filters['pets']) {
-      filteredListings = filteredListings.filter(listing => listing.allowsPets === true);
-    }
-
-    if (filters['camping']) {
-      filteredListings = filteredListings.filter(listing => listing.isCamping === true);
-    }
-
-    if (filters['glamping']) {
-      filteredListings = filteredListings.filter(listing => listing.isCamping === false);
-    }
-
-    if (filters['group']) {
-      filteredListings = filteredListings.filter(listing => listing.maxCapacity >= 15);
-    }
-
-    if (filters['private']) {
-      filteredListings = filteredListings.filter(listing => listing.isPrivate === true);
-    }
-
-    if (filters['public']) {
-      filteredListings = filteredListings.filter(listing => listing.isPrivate === false);
-    }
-
-    filteredListings = filteredListings.filter(listing => listing.dailyCost < filters.pricing);
+      return listing;
+    });
 
     if (Object.keys(mapBounds).length > 0 && geolocation.length > 0) {
       filteredListings = filteredListings.filter(listing =>
