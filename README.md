@@ -36,7 +36,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ## Features
 
 ### Search
-<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528824095/Screen_Shot_2018-06-12_at_10.21.13_AM.png" width="500">
+<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528824095/Screen_Shot_2018-06-12_at_10.21.13_AM.png" >
 
 * Search can filter listings by multiple categories (e.g. "glamping", "pet-friendly", and "less than $25/night").
 * Search can also filter by location
