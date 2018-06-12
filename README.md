@@ -71,7 +71,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ---
 
 ### Saves
-<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528782911/Screen_Shot_2018-06-11_at_10.54.04_PM.png" width="500">
+<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528782911/Screen_Shot_2018-06-11_at_10.54.04_PM.png" width="450">
 
 * Logged in users can save or unsave a listing
 
@@ -130,10 +130,6 @@ When scrolling through a listing, the booking form should remain visible on the 
 }
 
 ```
-
-Booking form position sticky in action:
-
-<img src="https://media.giphy.com/media/dl2cIqbUO75AHIaTmA/giphy.gif" width="500">
 
 
 ## Planned Work
