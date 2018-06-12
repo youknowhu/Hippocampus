@@ -49,7 +49,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ![listings page](https://res.cloudinary.com/deor0br3s/image/upload/v1523658759/Screen_Shot_2018-04-13_at_2.33.46_PM.png)
 * Listings showcase their photos using the react-slick photo carousel.
 * Listings display their elevation and current weather using their coordinates to ping Google Maps and Open Weather.
-* Listings also display reviews and booking.
+* Listings also display saves, reviews, and bookings.
 ---
 
 ### Reviews
@@ -67,6 +67,13 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 
 * Logged in users can book or cancel a listing
 * If not logged in, users will be prompted to log in.
+
+---
+
+### Saves
+<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528782911/Screen_Shot_2018-06-11_at_10.54.04_PM.png" width="500">
+
+* Logged in users can save or unsave a listing
 
 ## Code Highlights
 
