@@ -31,7 +31,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 
 #### Unit Testing
 * Backend: RSpec
-* Frontend: Jest 
+* Frontend: Jest and Enzyme
 
 ## Features
 
