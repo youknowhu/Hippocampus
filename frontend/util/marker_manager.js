@@ -41,17 +41,9 @@ class MarkerManager {
   }
 
   createMarkerFromListing(listing) {
-    console.log(listing);
     const icon = 'https://res.cloudinary.com/deor0br3s/image/upload/c_scale,w_100/v1523399623/Hippo_Marker_3.png'
     const position = new google.maps.LatLng(listing.lat, listing.lng);
-    const marker = new google.maps.Marker({
-      position,
-      map: this.map,
-      listingId: listing.id,
-      icon: icon,
-    });
-
-    const infowindow = new google.maps.InfoWindow({
+    const markerInfoWindow = new google.maps.InfoWindow({
       content:
       `<div class="infowindow">
         <a href="/#/listings/${listing.id}" style="display: flex;">
@@ -65,17 +57,34 @@ class MarkerManager {
       maxWidth: 300,
     });
 
+    const marker = new google.maps.Marker({
+      position,
+      map: this.map,
+      listingId: listing.id,
+      icon: icon,
+      clicked: false,
+      infoWindow: markerInfoWindow,
+    });
+
     marker.addListener('mouseover', () => {
-      infowindow.open(this.map, marker);
+      marker.infoWindow.open(this.map, marker);
     });
 
     marker.addListener('mouseout', () => {
-      infowindow.close(this.map, marker);
+      if (!marker.clicked) marker.infoWindow.close(this.map, marker);
     });
 
-    // marker.addListener('click', () => {
-    //   infowindow.open(this.map, marker);
-    // });
+    marker.addListener('click', () => {
+      marker.clicked = !marker.clicked;
+      if (marker.clicked) {
+        this.hideAllInfoWindows();
+        marker.infoWindow.open(this.map, marker);
+        const targetListing = document.getElementById(`listing-${listing.id}`);
+        targetListing.scrollIntoView({behavior: "smooth", block: "center"});
+      } else {
+        marker.infoWindow.close(this.map, marker);
+      }
+    });
 
 
     this.markers[marker.listingId] = marker;
@@ -85,6 +94,12 @@ class MarkerManager {
   removeMarker(marker) {
     this.markers[marker.listingId].setMap(null);
     delete this.markers[marker.listingId];
+  }
+
+  hideAllInfoWindows() {
+    Object.values(this.markers).forEach(marker => {
+      marker.infoWindow.close(this.map, marker);
+    });
   }
 
 }

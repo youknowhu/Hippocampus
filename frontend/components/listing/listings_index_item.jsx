@@ -6,7 +6,7 @@ class ListingsIndexItem extends React.Component {
     const { listing } = this.props;
 
     return (
-      <div className="listings-index-item">
+      <div className="listings-index-item" id={`listing-${listing.id}`}>
         <Link className='listings-index-link' to={`listings/${listing.id}`}>
           <aside className="listings-index-img">
             <img src={listing.iconUrl} />
