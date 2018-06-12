@@ -9,12 +9,7 @@ import SavesContainer from '../saves/saves_container';
 
 class Listing extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      elevation: 0,
-      weather: 'slightly cloudy',
-      temperature: 65,
-    }
+    super(props);
   }
 
   componentWillReceiveProps(newProps) {
@@ -35,7 +30,7 @@ class Listing extends React.Component {
 
   render() {
     if (this.props.listing.id === undefined) {
-      return ( <div className="loading-main"> </div> )
+      return ( <div className="loading-main"> </div> );
     }
 
     const { host, listing, external } = this.props;
