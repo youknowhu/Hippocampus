@@ -6,7 +6,7 @@ Live Site: [Hippocampus](https://camp-hippocampus.herokuapp.com/)
 
 Hippocampus was inspired by [Hipcamp](https://www.hipcamp.com/). Using Hippocampus, you can find awesome campsites and glampsites around the U.S. I chose to build Hippocampus because I love the outdoors, camping, and visiting national parks and I wanted to share the beautiful places I have been and hope to go.
 
-Hippocampus utilizes Rails/PostgreSQL backend and React/Redux frontend.Hippocampus was built in two weeks, but I plan to continue iterating on this website.
+Hippocampus utilizes Rails/PostgreSQL backend and React/Redux frontend.  Hippocampus was built in two weeks, but I plan to continue iterating on this website.
 
 
 Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/wiki)
@@ -25,9 +25,13 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 * External APIs: Google Maps API & Open Weather Map API
 
 #### Frontend
-* Frontend Framework: React/Redux (v16.3.0/v3.7.2)
+* Frontend Framework: Javascript ES7 and React/Redux (v16.3.0/v3.7.2)
 * Notable React Libraries Used: react-slick (photo carousel), react-day-picker (date input), react-modal (login form)
 * Styling: SCSS
+
+#### Unit Testing
+* Backend: RSpec
+* Frontend: Jest 
 
 ## Features
 
@@ -126,7 +130,7 @@ Booking form position sticky in action:
 
 
 ## Planned Work
-* Incorporate CSS media queries to ensure optimal user experience on any screen size.  
-* Add front-end and back-end testing (Jest and RSpec)
-* Add "Saves" feature, enabling users to heart their favorite listings.
-* Add "User Profile" feature, where users will be able
+* Incorporate CSS media queries to ensure optimal ruser experience on any screen size - Completed   
+* Add front-end and back-end testing (Jest and RSpec) - In Progress 
+* Add "Saves" feature, enabling users to heart their favorite listings - Completed 
+* Add "User Profile" feature, where users will be able to access their saved & booked listings
