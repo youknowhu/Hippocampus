@@ -5,7 +5,6 @@ import { Link, withRouter } from 'react-router-dom';
 class ListingsFilter extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.filters;
     this.toggle = this.toggle.bind(this);
     this.handlePricingFilter = this.handlePricingFilter.bind(this);
   }
@@ -81,7 +80,7 @@ class ListingsFilter extends React.Component {
             name='listing-filter'
             type='radio'
             onClick={this.handleListingFilter('public')}
-            checked={ filters['public'] === true }
+            checked={filters['public']}
             />
             <label htmlFor='public-filter' className='checkbox-label'>Public</label>
           </li>
@@ -91,7 +90,7 @@ class ListingsFilter extends React.Component {
             name='listing-filter'
             type='radio'
             onClick={this.handleListingFilter('private')}
-            checked={ filters['private'] === true }
+            checked={filters['private']}
             />
           <label htmlFor='private-filter' className='checkbox-label'>Private</label>
           </li>
@@ -103,7 +102,7 @@ class ListingsFilter extends React.Component {
               className='checkbox-filter'
               type='checkbox'
               onClick={this.toggle('pets')}
-              checked={ filters['pets'] === true }
+              checked={filters['pets']}
               />
             <label htmlFor='pet-friendly-filter' className='checkbox-label'>Pet Friendly</label>
           </li>
@@ -112,7 +111,7 @@ class ListingsFilter extends React.Component {
             className='checkbox-filter'
             type='checkbox'
             onClick={this.toggle('group')}
-            checked={ filters['group'] === true }
+            checked={filters['group']}
             />
             <label htmlFor='group-filter' className='checkbox-label'>Group (15+)</label>
           </li>
@@ -121,7 +120,7 @@ class ListingsFilter extends React.Component {
             className='checkbox-filter'
             type='checkbox'
             onClick={this.toggle('camping')}
-            checked={ filters['camping'] === true }
+            checked={filters['camping']}
             />
             <label htmlFor='camping-filter' className='checkbox-label'>Camping</label>
           </li>
@@ -130,7 +129,7 @@ class ListingsFilter extends React.Component {
             className='checkbox-filter'
             type='checkbox'
             onClick={this.toggle('glamping')}
-            checked={ filters['glamping'] === true }
+            checked={filters['glamping']}
             />
             <label htmlFor='glamping-filter' className='checkbox-label'>Glamping</label>
           </li>
@@ -176,7 +175,7 @@ class ListingsFilter extends React.Component {
             className='checkbox-filter'
             type='checkbox'
             onClick={this.toggle('biking')}
-            checked={filters['biking'] === true}
+            checked={filters['biking']}
             />
             <label htmlFor='biking-filter' className='checkbox-label'>Biking</label>
           </li>
@@ -184,7 +183,7 @@ class ListingsFilter extends React.Component {
             <input id='hiking-filter'
             className='checkbox-filter' type='checkbox'
             onClick={this.toggle('hiking')}
-            checked={filters['hiking'] === true}
+            checked={filters['hiking']}
             />
             <label htmlFor='hiking-filter' className='checkbox-label'>Hiking</label>
           </li>
@@ -192,7 +191,7 @@ class ListingsFilter extends React.Component {
             <input id='water-sports-filter'
             className='checkbox-filter' type='checkbox'
             onClick={this.toggle('water')}
-            checked={filters['water'] === true}
+            checked={filters['water']}
             />
             <label htmlFor='water-sports-filter' className='checkbox-label'>Water Sports</label>
           </li>
@@ -203,7 +202,7 @@ class ListingsFilter extends React.Component {
             <input id='forest-filter'
             className='checkbox-filter' type='checkbox'
             onClick={this.toggle('forest')}
-            checked={filters['forest'] === true}
+            checked={filters['forest']}
             />
             <label htmlFor='forest-filter' className='checkbox-label'>Forest</label>
           </li>
@@ -211,14 +210,14 @@ class ListingsFilter extends React.Component {
             <input id='waterfall-filter'
             className='checkbox-filter' type='checkbox'
             onClick={this.toggle('waterfall')}
-            checked={filters['waterfall'] === true}/>
+            checked={filters['waterfall']}/>
             <label htmlFor='waterfall-filter' className='checkbox-label'>Waterfall</label>
           </li>
           <li className='filters-list-item'>
             <input id='lake-filter'
             className='checkbox-filter' type='checkbox'
             onClick={this.toggle('lake')}
-            checked={filters['lake'] === true}/>
+            checked={filters['lake']}/>
             <label htmlFor='lake-filter' className='checkbox-label'>Lake</label>
           </li>
         </ul>
