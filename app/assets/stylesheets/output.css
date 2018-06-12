@@ -1360,15 +1360,9 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
   .explore-container .listings-index .listings-index-item .listings-index-link img {
     width: 175px;
     height: 175px; } }
-@media screen and (max-device-width: 550px) {
-  #booking-form {
-    position: relative;
-    margin-bottom: 300px;
-    width: 450px;
-    z-index: 3; }
-
+@media screen and (max-width: 550px) {
   .main-header .row {
-    width: 80%; }
+    width: 90%; }
   .main-header .row.right {
     display: none; }
 

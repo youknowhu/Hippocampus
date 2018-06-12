@@ -245,18 +245,10 @@
 }
 
 
-@media screen and (max-device-width: 550px) {
-  #booking-form {
-    position: relative;
-    margin-bottom: 300px;
-    width: 450px;
-    z-index: 3;
-  }
-
+@media screen and (max-width: 550px) {
   .main-header {
-
     .row {
-      width: 80%;
+      width: 90%;
     }
 
     .row.right {
