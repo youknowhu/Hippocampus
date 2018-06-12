@@ -29,7 +29,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 * Notable React Libraries Used: react-slick (photo carousel), react-day-picker (date input), react-modal (login form)
 * Styling: SCSS
 
-#### Unit Testing
+#### Unit Testing (In Progress)
 * Backend: RSpec
 * Frontend: Jest and Enzyme
 
