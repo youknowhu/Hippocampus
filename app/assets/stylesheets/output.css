@@ -1190,16 +1190,20 @@ footer {
         background: #40d9ac;
         border: 1px solid #40d9ac; }
 
-.infowindow {
-  width: 200px;
-  height: 200px;
-  overflow: hidden; }
-  .infowindow .infowindow-image {
-    width: 100px;
-    height: 100px; }
-  .infowindow .info-window-title {
-    font-weight: 700;
-    color: #333333; }
+.infowindow a .infowindow-image {
+  width: 85px;
+  height: 85px; }
+.infowindow a h2 {
+  padding-left: 15px;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 auto;
+  color: #474747;
+  padding-top: 5px; }
+.infowindow a p {
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-left: 15px; }
 
 img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
   display: none; }
@@ -1304,7 +1308,7 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
     overflow-x: hidden; }
   .listing-page .listing-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
     width: 75vw; }
     .listing-page .listing-content .listing-right {

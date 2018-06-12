@@ -188,19 +188,30 @@
 }
 
 .infowindow {
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
 
-  .infowindow-image {
-    width: 100px;
-    height: 100px;
+  a {
+    .infowindow-image {
+      width: 85px;
+      height: 85px;
+    }
+
+    h2 {
+      padding-left: 15px;
+      font-weight: bold;
+      font-size: 14px;
+      margin: 0 auto;
+      color: #474747;
+      padding-top: 5px;
+    }
+
+    p {
+      margin: 0 auto;
+      padding-top: 20px;
+      padding-left: 15px;
+    }
   }
 
-  .info-window-title {
-    font-weight: 700;
-    color: $dark-gray;
-  }
+
 }
 
 img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
