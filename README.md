@@ -63,7 +63,7 @@ Planning Documents: [Hippocampus Wiki](https://github.com/youknowhu/Hippocampus/
 ---
 
 ### Bookings
-<img src="https://media.giphy.com/media/3CZMPFJtjKtPnYPtVA/giphy.gif" width="500">
+<img src="https://res.cloudinary.com/deor0br3s/image/upload/v1528824009/Screen_Shot_2018-06-12_at_10.19.38_AM.png" width="500">
 
 * Logged in users can book or cancel a listing
 * If not logged in, users will be prompted to log in.
