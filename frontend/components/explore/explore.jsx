@@ -5,7 +5,7 @@ import { receiveGeolocationEntry } from '../../actions/geolocation_actions';
 
 import HippoMap from './hippo_map';
 import ListingsFilterContainer from '../listing/listings_filter_container';
-import ListingsIndexContainer from '../listing/listings_index_container';
+import ListingsIndex from '../listing/listings_index';
 
 class Explore extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class Explore extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0,0);
+    this.props.fetchAllListings();
   }
 
   componentWillUnmount() {
@@ -24,7 +25,12 @@ class Explore extends React.Component {
     return (
       <div className="explore-container">
         <ListingsFilterContainer />
-        <ListingsIndexContainer />
+        <ListingsIndex
+          listings={ this.props.listings }
+          filters={ this.props.filters }
+          geolocation={ this.props.geolocation }
+          mapBounds={ this.props.mapBounds }
+        />
         <HippoMap
           listings={ this.props.listings }
           filters={ this.props.filters }
@@ -37,10 +43,4 @@ class Explore extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry)),
-  }
-}
-
-export default connect(null, mapDispatchToProps)(Explore);
+export default Explore;

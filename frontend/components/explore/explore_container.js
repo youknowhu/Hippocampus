@@ -13,7 +13,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchAllListings: () => dispatch(fetchAllListings()),
-  receiveMapBounds: (bounds) => dispatch(receiveMapBounds(bounds))
+  receiveMapBounds: (bounds) => dispatch(receiveMapBounds(bounds)),
+  receiveGeolocationEntry: entry => dispatch(receiveGeolocationEntry(entry))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explore)
