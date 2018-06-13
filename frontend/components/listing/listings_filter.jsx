@@ -41,7 +41,7 @@ class ListingsFilter extends React.Component {
     }
   }
 
-  handleListingFilter(category) {
+  handlePrivatePublicFilter(category) {
     const {
       filters,
       removeSingleFilter,
@@ -79,7 +79,7 @@ class ListingsFilter extends React.Component {
             className='checkbox-filter'
             name='listing-filter'
             type='radio'
-            onClick={this.handleListingFilter('public')}
+            onClick={this.handlePrivatePublicFilter('public')}
             checked={filters['public']}
             />
             <label htmlFor='public-filter' className='checkbox-label'>Public</label>
@@ -89,7 +89,7 @@ class ListingsFilter extends React.Component {
             className='checkbox-filter'
             name='listing-filter'
             type='radio'
-            onClick={this.handleListingFilter('private')}
+            onClick={this.handlePrivatePublicFilter('private')}
             checked={filters['private']}
             />
           <label htmlFor='private-filter' className='checkbox-label'>Private</label>

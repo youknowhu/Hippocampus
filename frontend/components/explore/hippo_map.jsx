@@ -62,7 +62,7 @@ class HippoMap extends React.Component {
           if (status === 'OK') {
 
             if (results[0]) {
-              window.localStorage.setItem(geolocation, JSON.stringify(results))
+              window.localStorage.setItem(geolocation, JSON.stringify(results));
               this.map.setZoom(8.5);
               this.map.setCenter(results[0].geometry.location);
               const mapBounds = this.map.getBounds();
@@ -78,20 +78,17 @@ class HippoMap extends React.Component {
     }
   }
   render() {
-    const { listings, filters } = this.props;
+    const { listings } = this.props;
 
-    if (Object.keys(listings) === 0 ) {
-      return (<div> </div> )
-    } else {
+    if (Object.keys(listings) === 0 ) return ( <div> </div> )
 
-      return (
-        <div className="map-container">
-          <div className="map" ref={map => this.mapNode = map }>
-            MAP
-          </div>
+    return (
+      <div className="map-container">
+        <div className="map" ref={map => this.mapNode = map }>
+          MAP
         </div>
-      )
-    }
+      </div>
+    );
   }
 }
 

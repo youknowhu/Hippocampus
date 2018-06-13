@@ -1,16 +1,20 @@
 import { connect } from 'react-redux';
 import ListingsFilter from './listings_filter'
 import { fetchAllListings } from '../../actions/listing_actions'
-import { receiveSingleFilter, removeSingleFilter,
-  clearAllFilters, receivePricingFilter, removePricingFilter
+import {
+  receiveSingleFilter,
+  removeSingleFilter,
+  clearAllFilters,
+  receivePricingFilter,
+  removePricingFilter
   } from '../../actions/filter_actions';
 
 
-const msp = state => ({
+const mapStateToProps = state => ({
   filters: state.ui.filters,
 })
 
-const mdp = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   fetchAllListings: () => dispatch(fetchAllListings()),
   receiveSingleFilter: filter => dispatch(receiveSingleFilter(filter)),
   removeSingleFilter: filter => dispatch(removeSingleFilter(filter)),
@@ -20,4 +24,4 @@ const mdp = dispatch => ({
 
 })
 
-export default connect(msp, mdp)(ListingsFilter)
+export default connect(mapStateToProps, mapDispatchToProps)(ListingsFilter)
