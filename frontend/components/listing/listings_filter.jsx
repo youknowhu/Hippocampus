@@ -7,6 +7,7 @@ class ListingsFilter extends React.Component {
     super(props)
     this.toggle = this.toggle.bind(this);
     this.handlePricingFilter = this.handlePricingFilter.bind(this);
+    this.handlePrivatePublicFilter = this.handlePrivatePublicFilter.bind(this);
   }
 
   toggle(category) {
@@ -49,16 +50,23 @@ class ListingsFilter extends React.Component {
     } = this.props;
 
     return e => {
+      //user clicked private filter
       if (category === 'private') {
+        //if filter toggle already on, remove filter.
         if (filters['private']) {
           removeSingleFilter('private');
+        //otherwise, turn off public filter and turn on private
         } else {
           removeSingleFilter('public');
           receiveSingleFilter('private');
         }
+
+      //user clicked public filter
       } else if (category === 'public') {
+        //if filter toggle already on, remove filter.
         if (filters['public']) {
           removeSingleFilter('public');
+        //otherwise, turn off private filter and turn on public
         } else {
           removeSingleFilter('private');
           receiveSingleFilter('public');
