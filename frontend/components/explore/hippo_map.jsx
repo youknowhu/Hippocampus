@@ -17,12 +17,14 @@ class HippoMap extends React.Component {
   componentDidMount() {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
+    if (this.props.geolocation.length > 0) this.orientMap();
+
   }
 
   componentDidUpdate() {
     this.filteredListings = this.applyFilters();
-    this.MarkerManager.updateMarkers(this.filteredListings, this.props.geolocation)
-    this.orientMap();
+    this.MarkerManager.updateMarkers(this.filteredListings, this.props.geolocation);
+    if (this.props.geolocation.length > 0) this.orientMap();
   }
 
 
