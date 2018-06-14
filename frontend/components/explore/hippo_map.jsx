@@ -17,17 +17,11 @@ class HippoMap extends React.Component {
   componentDidMount() {
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
-    this.MarkerManager.updateMarkers(this.props.listings,
-      this.props.geolocation,
-      this.props.mapBounds);
-    this.orientMap();
   }
 
   componentDidUpdate() {
     this.filteredListings = this.applyFilters();
-    this.MarkerManager.updateMarkers(this.filteredListings,
-      this.props.geolocation,
-      this.props.mapBounds)
+    this.MarkerManager.updateMarkers(this.filteredListings, this.props.geolocation)
     this.orientMap();
   }
 
@@ -50,6 +44,7 @@ class HippoMap extends React.Component {
 
       return listing;
     });
+
     return filteredListings;
   }
 
@@ -65,10 +60,14 @@ class HippoMap extends React.Component {
               window.localStorage.setItem(geolocation, JSON.stringify(results));
               this.map.setZoom(8.5);
               this.map.setCenter(results[0].geometry.location);
-              const mapBounds = this.map.getBounds();
-              this.map.fitBounds(mapBounds);
+
+              /* get current map bounds, fit to those bounds,
+              then feed in mapBounds to UI object for mapBounds for Listing
+              Index to filter through */
+              const currentMapBounds = this.map.getBounds();
+              this.map.fitBounds(currentMapBounds);
               this.props.receiveMapBounds(this.map.getBounds());
-              this.map.fitBounds(mapBounds);
+
             } else {
               window.alert('No results found');
             }
@@ -80,7 +79,7 @@ class HippoMap extends React.Component {
   render() {
     const { listings } = this.props;
 
-    if (Object.keys(listings) === 0 ) return ( <div> </div> )
+    if (Object.keys(listings) === 0 ) return ( <div> </div> );
 
     return (
       <div className="map-container">

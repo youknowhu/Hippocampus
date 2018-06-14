@@ -9,33 +9,27 @@ class MarkerManager {
 
   clearMarkers(listingsObj) {
     Object.keys(this.markers)
-      .filter(listingId => !listingsObj[listingId])
       .forEach((listingId) => this.removeMarker(this.markers[listingId]))
   }
 
-  updateMarkers(listings, geolocation, mapBounds){
-    const listingsObj = {};
-
-    this.clearMarkers(listingsObj);
+  updateMarkers(listings, geolocation){
+    this.clearMarkers();
     this.bounds = new google.maps.LatLngBounds();
 
-    listings.forEach(listing => listingsObj[listing.id] = listing);
-
-    listings
-      .filter(listing => !this.markers[listing.id])
-      .forEach(newListing => this.createMarkerFromListing(newListing));
+    listings.forEach(listing => {
+      this.createMarkerFromListing(listing);
+    });
 
     //if user entered geolocation, map will be centered around geolocation.
-    if (geolocation.length > 0) {
-      return;
+    if (geolocation.length > 0) return;
 
     //if exactly one listing, center and set zoom around single location.
-    } else if (listings.length === 1) {
+    if (listings.length === 1) {
       this.map.setZoom(7);
       this.map.setCenter({lat: listings[0].lat, lng: listings[0].lng });
 
     //otherwise, reframe map around bounds set by all markers placed on the map.
-    } else if (listings.length > 0) {
+    } else if (listings.length > 1) {
       this.map.fitBounds(this.bounds);
     }
   }
